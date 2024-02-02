@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Slja/6fGAg3Hw4PQ2gdBgW7ow3U2t7rRnZg8Jl7Cb6iVHSd8NtosHpBs8LIrfS8JqAm5Ryf6nDEN2zcUy0G3jg==",
+  "dgSpecHash": "DCIdXiDZhMtOAmntufEoGTCO6odVzMzMd/C1pd0xpg1lLGz6Bt1bhFug+Xw8Goqvvrlr86+x6Tz0RBIQylB4Zw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\ApolloStageTest.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
@@ -65,10 +65,7 @@
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512",
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

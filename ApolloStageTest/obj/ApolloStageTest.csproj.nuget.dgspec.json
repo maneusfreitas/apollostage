@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\ApolloStageTest.csproj": {}
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\ApolloStageTest.csproj": {
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\ApolloStageTest.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
         "projectName": "ApolloStageTest",
-        "projectPath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\ApolloStageTest.csproj",
+        "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
         "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStageTest\\obj\\",
+        "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\ApolloStage.csproj": {
-                "projectPath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\ApolloStage.csproj"
+              "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj": {
+                "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj"
               }
             }
           }
@@ -80,20 +80,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -103,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\ApolloStage.csproj": {
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\ApolloStage.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj",
         "projectName": "ApolloStage",
-        "projectPath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\ApolloStage.csproj",
+        "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj",
         "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emanuel Freitas\\Downloads\\ApolloStage\\ApolloStage\\ApolloStage\\obj\\",
+        "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -197,24 +183,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
