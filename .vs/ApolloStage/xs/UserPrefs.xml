@@ -1,36 +1,36 @@
-﻿<Properties StartupConfiguration="{B8BC14C4-6261-481C-93AB-A27EEC76FE62}|Default">
+﻿<Properties StartupConfiguration="{91947474-CB70-4F88-BD86-EDA7994FFC08}|https">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ApolloStageTest/AccountControllerTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ApolloStage/Controllers/AccountController.cs">
     <Files>
-      <File FileName="ApolloStage/Program.cs" Line="41" Column="1" />
-      <File FileName="ApolloStage/Controllers/AccountController.cs" Line="22" Column="8" />
-      <File FileName="ApolloStageTest/UnitTest1.cs" Line="62" Column="1" />
-      <File FileName="ApolloStageTest/Usings.cs" Line="1" Column="1" />
-      <File FileName="ApolloStageTest/ApplicationDbContext.cs" Line="33" Column="1" />
-      <File FileName="ApolloStage/Data/ApplicationDbContext.cs" Line="7" Column="34" />
+      <File FileName="ApolloStage/Controllers/AccountController.cs" Line="228" Column="57" />
+      <File FileName="ApolloStage/Controllers/HomeController.cs" />
+      <File FileName="ApolloStage/Views/Account/Login.cshtml" Line="114" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ApolloStage" expanded="True">
-            <Node name="ApolloStageTest" expanded="True">
-              <Node name="AccountControllerTest.cs" selected="True" />
+            <Node name="ApolloStage" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AccountController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+              </Node>
             </Node>
+            <Node name="ApolloStageTest" expanded="True" />
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="ApolloStage" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.ApolloStage PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ApolloStageTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ApolloStage PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

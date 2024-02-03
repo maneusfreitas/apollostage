@@ -7545,26 +7545,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\": {}
+    "/Users/tenkait/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj",
+      "projectUniqueName": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj",
       "projectName": "ApolloStage",
-      "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\ApolloStage.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\obj\\",
+      "projectPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj",
+      "packagesPath": "/Users/tenkait/.nuget/packages/",
+      "outputPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/tenkait/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7649,7 +7647,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
       }
     }
   }

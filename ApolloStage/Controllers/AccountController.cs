@@ -5,6 +5,7 @@ using ApolloStage.Models;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using System.Text;
+using System.Reflection;
 
 namespace ApolloStageFirst.Controllers
 {
@@ -197,11 +198,13 @@ namespace ApolloStageFirst.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> VerifyCodeAsync(string UserMail, string code1, string code2, string code3, string code4)
+        public async Task<IActionResult> VerifyCodeAsync(ApplicationUser model,string UserMail, string code1, string code2, string code3, string code4, string pass = "normal")
         {
+            if (pass == "normal" || pass == "pass") { 
             try
             {
-                var user = await _userManager.FindByEmailAsync(UserMail);
+                   
+                    var user = await _userManager.FindByEmailAsync(UserMail);
 
                 if (user == null)
                 {
@@ -209,7 +212,7 @@ namespace ApolloStageFirst.Controllers
                 }
 
                 string combinedCode = code1 + code2 + code3 + code4;
-                Console.WriteLine(combinedCode + "  rgsergsr");
+                    Console.WriteLine("model.UserMail -- : --" + model.UserMail);
 
                 if (user.Code == combinedCode)
                 {
@@ -217,12 +220,18 @@ namespace ApolloStageFirst.Controllers
                     user.EmailConfirmed = true;
 
                     var updateResult = await _userManager.UpdateAsync(user);
-                    Console.WriteLine("UpdateAsync Succeeded: " + updateResult.Succeeded);
-
+                   
                     if (updateResult.Succeeded)
                     {
-                        return View("RegisterSucceeded");
-                    }
+                            if (pass == "normal")
+                            {
+                                TempData["successAccount"] = "Account created successfully, try to login NOW";
+                                return RedirectToAction("Login", "Account");
+                            }
+                            else if (pass == "pass")
+                                return View("PasswordChangeCompleted", model);
+                            else return RedirectToAction("Error", "Home");
+                        }
                     else
                     {
                         Console.WriteLine("UpdateAsync falhou: " + string.Join(", ", updateResult.Errors.Select(e => e.Description)));
@@ -240,7 +249,7 @@ namespace ApolloStageFirst.Controllers
                     {
                         return BadRequest("Erro ao excluir o usuário");
                     }
-                   
+
                 }
             }
             catch (Exception ex)
@@ -248,7 +257,9 @@ namespace ApolloStageFirst.Controllers
                 Console.WriteLine("Exceção durante a verificação do código: " + ex.ToString());
                 return RedirectToAction("Error");
             }
-        }
+        }else
+           return RedirectToAction("Error", "Home");
+    }
 
 
 
@@ -318,26 +329,73 @@ namespace ApolloStageFirst.Controllers
         [HttpPost]
         public async Task<IActionResult> ResetPassword(ApplicationUser user)
         {
-           var existingUser = await _userManager.FindByEmailAsync(user.UserMail);
-           if (existingUser != null)
-                {
-                    var newPassword = GenerateRandomPassword(); 
-                    var token = await _userManager.GeneratePasswordResetTokenAsync(existingUser);
-                    var resetResult = await _userManager.ResetPasswordAsync(existingUser, token, newPassword);
+            var existingUser = await _userManager.FindByEmailAsync(user.UserMail);
 
-                if (resetResult != null && resetResult.Succeeded)
-                {
-                    EmailService emailService = new EmailService();
-                    await emailService.SendPasswordByEmailAsync(existingUser.UserMail, newPassword);
+            if (existingUser != null)
+            {
+                var random = new Random();
+                var code = new string(Enumerable.Repeat("0123456789", 4)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
 
-                    return View("ForgotPasswordConfirmation");
+                existingUser.Code = code;
+                var updateResult = await _userManager.UpdateAsync(existingUser);
+
+                if (updateResult != null && updateResult.Succeeded)
+                {
+                  EmailService emailService = new EmailService();
+                    await emailService.SendCodeByEmailAsync(existingUser.UserMail, code);
+
+                    return View("CodeConfimPassword", existingUser);
                 }
-
             }
 
-
-            return RedirectToAction("Index", "Home");
+            TempData["fail"] = "E-mail não encontrado";
+            return View("ForgotPassword", user);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ApplicationUser user)
+        {
+            Console.WriteLine("ChangePassword " + user.UserMail);
+
+            if (user != null)
+            {
+                // Obtém o usuário do banco de dados com base no e-mail
+                var existingUser = await _userManager.FindByEmailAsync(user.UserMail);
+
+                if (existingUser != null)
+                {
+                    // Gera o token de redefinição de senha
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(existingUser);
+
+                    // Tenta redefinir a senha
+                    var result = await _userManager.ResetPasswordAsync(existingUser, token, user.Password);
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        // Se houver falha, você pode lidar com os erros aqui
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                    }
+                }
+                else
+                {
+                    // Usuário não encontrado
+                    ModelState.AddModelError(string.Empty, "Usuário não encontrado");
+                }
+            }
+
+            // Redireciona para uma página de erro em caso de falha
+            return RedirectToAction("Error", "Home");
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> ResendVerificationEmailAsync(string userEmail, int n)
@@ -390,10 +448,17 @@ namespace ApolloStageFirst.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
 
+
+        [HttpGet]
+        public async Task<IActionResult> ListenList()
+        {
+
+            return View("ListenList", "Account");
+        }
 
 
 

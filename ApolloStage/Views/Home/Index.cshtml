@@ -1,19 +1,87 @@
-﻿@{
+﻿@using System.Security.Claims;
+@* @model IndexModelView;*@
+@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @if (User.Identity.IsAuthenticated)
 {
-    <div class="text-center">
-        <h1 class="display-4">Welcome, @User.Identity.Name!</h1>
-        <!-- Conteúdo adicional para usuários autenticados -->
-        <p>Here's some content for authenticated users.</p>
+    <div class="container-fluid p-0 d-flex align-items-center">
+        <img class="drake" src="~/img/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg" width="60% " style="height:90vh" />
+        <div class="text-center mt-5 ms-5 me-5">
+            <p>new</p>
+            <br />
+            <br />
+            <p>OCTOBER 6, 2023</p>
+            <p>For all the dogs, DRAKE</p>
+            <p>The eighth studio album by Canadian rapper is a mixture between Drake’s old rap style and some sound experiments of the modern era</p>
+            <button href=""> spot</button>
+        </div>
+
     </div>
+
 }
 else
 {
+
     <div class="text-center">
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>
 }
+
+@*   <div class="container-fluid text-center">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (Model.Playlists != null)
+            {
+                <div class="container">
+                    <h1 class=" section-title">Top Playlists Albums</h1>
+                    <div class="row">
+                        <section class="row">
+                            <div class="nine columns">
+                                <div id="coverflow">
+                                   <a class="prev-arrow"></a>
+
+                                        @foreach (var playlist in Model.Playlists)
+                                        {
+
+                                            @if (playlist.Images != null)
+                                            {
+                                                <a href="@playlist.ExternalUrls.spotify">
+                                                    <img src="@playlist.Images[0].URL" alt="@playlist.Name" />
+                                                </a>
+
+
+                                            }
+                                        }
+                                        <a class="next-arrow"></a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+            }
+        </div>*@
+
+
+
+
+
+
+<style>
+
+    footer.border-top.footer.text-muted {
+        position: relative!important;
+        bottom: 0;
+    }
+</style>

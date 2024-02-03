@@ -1,0 +1,30 @@
+﻿@* @model List<Album>*@
+
+<center><h1>ListenList</h1>
+<p>Não existem álbuns adicionados à sua ListenList.</p></center>
+@*<div class="row">
+        @foreach (var album in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card">
+                    @if (album.images.Count > 0)
+                    {
+                        <img src="@album.images[0].URL" alt="@album.name" class="card-img-top img-fluid fixed-size-image">
+                    }
+                <div class="card-body">
+                    <p class="card-text">@album.name</p>
+                    <p class="card-text">Data de Lançamento: @album.release_date</p>
+                    <p class="card-text">Total de Faixas: @album.total_tracks</p>
+                    <form asp-controller="Account" asp-action="RemoverDosFavoritos" method="post">
+                        <input type="hidden" name="albumId" value="@album.id" />
+                        <button type="submit" class="btn btn-danger">Remover dos Favoritos</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        }
+        @if (Model.Count == 0)
+        {
+            <p>Não existem álbuns adicionados aos favoritos.</p>
+        }
+    </div>*@

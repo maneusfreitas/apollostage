@@ -2,15 +2,50 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<style>
+    .navbar-nav {
+        display: flex;
+        align-items: center; 
+    }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px; 
+        }
+
+            .navbar-nav .nav-item:last-child {
+                margin-right: 0; 
+            }
+</style>
+
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-
-        <li class="nav-item">
-            <form method="post" asp-controller="Account" asp-action="Logout">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        <li class="nav-item mr-3">
+            <form method="get" asp-controller="Account" asp-action="ListenList">
+                <button type="submit" class="nav-link btn btn-link text-dark">
+                    <i class="fa fa-bookmark fa-2x"></i>
+                </button>
             </form>
         </li>
+        <li class="nav-item mr-3">
+            <form method="get" asp-controller="Market" asp-action="market">
+                <button type="submit" class="nav-link btn btn-link text-dark">
+                    <i class="fa fa-shopping-bag fa-2x"></i>
+                </button>
+            </form>
+        </li>
+     
+            <li class="nav-item mr-3">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="nav-link btn btn-link text-dark"><i class="fa fa-user fa-2x"></i></button>
+                </form>
+            </li>
+        
+   
+
     }
     else
     {
