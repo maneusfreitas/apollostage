@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HTm53e7ExVo2DY8r5yMnWIGmB2+DzOxuptF1Cf2QAW/HwEjZOmGN9PS/6VccAXBkhtqBTJoYCjh0J986cylMeA==",
+  "dgSpecHash": "/uRHAod0gzBXvi83DmiYUAjoNcA4iFz2gCW692y/UAS1Ah0PpULn4Q1tUT+eELfxbF2iEbIHNGiGwrKo1rDRyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\Apollostage.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\Apollostage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
