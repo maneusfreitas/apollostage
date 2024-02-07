@@ -7545,26 +7545,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\": {}
+    "/Users/joaonanques/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\Apollostage.csproj",
+      "projectUniqueName": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/Apollostage.csproj",
       "projectName": "Apollostage",
-      "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\Apollostage.csproj",
-      "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\obj\\",
+      "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/Apollostage.csproj",
+      "packagesPath": "/Users/joaonanques/.nuget/packages/",
+      "outputPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/joaonanques/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/sdk/7.0.312/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7649,7 +7648,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
       }
     }
   }
