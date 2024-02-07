@@ -10,12 +10,6 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <Compile Remove="wwwroot\img\logos\**" />
-    <Content Remove="wwwroot\img\logos\**" />
-    <EmbeddedResource Remove="wwwroot\img\logos\**" />
-    <None Remove="wwwroot\img\logos\**" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Services\" />
     <None Remove="Views\Market\" />
   </ItemGroup>
@@ -43,5 +37,6 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Views\Market\" />
+    <Folder Include="wwwroot\img\logos\" />
   </ItemGroup>
 </Project>

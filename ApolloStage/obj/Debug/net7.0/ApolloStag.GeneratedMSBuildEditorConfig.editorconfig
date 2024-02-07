@@ -1,0 +1,111 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ApolloStag
+build_property.RootNamespace = ApolloStag
+build_property.ProjectDir = C:\Users\Emanuel Freitas\Documents\Pessoal\Universidade\Documentos\3A\apollostage\ApolloStage\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Emanuel Freitas\Documents\Pessoal\Universidade\Documentos\3A\apollostage\ApolloStage
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/CodeConfim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb2RlQ29uZmltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/CodeConfimPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb2RlQ29uZmltUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/FirstRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGaXJzdFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/InvalidCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbnZhbGlkQ29kZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/LimitAttempts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMaW1pdEF0dGVtcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/ListenList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMaXN0ZW5MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/PasswordChangeCompleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQYXNzd29yZENoYW5nZUNvbXBsZXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/RegisterSucceeded.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclN1Y2NlZWRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/SecondRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZWNvbmRSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Account/ThirdRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxUaGlyZFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Market/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emanuel Freitas/Documents/Pessoal/Universidade/Documentos/3A/apollostage/ApolloStage/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-br7gbtvvzk
