@@ -20,7 +20,7 @@ namespace ApolloStage.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "A password e a confirmação não estão iguais.")]
         public string ConfirmPassword { get; set; }
 
         [Required]
