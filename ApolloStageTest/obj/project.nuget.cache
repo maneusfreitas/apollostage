@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YvS5ps+E9x2dRoHLpzwsu1qxMhx+fHRRDNkmnc1S657d/zCacIdmau2457b4A9Hqc/pjx0QPIPKcJWq1MjprLg==",
+  "dgSpecHash": "oJpHOI6fKUNBRyDEEhJfzxRMFSARKj3B8nQE5StcySgD4mta233PaPoqxOV70MKR8ZmXN9yzfKoqzXWfjVYRCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
+  "projectFilePath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
