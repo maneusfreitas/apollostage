@@ -1281,7 +1281,7 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "ApolloStage/1.0.0": {
+      "Apollostage/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1297,10 +1297,10 @@
           "xunit": "2.4.1"
         },
         "compile": {
-          "bin/placeholder/ApolloStage.dll": {}
+          "bin/placeholder/Apollostage.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ApolloStage.dll": {}
+          "bin/placeholder/Apollostage.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -3106,15 +3106,15 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "ApolloStage/1.0.0": {
+    "Apollostage/1.0.0": {
       "type": "project",
-      "path": "../ApolloStage/ApolloStage.csproj",
-      "msbuildProject": "../ApolloStage/ApolloStage.csproj"
+      "path": "../ApolloStage/Apollostage.csproj",
+      "msbuildProject": "../ApolloStage/Apollostage.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "ApolloStage >= 1.0.0",
+      "Apollostage >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
       "coverlet.collector >= 3.2.0",
@@ -3123,32 +3123,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/tenkait/.nuget/packages/": {}
+    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tenkait/Downloads/apollostage-main/ApolloStageTest/ApolloStageTest.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
       "projectName": "ApolloStageTest",
-      "projectPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStageTest/ApolloStageTest.csproj",
-      "packagesPath": "/Users/tenkait/.nuget/packages/",
-      "outputPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStageTest/obj/",
+      "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
+      "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStageTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tenkait/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj": {
-              "projectPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj"
+            "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\Apollostage.csproj": {
+              "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\apollostage\\ApolloStage\\Apollostage.csproj"
             }
           }
         }
@@ -3204,7 +3206,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

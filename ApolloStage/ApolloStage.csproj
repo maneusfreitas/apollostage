@@ -37,5 +37,6 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Views\Market\" />
+    <Folder Include="wwwroot\img\logos\" />
   </ItemGroup>
 </Project>

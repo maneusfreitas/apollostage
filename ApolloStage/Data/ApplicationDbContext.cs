@@ -28,4 +28,3 @@ public class ApplicationDbContext : IdentityDbContext
         base.OnConfiguring(optionsBuilder);
     }
 }
-
