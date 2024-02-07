@@ -23,6 +23,7 @@ public class ApplicationDbContext : IdentityDbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        // Adicione o log para o Console para depuração
         optionsBuilder.UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()));
         base.OnConfiguring(optionsBuilder);
     }

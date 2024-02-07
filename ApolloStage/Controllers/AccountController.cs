@@ -59,7 +59,7 @@ namespace ApolloStageFirst.Controllers
                 }
             }
 
-            ModelState.AddModelError(string.Empty, "Tentativa de login falhada");
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 
             return View(model);
         }
@@ -69,6 +69,7 @@ namespace ApolloStageFirst.Controllers
         [HttpPost]
         public async Task<IActionResult> FirstRegister(ApplicationUser model)
         {
+            
                 try
                 {
                  
@@ -92,7 +93,7 @@ namespace ApolloStageFirst.Controllers
               
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", "Ocorreu um erro ao tentar guardar os dados: " + ex.Message);
+                    ModelState.AddModelError("", "Ocorreu um erro ao salvar os dados: " + ex.Message);
                     return View(model);
                 }
            
@@ -126,7 +127,7 @@ namespace ApolloStageFirst.Controllers
 
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", "Ocorreu um erro ao tentar guardar os dados: " + ex.Message);
+                    ModelState.AddModelError("", "Ocorreu um erro ao salvar os dados: " + ex.Message);
                     return View(model);
                 }
          
@@ -143,7 +144,7 @@ namespace ApolloStageFirst.Controllers
              
                 if (existingUser != null)
                 {
-                    ModelState.AddModelError("", "Este email já está a ser utilizado. Por favor, escolha outro.");
+                    ModelState.AddModelError("", "Este email já está em uso. Por favor, escolha outro.");
                     return View(model);
                 }
                 TempData["Email"] = model.UserMail;
@@ -190,7 +191,7 @@ namespace ApolloStageFirst.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Ocorreu um erro ao tentar guardar os dados: " + ex.Message);
+                ModelState.AddModelError("", "Ocorreu um erro ao salvar os dados: " + ex.Message);
                 return View(model);
             }
         }
@@ -224,7 +225,7 @@ namespace ApolloStageFirst.Controllers
                     {
                             if (pass == "normal")
                             {
-                                TempData["successAccount"] = "Conta criada com sucesso, já pode fazer o login.";
+                                TempData["successAccount"] = "Account created successfully, try to login NOW";
                                 return RedirectToAction("Login", "Account");
                             }
                             else if (pass == "pass")
@@ -233,7 +234,7 @@ namespace ApolloStageFirst.Controllers
                         }
                     else
                     {
-                        Console.WriteLine("Falha: " + string.Join(", ", updateResult.Errors.Select(e => e.Description)));
+                        Console.WriteLine("UpdateAsync falhou: " + string.Join(", ", updateResult.Errors.Select(e => e.Description)));
                         return RedirectToAction("Error");
                     }
                 }
@@ -246,14 +247,14 @@ namespace ApolloStageFirst.Controllers
                     }
                     else
                     {
-                        return BadRequest("Erro ao excluir o utilizador");
+                        return BadRequest("Erro ao excluir o usuário");
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exceção: " + ex.ToString());
+                Console.WriteLine("Exceção durante a verificação do código: " + ex.ToString());
                 return RedirectToAction("Error");
             }
         }else
@@ -386,7 +387,7 @@ namespace ApolloStageFirst.Controllers
                 else
                 {
                     // Usuário não encontrado
-                    ModelState.AddModelError(string.Empty, "Utilizador não encontrado");
+                    ModelState.AddModelError(string.Empty, "Usuário não encontrado");
                 }
             }
 
@@ -421,22 +422,22 @@ namespace ApolloStageFirst.Controllers
                         var deleteResult = await _userManager.DeleteAsync(existingUser);
                         if (deleteResult.Succeeded)
                         {
-                            return Ok("Utilizador eliminado com sucesso");
+                            return Ok("Usuário excluído com sucesso");
                         }
                         else
                         {
-                            return BadRequest("Erro ao excluir o utilizador");
+                            return BadRequest("Erro ao excluir o usuário");
                         }
                     }
                     return Ok(); 
                 }
                 else
                 {
-                    return BadRequest("Erro ao atualizar o código do utilizador");
+                    return BadRequest("Erro ao atualizar o código do usuário");
                 }
             }
 
-            return NotFound("Utilizador não encontrado");
+            return NotFound("Usuário não encontrado");
         }
 
 
