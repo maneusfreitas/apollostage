@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "ApolloStage/1.0.0": {
+      "Apollostage/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Google": "7.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.14",
@@ -21,7 +21,7 @@
           "xunit.runner.visualstudio": "2.4.1"
         },
         "runtime": {
-          "ApolloStage.dll": {}
+          "Apollostage.dll": {}
         }
       },
       "Castle.Core/5.1.1": {
@@ -1555,7 +1555,7 @@
     }
   },
   "libraries": {
-    "ApolloStage/1.0.0": {
+    "Apollostage/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
