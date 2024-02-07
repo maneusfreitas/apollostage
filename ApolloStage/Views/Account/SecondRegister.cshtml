@@ -18,12 +18,9 @@
 <body>
     <header>
         <div class="container-fluid d-flex align-items-center h-25 position-relative">
-            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <img src="~/img/apollostage-logo-black.png" alt="some text" width="200">
             <div class="w-100 position-absolute text-center">
                 <h1 class="text-center"> Register</h1>
-            </div>
-            <div class="me-0" style="position:absolute;right:30px">
-                <label> Dark Mode</label>
             </div>
         </div>
     </header>
@@ -34,18 +31,19 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                     <div id="name_pass_username" class="d-block">
                         <div class="form-floating mb-5">
-                            <input id="name" asp-for="Name" class="form-control" aria-required="true" placeholder="Name" />
-                            <label asp-for="Name">Name</label>
+
+                            <h5 asp-for="Name">Name</h5>
+                            <input id="name" asp-for="Name" class="form-control" aria-required="true" placeholder="Insert your name here" />
                             <span id="nameError" class="text-danger"></span>
                         </div>
                         <div class="form-outline mb-5">
                             <h5 asp-for="Password">Password</h5>
-                            <input id="password" asp-for="Password" class="form-control" aria-required="true" />
+                            <input id="password" asp-for="Password" class="form-control" aria-required="true" placeholder="Insert your password here" />
                             <span id="passwordError" class="text-danger"></span>
                         </div>
                         <div class="form-outline mb-5">
-                            <h5 asp-for="ConfirmPassword">Confirm Password</h5>
-                            <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" aria-required="true" />
+                            <h5 asp-for="ConfirmPassword">Confirm password</h5>
+                            <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" aria-required="true" placeholder="Insert your password here" />
                             <span id="confirmPasswordError" class="text-danger"></span>
                         </div>
                     </div>
@@ -59,21 +57,15 @@
                     <input type="hidden" asp-for="EmailConfirmed" />
 
                     <div>
-                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; font-weight: bold; color: #00bf63;">Next step</button>
                     </div>
 
 
 
 
                     <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
-                    <div>
-
-                        <h5 class="mt-4 w-100 text-center">
-                            Already have an account?
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
-                        </h5>
-
-                    </div>
+                    <br />
+                    <p style="text-align: center;">Already have an account? <a asp-controller="Account" asp-action="Login" style="text-decoration: none; color: black; font-weight: bold;">Log in here</a></p>
                 </form>
                
             </div>

@@ -23,12 +23,9 @@
 <body>
     <header>
         <div class="container-fluid d-flex align-items-center h-25 position-relative">
-            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <img src="~/img/apollostage-logo-black.png" alt="some text" width="200">
             <div class="w-100 position-absolute text-center">
                 <h1 class="text-center"> Register</h1>
-            </div>
-            <div class="me-0" style="position:absolute;right:30px">
-                <label> Dark Mode</label>
             </div>
         </div>
     </header>
@@ -39,7 +36,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                     <div id="email" class="form-outline mb-5 d-block ">
                         <h5 asp-for="UserMail">E-mail</h5>
-                        <input asp-for="UserMail" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        <input asp-for="UserMail" class="form-control" autocomplete="username" aria-required="true" placeholder="Insert your e-mail here" />
 
                         <span asp-validation-for="UserMail" class="text-danger"></span>
                     </div>
@@ -55,7 +52,7 @@
                     <input type="hidden" asp-for="EmailConfirmed" />
 
                     <div>
-                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: #00bf63; font-weight: bold;">Next step</button>
                     </div>
 
 
@@ -63,7 +60,7 @@
                         <h5 class="w-100 text-center mt-4 mb-4"> or </h5>
 
 
-                        <button id="login-google-submit" class="w-100 btn btn-sm-2 btn-outline-dark btn-block mt-2 d-flex align-items-center position-relative" style="height:70px; border-radius: 700px">
+                        <button id="login-google-submit" class="w-100 btn btn-sm-2 btn-outline-dark btn-block mt-2 d-flex align-items-center position-relative" style="height:70px; border-radius: 700px; background-color: white; color: black;">
                             <img class="rounded float-start" src="/img/icons/google.png" width="20px">
                             <span class="position-absolute text-center w-100">Continue with Google</span>
                         </button>
@@ -72,14 +69,9 @@
 
 
                     <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
-                    <div>
-
-                        <h5 class="mt-4 w-100 text-center">
-                            Already have an account?
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
-                        </h5>
-
-                    </div>
+                    <br />
+                        <p style="text-align: center;">Already have an account? <a asp-controller="Account" asp-action="Login" style="text-decoration: none; color: black; font-weight: bold;">Log in here</a></p>
+  
                 </form>
                 <form id="google-login-form" asp-action="ExternalLogin" asp-controller="Account" method="post" class="form-horizontal">
                     <input type="hidden" name="provider" value="google" />
