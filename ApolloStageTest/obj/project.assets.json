@@ -3123,32 +3123,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/joaonanques/.nuget/packages/": {}
+    "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/ApolloStageTest.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
       "projectName": "ApolloStageTest",
-      "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/ApolloStageTest.csproj",
-      "packagesPath": "/Users/joaonanques/.nuget/packages/",
-      "outputPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/obj/",
+      "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStageTest\\ApolloStageTest.csproj",
+      "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStageTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/joaonanques/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/Apollostage.csproj": {
-              "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/Apollostage.csproj"
+            "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\Apollostage.csproj": {
+              "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\Apollostage.csproj"
             }
           }
         }
@@ -3204,7 +3206,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

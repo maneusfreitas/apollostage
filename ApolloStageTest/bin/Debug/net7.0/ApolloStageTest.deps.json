@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "ApolloStageTest/1.0.0": {
         "dependencies": {
-          "ApolloStage": "1.0.0",
+          "Apollostage": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "Moq": "4.20.70",
           "coverlet.collector": "3.2.0",
@@ -785,7 +785,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -836,7 +836,7 @@
           "Microsoft.NET.Test.Sdk": "17.5.0"
         }
       },
-      "ApolloStage/1.0.0": {
+      "Apollostage/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Google": "7.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.14",
@@ -850,7 +850,7 @@
           "xunit": "2.4.1"
         },
         "runtime": {
-          "ApolloStage.dll": {}
+          "Apollostage.dll": {}
         }
       }
     }
@@ -1295,7 +1295,7 @@
       "path": "xunit.runner.visualstudio/2.4.1",
       "hashPath": "xunit.runner.visualstudio.2.4.1.nupkg.sha512"
     },
-    "ApolloStage/1.0.0": {
+    "Apollostage/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
