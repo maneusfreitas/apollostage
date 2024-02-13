@@ -13,7 +13,9 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<ApplicationUser> TempRegisterData { get; set; }
 
+    public DbSet<FavoriteAlbum> FavoriteAlbum { get; set; }
 
+    public DbSet<Models.Extra.Classification> AlbumRatings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

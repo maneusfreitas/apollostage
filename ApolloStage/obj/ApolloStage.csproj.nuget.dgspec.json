@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj": {}
+    "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {}
   },
   "projects": {
-    "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj": {
+    "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj",
+        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
         "projectName": "ApolloStage",
-        "projectPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/ApolloStage.csproj",
+        "projectPath": "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
         "packagesPath": "/Users/tenkait/.nuget/packages/",
-        "outputPath": "/Users/tenkait/Downloads/apollostage-main/ApolloStage/obj/",
+        "outputPath": "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tenkait/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.57, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -73,6 +77,14 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0-rc4, )"
             },
             "xunit": {
               "target": "Package",
