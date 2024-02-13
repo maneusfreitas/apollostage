@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apollostage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b39364eedae92672ca2af4ac1eb0232492afe973")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+384f6aeed841abf096de5e5ab808fa0cf6ea3005")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apollostage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apollostage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
