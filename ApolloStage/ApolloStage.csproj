@@ -10,26 +10,21 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <Compile Remove="wwwroot\img\logos\**" />
-    <Content Remove="wwwroot\img\logos\**" />
-    <EmbeddedResource Remove="wwwroot\img\logos\**" />
-    <None Remove="wwwroot\img\logos\**" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Services\" />
-    <None Remove="Views\Market\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.57" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -38,10 +33,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Views\Market\" />
   </ItemGroup>
 </Project>

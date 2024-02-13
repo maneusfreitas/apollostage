@@ -1,11 +1,27 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Apollostage.bundle.scp.css))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\.DS_Store))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
-      <RelativePath>Apollostage.bundle.scp.css</RelativePath>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ApolloStage.bundle.scp.css))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>ApolloStage.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,13 +30,13 @@
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Apollostage.bundle.scp.css))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ApolloStage.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\css\site.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>css/site.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -34,9 +50,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>favicon.ico</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -48,12 +64,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\apollostage-logo-black.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\.DS_Store))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
-      <RelativePath>img/apollostage-logo-black.png</RelativePath>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/.DS_Store</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -62,14 +78,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\apollostage-logo-black.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\background.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\apollo_logo-removebg-preview.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
-      <RelativePath>img/background.png</RelativePath>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/apollo_logo-removebg-preview.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -78,13 +94,61 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\background.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\apollo_logo-removebg-preview.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\background.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/background.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\background.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\google.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/google.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\google.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\filter.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/filter.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -98,9 +162,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\google.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/google.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -114,9 +178,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\hamburger.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/hamburger.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -130,9 +194,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\instagram.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/instagram.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -146,9 +210,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\save.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/save.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -162,9 +226,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\search.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/search.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -178,9 +242,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\shopping.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/shopping.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -194,9 +258,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\twitter.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/twitter.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -210,9 +274,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\user.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/user.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -226,9 +290,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\youtube.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>img/icons/youtube.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -240,12 +304,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons\youtube.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\new-album-background.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons8-google-logo-20.png))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
-      <RelativePath>img/new-album-background.jpg</RelativePath>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/icons8-google-logo-20.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -254,13 +318,109 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\new-album-background.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\icons8-google-logo-20.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\popularity-removebg-preview(1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/popularity-removebg-preview(1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\popularity-removebg-preview(1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\star1.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/star1.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\star1.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\star2.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/star2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\star2.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\topalbum.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/topalbum.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\topalbum.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\user-classification(1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ApolloStage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ApolloStage</BasePath>
+      <RelativePath>img/user-classification(1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\user-classification(1).png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\site.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>js/site.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -274,9 +434,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -290,9 +450,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -306,9 +466,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -322,9 +482,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -338,9 +498,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.rtl.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.rtl.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -354,9 +514,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -370,9 +530,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -386,9 +546,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -402,9 +562,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -418,9 +578,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -434,9 +594,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -450,9 +610,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -466,9 +626,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.rtl.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -482,9 +642,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -498,9 +658,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -514,9 +674,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -530,9 +690,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -546,9 +706,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -562,9 +722,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -578,9 +738,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -594,9 +754,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.rtl.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -610,9 +770,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -626,9 +786,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -642,9 +802,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -658,9 +818,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -674,9 +834,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -690,9 +850,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -706,9 +866,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -722,9 +882,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.rtl.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.rtl.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -738,9 +898,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.rtl.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.rtl.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -754,9 +914,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.rtl.min.css))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.rtl.min.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -770,9 +930,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/css/bootstrap.rtl.min.css.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -786,9 +946,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.bundle.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.bundle.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -802,9 +962,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.bundle.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.bundle.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -818,9 +978,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.bundle.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.bundle.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -834,9 +994,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.bundle.min.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -850,9 +1010,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.esm.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.esm.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -866,9 +1026,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.esm.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.esm.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -882,9 +1042,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.esm.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.esm.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -898,9 +1058,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.esm.min.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.esm.min.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -914,9 +1074,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -930,9 +1090,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -946,9 +1106,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -962,9 +1122,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.min.js.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/dist/js/bootstrap.min.js.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -978,9 +1138,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\LICENSE))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/bootstrap/LICENSE</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -994,9 +1154,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1010,9 +1170,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1026,9 +1186,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\LICENSE.txt))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation-unobtrusive/LICENSE.txt</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1042,9 +1202,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\additional-methods.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation/dist/additional-methods.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1058,9 +1218,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\additional-methods.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation/dist/additional-methods.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1074,9 +1234,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\jquery.validate.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation/dist/jquery.validate.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1090,9 +1250,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\jquery.validate.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation/dist/jquery.validate.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1106,9 +1266,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\LICENSE.md))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery-validation/LICENSE.md</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1122,9 +1282,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery/dist/jquery.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1138,9 +1298,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.min.js))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery/dist/jquery.min.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1154,9 +1314,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.min.map))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery/dist/jquery.min.map</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
@@ -1170,9 +1330,9 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))">
       <SourceType>Package</SourceType>
-      <SourceId>Apollostage</SourceId>
+      <SourceId>ApolloStage</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Apollostage</BasePath>
+      <BasePath>_content/ApolloStage</BasePath>
       <RelativePath>lib/jquery/LICENSE.txt</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
