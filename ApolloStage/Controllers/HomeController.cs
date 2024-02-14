@@ -68,14 +68,14 @@ public class HomeController : Controller
         }
 
 
-
+    /*
         [HttpGet]
         public IActionResult SearchArtist()
         {
             return View();
         }
-
-    [HttpPost]
+    */
+    [HttpGet]
     public async Task<IActionResult> SearchArtist(string id,string value, string searchType)
     {
         Console.WriteLine("searchType");

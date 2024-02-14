@@ -644,12 +644,13 @@ namespace ApolloStageFirst.Controllers
             Album albumDetails; // Mova a declaração para fora do loop
             string durationSeconds = "";
             double totalDuration = 0;
+            int i = 0;
             foreach (var favoriteAlbum in allAlbums)
             {
                 var albumDetailsUrl = $"https://api.spotify.com/v1/albums/{favoriteAlbum}";
                 var responseJson = await _httpClientHelper.SendAysnc(albumDetailsUrl, SpotifyService.AccessToken);
                 var albumDetailss = JsonConvert.DeserializeObject<Album>(responseJson);
-
+               
                 // Aqui você pode adicionar albumDetails a uma lista, se necessário
                 albumsWithDetails.Add(albumDetailss);
 
@@ -658,25 +659,50 @@ namespace ApolloStageFirst.Controllers
                 var responseTracksJson = await _httpClientHelper.SendAysnc(albumTracksUrl, SpotifyService.AccessToken);
                 var albumTracks = JsonConvert.DeserializeObject<AlbumTracks>(responseTracksJson);
 
-               
+                var artist = $"https://api.spotify.com/v1/artists/" + albumTracks.items[0].artists[0].id;
+                var responseJsonartist = await _httpClientHelper.SendAysnc(artist, SpotifyService.AccessToken);
+                dynamic responseJsonArtist = JsonConvert.DeserializeObject(responseJsonartist);
+
+                string name = responseJsonArtist.name;
+                string artistimage = responseJsonArtist.images[0].url;
+                var genresList = new List<string>();
+                var genresArray = (JArray)responseJsonArtist.genres;
+                foreach (var genre in genresArray)
+                {
+                    var genreString = (string)genre;
+                    albumsWithDetails[i].Genres.Add(genreString);
+                    Console.WriteLine("...ll...");
+                    Console.WriteLine(genreString);
+                    Console.WriteLine("...ll...");
+                }
                 foreach (var track in albumTracks.items)
                 {
                     totalDuration += track.duration_ms; // Convertendo para minutos
+              
                 }
-
+                i++;
                 TimeSpan t = TimeSpan.FromMilliseconds(totalDuration);
-                durationSeconds = string.Format("{0:D2}m:{1:D2}s", t.Minutes, t.Seconds);
+                durationSeconds = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", t.Hours, t.Minutes, t.Seconds);
                 albumDetailss.duration_ms_album = durationSeconds;
             }
 
+           
+
+
             foreach (var album in albumsWithDetails)
             {
-                var rating = _context.AlbumRatings
-                                  .FirstOrDefault(f => f.userEmail == userEmail && f.albumId == album.id);
-
+               var rating = _context.AlbumRatings.Where(r => r.albumId == album.id)
+                                                            .GroupBy(r => r.albumId)
+                                                            .Select(g => new
+                                                            {
+                                                                AlbumId = g.Key,
+                                                                AverageRating = g.Average(r => r.starRating)
+                                                            })
+                                                            .FirstOrDefault();
+           
                 if (rating != null)
                 {
-                    album.classificacaoEspecifica = rating.starRating;
+                    album.classificacaoEspecifica = (int)rating.AverageRating;
                 }
                 else
                 {
@@ -688,6 +714,7 @@ namespace ApolloStageFirst.Controllers
 
             string formattedUsername = char.ToUpper(username[0]) + username.Substring(1).ToLower().Replace(" ", "");
             TempData["username"] = formattedUsername;
+            if(albumsWithDetails.Count >=1)
             TempData["artistName"] = albumsWithDetails[0].artists[0].name;
             return View("ListenList", albumsWithDetails);
         }
@@ -903,7 +930,7 @@ namespace ApolloStageFirst.Controllers
 
                
                 TimeSpan t = TimeSpan.FromMilliseconds(totalDuration);
-                string durationSeconds = string.Format("{0:D2}m:{1:D2}s", t.Minutes, t.Seconds);
+                string durationSeconds = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", t.Hours, t.Minutes, t.Seconds);
                 TempData["rate"] = rate;
                 TempData["rated"] = listaounao;
                 TempData["durationSeconds"] = durationSeconds;
