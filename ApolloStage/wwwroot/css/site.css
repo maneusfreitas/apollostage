@@ -199,7 +199,16 @@ footer.border-top.footer.text-muted {
     bottom: 0;
 }
 
-
+.toGreen {
+    color: green;
+}
+p.card-text.ms-4.releaseDate.mb-0 {
+    text-transform: uppercase;
+  
+}
+.gray-text {
+    color: gray; 
+}
 .parallax {
     /* The image used */
     background-image: url("https://cdn.vox-cdn.com/thumbor/a8tNJ2GhEgbUhSOlbncMoZvXatM=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24982914/drakedogs_getty_ringer.jpg");

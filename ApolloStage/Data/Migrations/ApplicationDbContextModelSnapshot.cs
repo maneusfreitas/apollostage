@@ -17,6 +17,40 @@ namespace ApolloStage.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
 
+            modelBuilder.Entity("ApolloStage.Models.AlbumReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AlbumId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserMail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("itsMine")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("reviewDescription")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("reviewRecommendation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("reviewTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AlbumReview");
+                });
+
             modelBuilder.Entity("ApolloStage.Models.Extra.Classification", b =>
                 {
                     b.Property<int>("Id")
@@ -61,6 +95,25 @@ namespace ApolloStage.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("FavoriteAlbum");
+                });
+
+            modelBuilder.Entity("ApolloStage.Models.ReviewReports", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("IdReview")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IdUserMail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReviewReports");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

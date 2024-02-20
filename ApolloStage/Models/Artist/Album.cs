@@ -1,5 +1,6 @@
 ﻿using ApolloStage;
 using ApolloStage.DTO;
+using ApolloStage.Models;
 
 namespace ApolloStage
 {
@@ -21,14 +22,11 @@ namespace ApolloStage
         public string label { get; set; }
         public string popularity { get; set; }
         public string duration_ms_album { get; set; }
-
+        public List<string> Genres { get; set; }
         public int classificacaoEspecifica { get; set; }
-
         public List<AlbumItem> Albums { get; set; }
-
-
-
         public DateTime ReleaseDate { get; set; }
+
 
 
 

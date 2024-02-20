@@ -13,35 +13,38 @@
             {
                 <div class="ListenListButtonInImage">
                     <form asp-controller="Account" asp-action="GetAlbum" method="get">
-                    <a href="@Url.Action("GetAlbum", "Account", new { albumId = album.id, artistname = TempData["artistName"] })">
+                        <a href="@Url.Action("GetAlbum", "Account", new { albumId = album.id, artistname = TempData["artistName"] })">
                             <img src="@album.images[0].URL" alt="@album.name" class="card-img-top ms-2 mt-2 col-4">
-                    </a>
-                    <input type="hidden" name="albumId" value="@album.id" />
-                    <input type="hidden" name="artistname" value="@TempData["artistName"]" />
-                </form>
+                        </a>
+                        <input type="hidden" name="albumId" value="@album.id" />
+                        <input type="hidden" name="artistname" value="@TempData["artistName"]" />
+                    </form>
                     <form asp-controller="Account" asp-action="RemoverDosFavoritos" method="post">
                         <input type="hidden" name="albumId" value="@album.id" />
                         <button type="submit" class="btn btn-dark"><i name="markericon" class="fa fa-bookmark fa-2x toGreen"></i></button>
                     </form>
                 </div>
                 <div class="HOR col-8 mt-3">
-                    <p class="card-text ms-4 "><b>@album.name</b></p>
-                    <br />
+                    <p class="card-text ms-4 mb-0 "><b>@album.name</b></p>
+                    <p class="card-text ms-4"> by @album.artists[0].name</p>
                     <div class=" d-flex align-items-center ms-3">
-                        <img src="~/img/star2.png"name="markericon"  ms-4"></img>
+                        <img src="~/img/star2.png" name="markericon" ms-4"></img>
                         <span class="ms-2"> @album.classificacaoEspecifica</span>
                     </div>
                     <br />
                     <!-- Mudança: Adicionando uma classe para identificar este elemento específico e o atributo data-date com a data do álbum -->
-                    <p class="card-text ms-4 releaseDate" data-date="@album.release_date"></p>
-                    <p class="card-text ms-4 ">@album.duration_ms_album </p>
+                    <p class="card-text ms-4 releaseDate mb-0 gray-text" data-date="@album.release_date.ToUpper()"></p>
+                    <!--  <p>Genres: @string.Join(", ", album.Genres)</p>-->
+                   
+                    <p class="card-text ms-4 mb-0 gray-text">@album.Genres[0].ToUpper()</p>
+
+                    <p class="card-text ms-4 gray-text">@album.duration_ms_album </p>
                 </div>
             }
         </div>
     }
 
-    <script>
-        window.onload = function () {
+    <script>window.onload = function () {
             // Seu código JavaScript aqui
             var releaseDateElements = document.querySelectorAll(".releaseDate");
 
