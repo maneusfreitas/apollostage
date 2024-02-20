@@ -2,6 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using ApolloStage.Data;
 using ApolloStage.Models;
+using ApolloStage.Services;
+using ApolloStage.Factories.IFactories;
+
+using ApolloStage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +32,32 @@ builder.Services.AddControllersWithViews();
 
 // Add the line below to configure the Razor Pages service
 builder.Services.AddRazorPages();
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddControllers();
+builder.Services.AddControllersWithViews(options =>
+{
+}).AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization(options =>
+    {
+    }).AddJsonOptions(options =>
+    {
+
+        options.JsonSerializerOptions.ReferenceHandler =
+        System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<IFactories, ApolloStage.Factories.Factories>();
+builder.Services.AddTransient<ISingleton, Singleton>();
+builder.Services.AddTransient<IMusicService, SpotifyService>();
+
+builder.Services.AddTransient<IHttpClientHelper, HttpCLientHelper>();
+
+builder.Services.AddScoped<HttpCLientHelper>();
+
 
 
 
@@ -66,3 +96,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+

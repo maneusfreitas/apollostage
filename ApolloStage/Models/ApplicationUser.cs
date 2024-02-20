@@ -4,8 +4,17 @@ using Microsoft.AspNetCore.Identity;
 
 namespace ApolloStage.Models
 {
-    public class ApplicationUser : IdentityUser, IValidatableObject
+    public class ApplicationUser : IdentityUser
     {
+
+        public ApplicationUser()
+        {
+            FavoriteAlbum = new List<FavoriteAlbum>(); 
+        }
+
+        [Key]
+        public Guid Id { get; set; }
+
         [Required]
         [EmailAddress]
         public string UserMail { get; set; }
@@ -38,15 +47,7 @@ namespace ApolloStage.Models
         [Required]
         public bool ConfirmedEmail { get; set; } 
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-        
-            if (DateOfBirth > DateTime.Now.AddYears(100))
-            {
-                yield return new ValidationResult("A data de nascimento não pode ser superior a 100 anos", new[] { nameof(DateOfBirth) });
-            }
-        }
+        public ICollection<FavoriteAlbum> FavoriteAlbum { get; set; }
+
     }
-
-
 }

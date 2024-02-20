@@ -1,0 +1,42 @@
+﻿@using ApolloStage.DTO;
+@model IEnumerable<AlbumItem>
+
+@{
+    string DefineColor(DateTime date)
+    {
+
+        if (date.Year % 3 == 0 && date.Year % 5 == 0)
+        {
+            return  "#eeffee";
+        }
+        else if (date.Year % 3 == 0)
+        {
+            return "#ffeeee";
+        }
+        else if (date.Year % 5 == 0)
+        {
+            return "#eeeeff";
+        }
+        return "";
+    }
+}
+
+<div class="container-sm">
+    <div class="d-flex justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="card shadow" style="width: 18rem; margin:10px">
+                <img class="card-img-top" src="@item.Images[0].URL" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color: @DefineColor(item.ReleaseDate)">Release date: @item.ReleaseDate.ToShortDateString()</li>
+                    <li class="list-group-item">Total tracks: @item.Total_Tracks</li>
+                </ul>
+
+            </div>
+        }
+    </div>
+</div>
+

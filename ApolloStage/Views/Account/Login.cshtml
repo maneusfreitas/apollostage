@@ -30,6 +30,12 @@
             @TempData["successAccount"]
         </div>
     }
+     @if (TempData.ContainsKey("successPassword"))
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["successPassword"]
+        </div>
+    }
     <div class="container " style=" display: flex; align-items: center; justify-content: center;">
         <div class="row w-100 d-flex justify-content-center mt-5">
             <div class="col-md-8">
@@ -100,5 +106,8 @@
 <style>
     .alert.alert-danger {
         text-align: center;
+    }
+    .alert.alert-success {
+    text-align: center;
     }
 </style>
