@@ -1,0 +1,185 @@
+﻿@model ApplicationUser
+
+@{
+    string password = TempData["Password"]?.ToString();
+    string confirmPassword = TempData["ConfirmPassword"]?.ToString();
+    string name = TempData["Name"]?.ToString();
+}
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication3.styles.css" asp-append-version="true" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('login-google-submit').addEventListener('click', function () {
+                document.getElementById('google-login-form').submit();
+            });
+        });</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Faz a requisição AJAX para a API de países
+            $.ajax({
+                url: 'https://restcountries.com/v3.1/all',
+                method: 'GET',
+                success: function (data) {
+                    var countrySelect = $('#countrySelect');
+
+                    // Ordena os países por ordem alfabética
+                    data.sort(function (a, b) {
+                        var countryNameA = a.translations?.por?.common || a.name.common;
+                        var countryNameB = b.translations?.por?.common || b.name.common;
+                        return countryNameA.localeCompare(countryNameB);
+                    });
+
+                    // Preenche as opções do select com os dados recebidos da API
+                    data.forEach(function (country) {
+                        var countryName = country.translations?.por?.common || country.name.common;
+                        countrySelect.append($('<option>', {
+                            value: countryName,
+                            text: countryName
+                        }));
+                    });
+                },
+                error: function () {
+                    console.error('Erro ao buscar países.');
+                }
+            });
+        });
+
+    </script>
+</head>
+
+
+
+
+
+<body>
+    <header>
+        <div class="container-fluid d-flex align-items-center h-25 position-relative">
+            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <div class="w-100 position-absolute text-center">
+                <h1 class="text-center"> Register</h1>
+            </div>
+            <div class="me-0" style="position:absolute;right:30px">
+                <label> Dark Mode</label>
+            </div>
+        </div>
+    </header>
+    <div class="container " style=" display: flex; align-items: center; justify-content: center;">
+        <div class="row w-100 d-flex justify-content-center mt-5">
+            <div class="col-md-8">
+                <form id="registerForm" method="post" asp-controller="Account" asp-action="ThirdRegister">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div id="birthday_country_gender" class="d-block">
+                        <div class="form-floating mb-5">
+                            <input asp-for="DateOfBirth" class="form-control" aria-required="true" placeholder="Birthday" />
+                            <label asp-for="DateOfBirth">Birthday</label>
+                            <span id="dateOfBirthError" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <select id="countrySelect" class="form-select mb-5" aria-label="Country">
+                                <option selected disabled>Choose your country</option>
+                                <!-- Opções do país aqui -->
+                            </select>
+                            <span id="countryError" class="text-danger"></span> <!-- Mensagem de erro para o campo do país -->
+                        </div>
+                        <div>
+                            <select id="genderSelect" class="form-select mb-5" aria-label="Gender">
+                                <option selected>Choose your Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span id="genderError" class="text-danger"></span> <!-- Mensagem de erro para o campo de gênero -->
+                        </div>
+
+                    </div>
+
+                    <!-- Campos ocultos -->
+                    <input type="hidden" asp-for="UserMail" />
+                    <input type="hidden" asp-for="@name" />
+                    @if (!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(confirmPassword))
+                    {
+                        <input asp-for="Password" type="hidden" value="@password" />
+                        <input asp-for="ConfirmPassword" type="hidden" value="@confirmPassword" />
+                    }
+                    <input type="hidden" asp-for="Code" />
+                    <input type="hidden" asp-for="EmailConfirmed" />
+
+                    <div>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                    </div>
+
+
+                 
+
+
+
+                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
+                    <div>
+
+                        <h5 class="mt-4 w-100 text-center">
+                            Already have an account?
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
+                        </h5>
+
+                    </div>
+                </form>
+              
+            </div>
+
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            var dateOfBirth = new Date(document.getElementById('DateOfBirth').value);
+            var hundredYearsAgo = new Date();
+            hundredYearsAgo.setFullYear(hundredYearsAgo.getFullYear() - 100);
+            var dateOfBirthError = document.getElementById('dateOfBirthError'); // Elemento que exibirá a mensagem de erro
+
+            // Verifica se a data de nascimento está vazia ou inválida
+            if (!dateOfBirth || isNaN(dateOfBirth.getTime())) {
+                dateOfBirthError.innerText = "Please enter a valid date of birth";
+                event.preventDefault();
+            } else {
+                dateOfBirthError.innerText = ""; // Limpa a mensagem de erro se a data de nascimento for válida
+            }
+
+            // Verifica se a data de nascimento é superior a 100 anos a partir do dia atual
+            if (dateOfBirth < hundredYearsAgo) {
+                dateOfBirthError.innerText = "You must be less than 100 years old to register";
+                event.preventDefault();
+            }
+
+            var countrySelect = document.getElementById('countrySelect');
+            var genderSelect = document.getElementById('genderSelect');
+            var countryError = document.getElementById('countryError');
+            var genderError = document.getElementById('genderError');
+
+            // Verifica se o campo de país não foi selecionado
+            if (countrySelect.value === null || countrySelect.value === 'Choose your country') {
+                countryError.innerText = "Please choose your country";
+                event.preventDefault();
+            } else {
+                countryError.innerText = ""; // Limpa a mensagem de erro se o país for selecionado
+            }
+
+            // Verifica se o campo de gênero não foi selecionado
+            if (genderSelect.value === null || genderSelect.value === 'Choose your Gender') {
+                genderError.innerText = "Please choose your gender";
+                event.preventDefault();
+            } else {
+                genderError.innerText = ""; // Limpa a mensagem de erro se o gênero for selecionado
+            }
+        });
+    </script>
+}
