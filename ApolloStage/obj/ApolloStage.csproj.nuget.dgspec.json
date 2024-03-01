@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\zihqh02z9dpl5ouo\\ApolloStage_fase_3\\ApolloStage_fase_3\\ApolloStage fase 2\\ApolloStage\\ApolloStage.csproj": {}
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\zihqh02z9dpl5ouo\\ApolloStage_fase_3\\ApolloStage_fase_3\\ApolloStage fase 2\\ApolloStage\\ApolloStage.csproj": {
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\zihqh02z9dpl5ouo\\ApolloStage_fase_3\\ApolloStage_fase_3\\ApolloStage fase 2\\ApolloStage\\ApolloStage.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj",
         "projectName": "ApolloStage",
-        "projectPath": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\zihqh02z9dpl5ouo\\ApolloStage_fase_3\\ApolloStage_fase_3\\ApolloStage fase 2\\ApolloStage\\ApolloStage.csproj",
-        "packagesPath": "C:\\Users\\gonca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\zihqh02z9dpl5ouo\\ApolloStage_fase_3\\ApolloStage_fase_3\\ApolloStage fase 2\\ApolloStage\\obj\\",
+        "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj",
+        "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gonca\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
