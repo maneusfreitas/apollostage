@@ -3,9 +3,9 @@ using System.Net.Mail;
 
 public class EmailService
 {
-    private readonly string _emailFrom = "lisboabot@gmail.com";
-    private readonly string _password = "wnnz lzgn ydgr lvcj";
-    private readonly string _smtpServer = "smtp.gmail.com";
+    private readonly string _emailFrom = "lisboabot@gmail.com"; // Substitua pelo seu e-mail remetente
+    private readonly string _password = "wnnz lzgn ydgr lvcj"; // Substitua pela senha do seu e-mail remetente
+    private readonly string _smtpServer = "smtp.gmail.com"; // Substitua pelo seu servidor SMTP
 
     public async Task SendCodeByEmailAsync(string toEmail, string code)
     {
@@ -16,8 +16,8 @@ public class EmailService
 
             message.From = new MailAddress(_emailFrom);
             message.To.Add(toEmail);
-            message.Subject = "Confirmar registo";
-            message.Body = $"O código de verificação para validar a sua conta é: {code}";
+            message.Subject = "Seu Código de Verificação";
+            message.Body = $"Seu código de verificação é: {code}";
 
             smtpClient.Port = 587;
             smtpClient.Credentials = new NetworkCredential(_emailFrom, _password);
@@ -27,7 +27,8 @@ public class EmailService
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Erro ao enviar o e-mail: " + ex.Message); //ALTERAR
+            // Lida com possíveis erros no envio do e-mail
+            Console.WriteLine("Erro ao enviar o e-mail: " + ex.Message);
             throw;
         }
     }
@@ -41,8 +42,8 @@ public class EmailService
 
             message.From = new MailAddress(_emailFrom);
             message.To.Add(toEmail);
-            message.Subject = "Redifinir palavra-passe";
-            message.Body = $"O código de verificação para alterar a palavra-passe é: {code}";
+            message.Subject = "New Password";
+            message.Body = $"A sua nova password é: {code}";
 
             smtpClient.Port = 587;
             smtpClient.Credentials = new NetworkCredential(_emailFrom, _password);
@@ -52,7 +53,8 @@ public class EmailService
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Erro ao enviar o e-mail: " + ex.Message); //ALTERAR
+            // Lida com possíveis erros no envio do e-mail
+            Console.WriteLine("Erro ao enviar o e-mail: " + ex.Message);
             throw;
         }
     }
