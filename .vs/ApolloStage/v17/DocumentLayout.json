@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\albumreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\albumreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\albumsresponselist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\albumsresponselist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\reviewreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\reviewreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\favoritealbum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\favoritealbum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\models\\externalloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\models\\externalloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joao\\documents\\github\\apollostage\\apollostage\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T16:40:50.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T16:40:44.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AlbumReview.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\AlbumReview.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\AlbumReview.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\AlbumReview.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\AlbumReview.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:14:16.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlbumsResponseList.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\AlbumsResponseList.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\AlbumsResponseList.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\AlbumsResponseList.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\AlbumsResponseList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:13:59.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:14:13.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExternalLoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ExternalLoginModel.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\ExternalLoginModel.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ExternalLoginModel.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\ExternalLoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:14:12.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FavoriteAlbum.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\FavoriteAlbum.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\FavoriteAlbum.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\FavoriteAlbum.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\FavoriteAlbum.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:14:11.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReviewReports.cs",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ReviewReports.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Models\\ReviewReports.cs",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Models\\ReviewReports.cs",
+              "RelativeToolTip": "ApolloStage\\Models\\ReviewReports.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:14:10.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "ApolloStage\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\Joao\\Documents\\GitHub\\apollostage\\ApolloStage\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "ApolloStage\\Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-03T15:57:51.631Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

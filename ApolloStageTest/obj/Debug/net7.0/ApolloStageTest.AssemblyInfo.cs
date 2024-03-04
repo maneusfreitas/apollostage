@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApolloStageTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e453985a75f5abfaadcde7027b8aca10d7bc55e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApolloStageTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApolloStageTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
