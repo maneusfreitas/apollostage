@@ -10,6 +10,8 @@ using HtmlAgilityPack;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using ApolloStage.Data;
+using Microsoft.AspNetCore.Identity;
+using ApolloStage.Models.Product;
 
 namespace ApolloStage.Controllers;
 
@@ -20,12 +22,14 @@ public class HomeController : Controller
     private readonly string baseUrl = "https://api.spotify.com/v1";
     private readonly string playlistx = "https://api.spotify.com/v1/browse/featured-playlists";
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly ISingleton singleton;
-    public HomeController(ApplicationDbContext context, IHttpClientHelper httpClientHelper, ISingleton singleton)
+    public HomeController(ApplicationDbContext context, IHttpClientHelper httpClientHelper, ISingleton singleton, UserManager<ApplicationUser> userManager)
     {
         this.httpClientHelper = httpClientHelper;
         this.singleton = singleton;
         _context = context;
+        _userManager = userManager;
     }
 
 
@@ -78,14 +82,15 @@ public class HomeController : Controller
     [HttpGet]
     public async Task<IActionResult> SearchArtist(string id,string value, string searchType)
     {
-        Console.WriteLine("searchType");
-        Console.WriteLine(searchType);
-        Console.WriteLine(id);
-        Console.WriteLine("searchType");
 
         try
         {
-            string searchUrl = $"{baseUrl}/search?q={id}&type=artist&offset=0&limit=11";
+            if (searchType == "Products")
+            {
+                List<Product> products = _context.Product.Where(p => p.title.Contains(value)).ToList();
+                return View("~/Views/Market/Index.cshtml", products);
+            }
+                string searchUrl = $"{baseUrl}/search?q={id}&type=artist&offset=0&limit=11";
 
             var response = await httpClientHelper.SendAysnc(searchUrl, SpotifyService.AccessToken);
             var searchResult = JsonConvert.DeserializeObject<SearchResult>(response);
@@ -100,7 +105,7 @@ public class HomeController : Controller
                     string albumsUrl = $"{baseUrl}/artists/{artistId}/albums?limit=10";
                     var albumsResponse = await httpClientHelper.SendAysnc(albumsUrl, SpotifyService.AccessToken);
                     var albumsResult = JsonConvert.DeserializeObject<Albums>(albumsResponse);
-                    Console.WriteLine("entrei");
+                 
                     List<Album> albumList = albumsResult.items;
                     var userEmail = User.FindFirst(ClaimTypes.Email).Value;
                     foreach (var album in albumList)
@@ -198,7 +203,10 @@ public class HomeController : Controller
 
         public async Task<ActionResult> Index(string id = "6fOMl44jA4Sp5b9PpYCkzz")
         {
-            List<Artist> artistList = new List<Artist>();
+        var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+        var admin = await _userManager.FindByEmailAsync(userEmail);
+
+        List<Artist> artistList = new List<Artist>();
             List<Playlist> playlists = new List<Playlist>();
 
             Artist artist;
@@ -337,7 +345,7 @@ public class HomeController : Controller
             popularity = albumItem.popularity,
         }).ToList();
 
-
+        TempData["meu"] = admin.Admin;
         return View(albumList);
 
     

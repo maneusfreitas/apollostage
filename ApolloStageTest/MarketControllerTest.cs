@@ -24,7 +24,7 @@ namespace ApolloStageTest
         public async Task Market_ReturnsCorrectView()
         {
             // Arrange
-            var controller = new MarketController(null,null);
+            var controller = new MarketController(null,null,null);
 
             // Act
             var result = await controller.market();

@@ -15,7 +15,13 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<FavoriteAlbum> FavoriteAlbum { get; set; }
 
+    public DbSet<AlbumReview> AlbumReview { get; set; }
+
+    public DbSet<ReviewReports> ReviewReports { get; set; }
+
     public DbSet<Models.Extra.Classification> AlbumRatings { get; set; }
+
+    public DbSet<Models.Product.Product> Product { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

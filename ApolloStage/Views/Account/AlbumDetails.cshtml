@@ -1,7 +1,7 @@
 ﻿@model AlbumDetails
 @{
     string myrating = TempData["myrating"]?.ToString();
-    string allrating = TempData["allrating"]?.ToString();
+    double allrating = Convert.ToDouble(TempData["allrating"]?.ToString());
     string popularity = TempData["popularity"]?.ToString();
     string artistname = TempData["artistname"]?.ToString();
     string artistimage = TempData["artistimage"]?.ToString();
@@ -10,6 +10,7 @@
     string rate = TempData["rate"]?.ToString();
     string rated = TempData["rated"]?.ToString();
     string durationSeconds = TempData["durationSeconds"]?.ToString();
+    string meu = TempData["meu"]?.ToString();
 }
 
 <!DOCTYPE html>
@@ -64,10 +65,62 @@
             <div id="dois" class="d-flex text-center mt-5 justify-content-between ">
                 <div class="col-md-4">
                     <h4><b>apollo</b> RATING </h4>
-                    <h5 class="mt-2"> <img class="mb-2" src="~/img/star2.png"></img> @allrating /10</h5>
+                    <h5 class="mt-2"> <img class="mb-2" src="~/img/star2.png"></img> @Math.Round(allrating, 2) / 10</h5>
                 </div>
                 <div class="col-md-4 ps-3">
-                    <button class="ratingButt  m-0 p-0"><h4><b>your</b> RATING </h4></button>
+                    <button id="ratingButton" class="ratingButt m-0 p-0"><h4><b>your</b> RATING </h4></button>
+
+                    <div class="modal fade" style="background-color:rgba(0,0,0,0.5)" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                        <div class="modal-dialog modal-none modal-dialog-centered border-2">
+                            
+                            <div class="modal-content">
+                                <img class="mb-2" style="max-width:100px "  src="/img/star1_100-removebg-preview.png">
+                                <span style="margin-top:-67px !important;color: green;" class="mb-5">@myrating </span>
+
+                                <h5 class="modal-title" id="exampleModalLabel">@Model.AlbumsInfo[0].name</h5>
+                                <div class="modal-body">
+                                    @foreach (var albumInfo in Model.AlbumsInfo)
+                                    {
+                                        <div id="ratingForm_@albumInfo.id">
+                                            <fieldset class="fS">
+                                                <span class="star-cb-group">
+                                                    @for (int i = 10; i > 0; i--)
+                                                    {
+                                                        <input type="radio" id="rating-@i@albumInfo.id" name="starRating" value="@i" @(i == Convert.ToInt32(@rate) ? "checked" : "") onclick="updateRating('@i', '@albumInfo.id')" />
+
+                                                        <label for="rating-@i@albumInfo.id" class="@(i <= albumInfo.classificacaoEspecifica ? "filled" : "")">@i</label>
+                                                    }
+                                                </span>
+                                                @if (albumInfo.classificacaoEspecifica >= 7)
+                                                {
+                                                    <p style="color:white;">classificação igual ou maior que 7</p>
+                                                }
+                                            </fieldset>
+                                            <div class="text-center m-0 p-0">
+                                                <!-- Classe text-center para centralizar os botões horizontalmente e mb-3 para adicionar margem inferior -->
+                                                <input type="hidden" name="albumId" value="@albumInfo.id" />
+                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id')">
+                                                    @(albumInfo.classificacaoEspecifica >= 1 ? "Update" : "Rate")
+                                                </button>
+                                            </div>
+                                            <div class="text-center m-0 p-0">
+                                                <!-- Nova div para centralizar os botões horizontalmente -->
+                                                <button class=" toRedOnAD btn " type="button" onclick="RemoveAlbumRating('@albumInfo.id')">Remove rating</button>
+                                            </div>
+
+
+                                        </div>
+                                        <script>
+                                            function updateRating(value) {
+                                                document.getElementById("selectedRating").value = value;
+                                            }</script>
+                                    }
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
 
                     <h5>  <img class="mb-2" src="~/img/star1.png"></img> @myrating /10</h5>
                 </div>
@@ -205,31 +258,75 @@
 
 
 
-    @foreach (var albumInfo in Model.AlbumsInfo)
-    {
-        <div id="ratingForm_@albumInfo.id">
-            <fieldset>
-                <span class="star-cb-group">
-                    @for (int i = 10; i > 0; i--)
-                    {
-                        <input type="radio" id="rating-@i@albumInfo.id" name="starRating" value="@i" @(i == Convert.ToInt32(@rate) ? "checked" : "") onclick="updateRating('@i', '@albumInfo.id')" />
+    
 
-                        <label for="rating-@i@albumInfo.id" class="@(i <= albumInfo.classificacaoEspecifica ? "filled" : "")">@i</label>
-                    }
-                </span>
-                @if (albumInfo.classificacaoEspecifica >= 7)
-                {
-                    <p style="color:white;">classificação igual ou maior que 7</p>
-                }
-            </fieldset>
-            <input type="hidden" name="albumId" value="@albumInfo.id" />
-            <button style="text-align:center;" type="button" onclick="submitRatingForm('@albumInfo.id')">Submit</button>
+
+
+
+
+    <div style="width: 60%; text-align: center; margin: auto;">
+        <input type="hidden" name="albumId" value="@Model.AlbumsInfo[0].id" />
+
+        <div class="form-group">
+            <label for="reviewTitle">Título da Review:</label>
+            <input type="text" id="reviewTitle" name="reviewTitle" class="form-control" placeholder="Insira o título da Review" />
         </div>
-        <script>function updateRating(value) {
-                document.getElementById("selectedRating").value = value;
-            }</script>
-    }
 
+        <div class="form-group">
+            <label for="reviewDescription">Descrição da Review:</label>
+            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="reviewRecommendation">Recomendação da Review:</label>
+            <select id="reviewRecommendation" name="reviewRecommendation" class="form-control">
+                <option value="nao-recomendo">Não Recomendo</option>
+                <option value="recomendo">Recomendo</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none">
+            Enviar Review
+        </button>
+    </div>
+
+
+    <h1>Reviews do Álbum</h1>
+    <ul>
+        @foreach (var review in Model.AlbumReviews)
+        {
+            <li>
+                <strong>Utilizador:</strong> @review.UserMail<br />
+                <strong>Título da Review:</strong> @review.reviewTitle<br />
+                <strong>Descrição da Review:</strong> @review.reviewDescription<br />
+                <strong>Recomendação:</strong> @review.reviewRecommendation<br />
+                @if (@review.itsMine == true || @meu == "True")
+                {
+                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none">
+                        remover
+                    </button>
+                }
+                @if (@review.itsMine != true)
+                {
+                    <button onclick="reportComment('@review.Id', '@review.UserMail', 'motivo_@review.Id', 'descricao_@review.Id')" class="btn btn-dark btnAdicionar shadow-none">
+                        reportar
+                    </button>
+                    <label for="motivo_@review.Id">Selecione um motivo para relatar o comentário:</label>
+                    <select id="motivo_@review.Id" name="motivo_@review.Id">
+                        <option value="discurso de ódio">Discurso de ódio</option>
+                        <option value="bullying">Bullying</option>
+                        <option value="assédio">Assédio</option>
+                        <option value="spam">Spam</option>
+                        <option value="conteúdo inapropriado">Conteúdo inapropriado</option>
+                    </select>
+                    <br>
+                    <label for="descricao_@review.Id">Descreva o motivo do report:</label>
+                    <textarea id="descricao_@review.Id" name="descricao_@review.Id"></textarea>
+                }
+            </li>
+            <hr />
+        }
+    </ul>
     <div class="popups-cont" style="opacity:0.85">
         <div class="popups-cont__overlay"></div>
         <div class="popup">
@@ -257,16 +354,16 @@
         }
 
         .star-cb-group {
-            /* remove inline-block whitespace */
-            font-size: 0;
-            /* flip the order so we can use the + and ~ combinators */
+            /* remove inline-block whitespace /
+                    font-size: 0;
+                    / flip the order so we can use the + and ~ combinators */
             unicode-bidi: bidi-override;
             direction: rtl;
-            /* the hidden clearer */
+            text-align: initial;
         }
 
             .star-cb-group * {
-                font-size: 1rem;
+                font-size: 2rem;
             }
 
             .star-cb-group > input {
@@ -287,12 +384,12 @@
                         display: inline-block;
                         text-indent: -9999px;
                         content: "☆";
-                        color: #888;
+                        color: #333;
                     }
 
                     .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
                         content: "★";
-                        color: #e52;
+                        color: black;
                         text-shadow: 0 0 1px #333;
                     }
 
@@ -308,13 +405,13 @@
 
             .star-cb-group:hover > input + label:before {
                 content: "☆";
-                color: #888;
+                color: #333;
                 text-shadow: none;
             }
 
             .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
                 content: "★";
-                color: #e52;
+                color: black;
                 text-shadow: 0 0 1px #333;
             }
 
@@ -417,7 +514,49 @@
             margin-top: 10px;
             margin-left: 10px;
         }
-    </style>
+
+        .toGreenOnAD {
+            background: none;
+            color: green;
+            border: none;
+        }
+
+            .toGreenOnAD:hover,
+            .toGreenOnAD:active {
+                background: none;
+                color: green;
+                border: none;
+                outline: none;
+            }
+
+        .toRedOnAD {
+            background: none;
+            color: black;
+            border: none;
+        }
+
+            .toRedOnAD:hover,
+            .toRedOnAD:active {
+                background: none;
+                color: black;
+                border: none;
+                outline: none !important;
+            }
+
+        .fS{
+            width:100%;
+            background-color:white;        }
+
+        .modal-content img {
+            margin: auto;
+            margin-top: -39px;
+        }
+
+        .modal-content {
+            border: 5px solid rgba(0,0,0) !important
+        }
+        
+            </style>
     <script>window.onload = function () {
             // Seu código JavaScript aqui
             var releaseDateElements = document.querySelectorAll(".releaseDate");
@@ -504,7 +643,59 @@
             data: formData,
             success: function(response) {
                 console.log(response); // Exibe a resposta no console
-                // Se necessário, você pode fazer algo com a resposta JSON aqui
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+    </script>
+    @foreach (var review in Model.AlbumReviews)
+    {
+        @if (review.itsMine == true)
+        {
+            <script>
+        function removeComment(albumId, UserMail) {
+        var formData = {
+            albumId: albumId,
+            UserMail: UserMail,
+            };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("RemoveReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+            </script>
+            break;
+        }
+    }
+
+    <script>
+        function submitReviewForm(albumId) {
+        var formData = {
+            albumId: albumId,
+            reviewTitle: document.getElementById("reviewTitle").value,
+            reviewDescription: document.getElementById("reviewDescription").value,
+            reviewRecommendation: document.getElementById("reviewRecommendation").value,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SaveReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
             },
             error: function(error) {
                 console.error('Erro ao enviar os dados do formulário via AJAX:', error);
@@ -513,6 +704,51 @@
     }
     </script>
 
+
+
+
+    <script>
+            function RemoveAlbumRating(albumId) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("RemoveAlbumRating", "Account")',
+                    data: { albumId: albumId },
+                    success: function(response) {
+                        console.log(response);
+                        location.reload();
+                    },
+                    error: function(error) {
+                        console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+                    }
+                });
+             }
+    </script>
+
+    <script>
+    function reportComment(reviewId, userEmail, selectId, textareaId) {
+        var motivo = document.getElementById(selectId).value;
+        var descricao = document.getElementById(textareaId).value;
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("reportComment", "Account")',
+            data: { reviewId: reviewId, userEmail: userEmail, motivo: motivo, descricao: descricao },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+    </script>
+
+    <script>
+        document.getElementById('ratingButton').addEventListener('click', function () {
+            // Seleciona o modal e o exibe
+            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+        });
+    </script>
 
 </body>
 </html>

@@ -43,6 +43,8 @@ namespace ApolloStage.Models
         public string Gender { get; set; }
 
         public string Code { get; set; }
+        [Required]
+        public bool Admin { get; set; }
 
         [Required]
         public bool ConfirmedEmail { get; set; } 

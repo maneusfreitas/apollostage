@@ -80,11 +80,8 @@ namespace ApolloStageFirst.Controllers
         [HttpPost]
         public async Task<IActionResult> FirstRegister(ApplicationUser model)
         {
-
             try
             {
-
-
                 var tempRegisterData = new ApplicationUser
                 {
                     UserMail = model.UserMail,
@@ -96,9 +93,8 @@ namespace ApolloStageFirst.Controllers
                     Gender = "",
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin = false,
                 };
-
-
                 return View("SecondRegister", tempRegisterData);
             }
 
@@ -131,6 +127,7 @@ namespace ApolloStageFirst.Controllers
                     Gender = "",
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin = false,
                 };
 
                 return View("ThirdRegister", tempRegisterData);
@@ -172,6 +169,7 @@ namespace ApolloStageFirst.Controllers
                     Gender = model.Gender,
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin= false,
                 };
 
                 // Gerar um código aleatório de 4 numeros
@@ -314,6 +312,7 @@ namespace ApolloStageFirst.Controllers
 
 
 
+
         [ValidateAntiForgeryToken]
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
@@ -353,6 +352,7 @@ namespace ApolloStageFirst.Controllers
                     Name = externalFirstName,
                     Code = "0",
                     ConfirmedEmail = true,
+                    Admin=false,
                 };
 
 
@@ -763,22 +763,21 @@ namespace ApolloStageFirst.Controllers
         }
 
         [HttpPost]
-        public IActionResult SaveAlbumRating(Classification classification)
+        public  IActionResult SaveAlbumRating(Classification classification)
         {
             if (classification.userEmail != "" && classification.albumId != "")
             {
                 var userEmail = User.FindFirst(ClaimTypes.Email).Value;
 
-                // Verificar se o userEmail já classificou o albumId
                 var existingRating = _context.AlbumRatings
                                           .FirstOrDefault(r => r.userEmail == userEmail && r.albumId == classification.albumId);
 
                 if (existingRating != null)
                 {
-                    // Usuário já classificou este álbum
-                    // Você pode tratar isso conforme necessário
-                    // Por exemplo, você pode atualizar a classificação existente ou retornar uma mensagem de erro
-                    return Json(new { success = false, message = "Você já classificou este álbum." });
+                    existingRating.starRating = classification.starRating;
+                     _context.SaveChanges();
+
+                    return Json(new { success = true, message = "Classificação do album Atualizada" });
                 }
 
                 // Criar uma instância do modelo AlbumRating com os dados recebidos
@@ -801,7 +800,55 @@ namespace ApolloStageFirst.Controllers
 
 
 
+        [HttpPost]
+        public IActionResult RemoveAlbumRating(string albumId)
+        {
+            if (albumId != "" && albumId != "")
+            {
+                var userEmail = User.FindFirst(ClaimTypes.Email).Value;
 
+                var existingRating = _context.AlbumRatings
+                                          .FirstOrDefault(r => r.userEmail == userEmail && r.albumId == albumId);
+
+                if (existingRating != null)
+                {
+                    _context.Remove(existingRating);
+                    _context.SaveChanges();
+
+                    return Json(new { success = true, message = "Classificação Removida" });
+                }
+
+                return Json(new { success = false });
+            }
+            else
+                return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public IActionResult reportComment(string reviewId, string userEmail, string motivo, string descricao)
+        {
+            if (reviewId != "" && reviewId != null && motivo != "" && descricao != "")
+            {
+                var rev = _context.ReviewReports.FirstOrDefault(r => r.IdReview == reviewId);
+                if (rev == null)
+                {
+                    Console.WriteLine(motivo);
+                    var reviewReports = new ReviewReports
+                    {
+                        IdReview = reviewId,
+                        IdUserMail = userEmail,
+                        causa = motivo,
+                        descricao = descricao,
+                    };
+                    _context.ReviewReports.Add(reviewReports);
+                    _context.SaveChanges();
+                    return Json(new { success = true });
+                }else
+                     return Json(new { success = false, msg = "já foi reportado por um utilizador" });
+            }
+            else
+                return Json(new { success = false });
+        }
 
 
 
@@ -812,6 +859,8 @@ namespace ApolloStageFirst.Controllers
             if (!string.IsNullOrEmpty(albumId))
             {
                 var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+                var admin = await _userManager.FindByEmailAsync(userEmail);
+
                 var rating = _context.AlbumRatings.FirstOrDefault(r => r.userEmail == userEmail && r.albumId == albumId);
                 int userRating = 0;
                 double allRatingvalue = 0;
@@ -847,7 +896,8 @@ namespace ApolloStageFirst.Controllers
                 {
                     AlbumId = albumId,
                     Tracks = new List<Track>(),
-                    AlbumsInfo = new List<Album>()
+                    AlbumsInfo = new List<Album>(),
+                    AlbumReviews = new List<AlbumReview>()
                 };
                 double totalDuration = 0;
                 // Processar as faixas do álbum
@@ -901,6 +951,10 @@ namespace ApolloStageFirst.Controllers
                 TempData["artistname"] = name;
                 TempData["artistgenres"] = genresList;
                 TempData["artistimage"] = artistimage;
+                if (admin != null)
+                    TempData["meu"] = admin.Admin;
+                else
+                    TempData["meu"] = false;
                 var ratingd = _context.AlbumRatings
                                          .FirstOrDefault(f => f.userEmail == userEmail && f.albumId == albumId);
                 int rate = 0;
@@ -928,7 +982,18 @@ namespace ApolloStageFirst.Controllers
 
                 }
 
-               
+                List<AlbumReview> albumReviews = _context.AlbumReview
+                                                .Where(r => r.AlbumId == albumId)
+                                                .ToList();
+                foreach (var album in albumReviews)
+                {
+                    if (album.UserMail == userEmail)
+                        album.itsMine = true;
+                }
+
+                albumDetails.AlbumReviews.AddRange(albumReviews);
+
+
                 TimeSpan t = TimeSpan.FromMilliseconds(totalDuration);
                 string durationSeconds = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", t.Hours, t.Minutes, t.Seconds);
                 TempData["rate"] = rate;
@@ -938,10 +1003,91 @@ namespace ApolloStageFirst.Controllers
             }
             else
             {
-                // Tratar o caso em que o albumId é vazio
                 return View("AlbumDetails");
             }
         }
+
+
+        
+        [HttpPost]
+        public IActionResult SaveReview(AlbumReview album)
+        {
+            var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+            if (userEmail != "" && userEmail != null)
+            {
+                if(album.reviewTitle.Length < 30) {
+
+                    if (album.reviewDescription.Length < 300)
+                    {
+
+                        if (album.reviewRecommendation == "recomendo" || album.reviewRecommendation == "nao-recomendo")
+                        {
+                            var albumRating = new AlbumReview
+                            {
+                                AlbumId = album.AlbumId,
+                                UserMail = userEmail,
+                                reviewTitle = album.reviewTitle,
+                                reviewDescription = album.reviewDescription,
+                                reviewRecommendation = album.reviewRecommendation,
+                                itsMine = false,
+                            };
+                            if (album.reviewRecommendation == "recomendo")
+                                albumRating.reviewRecommendation = "Recomendo";
+                            if (album.reviewRecommendation == "nao-recomendo")
+                                albumRating.reviewRecommendation = "Não Recomendo";
+                            _context.AlbumReview.Add(albumRating);
+                            _context.SaveChanges();
+
+                            return Json(new { success = true });
+                        }
+                        else { return Json(new { success = false, title = true, description = true, recommendation = false }); }
+                    }else
+                    {
+                        return Json(new { success = false, title = true, description = false });
+                    }
+                }
+                else { return Json(new { success = false, title = false }); }
+
+               
+            }
+            else
+                return Json(new { success = false }); 
+        }
+
+
+        [HttpPost]
+        public IActionResult RemoveReview(AlbumReview albumReview)
+        {
+            var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+            if (!string.IsNullOrEmpty(userEmail))
+            {
+                var reviewExists = _context.AlbumReview.FirstOrDefault(f => f.UserMail == userEmail && f.AlbumId == albumReview.AlbumId);
+
+                if (reviewExists != null)
+                {
+                    var album = _context.AlbumReview.FirstOrDefault(a => a.AlbumId == reviewExists.AlbumId);
+                    if (album != null)
+                    {
+                        _context.AlbumReview.Remove(reviewExists);
+                        _context.SaveChanges();
+                        return Json(new { success = true });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Álbum não encontrado" });
+                    }
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Revisão não encontrada para este utilizador" });
+                }
+            }
+            else
+            {
+                return Json(new { success = false, message = "E-mail do utilizador não disponível" });
+            }
+        }
+
 
 
 

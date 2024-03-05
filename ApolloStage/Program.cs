@@ -65,7 +65,7 @@ builder.Services.AddAuthentication().AddGoogle("google", options =>
 {
     options.ClientId = "138536774146-o1tjo5q46jl3n183v6jlnji31a7m5qqv.apps.googleusercontent.com";
     options.ClientSecret = "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";
-  //  options.CallbackPath = "/Account/ExternalLoginCallback";
+    // options.CallbackPath = "/Account/ExternalLoginCallback";
 });
 
 var app = builder.Build();

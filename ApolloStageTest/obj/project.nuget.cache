@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WDVtiZoIPC9txiVmdZi12qA1tdTJ5aN6okSWgaeCl+rew6Sb0TOaicWHopH+WdGghpK5VE7BR314MXXHCJyLrw==",
+  "dgSpecHash": "/lW5ANBhRsvTID13YhskhAVNW77fGrgRWqstkeBtnOCU4lkmyIe+FjGsQO3frUSicI9+H0lMLfOwHcyHxt0zsA==",
   "success": true,
-  "projectFilePath": "/Users/tenkait/Desktop/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+  "projectFilePath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
   "expectedPackageFiles": [
     "/Users/tenkait/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
@@ -74,9 +74,12 @@
     "/Users/tenkait/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/nunit/3.13.2/nunit.3.13.2.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/nunit3testadapter/4.0.0/nunit3testadapter.4.0.0.nupkg.sha512",
+    "/Users/tenkait/.nuget/packages/sqlite-net-pcl/1.8.116/sqlite-net-pcl.1.8.116.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.4/sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
+    "/Users/tenkait/.nuget/packages/sqlitepclraw.bundle_green/2.0.4/sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.core/2.1.4/sqlitepclraw.core.2.1.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.4/sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
+    "/Users/tenkait/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.4/sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.4/sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/swashbuckle.aspnetcore/5.0.0-rc4/swashbuckle.aspnetcore.5.0.0-rc4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/swashbuckle.aspnetcore.swagger/5.0.0-rc4/swashbuckle.aspnetcore.swagger.5.0.0-rc4.nupkg.sha512",

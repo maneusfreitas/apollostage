@@ -1,5 +1,6 @@
 ﻿using ApolloStage;
 using ApolloStage.DTO;
+using ApolloStage.Models;
 
 namespace ApolloStage
 {
@@ -25,6 +26,7 @@ namespace ApolloStage
         public int classificacaoEspecifica { get; set; }
         public List<AlbumItem> Albums { get; set; }
         public DateTime ReleaseDate { get; set; }
+
 
 
 
