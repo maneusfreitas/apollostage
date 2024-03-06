@@ -1,0 +1,754 @@
+﻿@model AlbumDetails
+@{
+    string myrating = TempData["myrating"]?.ToString();
+    double allrating = Convert.ToDouble(TempData["allrating"]?.ToString());
+    string popularity = TempData["popularity"]?.ToString();
+    string artistname = TempData["artistname"]?.ToString();
+    string artistimage = TempData["artistimage"]?.ToString();
+    string label = TempData["label"]?.ToString();
+    var firstGenre = ((List<string>)TempData["ArtistGenres"]).FirstOrDefault();
+    string rate = TempData["rate"]?.ToString();
+    string rated = TempData["rated"]?.ToString();
+    string durationSeconds = TempData["durationSeconds"]?.ToString();
+    string meu = TempData["meu"]?.ToString();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Album Details</title>
+    <style>
+        .mt-5.ms-5 span {
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <input type="hidden" name="rating" id="selectedRating" value="" />
+    <div id="errorMessageContainer"></div>
+    <div class=" row container-fluid ps-4 pe-4">
+
+        <div class=" col-md-7 col-12 mt-2">
+
+            <div class="mt-4 ">
+                <h2><b>@Model.AlbumsInfo[0].name</b></h2>
+                <span style="font-size:20px" class="releaseDate" data-date="@Model.AlbumsInfo[0].release_date">@Model.AlbumsInfo[0].release_date</span>
+                <span style="font-size:20px" class="ms-5">@firstGenre</span>
+                @{
+                    double totalDuration = 0;
+                }
+                @foreach (var track in Model.Tracks)
+                {
+                    double durationMinutes;
+                    if (double.TryParse(track.DurationMinutes, out durationMinutes))
+                    {
+                        totalDuration += durationMinutes;
+                    }
+                }
+
+                @{
+                    totalDuration = Math.Round(totalDuration, 2);
+                }
+
+                @{
+                    string totalDurationM = totalDuration.ToString() + "m";
+                }
+
+                <span style="font-size:20px" class="ms-5">@durationSeconds</span>
+            </div>
+
+        </div>
+
+        <div class="col-md-5 col-12">
+            <div id="dois" class="d-flex text-center mt-5 justify-content-between ">
+                <div class="col-md-4">
+                    <h4><b>apollo</b> RATING </h4>
+                    <h5 class="mt-2"> <img class="mb-2" src="~/img/star2.png"></img> @Math.Round(allrating, 2) / 10</h5>
+                </div>
+                <div class="col-md-4 ps-3">
+                    <button id="ratingButton" class="ratingButt m-0 p-0"><h4><b>your</b> RATING </h4></button>
+
+                    <div class="modal fade" style="background-color:rgba(0,0,0,0.5)" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                        <div class="modal-dialog modal-none modal-dialog-centered border-2">
+                            
+                            <div class="modal-content">
+                                <img class="mb-2" style="max-width:100px "  src="/img/star1_100-removebg-preview.png">
+                                <span style="margin-top:-67px !important;color: green;" class="mb-5">@myrating </span>
+
+                                <h5 class="modal-title" id="exampleModalLabel">@Model.AlbumsInfo[0].name</h5>
+                                <div class="modal-body">
+                                    @foreach (var albumInfo in Model.AlbumsInfo)
+                                    {
+                                        <div id="ratingForm_@albumInfo.id">
+                                            <fieldset class="fS">
+                                                <span class="star-cb-group">
+                                                    @for (int i = 10; i > 0; i--)
+                                                    {
+                                                        <input type="radio" id="rating-@i@albumInfo.id" name="starRating" value="@i" @(i == Convert.ToInt32(@rate) ? "checked" : "") onclick="updateRating('@i', '@albumInfo.id')" />
+
+                                                        <label for="rating-@i@albumInfo.id" class="@(i <= albumInfo.classificacaoEspecifica ? "filled" : "")">@i</label>
+                                                    }
+                                                </span>
+                                                @if (albumInfo.classificacaoEspecifica >= 7)
+                                                {
+                                                    <p style="color:white;">classificação igual ou maior que 7</p>
+                                                }
+                                            </fieldset>
+                                            <div class="text-center m-0 p-0">
+                                                <!-- Classe text-center para centralizar os botões horizontalmente e mb-3 para adicionar margem inferior -->
+                                                <input type="hidden" name="albumId" value="@albumInfo.id" />
+                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id')">
+                                                    @(albumInfo.classificacaoEspecifica >= 1 ? "Update" : "Rate")
+                                                </button>
+                                            </div>
+                                            <div class="text-center m-0 p-0">
+                                                <!-- Nova div para centralizar os botões horizontalmente -->
+                                                <button class=" toRedOnAD btn " type="button" onclick="RemoveAlbumRating('@albumInfo.id')">Remove rating</button>
+                                            </div>
+
+
+                                        </div>
+                                        <script>
+                                            function updateRating(value) {
+                                                document.getElementById("selectedRating").value = value;
+                                            }</script>
+                                    }
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5>  <img class="mb-2" src="~/img/star1.png"></img> @myrating /10</h5>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="text-end">popularity </h4>
+                    <h5 class="ms-3 mb-2"> <img class="mb-2" src="~/img/popularity-removebg-preview(1).png"></img> @popularity</h5>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="d-flex mt-5 ps-4 pe-4 justify-content-center">
+        <div class="col-sm-4 col-12">
+            <div id="removerFavoritoForm">
+                <input type="hidden" name="albumId" value="@Model.AlbumsInfo[0].id" />
+                <input type="hidden" name="albumName" value="@Model.AlbumsInfo[0].name" />
+                <button onclick="submitRatingForm2('@Model.AlbumsInfo[0].id','@Model.AlbumsInfo[0].name')" class="btn btn-dark btnAdicionar shadow-none">
+                    <i name="markericon" id="markericon" class="fa fa-lg toGreen @if (rated == "true")
+                                            {
+                                            @:fa-bookmark
+                                        }
+                                            else
+                                            {
+                                            @:fa-bookmark-o
+                                        }">
+                    </i>
+                </button>
+
+            </div>
+            <img class="albumImage img-fluid  ms-auto w-100" src="@Model.AlbumsInfo[0].images[0].URL" alt="Album Image" />
+        </div>
+
+
+        <div class="image-container col-8  d-none d-sm-block">
+            <img src="@artistimage" alt="Album Image" />
+        </div>
+    </div>
+
+
+    <div class="content-wrapper mt-3 ms-5 me-4 p-0">
+        @foreach (var albumInfo in Model.AlbumsInfo)
+        {
+            <div class="align-content-end text-end">
+
+                <span>
+                    <div>
+                        @{
+                            int i = 0;
+                        }
+                        @foreach (var artist in albumInfo.artists)
+                        {
+                            if (i == 0)
+                            {
+                                <p class="artistName text-end ms-2">
+                                    <b>Artist:</b> <span class="m-0" style="color:rgb( 49, 166, 214)">@artist.name</span>
+                                </p>
+                                i++;
+
+                                @if (albumInfo.artists.Count() > 1)
+                                {
+                                    <span class="m-0">
+                                        <b>Appearences:</b>
+                                    </span>
+                                }
+
+                            }
+                            else
+                            {
+                                i++;
+                                <span style="color:rgb( 49, 166, 214)" class="text-end m-0">
+                                    @artist.name @if (albumInfo.artists.Count() != i)
+                                    {
+                                        <span>,</span>
+                                    }
+                                </span>
+                            }
+                        }
+                    </div>
+                </span>
+                <span class="text-end labelSpan p-0 m-0"><b>Label:</b> <span class="m-0" style="color:rgb( 49, 166, 214)">@label</span></span>
+            </div>
+
+        }
+
+    </div>
+    <h1 style="margin-top:50px;">TrackList</h1>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <ul class="list-group col-md-10 col-12">
+                <!-- Centraliza cada linha de tracks -->
+                @for (var i = 0; i < Model.Tracks.Count; i++)
+                {
+                    <li class="list-group-item border m-2 p-0 custom-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-row align-items-center" id="left-column">
+                                <div id="10" class="ms-2 mr-2">
+                                    @String.Concat(@Model.Tracks[i].TrackNumber, ".")<br />
+                                </div>
+                                <div class="text-start ms-5" id="20">
+                                    <strong>Track Name:</strong> @Model.Tracks[i].TrackName<br />
+                                    <strong>Duration: </strong> @Model.Tracks[i].DurationMinutes<br />
+                                </div>
+                            </div>
+                            <div id="30" class="text-end ms-2">
+                                <a class="text-black" href="https://open.spotify.com/intl-pt/track/@Model.Tracks[i].TrackId">
+                                    <i class="fa fa-external-link me-2" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    <div style="width: 60%; text-align: center; margin: auto;">
+        <input type="hidden" name="albumId" value="@Model.AlbumsInfo[0].id" />
+
+        <div class="form-group">
+            <label for="reviewTitle">Título da Review:</label>
+            <input type="text" id="reviewTitle" name="reviewTitle" class="form-control" placeholder="Insira o título da Review" />
+        </div>
+
+        <div class="form-group">
+            <label for="reviewDescription">Descrição da Review:</label>
+            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="reviewRecommendation">Recomendação da Review:</label>
+            <select id="reviewRecommendation" name="reviewRecommendation" class="form-control">
+                <option value="nao-recomendo">Não Recomendo</option>
+                <option value="recomendo">Recomendo</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none">
+            Enviar Review
+        </button>
+    </div>
+
+
+    <h1>Reviews do Álbum</h1>
+    <ul>
+        @foreach (var review in Model.AlbumReviews)
+        {
+            <li>
+                <strong>Utilizador:</strong> @review.UserMail<br />
+                <strong>Título da Review:</strong> @review.reviewTitle<br />
+                <strong>Descrição da Review:</strong> @review.reviewDescription<br />
+                <strong>Recomendação:</strong> @review.reviewRecommendation<br />
+                @if (@review.itsMine == true || @meu == "True")
+                {
+                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none">
+                        remover
+                    </button>
+                }
+                @if (@review.itsMine != true)
+                {
+                    <button onclick="reportComment('@review.Id', '@review.UserMail', 'motivo_@review.Id', 'descricao_@review.Id')" class="btn btn-dark btnAdicionar shadow-none">
+                        reportar
+                    </button>
+                    <label for="motivo_@review.Id">Selecione um motivo para relatar o comentário:</label>
+                    <select id="motivo_@review.Id" name="motivo_@review.Id">
+                        <option value="discurso de ódio">Discurso de ódio</option>
+                        <option value="bullying">Bullying</option>
+                        <option value="assédio">Assédio</option>
+                        <option value="spam">Spam</option>
+                        <option value="conteúdo inapropriado">Conteúdo inapropriado</option>
+                    </select>
+                    <br>
+                    <label for="descricao_@review.Id">Descreva o motivo do report:</label>
+                    <textarea id="descricao_@review.Id" name="descricao_@review.Id"></textarea>
+                }
+            </li>
+            <hr />
+        }
+    </ul>
+    <div class="popups-cont" style="opacity:0.85">
+        <div class="popups-cont__overlay"></div>
+        <div class="popup">
+            <div class="popup__pieces"></div>
+            <div class="popup__content">
+                <div class="popup__close"></div>
+                <b><h3 class="popup__heading"></h3></b>
+                <b><p class="popup__text"></p></b>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        main.pb-3 h1 {
+            text-align: center;
+        }
+
+        .card {
+            border: none;
+            background-color: transparent;
+        }
+
+        .img-fluid {
+            border-radius: 20px;
+        }
+
+        .star-cb-group {
+            /* remove inline-block whitespace /
+                    font-size: 0;
+                    / flip the order so we can use the + and ~ combinators */
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: initial;
+        }
+
+            .star-cb-group * {
+                font-size: 2rem;
+            }
+
+            .star-cb-group > input {
+                display: none;
+            }
+
+                .star-cb-group > input + label {
+                    /* only enough room for the star */
+                    display: inline-block;
+                    overflow: hidden;
+                    text-indent: 9999px;
+                    width: 1em;
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
+
+                    .star-cb-group > input + label:before {
+                        display: inline-block;
+                        text-indent: -9999px;
+                        content: "☆";
+                        color: #333;
+                    }
+
+                    .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+                        content: "★";
+                        color: black;
+                        text-shadow: 0 0 1px #333;
+                    }
+
+            .star-cb-group > .star-cb-clear + label {
+                text-indent: -9999px;
+                width: .5em;
+                margin-left: -.5em;
+            }
+
+                .star-cb-group > .star-cb-clear + label:before {
+                    width: .5em;
+                }
+
+            .star-cb-group:hover > input + label:before {
+                content: "☆";
+                color: #333;
+                text-shadow: none;
+            }
+
+            .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+                content: "★";
+                color: black;
+                text-shadow: 0 0 1px #333;
+            }
+
+
+
+        fieldset {
+            border: 0;
+            background: #222;
+            width: 5em;
+            border-radius: 1px;
+            padding: 1em 1.5em 0.9em;
+            margin: 1em auto;
+            width: 210px;
+        }
+
+        #log {
+            margin: 1em auto;
+            width: 5em;
+            text-align: center;
+            background: transparent;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button#formse {
+            width: 100px;
+            height: 30px;
+            top: 160px;
+            left: 50px;
+        }
+
+
+
+        .albumImage {
+            width: 400px;
+            height: 400px
+        }
+
+        .image-container {
+            height: 400px; /* Altura desejada */
+            overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites do contêiner */
+        }
+
+            .image-container img {
+                width: 100%; /* Ajusta a largura da imagem para preencher o contêiner */
+                height: 100%; /* Ajusta a altura da imagem para preencher o contêiner */
+                object-fit: cover; /* Recorta a imagem para preencher o contêiner mantendo a proporção */
+                object-position: center; /* Define a posição da imagem como centro superior */
+            }
+
+
+
+        .img-fluid {
+            border-radius: 0
+        }
+
+        .artistName {
+            margin-bottom: 0;
+        }
+
+        body, html {
+            margin: 0; /* Remove a margem padrão do corpo e do HTML */
+            padding: 0; /* Remove o preenchimento padrão do corpo e do HTML */
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Alinha o conteúdo à direita */
+            padding-right: 20px; /* Adiciona algum espaço à direita para garantir que o conteúdo não fique muito próximo da borda */
+            height: 100%; /* Define a altura para ocupar toda a altura da janela do navegador */
+        }
+
+        .align-content-end {
+            margin-left: auto; /* Alinha o conteúdo à direita */
+        }
+
+        .artistName {
+            margin: 0; /* Remove margem padrão */
+        }
+
+        .align-content-end span {
+            margin-right: 5px; /* Adiciona um espaço entre os elementos */
+        }
+
+        .align-content-end {
+            font-size: 20px;
+        }
+
+        .ratingButt {
+            background-color: transparent;
+            border: transparent;
+        }
+
+        div#removerFavoritoForm {
+            z-index: 99;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .toGreenOnAD {
+            background: none;
+            color: green;
+            border: none;
+        }
+
+            .toGreenOnAD:hover,
+            .toGreenOnAD:active {
+                background: none;
+                color: green;
+                border: none;
+                outline: none;
+            }
+
+        .toRedOnAD {
+            background: none;
+            color: black;
+            border: none;
+        }
+
+            .toRedOnAD:hover,
+            .toRedOnAD:active {
+                background: none;
+                color: black;
+                border: none;
+                outline: none !important;
+            }
+
+        .fS{
+            width:100%;
+            background-color:white;        }
+
+        .modal-content img {
+            margin: auto;
+            margin-top: -39px;
+        }
+
+        .modal-content {
+            border: 5px solid rgba(0,0,0) !important
+        }
+        
+            </style>
+    <script>window.onload = function () {
+            // Seu código JavaScript aqui
+            var releaseDateElements = document.querySelectorAll(".releaseDate");
+
+            // Iterar sobre todos os elementos com a classe 'releaseDate'
+            releaseDateElements.forEach(function (element) {
+                // Obter a data do atributo 'data-date'
+                var albumRealiseDate = element.getAttribute("data-date");
+
+                // Verificar se a data é válida
+                if (albumRealiseDate) {
+                    var releaseDate = new Date(albumRealiseDate);
+                    var formattedDate = releaseDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                    // Atualizar o texto do elemento atual com a data formatada
+                    element.textContent = formattedDate;
+                }
+            });
+        };</script>
+
+    <script>function submitRatingForm2(albumId, albumName) {
+            // var albumId = btn.siblings('input[name="albumId"]').val();
+            // var albumName = btn.siblings('input[name="albumName"]').val();
+
+            var btn = $(this);
+
+            $.ajax({
+                url: "/Account/AdicionarAlistenList",
+                type: "POST",
+                data: { albumId: albumId, albumName: albumName },
+                success: function (result) {
+                    if (result.success) {
+                        $("#errorMessageContainer").html('<div class="alert alert-success" role="alert">' + result.errorMessage + '</div>');
+
+                        document.getElementById('markericon').classList.remove("fa-bookmark-o");
+                        document.getElementById('markericon').classList.add("fa-bookmark");
+                        console.log("deu sucesso");
+                    } else {
+                        document.getElementById('markericon').classList.remove("fa-bookmark");
+                        document.getElementById('markericon').classList.add("fa-bookmark-o");
+
+                        $("#errorMessageContainer").html('<div class="alert alert-danger" role="alert">' + result.errorMessage + '</div>');
+
+                        $.ajax({
+                            url: "/Account/RemoverDosFavoritos",
+                            type: "POST",
+                            data: { albumId: albumId },
+                            success: function (result) {
+                                if (result.success) {
+                                    console.log("deu sucesso");
+                                } else {
+                                    console.log("não deu sucesso");
+                                }
+                            },
+                            error: function () {
+                                console.log("error");
+                            }
+                        });
+                    }
+                },
+                error: function () {
+                    console.log("error");
+                }
+            });
+
+
+        }</script>
+    <script>$('[id^="rating-"]').click(function () {
+            // Encontre o formulário pai do input de rádio clicado
+            var form = $(this).closest('form');
+            // Envie o formulário
+            form.submit();
+        });</script>
+    <script>
+    function submitRatingForm(albumId) {
+        var formData = {
+            albumId: albumId,
+            starRating: document.getElementById("selectedRating").value,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SaveAlbumRating", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response); // Exibe a resposta no console
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+    </script>
+    @foreach (var review in Model.AlbumReviews)
+    {
+        @if (review.itsMine == true)
+        {
+            <script>
+        function removeComment(albumId, UserMail) {
+        var formData = {
+            albumId: albumId,
+            UserMail: UserMail,
+            };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("RemoveReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+            </script>
+            break;
+        }
+    }
+
+    <script>
+        function submitReviewForm(albumId) {
+        var formData = {
+            albumId: albumId,
+            reviewTitle: document.getElementById("reviewTitle").value,
+            reviewDescription: document.getElementById("reviewDescription").value,
+            reviewRecommendation: document.getElementById("reviewRecommendation").value,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SaveReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+    </script>
+
+
+
+
+    <script>
+            function RemoveAlbumRating(albumId) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("RemoveAlbumRating", "Account")',
+                    data: { albumId: albumId },
+                    success: function(response) {
+                        console.log(response);
+                        location.reload();
+                    },
+                    error: function(error) {
+                        console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+                    }
+                });
+             }
+    </script>
+
+    <script>
+    function reportComment(reviewId, userEmail, selectId, textareaId) {
+        var motivo = document.getElementById(selectId).value;
+        var descricao = document.getElementById(textareaId).value;
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("reportComment", "Account")',
+            data: { reviewId: reviewId, userEmail: userEmail, motivo: motivo, descricao: descricao },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+    </script>
+
+    <script>
+        document.getElementById('ratingButton').addEventListener('click', function () {
+            // Seleciona o modal e o exibe
+            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+        });
+    </script>
+
+</body>
+</html>
