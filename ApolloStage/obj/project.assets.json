@@ -18,7 +18,7 @@
           }
         }
       },
-      "HtmlAgilityPack/1.11.57": {
+      "HtmlAgilityPack/1.11.59": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
@@ -2948,14 +2948,14 @@
         "readme.txt"
       ]
     },
-    "HtmlAgilityPack/1.11.57": {
-      "sha512": "zDxnHcAvi+qhZG602eKaPJKmzm0T8npKVML0RMwjrRBabpmTRtu2OVpfNkMUfYMgQ+5EllOkSeGxu0uFVV2zFw==",
+    "HtmlAgilityPack/1.11.59": {
+      "sha512": "0tMaGzTJ5uFFMCYvprZ4hRYg6Dm5E+/WeMFJiD5K83Fe/Y6kyLaRKcfrfUwfb1j428XzB4/2RR7sdxoQX5eaEA==",
       "type": "package",
-      "path": "htmlagilitypack/1.11.57",
+      "path": "htmlagilitypack/1.11.59",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "htmlagilitypack.1.11.57.nupkg.sha512",
+        "htmlagilitypack.1.11.59.nupkg.sha512",
         "htmlagilitypack.nuspec",
         "lib/Net35/HtmlAgilityPack.dll",
         "lib/Net35/HtmlAgilityPack.pdb",
@@ -8128,7 +8128,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "HtmlAgilityPack >= 1.11.57",
+      "HtmlAgilityPack >= 1.11.59",
       "Microsoft.AspNetCore.Authentication.Google >= 7.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.14",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.14",
@@ -8146,24 +8146,25 @@
     ]
   },
   "packageFolders": {
-    "/Users/tenkait/.nuget/packages/": {}
+    "/Users/joaonanques/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
+      "projectUniqueName": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/ApolloStage.csproj",
       "projectName": "ApolloStage",
-      "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
-      "packagesPath": "/Users/tenkait/.nuget/packages/",
-      "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/obj/",
+      "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/ApolloStage.csproj",
+      "packagesPath": "/Users/joaonanques/.nuget/packages/",
+      "outputPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tenkait/.nuget/NuGet/NuGet.Config"
+        "/Users/joaonanques/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/sdk/7.0.313/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8184,7 +8185,7 @@
         "dependencies": {
           "HtmlAgilityPack": {
             "target": "Package",
-            "version": "[1.11.57, )"
+            "version": "[1.11.59, )"
           },
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
@@ -8264,7 +8265,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.313/RuntimeIdentifierGraph.json"
       }
     }
   }

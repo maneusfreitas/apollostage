@@ -24,7 +24,7 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "HtmlAgilityPack/1.11.57": {
+      "HtmlAgilityPack/1.11.59": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
@@ -1848,7 +1848,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "HtmlAgilityPack": "1.11.57",
+          "HtmlAgilityPack": "1.11.59",
           "Microsoft.AspNetCore.Authentication.Google": "7.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.14",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.14",
@@ -1953,14 +1953,14 @@
         "coverlet.collector.nuspec"
       ]
     },
-    "HtmlAgilityPack/1.11.57": {
-      "sha512": "zDxnHcAvi+qhZG602eKaPJKmzm0T8npKVML0RMwjrRBabpmTRtu2OVpfNkMUfYMgQ+5EllOkSeGxu0uFVV2zFw==",
+    "HtmlAgilityPack/1.11.59": {
+      "sha512": "0tMaGzTJ5uFFMCYvprZ4hRYg6Dm5E+/WeMFJiD5K83Fe/Y6kyLaRKcfrfUwfb1j428XzB4/2RR7sdxoQX5eaEA==",
       "type": "package",
-      "path": "htmlagilitypack/1.11.57",
+      "path": "htmlagilitypack/1.11.59",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "htmlagilitypack.1.11.57.nupkg.sha512",
+        "htmlagilitypack.1.11.59.nupkg.sha512",
         "htmlagilitypack.nuspec",
         "lib/Net35/HtmlAgilityPack.dll",
         "lib/Net35/HtmlAgilityPack.pdb",
@@ -4300,19 +4300,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/tenkait/.nuget/packages/": {}
+    "/Users/joaonanques/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+      "projectUniqueName": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/ApolloStageTest.csproj",
       "projectName": "ApolloStageTest",
-      "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
-      "packagesPath": "/Users/tenkait/.nuget/packages/",
-      "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/obj/",
+      "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/ApolloStageTest.csproj",
+      "packagesPath": "/Users/joaonanques/.nuget/packages/",
+      "outputPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStageTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tenkait/.nuget/NuGet/NuGet.Config"
+        "/Users/joaonanques/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -4324,8 +4324,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
-              "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj"
+            "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/ApolloStage.csproj": {
+              "projectPath": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/ApolloStage.csproj"
             }
           }
         }
@@ -4381,7 +4381,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.313/RuntimeIdentifierGraph.json"
       }
     }
   }

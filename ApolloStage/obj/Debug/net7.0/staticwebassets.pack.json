@@ -1,355 +1,347 @@
 {
   "Files": [
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/projectbundle/ApolloStage.bundle.scp.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/obj/Debug/net7.0/scopedcss/projectbundle/ApolloStage.bundle.scp.css",
       "PackagePath": "staticwebassets/ApolloStage.bundle.scp.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/.DS_Store",
-      "PackagePath": "staticwebassets/.DS_Store"
-    },
-    {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/css/site.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/favicon.ico",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/.DS_Store",
-      "PackagePath": "staticwebassets/img/.DS_Store"
-    },
-    {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg",
       "PackagePath": "staticwebassets/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg",
       "PackagePath": "staticwebassets/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png",
       "PackagePath": "staticwebassets/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/apollo_logo-removebg-preview.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/apollo_logo-removebg-preview.png",
       "PackagePath": "staticwebassets/img/apollo_logo-removebg-preview.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/background.jpg",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/background.jpg",
       "PackagePath": "staticwebassets/img/background.jpg"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/google.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/google.png",
       "PackagePath": "staticwebassets/img/google.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/filter.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/filter.png",
       "PackagePath": "staticwebassets/img/icons/filter.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/google.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/google.png",
       "PackagePath": "staticwebassets/img/icons/google.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/hamburger.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/hamburger.png",
       "PackagePath": "staticwebassets/img/icons/hamburger.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/instagram.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/instagram.png",
       "PackagePath": "staticwebassets/img/icons/instagram.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/save.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/save.png",
       "PackagePath": "staticwebassets/img/icons/save.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/search.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/search.png",
       "PackagePath": "staticwebassets/img/icons/search.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/shopping.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/shopping.png",
       "PackagePath": "staticwebassets/img/icons/shopping.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/twitter.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/twitter.png",
       "PackagePath": "staticwebassets/img/icons/twitter.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/user.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/user.png",
       "PackagePath": "staticwebassets/img/icons/user.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons/youtube.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons/youtube.png",
       "PackagePath": "staticwebassets/img/icons/youtube.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/icons8-google-logo-20.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/icons8-google-logo-20.png",
       "PackagePath": "staticwebassets/img/icons8-google-logo-20.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png",
       "PackagePath": "staticwebassets/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/popularity-removebg-preview(1).png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/popularity-removebg-preview(1).png",
       "PackagePath": "staticwebassets/img/popularity-removebg-preview(1).png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/star1.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/star1.png",
       "PackagePath": "staticwebassets/img/star1.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/star1_100-removebg-preview.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/star1_100-removebg-preview.png",
       "PackagePath": "staticwebassets/img/star1_100-removebg-preview.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/star2.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/star2.png",
       "PackagePath": "staticwebassets/img/star2.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/topalbum.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/topalbum.png",
       "PackagePath": "staticwebassets/img/topalbum.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/user-classification(1).png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/user-classification(1).png",
       "PackagePath": "staticwebassets/img/user-classification(1).png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png",
       "PackagePath": "staticwebassets/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/js/site.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/LICENSE",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation/LICENSE.md",
       "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery/LICENSE.txt",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery/dist/jquery.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery/dist/jquery.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Id": "/Users/joaonanques/Documents/Escola/ESA/apollostage/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
