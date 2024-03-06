@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cPMisyMKd9phHwGhUnnmGX1UHM/omf70uC6BiOSkzX03JcaTR36Sz20O+ReksuSSe2x5GBZWnWu7JpCR4jEjLg==",
+  "dgSpecHash": "Ybb2aaGEMR+egpjI3L26WFGZXAm6l9RfVQrAVkkRtKDU99NTMyB44ddHIRdggB/9FxOly/tcXsEzoilsurh+hg==",
   "success": true,
-  "projectFilePath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
+  "projectFilePath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
   "expectedPackageFiles": [
     "/Users/tenkait/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/htmlagilitypack/1.11.57/htmlagilitypack.1.11.57.nupkg.sha512",
@@ -76,12 +76,9 @@
     "/Users/tenkait/.nuget/packages/nunit3testadapter/4.0.0/nunit3testadapter.4.0.0.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/runtime.native.system/4.0.0/runtime.native.system.4.0.0.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/runtime.native.system.security.cryptography/4.0.0/runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
-    "/Users/tenkait/.nuget/packages/sqlite-net-pcl/1.8.116/sqlite-net-pcl.1.8.116.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.4/sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
-    "/Users/tenkait/.nuget/packages/sqlitepclraw.bundle_green/2.0.4/sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.core/2.1.4/sqlitepclraw.core.2.1.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.4/sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
-    "/Users/tenkait/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.4/sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.4/sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/swashbuckle.aspnetcore/5.0.0-rc4/swashbuckle.aspnetcore.5.0.0-rc4.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/swashbuckle.aspnetcore.swagger/5.0.0-rc4/swashbuckle.aspnetcore.swagger.5.0.0-rc4.nupkg.sha512",

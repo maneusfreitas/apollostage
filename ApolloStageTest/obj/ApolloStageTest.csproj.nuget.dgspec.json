@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj": {}
+    "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj": {}
   },
   "projects": {
-    "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
+    "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
+        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
         "projectName": "ApolloStage",
-        "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
+        "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
         "packagesPath": "/Users/tenkait/.nuget/packages/",
-        "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/obj/",
+        "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tenkait/.nuget/NuGet/NuGet.Config"
@@ -86,10 +86,6 @@
               "target": "Package",
               "version": "[5.0.0-rc4, )"
             },
-            "sqlite-net-pcl": {
-              "target": "Package",
-              "version": "[1.8.116, )"
-            },
             "xunit": {
               "target": "Package",
               "version": "[2.4.1, )"
@@ -124,14 +120,14 @@
         }
       }
     },
-    "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj": {
+    "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
         "projectName": "ApolloStageTest",
-        "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+        "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
         "packagesPath": "/Users/tenkait/.nuget/packages/",
-        "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStageTest/obj/",
+        "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tenkait/.nuget/NuGet/NuGet.Config"
@@ -146,8 +142,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
-                "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/ApolloStage.csproj"
+              "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
+                "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj"
               }
             }
           }
