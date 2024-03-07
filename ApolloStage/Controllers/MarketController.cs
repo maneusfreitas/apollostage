@@ -17,21 +17,19 @@ namespace ApolloStageFirst.Controllers
     public class MarketController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public MarketController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
+        public MarketController(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _context = context;
             _webHostEnvironment = webHostEnvironment;
 
         }
 
         [HttpGet]
-        public async Task<IActionResult> market()
+        public IActionResult market()
         {
             List<Product> products = _context.Product.ToList();
             return View("Index", products);
