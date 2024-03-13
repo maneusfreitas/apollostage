@@ -2107,6 +2107,7 @@ C:/Users/gonca/OneDrive/Ambiente de Trabalho/5ffms91pfslqgh0t/ApolloStage_fase_3
 /Users/tenkait/Desktop/ApolloStage_fase_3/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/ref/ApolloStage.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/appsettings.Development.json
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/appsettings.json
+/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/ApolloStage.staticwebassets.runtime.json
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/xunit.runner.utility.netcoreapp10.dll
@@ -2116,7 +2117,6 @@ C:/Users/gonca/OneDrive/Ambiente de Trabalho/5ffms91pfslqgh0t/ApolloStage_fase_3
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/nunit.engine.api.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/nunit.engine.core.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/testcentric.engine.metadata.dll
-/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/ApolloStage.staticwebassets.runtime.json
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/app.db
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/ApolloStage
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/bin/Debug/net7.0/ApolloStage.deps.json
@@ -2274,6 +2274,7 @@ C:/Users/gonca/OneDrive/Ambiente de Trabalho/5ffms91pfslqgh0t/ApolloStage_fase_3
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/staticwebassets.build.json
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/staticwebassets.development.json
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/Views/Shared/_LayoutAdmin.cshtml.rz.scp.css
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/bundle/ApolloStage.styles.css
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/projectbundle/ApolloStage.bundle.scp.css
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/ApolloStage.csproj.CopyComplete
@@ -2282,4 +2283,3 @@ C:/Users/gonca/OneDrive/Ambiente de Trabalho/5ffms91pfslqgh0t/ApolloStage_fase_3
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/ApolloStage.pdb
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/ApolloStage.genruntimeconfig.cache
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/ref/ApolloStage.dll
-/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/Debug/net7.0/scopedcss/Views/Shared/_LayoutAdmin.cshtml.rz.scp.css

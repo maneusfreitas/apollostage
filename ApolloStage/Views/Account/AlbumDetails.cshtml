@@ -12,7 +12,13 @@
     string durationSeconds = TempData["durationSeconds"]?.ToString();
     string meu = TempData["meu"]?.ToString();
 }
-
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "False")
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    else
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,9 +79,9 @@
                     <div class="modal fade" style="background-color:rgba(0,0,0,0.5)" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                         <div class="modal-dialog modal-none modal-dialog-centered border-2">
-                            
+
                             <div class="modal-content">
-                                <img class="mb-2" style="max-width:100px "  src="/img/star1_100-removebg-preview.png">
+                                <img class="mb-2" style="max-width:100px " src="/img/star1_100-removebg-preview.png">
                                 <span style="margin-top:-67px !important;color: green;" class="mb-5">@myrating </span>
 
                                 <h5 class="modal-title" id="exampleModalLabel">@Model.AlbumsInfo[0].name</h5>
@@ -111,13 +117,12 @@
 
 
                                         </div>
-                                        <script>
-                                            function updateRating(value) {
+                                        <script>function updateRating(value) {
                                                 document.getElementById("selectedRating").value = value;
                                             }</script>
                                     }
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -258,7 +263,7 @@
 
 
 
-    
+
 
 
 
@@ -274,7 +279,7 @@
 
         <div class="form-group">
             <label for="reviewDescription">Descrição da Review:</label>
-            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review"></textarea>
+            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review" ></textarea>
         </div>
 
         <div class="form-group">
@@ -543,9 +548,10 @@
                 outline: none !important;
             }
 
-        .fS{
-            width:100%;
-            background-color:white;        }
+        .fS {
+            width: 100%;
+            background-color: white;
+        }
 
         .modal-content img {
             margin: auto;
@@ -555,8 +561,7 @@
         .modal-content {
             border: 5px solid rgba(0,0,0) !important
         }
-        
-            </style>
+    </style>
     <script>window.onload = function () {
             // Seu código JavaScript aqui
             var releaseDateElements = document.querySelectorAll(".releaseDate");
@@ -742,13 +747,11 @@
     }
     </script>
 
-    <script>
-        document.getElementById('ratingButton').addEventListener('click', function () {
+    <script>document.getElementById('ratingButton').addEventListener('click', function () {
             // Seleciona o modal e o exibe
             var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
             modal.show();
-        });
-    </script>
+        });</script>
 
 </body>
 </html>

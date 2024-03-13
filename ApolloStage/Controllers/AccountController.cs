@@ -328,7 +328,7 @@ namespace ApolloStageFirst.Controllers
         {
             if (remoteError != null)
             {
-                return RedirectToAction("Error");
+                return View("Error");
             }
 
             var result = await HttpContext.AuthenticateAsync("Identity.External");
@@ -337,7 +337,7 @@ namespace ApolloStageFirst.Controllers
 
             if (externalEmail == null)
             {
-                return RedirectToAction("Error");
+                return View("Error");
             }
 
             var user = await _userManager.FindByEmailAsync(externalEmail);
@@ -365,7 +365,7 @@ namespace ApolloStageFirst.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Error");
+                    return View("Error");
                 }
             }
             else
@@ -499,6 +499,8 @@ namespace ApolloStageFirst.Controllers
         public async Task<IActionResult> RemoverDosFavoritos(string albumId)
         {
             var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+
             string username = "";
             if (userEmailClaim == null)
             {
@@ -551,7 +553,7 @@ namespace ApolloStageFirst.Controllers
 
 
 
-
+            TempData["meu"] = admin.Admin;
             return View("ListenList", albumsWithDetails);
         }
 
@@ -706,7 +708,7 @@ namespace ApolloStageFirst.Controllers
                 }
                 else
                 {
-                    album.classificacaoEspecifica = 0; // Ou defina um valor padrão, se necessário
+                    album.classificacaoEspecifica = 0; 
                 }
             }
 
@@ -839,12 +841,19 @@ namespace ApolloStageFirst.Controllers
                         IdUserMail = userEmail,
                         causa = motivo,
                         descricao = descricao,
+                        count = 0,
                     };
                     _context.ReviewReports.Add(reviewReports);
                     _context.SaveChanges();
                     return Json(new { success = true });
-                }else
-                     return Json(new { success = false, msg = "já foi reportado por um utilizador" });
+                }
+                else
+                {
+                    rev.count++; 
+                    _context.ReviewReports.Update(rev);
+                    _context.SaveChanges();
+                    return Json(new { success = false, msg = "já foi reportado por um utilizador" });
+                }
             }
             else
                 return Json(new { success = false });

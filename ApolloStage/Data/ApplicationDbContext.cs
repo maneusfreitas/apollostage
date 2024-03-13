@@ -1,4 +1,5 @@
 ﻿using ApolloStage.Models;
+using ApolloStage.Models.Product;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,11 +18,14 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<AlbumReview> AlbumReview { get; set; }
 
+    public DbSet<ProductOrder> ProductOrder { get; set; }
+
     public DbSet<ReviewReports> ReviewReports { get; set; }
 
     public DbSet<Models.Extra.Classification> AlbumRatings { get; set; }
 
-    public DbSet<Models.Product.Product> Product { get; set; }
+    public DbSet<Tshirt> Tshirt { get; set; }
+    public DbSet<Mug> Mug { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -10,5 +10,6 @@ namespace ApolloStage.Models
         public string IdUserMail { get; set; }
         public string causa { get; set; }
         public string descricao { get; set; }
+        public int count { get; set; }
     }
 }

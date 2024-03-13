@@ -9,16 +9,100 @@
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/css/demo.css",
+      "PackagePath": "staticwebassets/css/demo.css"
+    },
+    {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/css/stylecart.css",
+      "PackagePath": "staticwebassets/css/stylecart.css"
     },
     {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/.DS_Store",
-      "PackagePath": "staticwebassets/img/.DS_Store"
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg",
+      "PackagePath": "staticwebassets/img/0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg",
+      "PackagePath": "staticwebassets/img/0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp",
+      "PackagePath": "staticwebassets/img/1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg",
+      "PackagePath": "staticwebassets/img/2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg",
+      "PackagePath": "staticwebassets/img/2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png",
+      "PackagePath": "staticwebassets/img/5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg",
+      "PackagePath": "staticwebassets/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png",
+      "PackagePath": "staticwebassets/img/A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg",
+      "PackagePath": "staticwebassets/img/Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png",
+      "PackagePath": "staticwebassets/img/El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png",
+      "PackagePath": "staticwebassets/img/F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg",
+      "PackagePath": "staticwebassets/img/H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg",
+      "PackagePath": "staticwebassets/img/KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png",
+      "PackagePath": "staticwebassets/img/KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg",
+      "PackagePath": "staticwebassets/img/MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png",
+      "PackagePath": "staticwebassets/img/R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg",
+      "PackagePath": "staticwebassets/img/VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg",
+      "PackagePath": "staticwebassets/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg",
+      "PackagePath": "staticwebassets/img/WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png",
+      "PackagePath": "staticwebassets/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png"
     },
     {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/apollo_logo-removebg-preview.png",
@@ -29,8 +113,36 @@
       "PackagePath": "staticwebassets/img/background.jpg"
     },
     {
-      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg",
-      "PackagePath": "staticwebassets/img/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9EWGJDUS9NQUZ6SWNEWGJDUS8xL3AuanBn.jpg"
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg",
+      "PackagePath": "staticwebassets/img/btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg",
+      "PackagePath": "staticwebassets/img/cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg",
+      "PackagePath": "staticwebassets/img/cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp",
+      "PackagePath": "staticwebassets/img/dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg",
+      "PackagePath": "staticwebassets/img/dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg",
+      "PackagePath": "staticwebassets/img/f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp",
+      "PackagePath": "staticwebassets/img/g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg",
+      "PackagePath": "staticwebassets/img/gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg"
     },
     {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/google.png",
@@ -81,6 +193,38 @@
       "PackagePath": "staticwebassets/img/icons8-google-logo-20.png"
     },
     {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/image-1.webp",
+      "PackagePath": "staticwebassets/img/image-1.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/image-2.webp",
+      "PackagePath": "staticwebassets/img/image-2.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/image-3.webp",
+      "PackagePath": "staticwebassets/img/image-3.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/image-4.webp",
+      "PackagePath": "staticwebassets/img/image-4.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/image-5.webp",
+      "PackagePath": "staticwebassets/img/image-5.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp",
+      "PackagePath": "staticwebassets/img/jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png",
+      "PackagePath": "staticwebassets/img/luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg",
+      "PackagePath": "staticwebassets/img/pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg"
+    },
+    {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png",
       "PackagePath": "staticwebassets/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png"
     },
@@ -105,8 +249,24 @@
       "PackagePath": "staticwebassets/img/topalbum.png"
     },
     {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg",
+      "PackagePath": "staticwebassets/img/u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp",
+      "PackagePath": "staticwebassets/img/uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp"
+    },
+    {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/user-classification(1).png",
       "PackagePath": "staticwebassets/img/user-classification(1).png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png",
+      "PackagePath": "staticwebassets/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/js/script.js",
+      "PackagePath": "staticwebassets/js/script.js"
     },
     {
       "Id": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/wwwroot/js/site.js",

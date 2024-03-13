@@ -51,5 +51,30 @@ namespace ApolloStage.Models
 
         public ICollection<FavoriteAlbum> FavoriteAlbum { get; set; }
 
+
+        public string Morada { get; set; }
+
+        public string Cidade { get; set; }
+
+        public string CodigoPostal { get; set; }
+
+        public string Pais { get; set; }
+
+        public string Numerotel { get; set; }
+
+
+
+        public string NomeEntrega { get; set; }
+
+        public string MoradaEntrega { get; set; }
+
+        public string CidadeEntrega { get; set; }
+
+        public string CodigoPostalEntrega { get; set; }
+
+        public string PaisEntrega { get; set; }
+
+        public string NumerotelEntrega { get; set; }
+        public bool ConfirmoEnvio { get; set; }
     }
 }

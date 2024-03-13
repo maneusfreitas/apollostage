@@ -3,9 +3,9 @@ using System.Net.Mail;
 
 public class EmailService
 {
-    private readonly string _emailFrom = "lisboabot@gmail.com"; // Substitua pelo seu e-mail remetente
-    private readonly string _password = "wnnz lzgn ydgr lvcj"; // Substitua pela senha do seu e-mail remetente
-    private readonly string _smtpServer = "smtp.gmail.com"; // Substitua pelo seu servidor SMTP
+    private readonly string _emailFrom = "lisboabot@gmail.com"; 
+    private readonly string _password = "duhq reic pesx ctfi"; 
+    private readonly string _smtpServer = "smtp.gmail.com"; 
 
     public async Task SendCodeByEmailAsync(string toEmail, string code)
     {
