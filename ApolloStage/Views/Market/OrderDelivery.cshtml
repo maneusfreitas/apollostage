@@ -1,0 +1,83 @@
+﻿@using System.Security.Claims;
+@{
+    string id = TempData["id"]?.ToString();
+    string email = TempData["email"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Market";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Delivery Order Address</h1>
+    </div>
+    <input hidden name="id" value="@id" />
+    <input hidden name="email" value="@email" />
+    <form method="post" action="@Url.Action("SubmitDeliveryOrder", "Market")">
+        <div class="form-group">
+            <h2>Dados de Faturação (Obrigatório)</h2>
+            <h5>Estes dados também servirão para o envio da encomenda casa queria adicionar uma morada alternetiva preencha o formulário opcional</h5>
+            <label for="Morada">Morada:</label>
+            <input type="text" class="form-control" id="Morada" name="Morada" required>
+
+            <label for="Cidade">Cidade:</label>
+            <input type="text" class="form-control" id="Cidade" name="Cidade" required>
+
+            <label for="CodigoPostal">Código Postal:</label>
+            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required>
+
+            <label for="Pais">País:</label>
+            <input type="text" class="form-control" id="Pais" name="Pais" required>
+
+            <label for="Numerotel">Número de Telefone:</label>
+            <input type="text" class="form-control" id="Numerotel" name="Numerotel" required>
+        </div>
+
+        <div class="form-group" id="zona2" style="display: none;">
+            <h2>Dados de Entrega (Opcional)</h2>
+            <label for="NomeEntrega">Nome do Destinatário:</label>
+            <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega">
+
+            <label for="MoradaEntrega">Morada de Entrega:</label>
+            <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega">
+
+            <label for="CidadeEntrega">Cidade de Entrega:</label>
+            <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega">
+
+            <label for="CodigoPostalEntrega">Código Postal de Entrega:</label>
+            <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega">
+
+            <label for="PaisEntrega">País de Entrega:</label>
+            <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega">
+
+            <label for="NumerotelEntrega">Número de Telefone de Entrega:</label>
+            <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega">
+            <div class="form-check">
+                <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio" checked>
+                <label class="form-check-label" for="ConfirmoEnvio">
+                    Confirmo que pretendo o envio para a morada opcional
+                </label>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="toggleZona2">Adicionar Endereço de Entrega Opcional</button>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#toggleZona2').click(function () {
+        $('#zona2').toggle();
+    });</script>
+<script>$(document).ready(function () {
+        $('#ConfirmoEnvio').change(function () {
+            var isChecked = $(this).prop('checked');
+            if (isChecked)
+                $(this).val('true');
+            else
+                $(this).val('false');
+            console.log(isChecked);
+        });
+    });</script>

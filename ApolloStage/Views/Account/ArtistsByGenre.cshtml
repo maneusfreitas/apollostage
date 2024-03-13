@@ -1,0 +1,38 @@
+﻿@model List<Album>  
+
+<h2>Artists by Genre</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var artist in Model)
+        {
+            <li>
+                <strong>@artist.name</strong>
+                <p>ID: @artist.id</p>
+                <p>External URL: <a href="@artist.external_urls.spotify">@artist.external_urls.spotify</a></p>
+                <p>Album Type: @artist.album_type</p>
+                <p>Available Markets: @string.Join(", ", artist.available_markets)</p>
+                <p>Href: @artist.href</p>
+                <p>Images:</p>
+                <ul>
+                    @foreach (var image in artist.images)
+                    {
+                        <li>
+                            <img src="@image.URL" alt="Artist Image">
+                        </li>
+                    }
+                </ul>
+                <p>Name: @artist.name</p>
+                <p>Release Date: @artist.ReleaseDate</p>
+                <p>Release Date Precision: @artist.release_date</p>
+                <p>Type: @artist.type</p>
+                <p>URI: @artist.uri</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No artists found for the specified genre.</p>
+}
