@@ -26,7 +26,7 @@ namespace ApolloStageTest
             // Arrange
             var httpClientMock = new Mock<IHttpClientHelper>();
             var singletonMock = new Mock<ISingleton>();
-            var controller = new HomeController(null,null,null,null);
+            var controller = new HomeController(null, null, null, null);
 
             var expectedAlbumList = new List<Album>
             {
@@ -53,7 +53,7 @@ namespace ApolloStageTest
             // Arrange
             var httpClientMock = new Mock<IHttpClientHelper>();
             var singletonMock = new Mock<ISingleton>();
-            var controller = new HomeController(null, null, null,null);
+            var controller = new HomeController(null, null, null, null);
 
             httpClientMock.Setup(client => client.SendAysnc(It.IsAny<string>(), It.IsAny<string>()))
                 .ThrowsAsync(new HttpRequestException("Authentication failed."));
@@ -67,7 +67,7 @@ namespace ApolloStageTest
         public void Privacy_ReturnsViewResult()
         {
             // Arrange
-            var controller = new HomeController(null, null, null,null);
+            var controller = new HomeController(null, null, null, null);
 
             // Act
             var result = controller.Privacy();

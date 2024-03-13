@@ -1,0 +1,845 @@
+﻿@using System.Security.Claims;
+@using ApolloStage.Models.Product
+@model ApolloStage.Models.Product.Tshirt
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "False")
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    else
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <div class="row d-flex mt-5">
+        <div class="col-md-6">
+            <input hidden type="text" id="theimage" name="theimage" value="~/@Model.Images1" />
+            <input hidden type="text" id="pname" name="pname" value="@Model.Title" />
+            <img src="~/@Model.Images1" name="~/@Model.Images1" alt="T-shirt Image" class="img-fluid" height="600px" width="600px" style="max-height:600px; max-width:600px">
+            @if (@Model.Images2 != "null")
+            {
+                <div>
+                    <img src="~/@Model.Images2" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
+                </div>}
+            @if (@Model.Images3 != "null")
+            {
+                <div>
+                    <img src="~/@Model.Images3" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
+                </div>}
+            @if (@Model.Images4 != "null")
+            {
+                <div>
+                    <img src="~/@Model.Images4" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
+                </div>}
+        </div>
+    
+        <div class="col-md-6 mt-md mt-3">
+            <span style="color:grey; font-size:20px">In association with</span>
+            <span style="color:rgb(49, 166, 214); font-size:20px">@Model.Association</span>
+            <br />
+            <span style="font-size:60px" class="mb-0">@Model.Title</span>
+            <br />
+            <span style="font-size:45px" class="mt-0"><b>@Model.Price.ToString("N2") €</b></span>
+            <br />
+            <div class="form-group mt-4">
+                <label for="tshirtColor"></label>
+                <div class="rating">
+                    <span id="red" style="border: 6px solid rgb(49, 166, 214);"></span>
+                    <span id="black"></span>
+                    <span id="white"></span>
+                </div>
+            </div>
+            <input hidden type="text" id="inputColor" name="color" value="red">
+            <input hidden type="text" id="inputSize" name="size" value="XS">
+            <input hidden type="text" id="inputName" name="size" value="@Model.Title.Replace(" ", "-")-XS-red">
+            <div class="mt-5 ">
+                <a href="#" class="text-decoration-underline text-primary mt-5" style=" font-size:20px;color:rgb(0, 151, 178)!important;">Size Guide</a>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="tshirtSize"></label>
+                <select class="form-control" id="tshirtSize" name="tshirtSize" required>
+                    <option>Choose your size</option>
+                    <option selected value="XS">Extra Small</option>
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">Extra Large</option>
+                </select>
+                <!-- <button type="button" data-name="@Model.Title.Split(' ').FirstOrDefault();" data-price="@Convert.ToUInt32(@Model.Price)" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5"> Add to Shopping car</button>
+
+            <button type="button" data-name="@Model.Title.Split(' ').Skip(1).FirstOrDefault();" data-price="@Convert.ToUInt32(@Model.Price)" data-size="grande"
+                    data-color="azul" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5">
+                Add to Shopping car
+            </button> -->
+                <button type="button" data-name="@Model.Title.Replace(" ", "-")" data-price="@Convert.ToDouble(@Model.Price)" data-size="grande"
+                        data-color="azul" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5">
+                    Add to Shopping car
+                </button>
+            </div>
+
+            <p class=" mt-5 " style="text-align: justify;">@Model.Description</p>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="show-cart table">
+                </table>
+                <div class="grand-total">Total price: <span class="total-cart"></span>€</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- Botão de checkout -->
+                <button style="display:none;" type="button" id="checkoutBtn" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src='https://code.jquery.com/jquery-3.6.3.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js'></script>
+<style>
+    .fa-shopping-cart:before {
+        margin-right: 10px;
+    }
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545 !important;
+        border-color: #dc3545;
+    }
+    button.btn.btn-success.my-2.my-sm-0 {
+        position: absolute;
+        right: 20px;
+        top: 120px;
+    }
+    #red {
+        background-color: red;
+        border: 3px solid black;
+    }
+
+    #black {
+        background-color: black;
+        border: 3px solid black;
+    }
+
+    #white {
+        background-color: white;
+        border: 3px solid black;
+    }
+
+    .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+        margin-left: 5px!important;
+    }
+    .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: left;
+    }
+
+        .rating > span {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+            .rating > span:hover {
+                cursor: pointer;
+            }
+            /* .rating > span:hover:before, */
+            .rating > span#red:hover ~ span:before,
+            .rating > span#blue:hover ~ span:before,
+            .rating > span#green:hover ~ span:before,
+            .rating > span#yellow:hover ~ span:before, {
+                content: "";
+                position: absolute;
+                left: 0;
+                background-color: white;
+                opacity: .25;
+                width: 10rem;
+                height: 10rem;
+            }
+
+            .rating > span.selected {
+                border: 4px solid "4px solid rgb(49, 166, 214)";
+            }
+
+    .btn-custom-success {
+        background-color: #00BF63; /* Esta é uma cor verde mais clara */
+        border-color: #00BF63;
+    }
+
+    @@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+    :root {
+        --bodyFonts: 'Josefin Sans', sans-serif;
+        --pinkColor: #5557F3;
+        --titleColor: #000000;
+        --bodyColor: #666666;
+        --lightblueColor: #8D99FF;
+        --whiteColor: #ffffff;
+        --fontSize: 16px;
+        --transition: .5s;
+    }
+
+
+    .pt-100 {
+        padding-top: 100px;
+    }
+
+    .pt-45 {
+        padding-top: 45px;
+    }
+
+    #not_found {
+        text-align: center;
+        color: red;
+    }
+
+    .grand-total {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .table {
+        margin-bottom: 0 !important;
+    }
+
+    .default-btn {
+        padding: 12px 25px 10px;
+        text-align: center;
+        color: var(--whiteColor) !important;
+        font-size: var(--fontSize);
+        transition: var(--transition);
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 8px;
+        z-index: 0;
+        background: var(--pinkColor);
+        overflow: hidden;
+        white-space: nowrap;
+        border: 0;
+    }
+
+        .default-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 550px;
+            height: 550px;
+            margin: auto;
+            background: var(--lightblueColor);
+            border-radius: 8px;
+            z-index: -1;
+            transform-origin: top center;
+            transform: translateX(-50%) translateY(-5%) scale(0.4);
+            transition: transform .9s;
+        }
+
+        .default-btn:hover {
+            color: var(--whiteColor) !important;
+        }
+
+            .default-btn:hover:before {
+                transition: transform 1s;
+                transform: translateX(-45%) translateY(0) scale(1);
+                transform-origin: bottom center;
+            }
+
+
+
+    .featured-area {
+        background-color: #EDEFF9;
+    }
+
+    .featured-tab-area .tabs {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        float: right;
+    }
+
+        .featured-tab-area .tabs li {
+            display: inline-block;
+            line-height: initial;
+            margin-right: 20px;
+        }
+
+            .featured-tab-area .tabs li a {
+                display: inline-block;
+                position: relative;
+                color: var(--titleColor);
+                padding: 13px 26px 10px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            .featured-tab-area .tabs li.active a {
+                background-color: var(--pinkColor);
+                color: var(--whiteColor);
+            }
+
+            .featured-tab-area .tabs li.current a {
+                background-color: var(--pinkColor);
+                color: var(--whiteColor);
+            }
+
+    .featured-tab-area-ml .tabs {
+        margin-top: 0 !important;
+        float: left;
+    }
+
+    .tab .tabs_item {
+        display: none;
+    }
+
+        .tab .tabs_item:first-child {
+            display: block;
+        }
+
+    .featured-item {
+        margin-bottom: 30px;
+        background-color: var(--whiteColor);
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+        .featured-item .featured-item-img {
+            position: relative;
+            z-index: 1;
+            transition: 0.3s linear;
+            overflow: hidden;
+        }
+
+            .featured-item .featured-item-img a {
+                display: block;
+            }
+
+                .featured-item .featured-item-img a img {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    border: 4px solid var(--whiteColor);
+                    transition: 0.3s linear;
+                }
+
+                    .featured-item .featured-item-img a img:hover {
+                        scale: 1.08;
+                    }
+
+        .featured-item .content {
+            padding: 20px 15px;
+        }
+
+            .featured-item .content h3 {
+                margin-bottom: 10px;
+            }
+
+                .featured-item .content h3 a {
+                    color: var(--titleColor);
+                    -webkit-transition: var(--transition);
+                    transition: var(--transition);
+                    font-weight: bold;
+                }
+
+            .featured-item .content .content-in {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 12px 10px;
+                border-radius: 3px;
+            }
+
+                .featured-item .content .content-in i {
+                    color: #ffcc00;
+                }
+
+                .featured-item .content .content-in span {
+                    font-size: 15px;
+                    color: var(--titleColor);
+                    font-weight: 500;
+                }
+
+                .featured-item .content .content-in h4 {
+                    font-size: 15px;
+                    color: var(--titleColor);
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+
+            .featured-item .content .featured-content-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 0 0;
+            }
+
+    .featured-tab-area .tabs li {
+        margin-right: 5px;
+    }
+
+    #staticBackdropLabel {
+        font-weight: bold;
+    }
+    /* responsive css */
+    @@media only screen and (max-width: 767px) {
+        .featured-tab-area .tabs {
+            margin: 20px 0 0;
+            float: none;
+            text-align: left;
+        }
+
+            .featured-tab-area .tabs li:last-child {
+                margin-right: 5px;
+            }
+
+            .featured-tab-area .tabs li a {
+                font-size: 14px;
+                padding: 12px 16px 9px;
+            }
+
+        .featured-item .content {
+            padding: 20px 10px;
+        }
+
+            .featured-item .content h3 {
+                font-size: 19px;
+            }
+
+            .featured-item .content .content-in span {
+                font-size: 14px;
+            }
+
+            .featured-item .content .content-in h4 {
+                font-size: 14px;
+            }
+
+            .featured-item .content .featured-content-list {
+                padding: 12px 0 0;
+            }
+    }
+
+    @@media only screen and (min-width: 576px) and (max-width: 767px) {
+        .featured-item .content {
+            padding: 20px 15px;
+        }
+    }
+
+    @@media only screen and (min-width: 768px) and (max-width: 991px) {
+        .featured-tab-area .tabs li a {
+            font-size: 14px;
+            padding: 12px 16px 9px;
+        }
+
+        .featured-item .featured-item-img .featured-user {
+            top: 20px;
+        }
+
+            .featured-item .featured-item-img .featured-user .featured-user-option img {
+                margin-right: 7px;
+                width: 25px !important;
+                height: 25px !important;
+            }
+
+            .featured-item .featured-item-img .featured-user .featured-user-option span {
+                font-size: 13px;
+                padding-top: 2px;
+            }
+
+        .featured-item .featured-item-img .featured-item-clock {
+            font-size: 18px;
+        }
+
+        .featured-item .content {
+            padding: 20px 10px;
+        }
+
+            .featured-item .content h3 {
+                font-size: 19px;
+            }
+
+            .featured-item .content .content-in span {
+                font-size: 14px;
+            }
+
+            .featured-item .content .content-in h4 {
+                font-size: 14px;
+            }
+
+            .featured-item .content .featured-content-list {
+                padding: 12px 0 0;
+            }
+
+                .featured-item .content .featured-content-list p {
+                    font-size: 14px;
+                }
+
+                    .featured-item .content .featured-content-list p i {
+                        font-size: 16px;
+                    }
+    }
+
+    @@media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .featured-tab-area .tabs li {
+            margin-right: 5px;
+        }
+
+            .featured-tab-area .tabs li a {
+                font-size: 14px;
+                padding: 12px 16px 9px;
+            }
+
+        .featured-item .content h3 {
+            font-size: 16px;
+        }
+    }
+
+    @@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+        .featured-tab-area .tabs li a {
+            font-size: 14px;
+            padding: 12px 16px 9px;
+        }
+
+        .featured-item .content {
+            padding: 20px 20px;
+        }
+
+            .featured-item .content .content-in {
+                padding: 10px 5px 8px;
+            }
+
+            .featured-item .content h3 {
+                font-size: 18px;
+            }
+    }
+    .modal-dialog.modal-dialog-centered {
+        max-width: 800px !important;
+    }
+    p.sku {
+        font-size: 10px;
+        margin-top: -35px;
+    }
+</style>
+<script>//localStorage.removeItem("shoppingCart");
+    $(document).ready(function () {
+        $(".rating > span").click(function () {
+            // Remove a classe selected e a borda azul dos outros quadros de cor
+            $(".rating > span").not(this).removeClass("selected").css("border", "");
+            // Adiciona a classe selected e a borda azul ao quadro clicado com 4px
+            $(this).addClass("selected").css("border", "6px solid rgb(49, 166, 214)");
+        });
+    });</script>
+<script>
+
+    var shoppingCart = (function () {
+
+        cart = [];
+
+        function Item(name, price, count, size, color,image,pname) {
+            this.name = name;
+            this.price = price;
+            this.count = count;
+            this.size = size;
+            this.color = color;
+            this.image = image;
+            this.pname = pname;
+        }
+
+        // Save cart
+        function saveCart() {
+            localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        }
+
+        // Load cart
+        function loadCart() {
+            cart = JSON.parse(localStorage.getItem('shoppingCart'));
+        }
+        if (localStorage.getItem("shoppingCart") != null) {
+            loadCart();
+        }
+
+
+        var obj = {};
+
+        // Add to cart
+        obj.addItemToCart = function (name, price, count, size, color, image,pname) {
+            for (var item in cart) {
+                if (cart[item].name === name) {
+                    cart[item].count++;
+                    saveCart();
+                    return;
+                }
+            }
+            var item = new Item(name, price, count, size, color, image, pname);
+            cart.push(item);
+            saveCart();
+        }
+        // Set count from item
+        obj.setCountForItem = function (name, count) {
+            for (var i in cart) {
+                if (cart[i].name === name) {
+                    cart[i].count = count;
+                    break;
+                }
+            }
+        };
+        // Remove item from cart
+        obj.removeItemFromCart = function (name) {
+            for (var item in cart) {
+                if (cart[item].name === name) {
+                    cart[item].count--;
+                    if (cart[item].count === 0) {
+                        cart.splice(item, 1);
+                    }
+                    break;
+                }
+            }
+            saveCart();
+        }
+
+        // Remove all items from cart
+        obj.removeItemFromCartAll = function (name) {
+            for (var item in cart) {
+                if (cart[item].name === name) {
+                    cart.splice(item, 1);
+                    break;
+                }
+            }
+            saveCart();
+        }
+
+        // Clear cart
+        obj.clearCart = function () {
+            cart = [];
+            saveCart();
+        }
+
+        // Count cart
+        obj.totalCount = function () {
+            var totalCount = 0;
+            for (var item in cart) {
+                totalCount += cart[item].count;
+            }
+            return totalCount;
+        }
+
+        // Total cart
+        obj.totalCart = function () {
+            var totalCart = 0;
+
+            for (var item in cart) {
+                let pricex = cart[item].price.replace(',', '.');
+                totalCart += parseFloat(pricex) * cart[item].count;
+            }
+            if (totalCart > 0) {
+                document.getElementById("checkoutBtn").style.display = "block";
+            } else {
+                document.getElementById("checkoutBtn").style.display = "none";
+            }
+
+            return Number(totalCart.toFixed(2));
+        }
+
+        // List cart
+        obj.listCart = function () {
+            var cartCopy = [];
+            for (i in cart) {
+                item = cart[i];
+                itemCopy = {};
+                for (p in item) {
+                    itemCopy[p] = item[p];
+                }
+                let pricex = item.price.replace(',', '.');
+                itemCopy.total = Number(parseFloat(pricex) * item.count).toFixed(2);
+                cartCopy.push(itemCopy)
+            }
+            return cartCopy;
+        }
+        return obj;
+    })();
+
+
+    // Add item
+    $('.default-btn').click(function (event) {
+        // alert('working');
+        event.preventDefault();
+        var name = document.getElementById("inputName").value;
+        var price = $(this).data('price');
+        var size = document.getElementById("inputSize").value;
+        var color = document.getElementById("inputColor").value;
+        var image = document.getElementById("theimage").value;
+        var pname = document.getElementById("pname").value;
+        shoppingCart.addItemToCart(name, price, 1, size, color, image, pname);
+        displayCart();
+    });
+
+    // Clear items
+    $('.clear-cart').click(function () {
+        shoppingCart.clearCart();
+        displayCart();
+    });
+
+
+    function displayCart() {
+        var cartArray = shoppingCart.listCart();
+        var output = "";
+
+        for (var i in cartArray) {
+            let meuArray = cartArray[i].name.split('-');
+            let ultimoElemento = meuArray[meuArray.length - 1];
+            let cor = "";
+            if (ultimoElemento == "black")
+                cor = '<span style="background-color: black; width: 40px;"></span>';
+            if (ultimoElemento == "white")
+                cor = '<span style="background-color: white;width: 40px; "></span>';
+            if (ultimoElemento == "red")
+                cor = '<span style="background-color: red; width: 40px;"></span>';
+            let penultimoElemento = meuArray[meuArray.length - 2];
+            var link = cartArray[i].image.replace(/~/g, '');
+            output += "<tr>"
+                + "<td><h5>" + cartArray[i].pname + "</h5></br><p class='sku'><strong>SKU</strong>:" + cartArray[i].name + "</p></td>"
+             
+                + "<td><div class='input-group'>"
+                + '<img src="' + link + '" alt="T-shirt Image" height="40px" width="40px" style="max-height:40px; max-width:40px;margin-left: 5px;margin - right: 5px;">'
+                + cor + '<span style="border: 2px solid rgb(49, 166, 214);width: 40px;text-align: center;margin-left: 5px;margin - right: 5px;">' + penultimoElemento + '</span>'
+                + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "' min='0'>"
+                + "</div></td>"
+                + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+                + " = "
+                + "<td>" + cartArray[i].total + "€</td>"
+                + "</tr>";
+        }
+        $('.show-cart').html(output);
+        $('.total-cart').html(shoppingCart.totalCart());
+        $('.total-count').html(shoppingCart.totalCount());
+    }
+
+    // Delete item button
+
+    $('.show-cart').on("click", ".delete-item", function (event) {
+        var name = $(this).data('name');
+        shoppingCart.removeItemFromCartAll(name);
+        displayCart();
+    })
+
+    // Item count input
+    $('.show-cart').on("change", ".item-count", function (event) {
+        var name = $(this).data('name');
+        var count = Number($(this).val());
+        shoppingCart.setCountForItem(name, count);
+        displayCart();
+    });
+    displayCart();
+
+    //////// ui script start /////////
+    // Tabs Single Page
+    $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+    $('.tab ul.tabs li a').on('click', function (g) {
+        var tab = $(this).closest('.tab'),
+            index = $(this).closest('li').index();
+        tab.find('ul.tabs > li').removeClass('current');
+        $(this).closest('li').addClass('current');
+        tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+        tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+        g.preventDefault();
+    });
+
+    // search function
+    $('#search_field').on('keyup', function () {
+        var value = $(this).val();
+        var patt = new RegExp(value, "i");
+
+        $('.tab_content').find('.col-lg-3').each(function () {
+            var $table = $(this);
+
+            if (!($table.find('.featured-item').text().search(patt) >= 0)) {
+                $table.not('.featured-item').hide();
+            }
+            if (($table.find('.col-lg-3').text().search(patt) >= 0)) {
+                $(this).show();
+                document.getElementById('not_found').style.display = 'none';
+            } else {
+                document.getElementById("not_found").innerHTML = " Product not found..";
+                document.getElementById('not_found').style.display = 'block';
+            }
+
+        });
+
+    });</script>
+
+<script>$(document).ready(function () {
+    $('.rating span').click(function () {
+        var size = document.getElementById("inputSize").value;
+        var name = $('.default-btn').data('name');
+        var selectedColor = $(this).attr('id'); 
+        $('#inputColor').val(selectedColor);
+        var colorId = document.getElementById("inputColor").value;
+        $('#inputName').val(name + "-" + size + "-" + colorId);
+        });
+    });</script>
+<script>$(document).ready(function () {
+        $('#tshirtSize').change(function () {
+            var selectedSize = $(this).val();
+            var name = $('.default-btn').data('name');
+            var colorId = document.getElementById("inputColor").value;
+            $('#inputSize').val(selectedSize);
+            var size = document.getElementById("inputSize").value;
+            $('#inputName').val(name + "-" + size + "-" + colorId);
+
+        });
+    });</script>
+
+<script>
+    document.getElementById("checkoutBtn").addEventListener("click", function () {
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+
+        var cartContent = shoppingCart.listCart();
+
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ShoppingCart", "Market")',
+            data: { cartContent: JSON.stringify(cartContent) },
+            success: function (response) {
+                console.log(response);
+                localStorage.removeItem("shoppingCart");
+                window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email;
+         },
+            error: function (xhr, status, error) {
+                console.error("Erro no post:", error);
+            }
+        });
+    });
+</script>

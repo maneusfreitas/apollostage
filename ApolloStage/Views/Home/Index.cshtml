@@ -9,9 +9,9 @@
 @{
     ViewData["Title"] = "Home Page";
     @if (meu == "False")
-            Layout = "~/Views/Shared/_Layout.cshtml";
-        else
-            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    else
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <head>
@@ -38,7 +38,10 @@
                 with Drake, showing the loyalty and credibility of his sound. Available on the stream platforms and music stores,
                 go get it and enjoy the new work of art!
             </p>
-         
+            <div class="container mt-5">
+         <button class="btn btn-primary" id="openModalBtn">help</button>
+     </div>
+
         </div>
     </div>
 
@@ -47,7 +50,16 @@
     <br />
     <br />
     <br />
-
+    <!-- Modal for the video -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Pop-up Arrastável</h2>
+            <iframe width="80%" height="80%" style="margin: auto;"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0">
+            </iframe>
+        </div>
+    </div>
 }
 
 @if (User.Identity.IsAuthenticated)
@@ -258,17 +270,17 @@
 
 <script>function carouselChanged(event) {
         var currentItemIndex = event.item.index + 2;
-        $(".custom-carousel .item").removeClass("active"); // Remove a classe 'active' de todos os itens
-        $(".custom-carousel .item").eq(currentItemIndex).addClass("active"); // Adiciona a classe 'active' ao item atual
+        $(".custom-carousel .item").removeClass("active"); 
+        $(".custom-carousel .item").eq(currentItemIndex).addClass("active"); 
     }
 
     $(".custom-carousel").owlCarousel({
         autoWidth: true,
         loop: true,
-        autoplay: true, // Ativa o autoplay
-        autoplayTimeout: 5000, // Define o intervalo em milissegundos (10 segundos)
-        autoplayHoverPause: true, // Pausa o autoplay quando o mouse está sobre o carrossel
-        onChanged: carouselChanged // Chama a função 'carouselChanged' quando o carrossel muda de slide
+        autoplay: true, 
+        autoplayTimeout: 5000, 
+        autoplayHoverPause: true, 
+        onChanged: carouselChanged 
 
     });
     $(document).ready(function () {
@@ -277,3 +289,111 @@
             $(this).toggleClass("active");
         });
     });</script>
+
+
+
+
+<style>    // daqui param baixo é bdo pop-up (modal for video)
+    /* Estilo para o pop-up */
+    #myModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1055;
+        display: none;
+        width: 400px !important;
+        height: 350px !important;
+        overflow-x: hidden;
+        overflow-y: auto;
+        outline: 0;
+    }
+
+    /* Conteúdo do pop-up */
+    .modal-content {
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 400px;
+        height: 350px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 17px;
+        margin: 10px;
+        position: absolute;
+        height: 17px;
+        right: -3px;
+        top: -17px;
+        /* margin-top: 28px; */
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+</style>
+<script>
+    document.getElementById('openModalBtn').addEventListener('click', function () {
+        document.getElementById('myModal').style.display = 'block';
+    });
+
+    dragElement(document.getElementById('myModal'));
+
+    function dragElement(element) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(element.id + 'header')) {
+            document.getElementById(element.id + 'header').onmousedown = dragMouseDown;
+        } else {
+            element.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            element.style.top = (element.offsetTop - pos2) + 'px';
+            element.style.left = (element.offsetLeft - pos1) + 'px';
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    document.getElementById('closeModalBtn').addEventListener('click', function () {
+        document.getElementById('myModal').style.display = 'none';
+    });</script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            var modal = document.querySelector("#myModal");
+            if (modal) {
+                modal.style.width = "400px";
+                modal.style.height = "350px";
+                modal.style.setProperty("width", "400px", "important");
+                modal.style.setProperty("height", "350px", "important");
+            }
+        }, 2000); 
+    });
+</script>

@@ -68,9 +68,40 @@
             </form>
         </li>
 
-    }
+        <li class="nav-item mr-3">
+            <button type="button" class="btn btn-success" data-toggle="modal"
+                    data-target="#staticBackdrop">
+                <i class="fa fa-shopping-cart total-count"></i>
+            </button>
+        </li>
 
-</ul>
+            }
+
+    </ul>
 
     
+<style>
+    button.btn.btn-success i {
+        color: black;
+        font-size: 25px;
+    }
 
+    .btn-success {
+        color: #fff;
+        background-color: white;
+        border-color: white;
+    }
+
+        .btn-success:hover {
+            color: #fff;
+            background-color: white;
+            border-color: grey;
+        }
+
+        .btn-check:focus + .btn-success, .btn-success:focus {
+            color: #fff !important;
+            background-color: white !important;
+            border-color: grey !important;
+            box-shadow: none !important;
+        }
+</style>

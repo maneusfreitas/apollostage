@@ -1,24 +1,37 @@
-﻿using ApolloStage.Data;
+﻿using System.Security.Claims;
+using ApolloStage;
+using ApolloStage.Controllers;
+using ApolloStage.Data;
+using ApolloStage.Models;
 using ApolloStageFirst.Controllers;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Moq;
+using Newtonsoft.Json;
 
 namespace ApolloStageTest
 {
-    public class MarketControllerTest : IClassFixture<ApplicationDbContextFixture>
+    public class MarketControllerTest
     {
-        private readonly ApplicationDbContext _context;
-
-        public MarketControllerTest(ApplicationDbContextFixture contextFixture)
-        {
-            _context = contextFixture.DbContext;
-        }
 
         [Fact]
-        public void Index()
+        public async Task Market_ReturnsCorrectView()
         {
-            var controller = new MarketController(null, _context, null);
-            var result = controller.market();
-            Assert.IsType<ViewResult>(result);
+            // Arrange
+            var controller = new MarketController(null,null,null,null);
+
+            // Act
+            var result = await controller.market();
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Equal("index", viewResult.ViewName);
         }
     }
 }

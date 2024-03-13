@@ -97,7 +97,7 @@ namespace ApolloStage.Migrations
                     b.ToTable("FavoriteAlbum");
                 });
 
-            modelBuilder.Entity("ApolloStage.Models.Product.Product", b =>
+            modelBuilder.Entity("ApolloStage.Models.Product.Mug", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -118,17 +118,95 @@ namespace ApolloStage.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("Mug");
+                });
+
+            modelBuilder.Entity("ApolloStage.Models.Product.ProductOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TshirtColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TshirtCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("TshirtPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TshirtSize")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TshirtTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserMail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("state")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductOrder");
+                });
+
+            modelBuilder.Entity("ApolloStage.Models.Product.Tshirt", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Association")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Images1")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Images2")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Images3")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Images4")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tshirt");
                 });
 
             modelBuilder.Entity("ApolloStage.Models.ReviewReports", b =>
@@ -148,6 +226,9 @@ namespace ApolloStage.Migrations
                     b.Property<string>("causa")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("count")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("descricao")
                         .IsRequired()
@@ -365,7 +446,23 @@ namespace ApolloStage.Migrations
                     b.Property<bool>("Admin")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CidadeEntrega")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CodigoPostal")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CodigoPostalEntrega")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -374,6 +471,9 @@ namespace ApolloStage.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("ConfirmedEmail")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ConfirmoEnvio")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Country")
@@ -387,7 +487,35 @@ namespace ApolloStage.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Morada")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MoradaEntrega")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeEntrega")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Numerotel")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NumerotelEntrega")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pais")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PaisEntrega")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

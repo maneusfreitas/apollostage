@@ -12,6 +12,7 @@ using System.Security.Claims;
 using ApolloStage.Data;
 using Microsoft.AspNetCore.Identity;
 using ApolloStage.Models.Product;
+using ApolloStage.Migrations;
 
 namespace ApolloStage.Controllers;
 
@@ -87,10 +88,18 @@ public class HomeController : Controller
         {
             if (searchType == "Products")
             {
-                List<Product> products = _context.Product.Where(p => p.title.Contains(value)).ToList();
-                return View("~/Views/Market/Index.cshtml", products);
+                List<Tshirt> tshirts = _context.Tshirt.Where(p => p.Title.Contains(value)).ToList();
+                List<Mug> mugs = _context.Mug.Where(p => p.title.Contains(value)).ToList();
+
+                MarketProductsModel viewModel = new MarketProductsModel
+                {
+                    Tshirts = tshirts,
+                    Mugs = mugs
+                };
+
+                return View("~/Views/Market/Index.cshtml", viewModel);
             }
-                string searchUrl = $"{baseUrl}/search?q={id}&type=artist&offset=0&limit=11";
+            string searchUrl = $"{baseUrl}/search?q={id}&type=artist&offset=0&limit=11";
 
             var response = await httpClientHelper.SendAysnc(searchUrl, SpotifyService.AccessToken);
             var searchResult = JsonConvert.DeserializeObject<SearchResult>(response);
@@ -105,7 +114,7 @@ public class HomeController : Controller
                     string albumsUrl = $"{baseUrl}/artists/{artistId}/albums?limit=10";
                     var albumsResponse = await httpClientHelper.SendAysnc(albumsUrl, SpotifyService.AccessToken);
                     var albumsResult = JsonConvert.DeserializeObject<Albums>(albumsResponse);
-                 
+
                     List<Album> albumList = albumsResult.items;
                     var userEmail = User.FindFirst(ClaimTypes.Email).Value;
                     foreach (var album in albumList)
@@ -141,11 +150,18 @@ public class HomeController : Controller
 
                     string x = value.Trim();
                     TempData["artistName"] = "Albuns off: " + char.ToUpper(x[0]) + x.Substring(1);
+                    var admin = await _userManager.FindByEmailAsync(userEmail);
+                    TempData["meu"] = admin.Admin;
                     return View("Artist", albumList);
                 }
             }
             else
+            {
+                var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+                var admin = await _userManager.FindByEmailAsync(userEmail);
+                TempData["meu"] = admin.Admin;
                 return View("ArtistList", artistList);
+            }
         }
         catch (Exception ex)
         {
@@ -213,7 +229,8 @@ public class HomeController : Controller
 
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync($"https://localhost:7164/GetArtist/{id}"))
+            //https://apollostage1.azurewebsites.net
+            using (var response = await httpClient.GetAsync($"https://localhost:7164/GetArtist/{id}"))
                 {
                     if (response.IsSuccessStatusCode)
                     {
