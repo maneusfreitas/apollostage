@@ -269,17 +269,17 @@
 
 
 
-    <div style="width: 60%; text-align: center; margin: auto;">
+    <div style="width: 50%; text-align: center; margin: auto;">
         <input type="hidden" name="albumId" value="@Model.AlbumsInfo[0].id" />
 
-        <div class="form-group">
+        <div class="form-group mt-4">
             <label for="reviewTitle">Título da Review:</label>
             <input type="text" id="reviewTitle" name="reviewTitle" class="form-control" placeholder="Insira o título da Review" />
         </div>
 
         <div class="form-group">
             <label for="reviewDescription">Descrição da Review:</label>
-            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review" ></textarea>
+            <textarea id="reviewDescription" name="reviewDescription" class="form-control" placeholder="Insira a descrição da Review"></textarea>
         </div>
 
         <div class="form-group">
@@ -290,13 +290,13 @@
             </select>
         </div>
 
-        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none">
+        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none mt-2">
             Enviar Review
         </button>
     </div>
 
 
-    <h1>Reviews do Álbum</h1>
+    <h1 class="mt-5">Reviews do Álbum</h1>
     <ul>
         @foreach (var review in Model.AlbumReviews)
         {
@@ -307,16 +307,16 @@
                 <strong>Recomendação:</strong> @review.reviewRecommendation<br />
                 @if (@review.itsMine == true || @meu == "True")
                 {
-                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none">
+                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none mt-2">
                         remover
                     </button>
                 }
                 @if (@review.itsMine != true)
                 {
-                    <button onclick="reportComment('@review.Id', '@review.UserMail', 'motivo_@review.Id', 'descricao_@review.Id')" class="btn btn-dark btnAdicionar shadow-none">
+                    <button onclick="reportComment('@review.Id', '@review.UserMail', 'motivo_@review.Id', 'descricao_@review.Id')" class="btn btn-dark btnAdicionar shadow-none mt-2">
                         reportar
                     </button>
-                    <label for="motivo_@review.Id">Selecione um motivo para relatar o comentário:</label>
+                    <label class="d-flex mt-2 mb-1" for="motivo_@review.Id">Selecione um motivo para relatar o comentário:</label>
                     <select id="motivo_@review.Id" name="motivo_@review.Id">
                         <option value="discurso de ódio">Discurso de ódio</option>
                         <option value="bullying">Bullying</option>
@@ -325,7 +325,8 @@
                         <option value="conteúdo inapropriado">Conteúdo inapropriado</option>
                     </select>
                     <br>
-                    <label for="descricao_@review.Id">Descreva o motivo do report:</label>
+                    <label class="mt-1 mb-1" for="descricao_@review.Id">Descreva o motivo do report:</label>
+                    <br>
                     <textarea id="descricao_@review.Id" name="descricao_@review.Id"></textarea>
                 }
             </li>

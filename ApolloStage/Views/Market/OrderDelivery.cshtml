@@ -1,4 +1,5 @@
 ﻿@using System.Security.Claims;
+@model ApolloStage.Models.ApplicationUser
 @{
     string id = TempData["id"]?.ToString();
     string email = TempData["email"]?.ToString();
@@ -15,60 +16,76 @@
     <input hidden name="id" value="@id" />
     <input hidden name="email" value="@email" />
     <form method="post" action="@Url.Action("SubmitDeliveryOrder", "Market")">
+        <!-- Dados de Faturação -->
         <div class="form-group">
-            <h2>Dados de Faturação (Obrigatório)</h2>
-            <h5>Estes dados também servirão para o envio da encomenda casa queria adicionar uma morada alternetiva preencha o formulário opcional</h5>
+            <!-- Morada -->
             <label for="Morada">Morada:</label>
-            <input type="text" class="form-control" id="Morada" name="Morada" required>
+            <input type="text" class="form-control" id="Morada" name="Morada" value="@Model.Morada" required>
 
+            <!-- Cidade -->
             <label for="Cidade">Cidade:</label>
-            <input type="text" class="form-control" id="Cidade" name="Cidade" required>
+            <input type="text" class="form-control" id="Cidade" name="Cidade" value="@Model.Cidade" required>
 
+            <!-- Código Postal -->
             <label for="CodigoPostal">Código Postal:</label>
-            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required>
+            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" value="@Model.CodigoPostal" required>
 
+            <!-- País -->
             <label for="Pais">País:</label>
-            <input type="text" class="form-control" id="Pais" name="Pais" required>
+            <input type="text" class="form-control" id="Pais" name="Pais" value="@Model.Pais" required>
 
+            <!-- Número de Telefone -->
             <label for="Numerotel">Número de Telefone:</label>
-            <input type="text" class="form-control" id="Numerotel" name="Numerotel" required>
+            <input type="text" class="form-control" id="Numerotel" name="Numerotel" value="@Model.Numerotel" required>
         </div>
 
+        <!-- Dados de Entrega -->
         <div class="form-group" id="zona2" style="display: none;">
-            <h2>Dados de Entrega (Opcional)</h2>
+            <!-- Nome do Destinatário -->
             <label for="NomeEntrega">Nome do Destinatário:</label>
-            <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega">
+            <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega" value="@Model.NomeEntrega">
 
+            <!-- Morada de Entrega -->
             <label for="MoradaEntrega">Morada de Entrega:</label>
-            <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega">
+            <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega" value="@Model.MoradaEntrega">
 
+            <!-- Cidade de Entrega -->
             <label for="CidadeEntrega">Cidade de Entrega:</label>
-            <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega">
+            <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega" value="@Model.CidadeEntrega">
 
+            <!-- Código Postal de Entrega -->
             <label for="CodigoPostalEntrega">Código Postal de Entrega:</label>
-            <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega">
+            <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega" value="@Model.CodigoPostalEntrega">
 
+            <!-- País de Entrega -->
             <label for="PaisEntrega">País de Entrega:</label>
-            <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega">
+            <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega" value="@Model.PaisEntrega">
 
+            <!-- Número de Telefone de Entrega -->
             <label for="NumerotelEntrega">Número de Telefone de Entrega:</label>
-            <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega">
+            <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega" value="@Model.NumerotelEntrega">
+
+            <!-- Checkbox de Confirmação de Envio -->
             <div class="form-check">
-                <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio" checked>
+                <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
                 <label class="form-check-label" for="ConfirmoEnvio">
                     Confirmo que pretendo o envio para a morada opcional
                 </label>
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-4">
+            <!-- Adiciona espaçamento superior -->
+            <button type="button" class="btn btn-primary w-50" id="toggleZona2">Adicionar Endereço de Entrega Opcional</button>
+        </div>
 
-        <button type="button" class="btn btn-primary" id="toggleZona2">Adicionar Endereço de Entrega Opcional</button>
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <div class="d-flex justify-content-center mt-2">
+            <!-- Adiciona espaçamento superior -->
+            <button type="submit" class="btn btn-primary w-50" id="toggleZona3">Enviar</button>
+        </div>
     </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#toggleZona2').click(function () {
+<script>$('#toggleZona2').click(function () {
         $('#zona2').toggle();
     });</script>
 <script>$(document).ready(function () {
@@ -81,3 +98,15 @@
             console.log(isChecked);
         });
     });</script>
+
+<style>
+    #toggleZona2 {
+        background-color: black;
+        border: none;
+    }
+
+    #toggleZona3 {
+        background-color: black;
+        border: none;
+    }
+</style>

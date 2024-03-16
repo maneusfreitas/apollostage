@@ -12,7 +12,7 @@ using System.Security.Claims;
 using ApolloStage.Data;
 using Microsoft.AspNetCore.Identity;
 using ApolloStage.Models.Product;
-using ApolloStage.Migrations;
+
 
 namespace ApolloStage.Controllers;
 
@@ -205,7 +205,6 @@ public class HomeController : Controller
 
         public async Task<ActionResult> ArtistDetails(string id)
         {
-            // Código para obter os detalhes do artista com base no ID (você pode usar o mesmo método que estava usando)
             var artist = id;
 
             if (artist == null)
@@ -230,6 +229,7 @@ public class HomeController : Controller
             using (var httpClient = new HttpClient())
             {
             //https://apollostage1.azurewebsites.net
+            //https://apollostage20240303150613.azurewebsites.net
             using (var response = await httpClient.GetAsync($"https://localhost:7164/GetArtist/{id}"))
                 {
                     if (response.IsSuccessStatusCode)
@@ -253,7 +253,7 @@ public class HomeController : Controller
             
 
             // top10 playlist albuns
-
+           /*
             var responseplaylists = await httpClientHelper.SendAysnc(playlistx, SpotifyService.AccessToken);
             var json = responseplaylists;
 
@@ -306,9 +306,9 @@ public class HomeController : Controller
                 // Lide com o caso em que a resposta é nula ou vazia, se necessário
             }
         }
+        
 
-
-        /*
+        
 
         // categorias 
 

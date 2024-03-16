@@ -33,6 +33,8 @@ namespace ApolloStage.Models.Product
         public decimal TshirtPrice { get; set; }
 
         public string state { get; set; }
+
+        public int pointstoapply { get; set; }
     }
 }
 

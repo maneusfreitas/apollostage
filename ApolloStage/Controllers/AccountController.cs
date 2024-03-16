@@ -94,6 +94,7 @@ namespace ApolloStageFirst.Controllers
                     Code = "0",
                     ConfirmedEmail = false,
                     Admin = false,
+                    points = 0
                 };
                 return View("SecondRegister", tempRegisterData);
             }
@@ -128,6 +129,7 @@ namespace ApolloStageFirst.Controllers
                     Code = "0",
                     ConfirmedEmail = false,
                     Admin = false,
+                    points=0
                 };
 
                 return View("ThirdRegister", tempRegisterData);
@@ -170,6 +172,7 @@ namespace ApolloStageFirst.Controllers
                     Code = "0",
                     ConfirmedEmail = false,
                     Admin= false,
+                    points=0
                 };
 
                 // Gerar um código aleatório de 4 numeros
@@ -352,7 +355,8 @@ namespace ApolloStageFirst.Controllers
                     Name = externalFirstName,
                     Code = "0",
                     ConfirmedEmail = true,
-                    Admin=false,
+                    Admin = false,
+                    points = 0
                 };
 
 
@@ -480,7 +484,14 @@ namespace ApolloStageFirst.Controllers
             }
 
             var albumExistente = _context.FavoriteAlbum.FirstOrDefault(a => a.UserMail == userEmail && a.AlbumId == albumId);
+            var user = _context.TempRegisterData.FirstOrDefault(r => r.UserMail == userEmail);
+            if (user != null)
+            {
+                user.points++;
+                _context.TempRegisterData.Update(user);
+                _context.SaveChanges();
 
+            }
 
             if (albumExistente == null)
             {
@@ -508,6 +519,18 @@ namespace ApolloStageFirst.Controllers
             }
 
             var userEmail = userEmailClaim.Value;
+
+
+            var user = _context.TempRegisterData.FirstOrDefault(r => r.UserMail == userEmail);
+            if (user != null)
+            {
+                if (user.points > 0)
+                {
+                    user.points -= 1;
+                    _context.TempRegisterData.Update(user);
+                    _context.SaveChanges();
+                }
+            }
 
             var existingUser = await _userManager.FindByEmailAsync(userEmail);
 
@@ -765,7 +788,7 @@ namespace ApolloStageFirst.Controllers
         }
 
         [HttpPost]
-        public  IActionResult SaveAlbumRating(Classification classification)
+        public async Task<IActionResult> SaveAlbumRating(Classification classification)
         {
             if (classification.userEmail != "" && classification.albumId != "")
             {
@@ -789,10 +812,11 @@ namespace ApolloStageFirst.Controllers
                     albumId = classification.albumId,
                     starRating = classification.starRating
                 };
-
-                // Adicionar a nova classificação ao contexto e salvar as alterações no banco de dados
+               
                 _context.AlbumRatings.Add(albumRating);
                 _context.SaveChanges();
+
+             
 
                 return Json(new { success = true }); // Resposta JSON indicando sucesso
             }
@@ -803,7 +827,7 @@ namespace ApolloStageFirst.Controllers
 
 
         [HttpPost]
-        public IActionResult RemoveAlbumRating(string albumId)
+        public async Task<IActionResult> RemoveAlbumRating(string albumId)
         {
             if (albumId != "" && albumId != "")
             {
@@ -814,6 +838,7 @@ namespace ApolloStageFirst.Controllers
 
                 if (existingRating != null)
                 {
+                  
                     _context.Remove(existingRating);
                     _context.SaveChanges();
 
@@ -1044,7 +1069,7 @@ namespace ApolloStageFirst.Controllers
                                 albumRating.reviewRecommendation = "Recomendo";
                             if (album.reviewRecommendation == "nao-recomendo")
                                 albumRating.reviewRecommendation = "Não Recomendo";
-                            _context.AlbumReview.Add(albumRating);
+                                _context.AlbumReview.Add(albumRating);
                             _context.SaveChanges();
 
                             return Json(new { success = true });

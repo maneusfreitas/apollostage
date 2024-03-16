@@ -13,6 +13,7 @@ namespace ApolloStage.Models.Product
         public string color { get; set; }
         public string size { get; set; }
         public string image { get; set; }
+        public int pointssend { get; set; }
     }
 }
 
