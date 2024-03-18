@@ -1,0 +1,126 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model ApplicationUser
+@inject SignInManager<ApplicationUser> SignInManager
+
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication3.styles.css" asp-append-version="true" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+
+
+
+
+<body>
+    <header>
+        <div class="container-fluid d-flex align-items-center h-25 position-relative">
+            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <div class="w-100 position-absolute text-center">
+                <h1 class="text-center"> Register</h1>
+            </div>
+            <div class="me-0" style="position:absolute;right:30px">
+                <label> Dark Mode</label>
+            </div>
+        </div>
+    </header>
+    <div class="container " style=" display: flex; align-items: center; justify-content: center;">
+        <div class="row w-100 d-flex justify-content-center mt-5">
+            <div class="col-md-8">
+                <form id="registerForm" method="post" asp-controller="Account" asp-action="SecondRegister">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div id="name_pass_username" class="d-block">
+                        <div class="form-floating mb-5">
+                            <input id="name" asp-for="Name" class="form-control" aria-required="true" placeholder="Name" />
+                            <label asp-for="Name">Name</label>
+                            <span id="nameError" class="text-danger"></span>
+                        </div>
+                        <div class="form-outline mb-5">
+                            <h5 asp-for="Password">Password</h5>
+                            <input id="password" asp-for="Password" class="form-control" aria-required="true" />
+                            <span id="passwordError" class="text-danger"></span>
+                        </div>
+                        <div class="form-outline mb-5">
+                            <h5 asp-for="ConfirmPassword">Confirm Password</h5>
+                            <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" aria-required="true" />
+                            <span id="confirmPasswordError" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Campos ocultos -->
+                    <input type="hidden" asp-for="UserMail" />
+                    <input type="hidden" asp-for="DateOfBirth" />
+                    <input type="hidden" asp-for="Country" />
+                    <input type="hidden" asp-for="Gender" />
+                    <input type="hidden" asp-for="Code" />
+                    <input type="hidden" asp-for="EmailConfirmed" />
+
+                    <div>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                    </div>
+
+
+
+
+                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
+                    <div>
+
+                        <h5 class="mt-4 w-100 text-center">
+                            Already have an account?
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
+                        </h5>
+
+                    </div>
+                </form>
+               
+            </div>
+
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            if (password.trim() === '') {
+                document.getElementById('passwordError').innerText = "Please enter a password";
+                event.preventDefault();
+            } else {
+                document.getElementById('passwordError').innerText = ""; // Limpa a mensagem de erro se a senha estiver preenchida
+            }
+
+            if (confirmPassword.trim() === '') {
+                document.getElementById('confirmPasswordError').innerText = "Please confirm your password";
+                event.preventDefault();
+            } else {
+                document.getElementById('confirmPasswordError').innerText = ""; // Limpa a mensagem de erro se a confirmação de senha estiver preenchida
+            }
+            if (password !== confirmPassword) {
+                document.getElementById('passwordError').innerText = "Passwords don't match";
+                document.getElementById('confirmPasswordError').innerText = "Passwords don't match";
+                event.preventDefault(); // Impede o envio do formulário
+            }
+            var passwordPattern = /^(?=.*[A-Z])(?=.*[!@@#$%^&*])(?=.{6,})/;
+            if (!passwordPattern.test(password)) {
+                document.getElementById('passwordError').innerText = "Password must contain at least one uppercase letter, one special character, and be at least 6 characters long";
+                event.preventDefault();
+            }
+            var name = document.getElementById('name').value;
+
+            if (name.trim() === '') {
+                document.getElementById('nameError').innerText = "Please enter a name";
+                event.preventDefault(); // Impede o envio do formulário se o campo estiver vazio
+            }
+        });
+
+    </script>
+}
