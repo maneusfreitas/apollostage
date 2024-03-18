@@ -9,185 +9,161 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ApolloStage
 build_property.RootNamespace = ApolloStage
-build_property.ProjectDir = /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/
+build_property.ProjectDir = /Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage
+build_property.MSBuildProjectDirectory = /Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Areas/Identity/Pages/_ViewStart.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/AlbumDetails.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/AlbumDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BbGJ1bURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ArtistsByGenre.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ArtistsByGenre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BcnRpc3RzQnlHZW5yZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/CodeConfim.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/CodeConfim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db2RlQ29uZmltLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/CodeConfimPassword.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/CodeConfimPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db2RlQ29uZmltUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/Error.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9FcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/FirstRegister.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/FirstRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9GaXJzdFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ForgotPassword.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ForgotPasswordConfirmation.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/InvalidCode.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/InvalidCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbnZhbGlkQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/LimitAttempts.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/LimitAttempts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9MaW1pdEF0dGVtcHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ListenList.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ListenList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9MaXN0ZW5MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/Login.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/PasswordChangeCompleted.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/PasswordChangeCompleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9QYXNzd29yZENoYW5nZUNvbXBsZXRlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/RegisterSucceeded.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/RegisterSucceeded.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3RlclN1Y2NlZWRlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/SecondRegister.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/SecondRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TZWNvbmRSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ThirdRegister.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Account/ThirdRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9UaGlyZFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/ArtistDetails.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/ArtistDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L0FydGlzdERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/Index.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/NotFound.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L05vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/_AlbumList.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Artist/_AlbumList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L19BbGJ1bUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Artist.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Artist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BcnRpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/ArtistList.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/ArtistList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BcnRpc3RMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FcnJvci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Index.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Privacy.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/SearchArtist.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Home/SearchArtist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TZWFyY2hBcnRpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/adminAddProduct.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/adminAddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L2FkbWluQWRkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/Index.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/OrderComplete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L09yZGVyQ29tcGxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/OrderDelivery.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L09yZGVyRGVsaXZlcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/Orderfail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L09yZGVyZmFpbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/ProductDetails.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/ProductDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L1Byb2R1Y3REZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/StripeCancel.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L1N0cmlwZUNhbmNlbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Market/StripeSuccess.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFya2V0L1N0cmlwZVN1Y2Nlc3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/Error.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/NotFound.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL05vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LoginPartial.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LoginPartialAdmin.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LoginPartialAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/_ViewImports.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/_ViewStart.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_Layout.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jt0l6c70a1
 
-[/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LayoutAdmin.cshtml]
+[/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-a09ai714me

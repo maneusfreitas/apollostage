@@ -18,6 +18,8 @@ using Stripe.Climate;
 using Stripe.FinancialConnections;
 using SessionCreateOptions = Stripe.Checkout.SessionCreateOptions;
 using SessionService = Stripe.Checkout.SessionService;
+using System.Diagnostics.Metrics;
+using System.Xml.Linq;
 
 namespace ApolloStageFirst.Controllers
 {
@@ -56,7 +58,7 @@ namespace ApolloStageFirst.Controllers
                 {
                     foreach (var order in ordersToUpdates)
                     {
-                        order.state = "Pago";
+                        order.State = "Pago";
                     }
                 }
             }
@@ -79,7 +81,7 @@ namespace ApolloStageFirst.Controllers
             int pointstoreplace = 0;
             foreach (var order in ordersToUpdates)
             {
-                pointstoreplace = order.pointstoapply;
+                pointstoreplace = order.Pointstoapply;
                 _context.ProductOrder.Remove(order);
             }
             var use = await _userManager.FindByEmailAsync(userEmail);
@@ -111,7 +113,7 @@ namespace ApolloStageFirst.Controllers
                 {
                     foreach (var order in ordersToUpdates)
                     {
-                        order.state = "Cancelado";
+                        order.State = "Cancelado";
                     }
 
                 }
@@ -169,71 +171,94 @@ namespace ApolloStageFirst.Controllers
             TempData["meu"] = admin.Admin;
             return View("ProductDetails",tshirt);
         }
-
         [HttpPost]
-        public async Task<IActionResult> ShoppingCart(string cartContent, int points)
+       /* [HttpPost]
+        public IActionResult ShoppingCart([FromBody] List<Cart> products)
         {
-            var userEmail = User.FindFirst(ClaimTypes.Email).Value;
-            var OrderIdx = _context.ProductOrder.Max(p => (int?)p.OrderId) ?? 0;
-            
-                List<Cart> cartItems = JsonConvert.DeserializeObject<List<Cart>>(cartContent);
-
-            bool check = true;
-            int oid = OrderIdx + 1;
-            foreach (var item in cartItems)
+            if (products == null || !products.Any())
             {
-                string nameWithoutHyphens = item.name.Replace("-", " ");
-
-                // Dividir o nome em partes usando espaços como delimitador
-                string[] nameParts = nameWithoutHyphens.Split(' ');
-                string sizex = "";
-                string colorx = "";
-
-                // Verificar se existem pelo menos duas palavras na string
-                if (nameParts.Length >= 2)
-                {
-                    // Guardar os dois últimos nomes em variáveis
-                    colorx = nameParts[nameParts.Length - 1];
-                    sizex = nameParts[nameParts.Length - 2];
-
-                    // Remover as duas últimas palavras da lista
-                    Array.Resize(ref nameParts, nameParts.Length - 2);
-                }
-             
-                string finalName = string.Join(" ", nameParts);
-                if (item.count > 0)
-                {
-
-                    var fprice = _context.Tshirt.First(p => p.Title == finalName);
-                    decimal finalprice = fprice.Price;
-                    if (points > 1000 && check)
-                    {
-                        decimal p = fprice.Price;
-                        finalprice= (p - (Math.Floor((decimal)points / 1000) / item.count));
-                        var user = await _userManager.FindByEmailAsync(userEmail);
-                        user.points -= points;
-                        _context.TempRegisterData.Update(user);
-                        check = false;
-                    }
-                    var product = new ApolloStage.Models.Product.ProductOrder
-                    {
-                        OrderId = oid,
-                        UserMail = userEmail,
-                        TshirtTitle = finalName,
-                        TshirtSize = sizex,
-                        TshirtColor = colorx,
-                        TshirtCount = item.count,
-                        TshirtPrice = finalprice,
-                        state = "inexistente",
-                        pointstoapply = points
-                    };
-
-                    _context.ProductOrder.Add(product);
-                }
+                return BadRequest("Nenhum produto enviado");
             }
-            await _context.SaveChangesAsync();
-            return Json(new { id = oid, email = userEmail });
-        }
+
+            foreach (var product in products)
+            {
+                Console.WriteLine($"Nome: {product.Name}, Preço: {product.Price}, Quantidade: {product.Count}, Tamanho: {product.Size}, Cor: {product.Color}, Imagem: {product.Image}, Descrição: {product.Pname}, Total: {product.Total}");
+            }
+
+            return NoContent();
+        }*/
+
+
+         [HttpPost]
+         public async Task<IActionResult> ShoppingCart([FromBody] List<Cart> cartContent, int points)
+         {
+             var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+             var OrderIdx = _context.ProductOrder.Max(p => (int?)p.OrderId) ?? 0;
+
+             Console.WriteLine("cartContent");
+             Console.WriteLine("Cart Content:");
+             foreach (var cartItem in cartContent)
+             {
+                 Console.WriteLine($"Product ID: {cartItem.Name}, Quantity: {cartItem.Count}");
+                 // Se houver mais propriedades em Cart, você pode imprimi-las da mesma maneira
+             }
+             Console.WriteLine("cartContent");
+             bool check = true;
+             int oid = OrderIdx + 1;
+             foreach (var item in cartContent)
+             {
+                 string nameWithoutHyphens = item.Name.Replace("-", " ");
+
+                 // Dividir o nome em partes usando espaços como delimitador
+                 string[] nameParts = nameWithoutHyphens.Split(' ');
+                 string sizex = "";
+                 string colorx = "";
+
+                 // Verificar se existem pelo menos duas palavras na string
+                 if (nameParts.Length >= 2)
+                 {
+                     // Guardar os dois últimos nomes em variáveis
+                     colorx = nameParts[nameParts.Length - 1];
+                     sizex = nameParts[nameParts.Length - 2];
+
+                     // Remover as duas últimas palavras da lista
+                     Array.Resize(ref nameParts, nameParts.Length - 2);
+                 }
+
+                 string finalName = string.Join(" ", nameParts);
+                 if (item.Count > 0)
+                 {
+
+                     var fprice = _context.Tshirt.First(p => p.Title == finalName);
+                     decimal finalprice = fprice.Price;
+                     if (points > 1000 && check)
+                     {
+                         decimal p = fprice.Price;
+                         finalprice= (p - (Math.Floor((decimal)points / 1000) / item.Count));
+                         var user = await _userManager.FindByEmailAsync(userEmail);
+                         user.points -= points;
+                         _context.TempRegisterData.Update(user);
+                         check = false;
+                     }
+                     var product = new ApolloStage.Models.Product.ProductOrder
+                     {
+                         OrderId = oid,
+                         UserMail = userEmail,
+                         TshirtTitle = finalName,
+                         TshirtSize = sizex,
+                         TshirtColor = colorx,
+                         TshirtCount = item.Count,
+                         TshirtPrice = finalprice,
+                         State = "inexistente",
+                         Pointstoapply = points
+                     };
+
+                     _context.ProductOrder.Add(product);
+                 }
+             }
+             await _context.SaveChangesAsync();
+             return Json(new { id = oid, email = userEmail });
+         }
 
         [HttpPost]
         public async Task<IActionResult> SubmitTShirt(Tshirt model, List<IFormFile> Images)
@@ -375,7 +400,7 @@ namespace ApolloStageFirst.Controllers
                 {
                     foreach (var order in ordersToUpdates)
                     {
-                        order.state = "Pendente"; 
+                        order.State = "Pendente"; 
                     }
 
                 }
@@ -426,8 +451,8 @@ namespace ApolloStageFirst.Controllers
                     PaymentMethodTypes = new List<string> { "card" },
                     LineItems = lineItems,
                     Mode = "payment",
-                    SuccessUrl = "https://localhost:7164/market/success",
-                    CancelUrl = "https://localhost:7164/market/cancel"
+                    SuccessUrl = "https://apollostage20240303150613.azurewebsites.net/market/success",
+                    CancelUrl = "https://apollostage20240303150613.azurewebsites.net/market/cancel"
                 };
 
                 var service = new SessionService();

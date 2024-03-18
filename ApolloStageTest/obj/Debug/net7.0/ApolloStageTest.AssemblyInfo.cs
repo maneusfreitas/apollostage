@@ -10,7 +10,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ApolloStage", "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage", "ApolloStage.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("ApolloStage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage", "ApolloStage.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApolloStageTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

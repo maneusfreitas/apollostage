@@ -23,7 +23,7 @@
             <input hidden type="text" id="points" name="points" value="@points" />
             <input hidden type="number" id="pointssend" name="pointssend" value="" />
 
-            
+
             <div style="position: relative; max-width: 100%; overflow: hidden;border: solid 1px grey;">
                 <img id="mainImage" src="~/@Model.Images1" alt="T-shirt Image" style="max-width: 100%; height: auto; display: block;">
 
@@ -132,7 +132,7 @@
                 <div id="total-cart-disc-div" style="display:none;" class="grand-total"> Total price after discount: <span id="total-cart-disc"></span>€</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"id="closebtn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="closebtn" data-dismiss="modal">Close</button>
                 <!-- Botão de checkout -->
                 <button style="display:none;" type="button" id="checkoutBtn" class="btn btn-primary">Checkout</button>
 
@@ -578,16 +578,16 @@
         margin-top: -35px;
     }
 
-    #checkoutBtn{
-    background-color:black;
-    border:none;
+    #checkoutBtn {
+        background-color: black;
+        border: none;
     }
 
-    #closebtn{
+    #closebtn {
         background-color: black;
-        border:none;
+        border: none;
     }
-    </style>
+</style>
 <script>//localStorage.removeItem("shoppingCart");
     $(document).ready(function () {
         $(".rating > span").click(function () {
@@ -859,22 +859,38 @@
         localStorage.setItem('shoppingCart', JSON.stringify(cart));
 
         var cartContent = shoppingCart.listCart();
+        var newObjArray = [];
 
+        cartContent.forEach(function (item) {
+            var newItem = {
+                name: item.name,
+                price: parseFloat(item.price), 
+                count: item.count,
+                size: item.size,
+                color: item.color,
+                image: item.image,
+                pname: item.pname, 
+                total: (parseFloat(item.price) * item.count).toFixed(2) 
+            };
 
-
-        $.ajax({
+            newObjArray.push(newItem);
+        });
+        console.log(newObjArray);
+           $.ajax({
             type: "POST",
             url: '@Url.Action("ShoppingCart", "Market")',
-            data: { cartContent: JSON.stringify(cartContent), points: document.getElementById("pointssend").value },
+            contentType: 'application/json',
+               data: JSON.stringify(newObjArray),
             success: function (response) {
                 console.log(response);
                 localStorage.removeItem("shoppingCart");
                 window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email;
-         },
+            },
             error: function (xhr, status, error) {
                 console.error("Erro no post:", error);
             }
         });
+
     });
 </script>
 <script>function trocarImagem(imagemClicada) {

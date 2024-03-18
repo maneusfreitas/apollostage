@@ -230,7 +230,7 @@ public class HomeController : Controller
             {
             //https://apollostage1.azurewebsites.net
             //https://apollostage20240303150613.azurewebsites.net
-            using (var response = await httpClient.GetAsync($"https://localhost:7164/GetArtist/{id}"))
+            using (var response = await httpClient.GetAsync($"https://apollostage20240303150613.azurewebsites.net/GetArtist/{id}"))
                 {
                     if (response.IsSuccessStatusCode)
                     {

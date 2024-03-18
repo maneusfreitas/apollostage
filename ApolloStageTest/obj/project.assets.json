@@ -655,6 +655,22 @@
           "build/net6.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/7.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.14"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
         "type": "package",
         "dependencies": {
@@ -3007,6 +3023,20 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.InMemory/7.0.14": {
+      "sha512": "AkslBuDeD46shtKsM1uLChYXtLAib9/7QI7s3LXNLxY9qh0KHfmz5dQsV+pJqXknZNu6+10v/7t7o2o/dKTOvQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/7.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.7.0.14.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
       "sha512": "MrVBnWOFYwfLMGQfrcIuqEM9Xvokv1vJeYxqNH3K3xOtAdHwHQTrKnpDP97tU+LBlvcnyXAtAtryYcpLXWtRNA==",
       "type": "package",
@@ -4954,6 +4984,7 @@
     "net7.0": [
       "ApolloStage >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 2.2.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.14",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
       "Stripe.net >= 43.19.0",
@@ -5006,6 +5037,10 @@
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[7.0.14, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

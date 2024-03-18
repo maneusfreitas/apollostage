@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9zCK25BIL0rdYmMo1a18FqS1lwm/gnovUxlSBt24k9qWDaF5niuiW+zwKHDIF27JPbYB4yeVvCsPa27RsAYW2g==",
+  "dgSpecHash": "3WWiPHHYMzDn5de2UkK9wPiuTTM2EpK4/wAV/WYbNE88i7K++UOpCnhW/CcCwFdWsS/zOqUp08/y2T00JVRMIg==",
   "success": true,
   "projectFilePath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.14/microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.14/microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.design/7.0.14/microsoft.entityframeworkcore.design.7.0.14.nupkg.sha512",
+    "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.inmemory/7.0.14/microsoft.entityframeworkcore.inmemory.7.0.14.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.14/microsoft.entityframeworkcore.relational.7.0.14.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.sqlite/7.0.14/microsoft.entityframeworkcore.sqlite.7.0.14.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/7.0.14/microsoft.entityframeworkcore.sqlite.core.7.0.14.nupkg.sha512",
