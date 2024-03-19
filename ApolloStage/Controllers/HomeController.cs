@@ -5,9 +5,6 @@ using ApolloStage.Models.Categories;
 using ApolloStage.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Xml;
-using HtmlAgilityPack;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using ApolloStage.Data;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +22,7 @@ public class HomeController : Controller
     private readonly ApplicationDbContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly ISingleton singleton;
+    
     public HomeController(ApplicationDbContext context, IHttpClientHelper httpClientHelper, ISingleton singleton, UserManager<ApplicationUser> userManager)
     {
         this.httpClientHelper = httpClientHelper;
@@ -34,52 +32,12 @@ public class HomeController : Controller
     }
 
 
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-
- 
-        public IActionResult GetCustomString()
-        {
-            int i = 0;
-            i++;
-            var customString = "Sua string personalizada" + i;
-            return Content(customString);
-        }
-
-        public ActionResult Indexx()
-        {
-
-            return View((object)"erfwerfwerfwe");
-        }
-
-
-
-        [HttpPost]
-        public ActionResult GenerateRandomWord()
-        {
-            int i = 0; // Você precisa definir o valor de 'i' de alguma forma
-            string word = "erfwerfwerfwe" + i.ToString();
-            return View((object)word);
-        }
-
-
-    /*
-        [HttpGet]
-        public IActionResult SearchArtist()
-        {
-            return View();
-        }
-    */
     [HttpGet]
     public async Task<IActionResult> SearchArtist(string id,string value, string searchType)
     {
@@ -253,7 +211,7 @@ public class HomeController : Controller
             
 
             // top10 playlist albuns
-           /*
+           
             var responseplaylists = await httpClientHelper.SendAysnc(playlistx, SpotifyService.AccessToken);
             var json = responseplaylists;
 
@@ -333,8 +291,6 @@ public class HomeController : Controller
                 })
                 .ToList();
 
-
-        */
         // top 10 genero musical
         string rAlbums = "4czdORdCWP9umpbhFXK2fW,1YZiR5FINFOlZPGKSVplIY,2cWBwpqMsDJC1ZUwz813lo,6QtnCAFmqOwR75jOOmU7k9,6zaisPwfcIAfdUGPj3mmGY,0u7sgzvlLmPLvujXxy9EeY,3elU9JzR0DtbdRv8EOzBa4,3VWrUk4vBznMYXGMPc7dRB,2acDkDTWdNFie1HjcFa4Ny,6i6folBtxKV28WX3msQ4FE";
         string urlnew = "https://api.spotify.com/v1/albums?ids=" + rAlbums;
@@ -368,19 +324,8 @@ public class HomeController : Controller
     
         }
 
-
-
         public ActionResult NotFound()
         {
-
             return View();
         }
-
-
-
-
-    }
-
-
-
-
+}

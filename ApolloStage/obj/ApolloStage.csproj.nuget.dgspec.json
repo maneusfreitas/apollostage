@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {}
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj": {}
   },
   "projects": {
-    "/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
+    "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj",
         "projectName": "ApolloStage",
-        "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj",
-        "packagesPath": "/Users/tenkait/.nuget/packages/",
-        "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3_4-1/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/obj/",
+        "projectPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\ApolloStage.csproj",
+        "packagesPath": "C:\\Users\\Emanuel Freitas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emanuel Freitas\\Documents\\Pessoal\\Universidade\\Documentos\\3A\\ESA\\PRO\\apollostage\\ApolloStage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tenkait/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Emanuel Freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,6 +84,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[43.19.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0-rc4, )"
@@ -116,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
