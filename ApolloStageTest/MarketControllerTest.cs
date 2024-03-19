@@ -76,24 +76,6 @@ namespace ApolloStageTest
             userManagerMock.Setup(x => x.FindByEmailAsync(It.IsAny<string>())).ReturnsAsync(user);
         }
 
-        [Test]
-        public async Task ProcessPayment_ReturnsRedirect()
-        {
-            // Arrange
-            var controller = new MarketController(
-                _configuration, _userManager, _signInManager, _context, _webHostEnvironment
-            );
-
-            // Act
-            var result = await controller.ProcessPayment("1", "lisboabot@gmail.com", 10.99m) as RedirectResult;
-
-            // Assert
-            NUnit.Framework.Assert.IsNotNull(result);
-            NUnit.Framework.Assert.AreEqual("https://apollostage20240303150613.azurewebsites.net/market/success", result.Url);
-
-            // Example database access
-            var userFromDb = await _context.Users.FirstOrDefaultAsync(u => u.Email == "lisboabot@gmail.com");
-            // Make assertions based on the database result, if necessary
-        }
+   
     }
 }

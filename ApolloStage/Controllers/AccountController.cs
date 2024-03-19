@@ -502,12 +502,28 @@ namespace ApolloStageFirst.Controllers
             if (albumExistente == null)
             {
                 existingUser.FavoriteAlbum.Add(new FavoriteAlbum { UserMail = userEmail, AlbumId = albumId });
+
                 await _userManager.UpdateAsync(existingUser);
+                var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count++;
+                }
+                else
+                {
+                    var novoRegistro = new Top50 { IdAlbum = albumId, count = 1 };
+                    _context.Top50.Add(novoRegistro);
+                }
+
+                _context.SaveChanges();
                 return Json(new { success = true, errorMessage = "O álbum " + albumName + " foi adicionado à sua ListenList." });
             }
             else
             {
+               
 
+                _context.SaveChanges();
                 return Json(new { success = false, errorMessage = "O álbum " + albumName + " foi removido da sua ListenList." });
             }
         }
@@ -551,14 +567,31 @@ namespace ApolloStageFirst.Controllers
 
             if (albumExistente != null)
             {
+                var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count--;
+                    _context.Top50.Update(registroExistente);
+
+                }
                 _context.FavoriteAlbum.Remove(albumExistente);
                 await _context.SaveChangesAsync();
 
             }
             else
             {
-                // Adicione logs para depuração
-                Console.WriteLine($"Álbum não encontrado na lista de favoritos: {albumId}");
+                 var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count++;
+                }
+                else
+                {
+                    var novoRegistro = new Top50 { IdAlbum = albumId, count = 1 };
+                    _context.Top50.Add(novoRegistro);
+                }
             }
 
             var allAlbums = _context.FavoriteAlbum
@@ -614,6 +647,8 @@ namespace ApolloStageFirst.Controllers
 
             if (albumExistente != null)
             {
+                
+
                 _context.FavoriteAlbum.Remove(albumExistente);
                 await _context.SaveChangesAsync();
 
