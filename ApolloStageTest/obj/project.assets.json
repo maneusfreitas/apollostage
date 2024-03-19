@@ -4999,11 +4999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+      "projectUniqueName": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/ApolloStageTest.csproj",
       "projectName": "ApolloStageTest",
-      "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+      "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/ApolloStageTest.csproj",
       "packagesPath": "/Users/tenkait/.nuget/packages/",
-      "outputPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/obj/",
+      "outputPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tenkait/.nuget/NuGet/NuGet.Config"
@@ -5018,8 +5018,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj": {
-              "projectPath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStage/ApolloStage.csproj"
+            "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/ApolloStage.csproj": {
+              "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/ApolloStage.csproj"
             }
           }
         }

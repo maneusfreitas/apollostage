@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3WWiPHHYMzDn5de2UkK9wPiuTTM2EpK4/wAV/WYbNE88i7K++UOpCnhW/CcCwFdWsS/zOqUp08/y2T00JVRMIg==",
+  "dgSpecHash": "hJBAHkUVEk5X6u/SkYZYg78u8ynlrov9meR4upBIdt95gfvKzkFn7yIaKFIVL/3R5eJt6ZXVy8iEaEYHWorTrA==",
   "success": true,
-  "projectFilePath": "/Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/ApolloStageTest.csproj",
+  "projectFilePath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/ApolloStageTest.csproj",
   "expectedPackageFiles": [
     "/Users/tenkait/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",

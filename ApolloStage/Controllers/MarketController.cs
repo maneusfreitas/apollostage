@@ -451,8 +451,8 @@ namespace ApolloStageFirst.Controllers
                     PaymentMethodTypes = new List<string> { "card" },
                     LineItems = lineItems,
                     Mode = "payment",
-                    SuccessUrl = "https://apollostage20240303150613.azurewebsites.net/market/success",
-                    CancelUrl = "https://apollostage20240303150613.azurewebsites.net/market/cancel"
+                    SuccessUrl = "https://localhost:7164/market/success",
+                    CancelUrl = "https://localhost:7164/market/cancel"
                 };
 
                 var service = new SessionService();
