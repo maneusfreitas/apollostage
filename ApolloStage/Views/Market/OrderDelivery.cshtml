@@ -5,8 +5,15 @@
     string email = TempData["email"]?.ToString();
 }
 @{
-    ViewData["Title"] = "Market";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string meu = TempData["meu"]?.ToString();
+    string pointsx = TempData["points"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
@@ -15,7 +22,9 @@
     </div>
     <input hidden name="id" value="@id" />
     <input hidden name="email" value="@email" />
+  
     <form method="post" action="@Url.Action("SubmitDeliveryOrder", "Market")">
+        <input hidden name="points" value="@pointsx" />
         <!-- Dados de Faturação -->
         <div class="form-group">
             <!-- Morada -->

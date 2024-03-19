@@ -4,9 +4,16 @@
     string email = TempData["email"]?.ToString();
 }
 @{
-    ViewData["Title"] = "Market";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string meu = TempData["meu"]?.ToString();
 }
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <div class="container">
     <div class="text-center">

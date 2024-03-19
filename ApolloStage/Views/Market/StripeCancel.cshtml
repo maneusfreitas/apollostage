@@ -9,6 +9,16 @@
 @{
     ViewData["Title"] = "Error";
 }
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <h1 class="text-danger">A sua compra foi Cancelada.</h1>
 <h2 class="text-danger">@cancel.</h2>
@@ -50,18 +60,16 @@
         // Submeter o formulário
         document.getElementById('buyNowForm').submit();
     }</script>
-<script>
-
-    function cancelOrder() {
+<script>function cancelOrder() {
         $.ajax({
             type: "GET",
-            url: "/Market/CancelOrder", 
+            url: "/Market/CancelOrder",
             success: function (response) {
                 if (response.success) {
                     console.log("Order canceled successfully");
                     alert("Order canceled successfully");
-                    window.location.href = "/home/index"; 
-                  
+                    window.location.href = "/home/index";
+
                 } else {
                     console.error("Failed to cancel order");
                     alert("Failed to cancel order. Please try again later.");
@@ -73,6 +81,4 @@
                 alert("Failed to cancel order. Please try again later.");
             }
         });
-    }
-
-</script>
+    }</script>

@@ -203,7 +203,7 @@ public class HomeController : Controller
                 }
             }
            
-
+/*
             // albuns lançados recentemente
             string apiUrl = "https://api.spotify.com/v1/browse/new-releases";
 
@@ -217,7 +217,7 @@ public class HomeController : Controller
 
             var jsonObject = JObject.Parse(json);
             var items = jsonObject["playlists"]["items"];
-
+       
             var playlistsx = items
                 .Select(item => new Playlist
                 {
@@ -289,7 +289,7 @@ public class HomeController : Controller
             }
                     }
                 })
-                .ToList();
+                .ToList();*/
 
         // top 10 genero musical
         string rAlbums = "4czdORdCWP9umpbhFXK2fW,1YZiR5FINFOlZPGKSVplIY,2cWBwpqMsDJC1ZUwz813lo,6QtnCAFmqOwR75jOOmU7k9,6zaisPwfcIAfdUGPj3mmGY,0u7sgzvlLmPLvujXxy9EeY,3elU9JzR0DtbdRv8EOzBa4,3VWrUk4vBznMYXGMPc7dRB,2acDkDTWdNFie1HjcFa4Ny,6i6folBtxKV28WX3msQ4FE";

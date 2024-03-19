@@ -43,11 +43,12 @@ namespace ApolloStageFirst.Controllers
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
         }
         [HttpGet]
-        public async Task<IActionResult> Success()
+        public async Task<IActionResult> Success(int StripePoints)
         {
             var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+            var userdetails = await _userManager.FindByEmailAsync(userEmail);
             var maxOrderId = await _context.ProductOrder.Where(u => u.UserMail == userEmail).MaxAsync(u => (int?)u.OrderId);
-
+            var price = 0;
             if (maxOrderId.HasValue)
             {
                 var ordersToUpdates = await _context.ProductOrder
@@ -62,12 +63,24 @@ namespace ApolloStageFirst.Controllers
                     }
                 }
             }
+
+            if (StripePoints < userdetails.points)
+            {
+                userdetails.points -= StripePoints;
+                _context.TempRegisterData.Update(userdetails);
+            }
+            else
+            {
+                userdetails.points = 0;
+                _context.TempRegisterData.Update(userdetails);
+            }
             await _context.SaveChangesAsync();
+            TempData["StripePoints"] = StripePoints;
             return View("StripeSuccess");
         }
 
         [HttpGet]
-        public async Task<IActionResult> CancelOrder()
+        public async Task<IActionResult> CancelOrder(int StripePoints)
         {
             var userEmail = User.FindFirst(ClaimTypes.Email).Value;
             var maxOrderId = await _context.ProductOrder
@@ -172,30 +185,32 @@ namespace ApolloStageFirst.Controllers
             return View("ProductDetails",tshirt);
         }
         [HttpPost]
-       /* [HttpPost]
-        public IActionResult ShoppingCart([FromBody] List<Cart> products)
-        {
-            if (products == null || !products.Any())
-            {
-                return BadRequest("Nenhum produto enviado");
-            }
-
-            foreach (var product in products)
-            {
-                Console.WriteLine($"Nome: {product.Name}, Preço: {product.Price}, Quantidade: {product.Count}, Tamanho: {product.Size}, Cor: {product.Color}, Imagem: {product.Image}, Descrição: {product.Pname}, Total: {product.Total}");
-            }
-
-            return NoContent();
-        }*/
-
-
-         [HttpPost]
-         public async Task<IActionResult> ShoppingCart([FromBody] List<Cart> cartContent, int points)
+        /* [HttpPost]
+         public IActionResult ShoppingCart([FromBody] List<Cart> products)
          {
-             var userEmail = User.FindFirst(ClaimTypes.Email).Value;
-             var OrderIdx = _context.ProductOrder.Max(p => (int?)p.OrderId) ?? 0;
+             if (products == null || !products.Any())
+             {
+                 return BadRequest("Nenhum produto enviado");
+             }
 
-             Console.WriteLine("cartContent");
+             foreach (var product in products)
+             {
+                 Console.WriteLine($"Nome: {product.Name}, Preço: {product.Price}, Quantidade: {product.Count}, Tamanho: {product.Size}, Cor: {product.Color}, Imagem: {product.Image}, Descrição: {product.Pname}, Total: {product.Total}");
+             }
+
+             return NoContent();
+         }*/
+
+
+        [HttpPost]
+        public async Task<IActionResult> ShoppingCart([FromBody] ShoppingCartRequest request)
+        {
+            List<Cart> cartContent = request.cartContent;
+            int points = request.points;
+            var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+             var OrderIdx = _context.ProductOrder.Max(p => (int?)p.OrderId) ?? 0;
+            var use = await _userManager.FindByEmailAsync(userEmail);
+            Console.WriteLine("cartContent");
              Console.WriteLine("Cart Content:");
              foreach (var cartItem in cartContent)
              {
@@ -224,8 +239,9 @@ namespace ApolloStageFirst.Controllers
                      // Remover as duas últimas palavras da lista
                      Array.Resize(ref nameParts, nameParts.Length - 2);
                  }
-
-                 string finalName = string.Join(" ", nameParts);
+                 if(points > use.points)
+                    return Json(new { id = "false", email = "false" });
+                string finalName = string.Join(" ", nameParts);
                  if (item.Count > 0)
                  {
 
@@ -236,7 +252,7 @@ namespace ApolloStageFirst.Controllers
                          decimal p = fprice.Price;
                          finalprice= (p - (Math.Floor((decimal)points / 1000) / item.Count));
                          var user = await _userManager.FindByEmailAsync(userEmail);
-                         user.points -= points;
+                    
                          _context.TempRegisterData.Update(user);
                          check = false;
                      }
@@ -257,7 +273,7 @@ namespace ApolloStageFirst.Controllers
                  }
              }
              await _context.SaveChangesAsync();
-             return Json(new { id = oid, email = userEmail });
+             return Json(new { id = oid, email = userEmail,  userpoints =  points});
          }
 
         [HttpPost]
@@ -342,12 +358,13 @@ namespace ApolloStageFirst.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> delivery(string id, string email)
+        public async Task<IActionResult> delivery(string id, string email, int points)
         {
             var userEmail = User.FindFirst(ClaimTypes.Email).Value;
             var userx = await _context.TempRegisterData.FirstOrDefaultAsync(u => u.Email == userEmail);
             TempData["id"] = id;
             TempData["email"] = email;
+            TempData["points"] = points;
             return View("OrderDelivery",userx);
         }
 
@@ -410,11 +427,12 @@ namespace ApolloStageFirst.Controllers
             var ordersToUpdate = await _context.ProductOrder
                     .Where(u => u.UserMail == userEmail && u.OrderId == maxOrderId)
                     .ToListAsync();
+            TempData["points"] = model.points;
             return View("OrderComplete", ordersToUpdate);
 
         }
         [HttpPost]
-        public async Task<IActionResult> ProcessPayment(string orderId, string userEmail, decimal amount)
+        public async Task<IActionResult> ProcessPayment(string orderId, string userEmail, decimal amount, int points)
         {
             try
             {
@@ -451,8 +469,8 @@ namespace ApolloStageFirst.Controllers
                     PaymentMethodTypes = new List<string> { "card" },
                     LineItems = lineItems,
                     Mode = "payment",
-                    SuccessUrl = "https://localhost:7164/market/success",
-                    CancelUrl = "https://localhost:7164/market/cancel"
+                    SuccessUrl = "https://localhost:7164/market/success?StripePoints=" + points,
+                    CancelUrl = "https://localhost:7164/market/cancel?StripePoints=" + points
                 };
 
                 var service = new SessionService();

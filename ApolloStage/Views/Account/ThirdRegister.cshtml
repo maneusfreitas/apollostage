@@ -6,6 +6,16 @@
     string confirmPassword = TempData["ConfirmPassword"]?.ToString();
     string name = TempData["Name"]?.ToString();
 }
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -19,8 +29,7 @@
         });</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
             // Faz a requisição AJAX para a API de países
             $.ajax({
                 url: 'https://restcountries.com/v3.1/all',
@@ -48,9 +57,7 @@
                     console.error('Erro ao buscar países.');
                 }
             });
-        });
-
-    </script>
+        });</script>
 </head>
 
 
@@ -110,13 +117,13 @@
                     </div>
 
 
-                
+
                     <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: #00BF63  ">Conclude</button>
                     <div>
                         <p class="mt-4 text-center">Already have an account? <a style="font-weight: bold; color: black; text-decoration: none;" asp-controller="Account" asp-action="Login">Login here</a></p>
                     </div>
                 </form>
-              
+
             </div>
 
         </div>
@@ -128,8 +135,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function (event) {
+    <script>document.getElementById('registerForm').addEventListener('submit', function (event) {
             var dateOfBirth = new Date(document.getElementById('DateOfBirth').value);
             var hundredYearsAgo = new Date();
             hundredYearsAgo.setFullYear(hundredYearsAgo.getFullYear() - 100);
@@ -169,6 +175,5 @@
             } else {
                 genderError.innerText = ""; // Limpa a mensagem de erro se o gênero for selecionado
             }
-        });
-    </script>
+        });</script>
 }

@@ -7,7 +7,7 @@
 
         if (date.Year % 3 == 0 && date.Year % 5 == 0)
         {
-            return  "#eeffee";
+            return "#eeffee";
         }
         else if (date.Year % 3 == 0)
         {
@@ -20,6 +20,17 @@
         return "";
     }
 }
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <div class="container-sm">
     <div class="d-flex justify-content-center">

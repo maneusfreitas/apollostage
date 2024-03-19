@@ -1,8 +1,19 @@
-﻿<h1>
+﻿@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>
     Register Succeeded
 </h1>
 
-    <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
+<a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
 
 <style>
     main.pb-3 {

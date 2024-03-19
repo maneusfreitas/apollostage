@@ -3,12 +3,18 @@
     string id = TempData["id"]?.ToString();
     string email = TempData["email"]?.ToString();
     var lastIndex = Model.Count - 1;
-    
-}
 
+}
 @{
-    ViewData["Title"] = "Order Complete";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string meu = TempData["meu"]?.ToString();
+    string points = TempData["points"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Order Complete</h1>
@@ -17,6 +23,8 @@
     <input type="hidden" id="orderId" name="orderId" />
     <input type="hidden" id="userEmail" name="userEmail" />
     <input type="hidden" id="amount" name="amount" />
+    <input type="hidden" id="amount" name="amount" />
+    <input type="hidden"   id="points" name="points" value="@points"/>
 </form>
 
 

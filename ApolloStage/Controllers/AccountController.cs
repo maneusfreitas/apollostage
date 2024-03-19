@@ -38,6 +38,12 @@ namespace ApolloStageFirst.Controllers
         {
             return View("Login");
         }
+
+        [HttpGet]
+        public IActionResult profile()
+        {
+            return View("Profile");
+        }
         [HttpGet]
         public IActionResult Register()
         {
@@ -531,7 +537,7 @@ namespace ApolloStageFirst.Controllers
                     _context.SaveChanges();
                 }
             }
-
+        
             var existingUser = await _userManager.FindByEmailAsync(userEmail);
 
             if (existingUser == null)

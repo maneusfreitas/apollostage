@@ -4,6 +4,16 @@
 @{
     ViewData["Title"] = "Login";
 }
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -34,7 +44,7 @@
             @TempData["successAccount"]
         </div>
     }
-     @if (TempData.ContainsKey("successPassword"))
+    @if (TempData.ContainsKey("successPassword"))
     {
         <div class="alert alert-success" role="alert">
             @TempData["successPassword"]
@@ -112,7 +122,8 @@
     .alert.alert-danger {
         text-align: center;
     }
+
     .alert.alert-success {
-    text-align: center;
+        text-align: center;
     }
 </style>

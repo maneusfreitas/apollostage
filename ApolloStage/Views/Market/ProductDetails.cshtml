@@ -6,13 +6,15 @@
     string points = TempData["points"]?.ToString();
 }
 
+
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 
 <div class="container">
@@ -21,7 +23,7 @@
             <input hidden type="text" id="theimage" name="theimage" value="~/@Model.Images1" />
             <input hidden type="text" id="pname" name="pname" value="@Model.Title" />
             <input hidden type="text" id="points" name="points" value="@points" />
-            <input hidden type="number" id="pointssend" name="pointssend" value="" />
+            <input hidden type="number" id="pointssend" name="pointssend" value="0" />
 
 
             <div style="position: relative; max-width: 100%; overflow: hidden;border: solid 1px grey;">
@@ -864,13 +866,13 @@
         cartContent.forEach(function (item) {
             var newItem = {
                 name: item.name,
-                price: parseFloat(item.price), 
+                price: parseFloat(item.price),
                 count: item.count,
                 size: item.size,
                 color: item.color,
                 image: item.image,
-                pname: item.pname, 
-                total: (parseFloat(item.price) * item.count).toFixed(2) 
+                pname: item.pname,
+                total: (parseFloat(item.price) * item.count).toFixed(2)
             };
 
             newObjArray.push(newItem);
@@ -880,11 +882,14 @@
             type: "POST",
             url: '@Url.Action("ShoppingCart", "Market")',
             contentType: 'application/json',
-               data: JSON.stringify(newObjArray),
+            data: JSON.stringify({ cartContent: newObjArray, points: parseInt($("#pointssend").val()) }),
             success: function (response) {
                 console.log(response);
                 localStorage.removeItem("shoppingCart");
-                window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email;
+                if (response.id != "false")
+                    window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email + '&points=' + response.userpoints;
+                else
+                    alert("NOT enogth points")
             },
             error: function (xhr, status, error) {
                 console.error("Erro no post:", error);

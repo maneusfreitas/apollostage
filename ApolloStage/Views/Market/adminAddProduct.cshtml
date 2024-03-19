@@ -1,11 +1,15 @@
 ﻿@using System.Security.Claims;
 
-@{
-    ViewData["Title"] = "Market";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+
 @{
     string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="text-center">
     <h1 class="display-4">Add to the Market</h1>
@@ -114,7 +118,7 @@ else
     </div>
 }
 <style>
- 
+
     form {
         margin: auto;
         width: 80%;

@@ -3,13 +3,15 @@
     string meu = TempData["meu"]?.ToString();
 }
 
+
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2>Lista de Artistas</h2>
 
 <div class="row">

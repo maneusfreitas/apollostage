@@ -4,13 +4,15 @@
     string meu = TempData["meu"]?.ToString();
 }
 
+
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h1 class="ms-5"> @username's ListenList</h1>
 
 <div class="row ms-5 justify-content-center ">

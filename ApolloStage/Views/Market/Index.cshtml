@@ -7,10 +7,10 @@
 
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
@@ -39,13 +39,13 @@
                 <span class="releaseDate mb-0">
                     <b>
                         @tshirt.Price.ToString("N2")
-                    euros
-                </b>
-            </span>
+                        euros
+                    </b>
+                </span>
+            </div>
         </div>
-    </div>
 
-}
+    }
     <!--
         @foreach (var mug in Model.Mugs)
         {
@@ -507,9 +507,8 @@
             font-size: 14px;
             padding: 12px 16px 9px;
         }
-
-       
     }
+
     .featured-item .content {
         padding: 20px 20px;
     }
@@ -521,6 +520,7 @@
         .featured-item .content h3 {
             font-size: 18px;
         }
+
     .modal-dialog.modal-dialog-centered {
         max-width: 800px !important;
     }
