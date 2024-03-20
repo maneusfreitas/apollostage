@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Security.Claims;
+@model ApolloStage.Models.ProfileViewModel
+@{
     string meu = TempData["meu"]?.ToString();
 }
 @{
@@ -10,4 +12,408 @@
 }
 
 
-<h1>Profile.</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+</head>
+
+<div class="container">
+
+    <form method="post" action="@Url.Action("UpdateUser", "Account")">
+        <div class="text-center">
+            <h1>zona morada.</h1>
+        </div>
+        <div class="form-group">
+            <!-- Morada -->
+            <label for="Morada">Morada:</label>
+            <input type="text" class="form-control" id="Morada" name="Morada" value="@Model.User.Morada" required>
+
+            <!-- Cidade -->
+            <label for="Cidade">Cidade:</label>
+            <input type="text" class="form-control" id="Cidade" name="Cidade" value="@Model.User.Cidade" required>
+
+            <!-- Código Postal -->
+            <label for="CodigoPostal">Código Postal:</label>
+            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" value="@Model.User.CodigoPostal" required>
+
+            <!-- País -->
+            <label for="Pais">País:</label>
+            <input type="text" class="form-control" id="Pais" name="Pais" value="@Model.User.Pais" required>
+
+            <!-- Número de Telefone -->
+            <label for="Numerotel">Número de Telefone:</label>
+            <input type="text" class="form-control" id="Numerotel" name="Numerotel" value="@Model.User.Numerotel" required>
+        </div>
+
+        <!-- Dados de Entrega -->
+        <div class="form-group" id="zona2">
+            <!-- Nome do Destinatário -->
+            <label for="NomeEntrega">Nome do Destinatário:</label>
+            <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega" value="@Model.User.NomeEntrega">
+
+            <!-- Morada de Entrega -->
+            <label for="MoradaEntrega">Morada de Entrega:</label>
+            <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega" value="@Model.User.MoradaEntrega">
+
+            <!-- Cidade de Entrega -->
+            <label for="CidadeEntrega">Cidade de Entrega:</label>
+            <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega" value="@Model.User.CidadeEntrega">
+
+            <!-- Código Postal de Entrega -->
+            <label for="CodigoPostalEntrega">Código Postal de Entrega:</label>
+            <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega" value="@Model.User.CodigoPostalEntrega">
+
+            <!-- País de Entrega -->
+            <label for="PaisEntrega">País de Entrega:</label>
+            <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega" value="@Model.User.PaisEntrega">
+
+            <!-- Número de Telefone de Entrega -->
+            <label for="NumerotelEntrega">Número de Telefone de Entrega:</label>
+            <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega" value="@Model.User.NumerotelEntrega">
+
+            <!-- Checkbox de Confirmação de Envio -->
+            <div class="form-check">
+                <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
+                <label class="form-check-label" for="ConfirmoEnvio">
+                    Confirmo que pretendo o envio para a morada opcional
+                </label>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-2">
+            <button type="submit" class="btn btn-primary w-50" id="toggleZona3">Guardar</button>
+        </div>
+    </form>
+</div>
+
+<section class="game-section">
+    <h2 class="line-title">Your Ratings</h2>
+    <div class="owl-carousel custom-carousel owl-theme">
+
+        @foreach (var album in Model.Albums)
+        {
+
+            @if (album.images != null)
+            {
+                <div class="item" style="background-image: url(@album.images[0].URL);">
+                 
+                    <div class="item-desc">
+                        <h3>@album.name</h3>
+                        <form method="GET" action="@Url.Action("getalbum", "Account")">
+                            <input hidden type="text" name="albumId" value="@album.id" />
+                            <button type="submit" class="btn btn-danger">View album details</button>
+                         </form>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>
+
+
+
+
+<style>
+
+    .clear {
+        clear: both;
+    }
+
+    img {
+        max-width: 100%;
+        border: 0px;
+    }
+
+    ul, ol {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+    }
+
+        a:focus, a:active, a:visited, a:hover {
+            text-decoration: none;
+            outline: none;
+        }
+
+        a:hover {
+            color: #e73700;
+        }
+
+    h2 {
+        margin-bottom: 48px;
+        padding-bottom: 16px;
+        font-size: 40px;
+        line-height: 28px;
+        font-weight: 700;
+        position: relative;
+        text-transform: capitalize;
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    button {
+        outline: none !important;
+    }
+    /******* Common Element CSS End *********/
+    /* -------- title style ------- */
+    .line-title {
+        position: relative;
+        width: 400px;
+    }
+
+        .line-title::before, .line-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .line-title::before {
+            width: 100%;
+            background: #f2f2f2;
+        }
+
+        .line-title::after {
+            width: 32px;
+            background: #e73700;
+        }
+    /******* Middle section CSS Start ******/
+    /* -------- Landing page ------- */
+    .game-section {
+        padding: 60px 50px;
+    }
+
+        .game-section .owl-stage {
+            margin: 15px 0;
+            display: flex;
+            display: -webkit-flex;
+        }
+
+        .game-section .item {
+            margin: 0 15px 60px;
+            width: 320px;
+            height: 400px;
+            display: flex;
+            display: -webkit-flex;
+            align-items: flex-end;
+            -webkit-align-items: flex-end;
+            background: #343434 no-repeat center center / cover;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+            .game-section .item.active {
+                width: 500px;
+                box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+                -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+            }
+
+            .game-section .item:after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            }
+
+        .game-section .item-desc {
+            padding: 0 24px 12px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transform: translateY(calc(100% - 54px));
+            -webkit-transform: translateY(calc(100% - 54px));
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+        }
+
+        .game-section .item.active .item-desc {
+            transform: none;
+            -webkit-transform: none;
+        }
+
+        .game-section .item-desc p {
+            opacity: 0;
+            -webkit-transform: translateY(32px);
+            transform: translateY(32px);
+            transition: all 0.4s ease-in-out 0.2s;
+            -webkit-transition: all 0.4s ease-in-out 0.2s;
+        }
+
+        .game-section .item.active .item-desc p {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        .game-section .owl-theme.custom-carousel .owl-dots {
+            margin-top: -20px;
+            position: relative;
+            z-index: 5;
+        }
+
+    .owl-dots {
+        display: none;
+    }
+
+    .owl-nav.disabled {
+        display: none;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+</style>
+
+<script>function carouselChanged(event) {
+        var currentItemIndex = event.item.index + 2;
+        $(".custom-carousel .item").removeClass("active");
+        $(".custom-carousel .item").eq(currentItemIndex).addClass("active");
+    }
+
+    $(".custom-carousel").owlCarousel({
+        autoWidth: true,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        onChanged: carouselChanged
+
+    });
+    $(document).ready(function () {
+        $(".custom-carousel .item").click(function () {
+            $(".custom-carousel .item").not($(this)).removeClass("active");
+            $(this).toggleClass("active");
+        });
+    });</script>
+
+
+
+
+<style>
+    // daqui param baixo é bdo pop-up (modal for video)
+    /* Estilo para o pop-up */
+    #myModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1055;
+        display: none;
+        width: 400px !important;
+        height: 350px !important;
+        overflow-x: hidden;
+        overflow-y: auto;
+        outline: 0;
+    }
+
+    /* Conteúdo do pop-up */
+    .modal-content {
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 400px;
+        height: 350px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 17px;
+        margin: 10px;
+        position: absolute;
+        height: 17px;
+        right: -3px;
+        top: -17px;
+        /* margin-top: 28px; */
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+</style>
+<script>document.getElementById('openModalBtn').addEventListener('click', function () {
+        document.getElementById('myModal').style.display = 'block';
+    });
+
+    dragElement(document.getElementById('myModal'));
+
+    function dragElement(element) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(element.id + 'header')) {
+            document.getElementById(element.id + 'header').onmousedown = dragMouseDown;
+        } else {
+            element.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            element.style.top = (element.offsetTop - pos2) + 'px';
+            element.style.left = (element.offsetLeft - pos1) + 'px';
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    document.getElementById('closeModalBtn').addEventListener('click', function () {
+        document.getElementById('myModal').style.display = 'none';
+    });</script>
+
+<script>document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            var modal = document.querySelector("#myModal");
+            if (modal) {
+                modal.style.width = "400px";
+                modal.style.height = "350px";
+                modal.style.setProperty("width", "400px", "important");
+                modal.style.setProperty("height", "350px", "important");
+            }
+        }, 2000);
+    });</script>

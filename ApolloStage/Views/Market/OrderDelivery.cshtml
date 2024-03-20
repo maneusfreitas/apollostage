@@ -22,76 +22,79 @@
     </div>
     <input hidden name="id" value="@id" />
     <input hidden name="email" value="@email" />
-  
-    <form method="post" action="@Url.Action("SubmitDeliveryOrder", "Market")">
-        <input hidden name="points" value="@pointsx" />
-        <!-- Dados de Faturação -->
-        <div class="form-group">
-            <!-- Morada -->
-            <label for="Morada">Morada:</label>
-            <input type="text" class="form-control" id="Morada" name="Morada" value="@Model.Morada" required>
 
-            <!-- Cidade -->
-            <label for="Cidade">Cidade:</label>
-            <input type="text" class="form-control" id="Cidade" name="Cidade" value="@Model.Cidade" required>
+    <div class="container d-flex justify-content-center" style="height: 100vh;">
+        <form method="post" class="w-50" action="@Url.Action("SubmitDeliveryOrder", "Market")">
+            <input hidden name="points" value="@pointsx" />
+            <!-- Dados de Faturação -->
+            <div class="form-group">
+                <!-- Morada -->
+                <label for="Morada">Adress:</label>
+                <input type="text" class="form-control" id="Morada" name="Morada" value="@Model.Morada" required>
 
-            <!-- Código Postal -->
-            <label for="CodigoPostal">Código Postal:</label>
-            <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" value="@Model.CodigoPostal" required>
+                <!-- Cidade -->
+                <label for="Cidade">City:</label>
+                <input type="text" class="form-control" id="Cidade" name="Cidade" value="@Model.Cidade" required>
 
-            <!-- País -->
-            <label for="Pais">País:</label>
-            <input type="text" class="form-control" id="Pais" name="Pais" value="@Model.Pais" required>
+                <!-- Código Postal -->
+                <label for="CodigoPostal">Postal Code:</label>
+                <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" value="@Model.CodigoPostal" required>
 
-            <!-- Número de Telefone -->
-            <label for="Numerotel">Número de Telefone:</label>
-            <input type="text" class="form-control" id="Numerotel" name="Numerotel" value="@Model.Numerotel" required>
-        </div>
+                <!-- País -->
+                <label for="Pais">Country:</label>
+                <input type="text" class="form-control" id="Pais" name="Pais" value="@Model.Pais" required>
 
-        <!-- Dados de Entrega -->
-        <div class="form-group" id="zona2" style="display: none;">
-            <!-- Nome do Destinatário -->
-            <label for="NomeEntrega">Nome do Destinatário:</label>
-            <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega" value="@Model.NomeEntrega">
-
-            <!-- Morada de Entrega -->
-            <label for="MoradaEntrega">Morada de Entrega:</label>
-            <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega" value="@Model.MoradaEntrega">
-
-            <!-- Cidade de Entrega -->
-            <label for="CidadeEntrega">Cidade de Entrega:</label>
-            <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega" value="@Model.CidadeEntrega">
-
-            <!-- Código Postal de Entrega -->
-            <label for="CodigoPostalEntrega">Código Postal de Entrega:</label>
-            <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega" value="@Model.CodigoPostalEntrega">
-
-            <!-- País de Entrega -->
-            <label for="PaisEntrega">País de Entrega:</label>
-            <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega" value="@Model.PaisEntrega">
-
-            <!-- Número de Telefone de Entrega -->
-            <label for="NumerotelEntrega">Número de Telefone de Entrega:</label>
-            <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega" value="@Model.NumerotelEntrega">
-
-            <!-- Checkbox de Confirmação de Envio -->
-            <div class="form-check">
-                <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
-                <label class="form-check-label" for="ConfirmoEnvio">
-                    Confirmo que pretendo o envio para a morada opcional
-                </label>
+                <!-- Número de Telefone -->
+                <label for="Numerotel">Phone number:</label>
+                <input type="text" class="form-control" id="Numerotel" name="Numerotel" value="@Model.Numerotel" required>
             </div>
-        </div>
-        <div class="d-flex justify-content-center mt-4">
-            <!-- Adiciona espaçamento superior -->
-            <button type="button" class="btn btn-primary w-50" id="toggleZona2">Adicionar Endereço de Entrega Opcional</button>
-        </div>
 
-        <div class="d-flex justify-content-center mt-2">
-            <!-- Adiciona espaçamento superior -->
-            <button type="submit" class="btn btn-primary w-50" id="toggleZona3">Enviar</button>
-        </div>
-    </form>
+            <!-- Dados de Entrega -->
+            <div class="form-group" id="zona2" style="display: none;">
+                <!-- Nome do Destinatário -->
+                <label for="NomeEntrega">Recipient name:</label>
+                <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega" value="@Model.NomeEntrega">
+
+                <!-- Morada de Entrega -->
+                <label for="MoradaEntrega">Delivery address</label>
+                <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega" value="@Model.MoradaEntrega">
+
+                <!-- Cidade de Entrega -->
+                <label for="CidadeEntrega">Delivery city:</label>
+                <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega" value="@Model.CidadeEntrega">
+
+                <!-- Código Postal de Entrega -->
+                <label for="CodigoPostalEntrega">Postal Code of delivery:</label>
+                <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega" value="@Model.CodigoPostalEntrega">
+
+                <!-- País de Entrega -->
+                <label for="PaisEntrega">Delivery country:</label>
+                <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega" value="@Model.PaisEntrega">
+
+                <!-- Número de Telefone de Entrega -->
+                <label for="NumerotelEntrega">Delivery phone number:</label>
+                <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega" value="@Model.NumerotelEntrega">
+
+                <!-- Checkbox de Confirmação de Envio -->
+                <div class="form-check">
+                    <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
+                    <label class="form-check-label" for="ConfirmoEnvio">
+                        I confirm that I intend to send it to the optional address.
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt- w-100">
+                <!-- Adiciona espaçamento superior -->
+                <button type="button" class="btn btn-primary w-100" id="toggleZona2">Add Optional Delivery Address</button>
+            </div>
+
+            <div class="d-flex justify-content-center mt-2 mb-3 w-100">
+                <!-- Adiciona espaçamento superior -->
+                <button type="submit" class="btn btn-primary w-100" id="toggleZona3">Submit</button>
+            </div>
+        </form>
+    </div>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>$('#toggleZona2').click(function () {

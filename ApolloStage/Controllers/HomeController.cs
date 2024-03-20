@@ -389,4 +389,7 @@ public class HomeController : Controller
         return View("Top50",albumList);
 
     }
-}
+
+
+   
+    }

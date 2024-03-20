@@ -137,7 +137,7 @@ namespace ApolloStageFirst.Controllers
                     .Where(u => u.UserMail == userEmail && u.OrderId == maxOrderId)
                     .ToListAsync();
             // return View("OrderComplete", ordersToUpdate);
-            TempData["cancel"] = "A encomenda nº"+ maxOrderId + " foi cancelada caso pretenda tentar novamente clique em pagar novamente";
+            TempData["cancel"] =  maxOrderId ;
             return View("StripeCancel", ordersToUpdate);
         }
 

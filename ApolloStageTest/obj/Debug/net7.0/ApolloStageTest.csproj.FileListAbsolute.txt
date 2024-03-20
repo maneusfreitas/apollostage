@@ -815,8 +815,11 @@
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/obj/Debug/net7.0/ref/ApolloStageTest.dll
 /Users/tenkait/Desktop/ApolloStage_fase_3 4/ApolloStage fase 2/ApolloStageTest/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/CoverletSourceRootsMapping
+/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.deps.json
+/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.runtimeconfig.json
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/appsettings.Development.json
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/appsettings.json
+/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.staticwebassets.runtime.json
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/NUnit3.TestAdapter.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/NUnit3.TestAdapter.pdb
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/nunit.engine.dll
@@ -824,13 +827,10 @@
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/nunit.engine.core.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/testcentric.engine.metadata.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/app.db
+/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/xunit.runner.utility.netcoreapp10.dll
-/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.deps.json
-/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.runtimeconfig.json
-/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage.staticwebassets.runtime.json
-/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStage
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStageTest.deps.json
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStageTest.runtimeconfig.json
 /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/bin/Debug/net7.0/ApolloStageTest.dll

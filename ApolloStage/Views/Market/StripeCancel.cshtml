@@ -3,7 +3,7 @@
     string id = TempData["id"]?.ToString();
     string email = TempData["email"]?.ToString();
     var lastIndex = Model.Count - 1;
-    string cancel = TempData["cancel"]?.ToString();
+    string cancelNumber = TempData["cancel"]?.ToString();
 
 }
 @{
@@ -20,8 +20,7 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-danger">A sua compra foi Cancelada.</h1>
-<h2 class="text-danger">@cancel.</h2>
+<h3 class="text-danger text-center"> Cancel the order nº @cancelNumber ?</h3>
 
 
 
@@ -35,20 +34,26 @@
 
 @foreach (var order in Model)
 {
+    <div class="d-flex justify-content-center mt-5">
     <div>
-        <p>T-shirt Title: @order.TshirtTitle</p>
-        <p>T-shirt size: @order.TshirtSize</p>
-        <p>T-shirt Color: @order.TshirtColor</p>
-        <p>T-shirt qt: @order.TshirtCount</p>
-        <p>T-shirt Price: @order.TshirtPrice</p>
+            <p><b>T-shirt Title:</b> @order.TshirtTitle</p>
+            <p><b>T-shirt size:</b> @order.TshirtSize</p>
+            <p><b>T-shirt Color:</b> @order.TshirtColor</p>
+            <p><b>T-shirt qt:</b> @order.TshirtCount</p>
+            <p><b>T-shirt Price:</b> @order.TshirtPrice</p>
+    </div>
     </div>
 
+    <div class="d-flex justify-content-center">
     @if (Model.IndexOf(order) == lastIndex)
     {
-        <button onclick="buyNow('@order.OrderId', '@order.UserMail', '@order.TshirtTitle', @order.TshirtPrice)" class="btn btn-dark btn-lg d-block">Pagar Novamente</button>
+        <button onclick="buyNow('@order.OrderId', '@order.UserMail', '@order.TshirtTitle', @order.TshirtPrice)" class="btn btn-dark btn-lg d-block w-25">Pay Again</button>
     }
+    </div>
 }
-<button onclick="cancelOrder()" class="btn btn-dark btn-lg d-block">Cancelar a encomenda</button>
+<div class="d-flex justify-content-center mt-2">
+<button onclick="cancelOrder()" class="btn btn-dark btn-lg d-block w-25">Cancel</button>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>async function buyNow(orderId, userEmail, tshirtTitle, amount) {

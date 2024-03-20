@@ -164,6 +164,11 @@
             color: #000000;
         }
 
+        .fixed-menu {
+            position: fixed;
+            /* Adicione outras propriedades de estilo conforme necessário */
+        }
+
         
     </style>
 </head>
@@ -178,12 +183,20 @@
                         <div class="hamburger-menu " >
                             <input id="menu__toggle" type="checkbox" />
                             <label class="menu__btn" for="menu__toggle">
-                               <i class=" nav-link btn btn-link text-dark fa fa-bars fa-2x"></i>
+                                <i id="menuIcon" class="nav-link btn btn-link text-dark fa fa-bars fa-2x"></i>
                             </label>
                             <button class="border-0 bg-white"></button>
                             <ul class="menu__box ps-5">
+
+                                <li class="mt-3 pt-3">
+                                    <form method="get" asp-controller="Home" asp-action="index">
+                                        <button type="submit" class="nav-link btn btn-link text-dark" style="color:green">
+                                            HOME
+                                        </button>
+                                    </form>
+                                </li>
                                 <strong>
-                                <li>STATISTICS</li></strong>
+                                <li class="mt-3 pt-3">STATISTICS</li></strong>
                                 <li>
                                     <form method="get" asp-controller="Home" asp-action="top5">
                                         <button type="submit" class="nav-link btn btn-link text-dark">
@@ -199,7 +212,7 @@
                                     </form>
                                 </li>
                                 <strong>
-                                <li>BUYINGS</li></strong>
+                                <li class="mt-4 pt-3">BUYINGS</li></strong>
                                 <li>
                                     <form method="get" asp-controller="Market" asp-action="market">
                                         <button type="submit" class="nav-link btn btn-link text-dark">
@@ -208,7 +221,7 @@
                                     </form>
                                 </li>
                                 <strong>
-                                <li>You</li></strong>
+                                <li class="mt-4 pt-3">You</li></strong>
                                 <li>
                                     <form method="get" asp-controller="Account" asp-action="profile">
                                         <button type="submit" class="nav-link btn btn-link text-dark">
@@ -327,7 +340,32 @@
                     // Atribua o valor do input ao atributo "value" do botão "Pesquisar"
                     searchButton.value = inputElement.value;
                 });
-            });</script>
+            });
+            
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <script>
+        $(document).ready(function () {
+            // Defina uma variável para controlar o estado do menu
+            var menuOpen = false;
+
+            // Adicione um manipulador de eventos de clique ao ícone do menu
+            $('#menuIcon').click(function () {
+                if (!menuOpen) {
+                    // Se o menu estiver fechado, adicione a classe para posição fixa
+                    $(this).addClass('fixed-menu');
+                } else {
+                    // Se o menu estiver aberto, remova a classe de posição fixa
+                    $(this).removeClass('fixed-menu');
+                }
+
+                // Alterne o estado do menu
+                menuOpen = !menuOpen;
+            });
+        });
+    </script>
+
+        
+        </script>
 
     </body>
 </html>

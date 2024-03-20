@@ -17,33 +17,38 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Order Complete</h1>
+<h1 class="text-center">Order Complete</h1>
 
 <form id="buyNowForm" method="post" action="@Url.Action("ProcessPayment", "Market")">
     <input type="hidden" id="orderId" name="orderId" />
     <input type="hidden" id="userEmail" name="userEmail" />
     <input type="hidden" id="amount" name="amount" />
     <input type="hidden" id="amount" name="amount" />
-    <input type="hidden"   id="points" name="points" value="@points"/>
+    <input type="hidden" id="points" name="points" value="@points" />
 </form>
-
-
 @foreach (var order in Model)
 {
-    <div>
-        <p>T-shirt Title: @order.TshirtTitle</p>
-        <p>T-shirt size: @order.TshirtSize</p>
-        <p>T-shirt Color: @order.TshirtColor</p>
-        <p>T-shirt qt: @order.TshirtCount</p>
-        <p>T-shirt Price: @order.TshirtPrice</p>
-    </div>
+    <div class="d-flex justify-content-center flex-wrap">
 
+        <div class="d-inline-block mx-3 my-3 border rounded p-3">
+            <p><b>T-shirt Title:</b> @order.TshirtTitle</p>
+            <p><b>T-shirt size:</b> @order.TshirtSize</p>
+            <p><b>T-shirt Color:</b> @order.TshirtColor</p>
+            <p><b>T-shirt qt:</b> @order.TshirtCount</p>
+            <p><b>T-shirt Price:</b> @order.TshirtPrice</p>
+        </div>
+
+
+    </div>
     @if (Model.IndexOf(order) == lastIndex)
-    {
-        <button onclick="buyNow('@order.OrderId', '@order.UserMail', '@order.TshirtTitle', @order.TshirtPrice)" class="btn btn-dark btn-lg d-block">Encomendar</button>
+    {<div class="d-flex justify-content-center mt-3">
+            <button onclick="buyNow('@order.OrderId', '@order.UserMail', '@order.TshirtTitle', @order.TshirtPrice)" class="btn btn-dark btn-lg w-25">Encomendar</button>
+        </div>
     }
 }
-<button onclick="cancelOrder()" class="btn btn-dark btn-lg d-block">Cancelar a encomenda</button>
+<div class="d-flex justify-content-center mt-2">
+    <button onclick="cancelOrder()" class="btn btn-dark btn-lg d-block w-25">Cancelar a encomenda</button>
+</div>
 <script>async function buyNow(orderId, userEmail, tshirtTitle, amount) {
         // Definir os valores nos campos de input do formulário
         document.getElementById('orderId').value = orderId;
