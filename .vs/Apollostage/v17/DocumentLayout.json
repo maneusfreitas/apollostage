@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|c:\\users\\joaon\\onedrive\\documents\\github\\apollostage\\apollostage\\controllers\\marketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91947474-CB70-4F88-BD86-EDA7994FFC08}|ApolloStage\\ApolloStage.csproj|solutionrelative:apollostage\\controllers\\marketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8BC14C4-6261-481C-93AB-A27EEC76FE62}|ApolloStageTest\\ApolloStageTest.csproj|c:\\users\\joaon\\onedrive\\documents\\github\\apollostage\\apollostagetest\\marketcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8BC14C4-6261-481C-93AB-A27EEC76FE62}|ApolloStageTest\\ApolloStageTest.csproj|solutionrelative:apollostagetest\\marketcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MarketControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStageTest\\MarketControllerTest.cs",
+              "RelativeDocumentMoniker": "ApolloStageTest\\MarketControllerTest.cs",
+              "ToolTip": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStageTest\\MarketControllerTest.cs",
+              "RelativeToolTip": "ApolloStageTest\\MarketControllerTest.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAswBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T01:55:19.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MarketController.cs",
+              "DocumentMoniker": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\Controllers\\MarketController.cs",
+              "RelativeDocumentMoniker": "ApolloStage\\Controllers\\MarketController.cs",
+              "ToolTip": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\Controllers\\MarketController.cs",
+              "RelativeToolTip": "ApolloStage\\Controllers\\MarketController.cs",
+              "ViewState": "AQIAAAYCAAAAAAAAAADwvysCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T01:56:21.791Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

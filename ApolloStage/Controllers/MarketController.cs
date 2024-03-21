@@ -31,7 +31,11 @@ namespace ApolloStageFirst.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly string _stripeSecretKey;
         private readonly IConfiguration _configuration;
-
+        private object value1;
+        private object value2;
+        private object value3;
+        private object value4;
+        private UserManager<ApplicationUser> @object;
 
         public MarketController(IConfiguration configuration, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
@@ -42,6 +46,20 @@ namespace ApolloStageFirst.Controllers
             _webHostEnvironment = webHostEnvironment;
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
         }
+
+        public MarketController(object value1, object value2, object value3, object value4)
+        {
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.value4 = value4;
+        }
+
+        public MarketController(UserManager<ApplicationUser> @object)
+        {
+            this.@object = @object;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Success(int StripePoints)
         {
@@ -528,6 +546,10 @@ namespace ApolloStageFirst.Controllers
 
             return shuffledPassword;
         }
-     
+
+        public async Task<ViewResult> delivery(string id, string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
