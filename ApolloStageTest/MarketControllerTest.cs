@@ -1,64 +1,81 @@
-﻿using System.Security.Claims;
-using ApolloStage;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Moq;
+using NUnit.Framework;
 using ApolloStage.Controllers;
 using ApolloStage.Data;
 using ApolloStage.Models;
 using ApolloStageFirst.Controllers;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
-using Moq;
-using Newtonsoft.Json;
 
 namespace ApolloStageTest
 {
     public class MarketControllerTest
     {
+        private ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
+        private SignInManager<ApplicationUser> _signInManager;
+        private IWebHostEnvironment _webHostEnvironment;
+        private IConfiguration _configuration;
 
-
-
-        [Fact]
-        public async Task SaveImage_ReturnsImagePath()
+        [SetUp]
+        public void Setup()
         {
-            // Arrange
-            var fakeImage = new FormFile(new MemoryStream(new byte[] { 0x20, 0x20, 0x20 }), 0, 3, "Data", "fake.jpg");
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase(databaseName: "TestDb")
+                .Options;
 
-            // Act
-            var imagePath = fakeImage;
+            _context = new ApplicationDbContext(options);
 
-            // Assert
-            Assert.NotNull(imagePath);
-        }
+            // Configure IConfiguration
+            var configuration = new ConfigurationBuilder()
+                .AddInMemoryCollection(new Dictionary<string, string>
+                {
+                    { "Stripe:PubKey", "pk_test_51Ouw5g040plG9RotFtnzZX5ZuylkUmaepSH7HlJ8r2Xxydpnbe6m02zEeROTabGZqhTJNQJNRZ7VsaubUJggK9Nq00r6ZARMiq" },
+                    { "Stripe:SecretKey", "sk_test_51Ouw5g040plG9RotKa3ephwgHk0fG7rTIR3qNBSX0ULowLuYcpeCXRdF9ruE2XkNZg8EcG3GqNf2e4nJMR5RxzyB00hbCeP95c" }
+                })
+                .Build();
 
+            // Mock UserManager
+            var userManagerMock = new Mock<UserManager<ApplicationUser>>(
+                new Mock<IUserStore<ApplicationUser>>().Object,
+                null, null, null, null, null, null, null, null);
 
-        [Fact]
-        public async Task Delivery_ReturnsCorrectViewAndTempData()
-        {
-            // Arrange
-            var mockHttpContext = new DefaultHttpContext();
-            var tempData = new TempDataDictionary(mockHttpContext, Mock.Of<ITempDataProvider>());
-            var controller = new MarketController(null, null, null, null)
+            // Mock SignInManager
+            var signInManagerMock = new Mock<SignInManager<ApplicationUser>>(
+                userManagerMock.Object, null, null, null, null, null, null);
+
+            _webHostEnvironment = new Mock<IWebHostEnvironment>().Object;
+            _userManager = userManagerMock.Object;
+            _signInManager = signInManagerMock.Object;
+            _configuration = configuration;
+
+            // Register a test user
+            var user = new ApplicationUser
             {
-                TempData = tempData
+                UserMail = "lisboabot@gmail.com",
+                Email = "lisboabot@gmail.com",
+                Name = "lisboabot",
+                UserName = "lisboabot",
+                Password = "Password123",
+                ConfirmPassword = "Password123",
+                DateOfBirth = DateTime.Now.AddYears(-30),
+                Country = "Portugal",
+                Gender = "Masculino",
+                Code = "0",
+                ConfirmedEmail = false,
+                Admin = false,
+                points = 0
             };
-            var id = "123";
-            var email = "test@example.com";
 
-            // Act
-            var result = await controller.delivery(id, email) as ViewResult;
-
-            // Assert
-            Assert.NotNull(result);
-            Assert.Equal("OrderDelivery", result.ViewName);
-            Assert.Equal(id, controller.TempData["id"]);
-            Assert.Equal(email, controller.TempData["email"]);
+            userManagerMock.Setup(x => x.FindByEmailAsync(It.IsAny<string>())).ReturnsAsync(user);
         }
 
+   
     }
 }

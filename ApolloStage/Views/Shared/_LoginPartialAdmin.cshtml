@@ -1,10 +1,14 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity;
+@using System.Text.RegularExpressions;
+
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @{
     string currentPath = Context.Request.Path;
+    var regex = new Regex("^/Market/ProductDetails/\\d+$", RegexOptions.IgnoreCase);
 }
 <head>
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
@@ -68,19 +72,41 @@
             </form>
         </li>
 
-        <li class="nav-item mr-3">
-            <button type="button" class="btn btn-success" data-toggle="modal"
-                    data-target="#staticBackdrop">
-                <i class="fa fa-shopping-cart total-count"></i>
-            </button>
-        </li>
+        @if (currentPath.Equals("/Market/market", StringComparison.OrdinalIgnoreCase) || regex.IsMatch(currentPath))
+        {
+            <li class="nav-item mr-3">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">
+                    <i class="fa fa-shopping-cart total-count"></i>
+                </button>
+            </li>
+        }
 
-            }
+    }
 
-    </ul>
+</ul>
 
-    
+
 <style>
+
+  .quote {
+    position: relative;
+  }
+
+  .quotes::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -1rem;
+    left: 1.5rem;
+    --tw-bg-opacity: 1;
+    border-top: 1rem solid rgb(209 213 219 / var(--tw-bg-opacity));
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1rem solid rgb(209 213 219 / var(--tw-bg-opacity));
+  }
+
+/* ### END PEHTHEME CSS */
     button.btn.btn-success i {
         color: black;
         font-size: 25px;

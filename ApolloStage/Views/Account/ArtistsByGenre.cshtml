@@ -1,4 +1,14 @@
-﻿@model List<Album>  
+﻿@model List<Album>
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <h2>Artists by Genre</h2>
 

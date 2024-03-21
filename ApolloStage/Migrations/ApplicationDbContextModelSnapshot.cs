@@ -136,6 +136,13 @@ namespace ApolloStage.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Pointstoapply")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("TshirtColor")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -155,10 +162,6 @@ namespace ApolloStage.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserMail")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("state")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -237,6 +240,24 @@ namespace ApolloStage.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ReviewReports");
+                });
+
+            modelBuilder.Entity("ApolloStage.Models.Top50", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("IdAlbum")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("count")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Top50");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -526,6 +547,9 @@ namespace ApolloStage.Migrations
                     b.Property<string>("UserMail")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("points")
+                        .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });

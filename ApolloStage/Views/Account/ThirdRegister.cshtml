@@ -1,9 +1,20 @@
 ﻿@model ApplicationUser
 
 @{
+    ViewData["Title"] = "Register";
     string password = TempData["Password"]?.ToString();
     string confirmPassword = TempData["ConfirmPassword"]?.ToString();
     string name = TempData["Name"]?.ToString();
+}
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <head>
@@ -18,8 +29,7 @@
         });</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
             // Faz a requisição AJAX para a API de países
             $.ajax({
                 url: 'https://restcountries.com/v3.1/all',
@@ -47,9 +57,7 @@
                     console.error('Erro ao buscar países.');
                 }
             });
-        });
-
-    </script>
+        });</script>
 </head>
 
 
@@ -59,12 +67,9 @@
 <body>
     <header>
         <div class="container-fluid d-flex align-items-center h-25 position-relative">
-            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <img src="~/img/apollostage-logo.png" alt="some text" width="250">
             <div class="w-100 position-absolute text-center">
-                <h1 class="text-center"> Register</h1>
-            </div>
-            <div class="me-0" style="position:absolute;right:30px">
-                <label> Dark Mode</label>
+                <h1 class="text-center">Register</h1>
             </div>
         </div>
     </header>
@@ -75,16 +80,15 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                     <div id="birthday_country_gender" class="d-block">
                         <div class="form-floating mb-5">
-                            <input asp-for="DateOfBirth" class="form-control" aria-required="true" placeholder="Birthday" />
+                            <input asp-for="DateOfBirth" class="form-control" aria-required="true" placeholder="Birthday" max=@DateTime.Now.AddYears(-15).ToString("yyyy-MM-dd") />
                             <label asp-for="DateOfBirth">Birthday</label>
                             <span id="dateOfBirthError" class="text-danger"></span>
                         </div>
                         <div>
                             <select id="countrySelect" class="form-select mb-5" aria-label="Country">
                                 <option selected disabled>Choose your country</option>
-                                <!-- Opções do país aqui -->
                             </select>
-                            <span id="countryError" class="text-danger"></span> <!-- Mensagem de erro para o campo do país -->
+                            <span id="countryError" class="text-danger"></span>
                         </div>
                         <div>
                             <select id="genderSelect" class="form-select mb-5" aria-label="Gender">
@@ -92,7 +96,7 @@
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
-                            <span id="genderError" class="text-danger"></span> <!-- Mensagem de erro para o campo de gênero -->
+                            <span id="genderError" class="text-danger"></span>
                         </div>
 
                     </div>
@@ -109,25 +113,17 @@
                     <input type="hidden" asp-for="EmailConfirmed" />
 
                     <div>
-                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: #00BF63">Next step</button>
                     </div>
 
 
-                 
 
-
-
-                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
+                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: #00BF63  ">Conclude</button>
                     <div>
-
-                        <h5 class="mt-4 w-100 text-center">
-                            Already have an account?
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
-                        </h5>
-
+                        <p class="mt-4 text-center">Already have an account? <a style="font-weight: bold; color: black; text-decoration: none;" asp-controller="Account" asp-action="Login">Login here</a></p>
                     </div>
                 </form>
-              
+
             </div>
 
         </div>
@@ -139,8 +135,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function (event) {
+    <script>document.getElementById('registerForm').addEventListener('submit', function (event) {
             var dateOfBirth = new Date(document.getElementById('DateOfBirth').value);
             var hundredYearsAgo = new Date();
             hundredYearsAgo.setFullYear(hundredYearsAgo.getFullYear() - 100);
@@ -180,6 +175,5 @@
             } else {
                 genderError.innerText = ""; // Limpa a mensagem de erro se o gênero for selecionado
             }
-        });
-    </script>
+        });</script>
 }

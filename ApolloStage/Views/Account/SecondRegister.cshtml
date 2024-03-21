@@ -1,7 +1,19 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model ApplicationUser
 @inject SignInManager<ApplicationUser> SignInManager
-
+@{
+    ViewData["Title"] = "Register";
+}
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 
 <head>
@@ -18,12 +30,9 @@
 <body>
     <header>
         <div class="container-fluid d-flex align-items-center h-25 position-relative">
-            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <img src="~/img/apollostage-logo.png" alt="some text" width="250">
             <div class="w-100 position-absolute text-center">
-                <h1 class="text-center"> Register</h1>
-            </div>
-            <div class="me-0" style="position:absolute;right:30px">
-                <label> Dark Mode</label>
+                <h1 class="text-center">Register</h1>
             </div>
         </div>
     </header>
@@ -38,14 +47,14 @@
                             <label asp-for="Name">Name</label>
                             <span id="nameError" class="text-danger"></span>
                         </div>
-                        <div class="form-outline mb-5">
-                            <h5 asp-for="Password">Password</h5>
-                            <input id="password" asp-for="Password" class="form-control" aria-required="true" />
+                        <div class="form-floating mb-5">
+                            <input id="password" asp-for="Password" class="form-control" aria-required="true" placeholder="Password" />
+                            <label asp-for="Password">Password</label>
                             <span id="passwordError" class="text-danger"></span>
                         </div>
-                        <div class="form-outline mb-5">
-                            <h5 asp-for="ConfirmPassword">Confirm Password</h5>
-                            <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" aria-required="true" />
+                        <div class="form-floating mb-5">
+                            <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control" aria-required="true" placeholder="Confirm Password" />
+                            <label asp-for="ConfirmPassword">Confirm Password</label>
                             <span id="confirmPasswordError" class="text-danger"></span>
                         </div>
                     </div>
@@ -59,23 +68,16 @@
                     <input type="hidden" asp-for="EmailConfirmed" />
 
                     <div>
-                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: #00BF63">Next step</button>
                     </div>
 
 
-
-
-                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
+                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: #00BF63  ">Conclude</button>
                     <div>
-
-                        <h5 class="mt-4 w-100 text-center">
-                            Already have an account?
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
-                        </h5>
-
+                        <p class="mt-4 text-center">Already have an account? <a style="font-weight: bold; color: black; text-decoration: none;" asp-controller="Account" asp-action="Login">Login here</a></p>
                     </div>
                 </form>
-               
+
             </div>
 
         </div>
@@ -87,8 +89,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function (event) {
+    <script>document.getElementById('registerForm').addEventListener('submit', function (event) {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
             if (password.trim() === '') {
@@ -120,7 +121,5 @@
                 document.getElementById('nameError').innerText = "Please enter a name";
                 event.preventDefault(); // Impede o envio do formulário se o campo estiver vazio
             }
-        });
-
-    </script>
+        });</script>
 }

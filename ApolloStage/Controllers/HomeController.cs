@@ -5,14 +5,11 @@ using ApolloStage.Models.Categories;
 using ApolloStage.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Xml;
-using HtmlAgilityPack;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using ApolloStage.Data;
 using Microsoft.AspNetCore.Identity;
 using ApolloStage.Models.Product;
-using ApolloStage.Migrations;
+
 
 namespace ApolloStage.Controllers;
 
@@ -25,6 +22,7 @@ public class HomeController : Controller
     private readonly ApplicationDbContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly ISingleton singleton;
+    
     public HomeController(ApplicationDbContext context, IHttpClientHelper httpClientHelper, ISingleton singleton, UserManager<ApplicationUser> userManager)
     {
         this.httpClientHelper = httpClientHelper;
@@ -34,52 +32,12 @@ public class HomeController : Controller
     }
 
 
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-
- 
-        public IActionResult GetCustomString()
-        {
-            int i = 0;
-            i++;
-            var customString = "Sua string personalizada" + i;
-            return Content(customString);
-        }
-
-        public ActionResult Indexx()
-        {
-
-            return View((object)"erfwerfwerfwe");
-        }
-
-
-
-        [HttpPost]
-        public ActionResult GenerateRandomWord()
-        {
-            int i = 0; // Você precisa definir o valor de 'i' de alguma forma
-            string word = "erfwerfwerfwe" + i.ToString();
-            return View((object)word);
-        }
-
-
-    /*
-        [HttpGet]
-        public IActionResult SearchArtist()
-        {
-            return View();
-        }
-    */
     [HttpGet]
     public async Task<IActionResult> SearchArtist(string id,string value, string searchType)
     {
@@ -205,7 +163,6 @@ public class HomeController : Controller
 
         public async Task<ActionResult> ArtistDetails(string id)
         {
-            // Código para obter os detalhes do artista com base no ID (você pode usar o mesmo método que estava usando)
             var artist = id;
 
             if (artist == null)
@@ -230,6 +187,7 @@ public class HomeController : Controller
             using (var httpClient = new HttpClient())
             {
             //https://apollostage1.azurewebsites.net
+            //https://apollostage20240303150613.azurewebsites.net
             using (var response = await httpClient.GetAsync($"https://localhost:7164/GetArtist/{id}"))
                 {
                     if (response.IsSuccessStatusCode)
@@ -245,7 +203,7 @@ public class HomeController : Controller
                 }
             }
            
-
+/*
             // albuns lançados recentemente
             string apiUrl = "https://api.spotify.com/v1/browse/new-releases";
 
@@ -253,13 +211,13 @@ public class HomeController : Controller
             
 
             // top10 playlist albuns
-
+           
             var responseplaylists = await httpClientHelper.SendAysnc(playlistx, SpotifyService.AccessToken);
             var json = responseplaylists;
 
             var jsonObject = JObject.Parse(json);
             var items = jsonObject["playlists"]["items"];
-
+       
             var playlistsx = items
                 .Select(item => new Playlist
                 {
@@ -306,9 +264,9 @@ public class HomeController : Controller
                 // Lide com o caso em que a resposta é nula ou vazia, se necessário
             }
         }
+        
 
-
-        /*
+        
 
         // categorias 
 
@@ -331,10 +289,8 @@ public class HomeController : Controller
             }
                     }
                 })
-                .ToList();
+                .ToList();*/
 
-
-        */
         // top 10 genero musical
         string rAlbums = "4czdORdCWP9umpbhFXK2fW,1YZiR5FINFOlZPGKSVplIY,2cWBwpqMsDJC1ZUwz813lo,6QtnCAFmqOwR75jOOmU7k9,6zaisPwfcIAfdUGPj3mmGY,0u7sgzvlLmPLvujXxy9EeY,3elU9JzR0DtbdRv8EOzBa4,3VWrUk4vBznMYXGMPc7dRB,2acDkDTWdNFie1HjcFa4Ny,6i6folBtxKV28WX3msQ4FE";
         string urlnew = "https://api.spotify.com/v1/albums?ids=" + rAlbums;
@@ -368,19 +324,72 @@ public class HomeController : Controller
     
         }
 
-
-
         public ActionResult NotFound()
         {
-
             return View();
         }
 
 
+    [HttpGet]
+    public async Task<IActionResult> top5()
+    {
+        var top50Albums = _context.Top50
+      .OrderByDescending(t => t.count)
+      .Take(50)
+      .Select(t => t.IdAlbum)
+      .ToList();
 
+        // Agrupar em lotes de 10
+        var albumGroups = top50Albums
+            .Select((value, index) => new { value, index })
+            .GroupBy(x => x.index / 10)
+            .Select(group => group.Select(x => x.value).ToList())
+            .ToList();
+
+        // Consultar a API do Spotify para cada lote de 10
+        var albums = new List<Album>();
+        foreach (var group in albumGroups)
+        {
+            // Concatenar os IdAlbum em uma única string separada por vírgulas
+            string rAlbums = string.Join(",", group);
+
+            // Consultar a API do Spotify
+            string urlnew = "https://api.spotify.com/v1/albums?ids=" + rAlbums;
+            Console.WriteLine("token: " + SpotifyService.AccessToken);
+            Console.WriteLine("albuns: " + rAlbums);
+            var responseJsonw = await httpClientHelper.SendAysnc(urlnew, SpotifyService.AccessToken);
+
+            var responseJObjectw = JObject.Parse(responseJsonw);
+            var albumsInGroup = responseJObjectw["albums"].ToObject<List<Album>>();
+
+            albums.AddRange(albumsInGroup);
+        }
+    
+
+        var albumList = albums.Select(albumItem => new Album
+        {
+            album_type = albumItem.album_type,
+            artists = albumItem.artists,
+            available_markets = albumItem.available_markets,
+            external_urls = albumItem.external_urls,
+            href = albumItem.href,
+            id = albumItem.id,
+            images = albumItem.images,
+            name = albumItem.name,
+            release_date = albumItem.release_date,
+            release_date_precision = albumItem.release_date_precision,
+            type = albumItem.type,
+            uri = albumItem.uri,
+            label = albumItem.label,
+            popularity = albumItem.popularity,
+        }).ToList();
+        var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+        var admin = await _userManager.FindByEmailAsync(userEmail);
+        TempData["meu"] = admin.Admin;
+        return View("Top50",albumList);
 
     }
 
 
-
-
+   
+    }

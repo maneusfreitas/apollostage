@@ -1,8 +1,15 @@
 ﻿@model IndexModelView;
 @{
-    ViewData["Title"] = "Tasks";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    string meu = TempData["meu"]?.ToString();
 }
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <div class="container text-center">
     @using (Html.BeginForm("SearchArtist", "Home", FormMethod.Post))
@@ -29,13 +36,13 @@
             }
         </div>
 
-       <div class="section">
+        <div class="section">
             <h1 class="section-title">Álbuns</h1>
             <div class="row">
                 @if (Model.Artists[0].Albums != null && Model.Artists[0].Albums.items != null)
-                    {
+                {
                     @foreach (var album in Model.Artists[0].Albums.items)
-                        {
+                    {
                         <div class="col-4">
                             <div class="card">
                                 <img src="@album.images[0].URL" class="card-img-top" alt="Capa do Álbum">
@@ -62,7 +69,7 @@
         <p>Nenhum artista encontrado.</p>
     }
 
-  
+
 </div>
 @if (Model.Playlists != null)
 {

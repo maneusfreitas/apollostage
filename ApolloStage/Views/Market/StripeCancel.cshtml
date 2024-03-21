@@ -1,0 +1,89 @@
+﻿@using System.Security.Claims;
+@{
+    string id = TempData["id"]?.ToString();
+    string email = TempData["email"]?.ToString();
+    var lastIndex = Model.Count - 1;
+    string cancelNumber = TempData["cancel"]?.ToString();
+
+}
+@{
+    ViewData["Title"] = "Error";
+}
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger text-center"> Cancel the order nº @cancelNumber ?</h3>
+
+
+
+
+<form id="buyNowForm" method="post" action="@Url.Action("ProcessPayment", "Market")">
+    <input type="hidden" id="orderId" name="orderId" />
+    <input type="hidden" id="userEmail" name="userEmail" />
+    <input type="hidden" id="amount" name="amount" />
+</form>
+
+
+@foreach (var order in Model)
+{
+    <div class="d-flex justify-content-center mt-5">
+    <div>
+            <p><b>T-shirt Title:</b> @order.TshirtTitle</p>
+            <p><b>T-shirt size:</b> @order.TshirtSize</p>
+            <p><b>T-shirt Color:</b> @order.TshirtColor</p>
+            <p><b>T-shirt qt:</b> @order.TshirtCount</p>
+            <p><b>T-shirt Price:</b> @order.TshirtPrice</p>
+    </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+    @if (Model.IndexOf(order) == lastIndex)
+    {
+        <button onclick="buyNow('@order.OrderId', '@order.UserMail', '@order.TshirtTitle', @order.TshirtPrice)" class="btn btn-dark btn-lg d-block w-25">Pay Again</button>
+    }
+    </div>
+}
+<div class="d-flex justify-content-center mt-2">
+<button onclick="cancelOrder()" class="btn btn-dark btn-lg d-block w-25">Cancel</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>async function buyNow(orderId, userEmail, tshirtTitle, amount) {
+        // Definir os valores nos campos de input do formulário
+        document.getElementById('orderId').value = orderId;
+        document.getElementById('userEmail').value = userEmail;
+        document.getElementById('amount').value = amount;
+
+        // Submeter o formulário
+        document.getElementById('buyNowForm').submit();
+    }</script>
+<script>function cancelOrder() {
+        $.ajax({
+            type: "GET",
+            url: "/Market/CancelOrder",
+            success: function (response) {
+                if (response.success) {
+                    console.log("Order canceled successfully");
+                    alert("Order canceled successfully");
+                    window.location.href = "/home/index";
+
+                } else {
+                    console.error("Failed to cancel order");
+                    alert("Failed to cancel order. Please try again later.");
+                }
+            },
+            error: function (xhr, status, error) {
+                // Manipula erros aqui, se necessário
+                console.error(error);
+                alert("Failed to cancel order. Please try again later.");
+            }
+        });
+    }</script>

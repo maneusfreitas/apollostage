@@ -3,15 +3,18 @@
 @model ApolloStage.Models.Product.Tshirt
 @{
     string meu = TempData["meu"]?.ToString();
+    string points = TempData["points"]?.ToString();
 }
+
 
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 
 <div class="container">
@@ -19,25 +22,40 @@
         <div class="col-md-6">
             <input hidden type="text" id="theimage" name="theimage" value="~/@Model.Images1" />
             <input hidden type="text" id="pname" name="pname" value="@Model.Title" />
-            <img src="~/@Model.Images1" name="~/@Model.Images1" alt="T-shirt Image" class="img-fluid" height="600px" width="600px" style="max-height:600px; max-width:600px">
-            @if (@Model.Images2 != "null")
-            {
-                <div>
-                    <img src="~/@Model.Images2" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
-                </div>}
-            @if (@Model.Images3 != "null")
-            {
-                <div>
-                    <img src="~/@Model.Images3" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
-                </div>}
-            @if (@Model.Images4 != "null")
-            {
-                <div>
-                    <img src="~/@Model.Images4" alt="T-shirt" style="max-width: 50px; max-height:50px" height="50px" width="50px">
-                </div>}
+            <input hidden type="text" id="points" name="points" value="@points" />
+            <input hidden type="number" id="pointssend" name="pointssend" value="0" />
+
+
+            <div style="position: relative; max-width: 100%; overflow: hidden;border: solid 1px grey;">
+                <img id="mainImage" src="~/@Model.Images1" alt="T-shirt Image" style="max-width: 100%; height: auto; display: block;">
+
+                <div id="imggroup" style="position: absolute; top: 0; right: 0; display: flex; flex-direction: column; align-items: flex-end;">
+                    @if (@Model.Images2 != "null")
+                    {
+                        <div style="position: relative;border: solid 1px grey; ">
+                            <img src="~/@Model.Images2" alt="T-shirt" style="max-width: 60px; max-height: 60px; width: auto; height: auto;" onclick="trocarImagem(this)">
+                        </div>
+                    }
+                    @if (@Model.Images3 != "null")
+                    {
+                        <div style="position: relative;border: solid 1px grey;">
+                            <img src="~/@Model.Images3" alt="T-shirt" style="max-width: 60px; max-height: 60px; width: auto; height: auto;" onclick="trocarImagem(this)">
+                        </div>
+                    }
+                    @if (@Model.Images4 != "null")
+                    {
+                        <div style="position: relative;border: solid 1px grey;  ">
+                            <img src="~/@Model.Images4" alt="T-shirt" style="max-width: 60px; max-height: 60px; width: auto; height: auto;" onclick="trocarImagem(this)">
+                        </div>
+                    }
+                </div>
+            </div>
+
+
         </div>
-    
-        <div class="col-md-6 mt-md mt-3">
+
+
+        <div class="col-md-6 mt-3">
             <span style="color:grey; font-size:20px">In association with</span>
             <span style="color:rgb(49, 166, 214); font-size:20px">@Model.Association</span>
             <br />
@@ -74,12 +92,12 @@
                 </select>
                 <!-- <button type="button" data-name="@Model.Title.Split(' ').FirstOrDefault();" data-price="@Convert.ToUInt32(@Model.Price)" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5"> Add to Shopping car</button>
 
-            <button type="button" data-name="@Model.Title.Split(' ').Skip(1).FirstOrDefault();" data-price="@Convert.ToUInt32(@Model.Price)" data-size="grande"
-                    data-color="azul" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5">
-                Add to Shopping car
-            </button> -->
-                <button type="button" data-name="@Model.Title.Replace(" ", "-")" data-price="@Convert.ToDouble(@Model.Price)" data-size="grande"
+                <button type="button" data-name="@Model.Title.Split(' ').Skip(1).FirstOrDefault();" data-price="@Convert.ToUInt32(@Model.Price)" data-size="grande"
                         data-color="azul" class="default-btn w-100 btn-lg btn btn-custom-success text-white border-radius-5">
+                    Add to Shopping car
+                </button> -->
+                <button type="button" data-name="@Model.Title.Replace(" ", "-")" data-price="@Convert.ToDouble(@Model.Price)" data-size="grande"
+                        data-color="azul" class=" w-100 btn-lg btn btn-custom-success text-white border-radius-5">
                     Add to Shopping car
                 </button>
             </div>
@@ -87,7 +105,7 @@
             <p class=" mt-5 " style="text-align: justify;">@Model.Description</p>
         </div>
     </div>
-    </div>
+</div>
 
 
 
@@ -102,6 +120,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -109,12 +128,16 @@
             <div class="modal-body">
                 <table class="show-cart table">
                 </table>
+                <h3 style="color:red;display:none" id="enoughpoits">Don´t have enough points</h3>
+                <div> You have @points, do you want to spend it? 1000 pontos = 1€ <input type='number' id="inputpoints" name="inputpoints" value="0" min='0' max='@points' />  <button style="display:none;" type="button" id="pointsBtn" class="btn btn-primary">apply discount</button></div>
                 <div class="grand-total">Total price: <span class="total-cart"></span>€</div>
+                <div id="total-cart-disc-div" style="display:none;" class="grand-total"> Total price after discount: <span id="total-cart-disc"></span>€</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="closebtn" data-dismiss="modal">Close</button>
                 <!-- Botão de checkout -->
                 <button style="display:none;" type="button" id="checkoutBtn" class="btn btn-primary">Checkout</button>
+
             </div>
         </div>
     </div>
@@ -128,16 +151,19 @@
     .fa-shopping-cart:before {
         margin-right: 10px;
     }
+
     .btn-danger {
         color: #fff;
         background-color: #dc3545 !important;
         border-color: #dc3545;
     }
+
     button.btn.btn-success.my-2.my-sm-0 {
         position: absolute;
         right: 20px;
         top: 120px;
     }
+
     #red {
         background-color: red;
         border: 3px solid black;
@@ -154,8 +180,9 @@
     }
 
     .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-        margin-left: 5px!important;
+        margin-left: 5px !important;
     }
+
     .rating {
         unicode-bidi: bidi-override;
         direction: rtl;
@@ -543,12 +570,24 @@
                 font-size: 18px;
             }
     }
+
     .modal-dialog.modal-dialog-centered {
         max-width: 800px !important;
     }
+
     p.sku {
         font-size: 10px;
         margin-top: -35px;
+    }
+
+    #checkoutBtn {
+        background-color: black;
+        border: none;
+    }
+
+    #closebtn {
+        background-color: black;
+        border: none;
     }
 </style>
 <script>//localStorage.removeItem("shoppingCart");
@@ -560,13 +599,11 @@
             $(this).addClass("selected").css("border", "6px solid rgb(49, 166, 214)");
         });
     });</script>
-<script>
-
-    var shoppingCart = (function () {
+<script>var shoppingCart = (function () {
 
         cart = [];
 
-        function Item(name, price, count, size, color,image,pname) {
+        function Item(name, price, count, size, color, image, pname) {
             this.name = name;
             this.price = price;
             this.count = count;
@@ -593,7 +630,7 @@
         var obj = {};
 
         // Add to cart
-        obj.addItemToCart = function (name, price, count, size, color, image,pname) {
+        obj.addItemToCart = function (name, price, count, size, color, image, pname) {
             for (var item in cart) {
                 if (cart[item].name === name) {
                     cart[item].count++;
@@ -659,8 +696,7 @@
             var totalCart = 0;
 
             for (var item in cart) {
-                let pricex = cart[item].price.replace(',', '.');
-                totalCart += parseFloat(pricex) * cart[item].count;
+                totalCart += parseFloat(cart[item].price) * cart[item].count;
             }
             if (totalCart > 0) {
                 document.getElementById("checkoutBtn").style.display = "block";
@@ -680,8 +716,7 @@
                 for (p in item) {
                     itemCopy[p] = item[p];
                 }
-                let pricex = item.price.replace(',', '.');
-                itemCopy.total = Number(parseFloat(pricex) * item.count).toFixed(2);
+                itemCopy.total = Number(parseFloat(item.price) * item.count).toFixed(2);
                 cartCopy.push(itemCopy)
             }
             return cartCopy;
@@ -691,7 +726,7 @@
 
 
     // Add item
-    $('.default-btn').click(function (event) {
+    $('.btn-custom-success').click(function (event) {
         // alert('working');
         event.preventDefault();
         var name = document.getElementById("inputName").value;
@@ -728,15 +763,16 @@
             let penultimoElemento = meuArray[meuArray.length - 2];
             var link = cartArray[i].image.replace(/~/g, '');
             output += "<tr>"
+                + '<td><img src="' + link + '" alt="T-shirt Image" height="140px" width="140px" style="max-height:140px; max-width:140px;margin-left: 5px;margin - right: 5px;"></td>'
+
                 + "<td><h5>" + cartArray[i].pname + "</h5></br><p class='sku'><strong>SKU</strong>:" + cartArray[i].name + "</p></td>"
-             
                 + "<td><div class='input-group'>"
-                + '<img src="' + link + '" alt="T-shirt Image" height="40px" width="40px" style="max-height:40px; max-width:40px;margin-left: 5px;margin - right: 5px;">'
+
                 + cor + '<span style="border: 2px solid rgb(49, 166, 214);width: 40px;text-align: center;margin-left: 5px;margin - right: 5px;">' + penultimoElemento + '</span>'
                 + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "' min='0'>"
                 + "</div></td>"
                 + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
-                + " = "
+
                 + "<td>" + cartArray[i].total + "€</td>"
                 + "</tr>";
         }
@@ -799,19 +835,19 @@
     });</script>
 
 <script>$(document).ready(function () {
-    $('.rating span').click(function () {
-        var size = document.getElementById("inputSize").value;
-        var name = $('.default-btn').data('name');
-        var selectedColor = $(this).attr('id'); 
-        $('#inputColor').val(selectedColor);
-        var colorId = document.getElementById("inputColor").value;
-        $('#inputName').val(name + "-" + size + "-" + colorId);
+        $('.rating span').click(function () {
+            var size = document.getElementById("inputSize").value;
+            var name = $('.btn-custom-success').data('name');
+            var selectedColor = $(this).attr('id');
+            $('#inputColor').val(selectedColor);
+            var colorId = document.getElementById("inputColor").value;
+            $('#inputName').val(name + "-" + size + "-" + colorId);
         });
     });</script>
 <script>$(document).ready(function () {
         $('#tshirtSize').change(function () {
             var selectedSize = $(this).val();
-            var name = $('.default-btn').data('name');
+            var name = $('.btn-custom-success').data('name');
             var colorId = document.getElementById("inputColor").value;
             $('#inputSize').val(selectedSize);
             var size = document.getElementById("inputSize").value;
@@ -825,21 +861,120 @@
         localStorage.setItem('shoppingCart', JSON.stringify(cart));
 
         var cartContent = shoppingCart.listCart();
+        var newObjArray = [];
 
+        cartContent.forEach(function (item) {
+            var newItem = {
+                name: item.name,
+                price: parseFloat(item.price),
+                count: item.count,
+                size: item.size,
+                color: item.color,
+                image: item.image,
+                pname: item.pname,
+                total: (parseFloat(item.price) * item.count).toFixed(2)
+            };
 
-
-        $.ajax({
+            newObjArray.push(newItem);
+        });
+        console.log(newObjArray);
+           $.ajax({
             type: "POST",
             url: '@Url.Action("ShoppingCart", "Market")',
-            data: { cartContent: JSON.stringify(cartContent) },
+            contentType: 'application/json',
+            data: JSON.stringify({ cartContent: newObjArray, points: parseInt($("#pointssend").val()) }),
             success: function (response) {
                 console.log(response);
                 localStorage.removeItem("shoppingCart");
-                window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email;
-         },
+                if (response.id != "false")
+                    window.location.href = '@Url.Action("delivery", "Market")' + '?id=' + response.id + '&email=' + response.email + '&points=' + response.userpoints;
+                else
+                    alert("NOT enogth points")
+            },
             error: function (xhr, status, error) {
                 console.error("Erro no post:", error);
             }
         });
+
     });
 </script>
+<script>function trocarImagem(imagemClicada) {
+        var imagemPrincipal = document.getElementById('mainImage');
+        var imagemAntiga = imagemPrincipal.src;
+
+        var imagemClicadaSrc = imagemClicada.src;
+        imagemClicada.src = imagemAntiga;
+
+        imagemPrincipal.src = imagemClicadaSrc;
+    }</script>
+
+
+
+<script>
+    const inputPoints = document.getElementById('inputpoints');
+    const enoughpoits = document.getElementById('enoughpoits');
+    const pointsBtn = document.getElementById('pointsBtn');
+
+    inputPoints.addEventListener('input', function(event) {
+        const value = parseInt(event.target.value);
+
+        const maxValue = parseInt('@points');
+        if (value >= 1000)
+            pointsBtn.style.display = "block";
+        else
+            pointsBtn.style.display = "none";
+        if (value > maxValue) {
+            enoughpoits.style.display = 'block';
+
+            setTimeout(function () {
+                enoughpoits.style.display = 'none';
+            }, 10000);
+            event.target.value = maxValue;
+        }
+    });
+</script>
+
+<script>document.getElementById('pointsBtn').addEventListener('click', function () {
+
+        var pointsInput = document.getElementById('inputpoints');
+        var pointsValue = parseInt(pointsInput.value);
+
+        if (pointsValue >= 1000) {
+            var discountAmount = Math.floor(pointsValue / 1000);
+            document.getElementById("pointssend").value = pointsInput.value;
+            shoppingCart.applyDiscount(discountAmount);
+
+            displayCart();
+            pointsInput.value = 0;
+        } else {
+            // Exibe uma mensagem de erro se não houver pontos suficientes para aplicar o desconto
+            alert('You need at least 1000 points to apply a discount.');
+        }
+    });
+
+    // Função para aplicar o desconto ao carrinho
+    shoppingCart.applyDiscount = function (discountAmount) {
+        var newTotal = shoppingCart.totalCart() - discountAmount;
+
+        if (newTotal >= 0) {
+            var spanElement = document.getElementById('total-cart-disc');
+            var spanElementdiv = document.getElementById('total-cart-disc-div');
+            spanElementdiv.style.display = "block";
+            spanElement.textContent = newTotal;
+        } else {
+            newTotal = 0;
+            var spanElement = document.getElementById('total-cart-disc');
+            var spanElementdiv = document.getElementById('total-cart-disc-div');
+            spanElementdiv.style.display = "none";
+            spanElement.textContent = newTotal;
+        }
+
+    };</script>
+<script src="https://js.stripe.com/v3/"></script>
+
+
+
+<script>function checkout(pubKey, sessionId) {
+        const stripe = Stripe(pubKey);
+        stripe.redirectToCheckout({ sessionId });
+    }</script>

@@ -26,6 +26,7 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<Tshirt> Tshirt { get; set; }
     public DbSet<Mug> Mug { get; set; }
+    public DbSet<Top50> Top50 { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

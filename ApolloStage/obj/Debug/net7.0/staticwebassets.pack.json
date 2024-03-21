@@ -1,515 +1,567 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ApolloStage.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ApolloStage.bundle.scp.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/obj/Debug/net7.0/scopedcss/projectbundle/ApolloStage.bundle.scp.css",
+      "PackagePath": "staticwebassets/ApolloStage.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\css\\demo.css",
-      "PackagePath": "staticwebassets\\css\\demo.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/css/demo.css",
+      "PackagePath": "staticwebassets/css/demo.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\css\\stylecart.css",
-      "PackagePath": "staticwebassets\\css\\stylecart.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/css/stylecart.css",
+      "PackagePath": "staticwebassets/css/stylecart.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/icon.ico",
+      "PackagePath": "staticwebassets/icon.ico"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg",
-      "PackagePath": "staticwebassets\\img\\0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg",
+      "PackagePath": "staticwebassets/img/0aODTWAREq3scO6Opi6RsTbOiHAyMvPJh.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg",
-      "PackagePath": "staticwebassets\\img\\0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg",
+      "PackagePath": "staticwebassets/img/0z3Ws95pOdx8lVPxcGkngcD2lMfUHMRVY.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp",
-      "PackagePath": "staticwebassets\\img\\1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp",
+      "PackagePath": "staticwebassets/img/1FZMxnve5KHDYG5BuvXh3bk8eRt5NvXJn.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg",
-      "PackagePath": "staticwebassets\\img\\2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg",
+      "PackagePath": "staticwebassets/img/2CWf69gaxouJzYievjdAVJOFwDRIl18k5.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg",
-      "PackagePath": "staticwebassets\\img\\2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/2N1t9I73kDPPzzv7RB67d6O0F29a6ef9F.webp",
+      "PackagePath": "staticwebassets/img/2N1t9I73kDPPzzv7RB67d6O0F29a6ef9F.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png",
-      "PackagePath": "staticwebassets\\img\\5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg",
+      "PackagePath": "staticwebassets/img/2xJLgtyIO4Ai3YwqNxNbKixANQPcwQ6t6.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg",
-      "PackagePath": "staticwebassets\\img\\6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/47tSApeAQgwSAUeg3WAFGmkT788P1vG1T.webp",
+      "PackagePath": "staticwebassets/img/47tSApeAQgwSAUeg3WAFGmkT788P1vG1T.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png",
-      "PackagePath": "staticwebassets\\img\\A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png",
+      "PackagePath": "staticwebassets/img/5a5Iy0mnn7d8ppA8MyZiep5YxpXSBHyxM.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg",
-      "PackagePath": "staticwebassets\\img\\Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg",
+      "PackagePath": "staticwebassets/img/6gL06VjLhaFk5KimUMNMNO5viLt6i27Kn.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png",
-      "PackagePath": "staticwebassets\\img\\El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png",
+      "PackagePath": "staticwebassets/img/A0ByYlwIltxJg0p3ojUNo1fDeD9OnzCFf.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png",
-      "PackagePath": "staticwebassets\\img\\F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/A4h0awZW5gf6WqdBHMz3FbNiKhyMl8kx7.webp",
+      "PackagePath": "staticwebassets/img/A4h0awZW5gf6WqdBHMz3FbNiKhyMl8kx7.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg",
-      "PackagePath": "staticwebassets\\img\\H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/Dla27iPsdgK1ZHk5Hj9ofNgasHMwJpvOB.webp",
+      "PackagePath": "staticwebassets/img/Dla27iPsdgK1ZHk5Hj9ofNgasHMwJpvOB.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg",
-      "PackagePath": "staticwebassets\\img\\KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg",
+      "PackagePath": "staticwebassets/img/Dlb1DeKWiGNiXGjdHUPB74H59XaviCVB6.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png",
-      "PackagePath": "staticwebassets\\img\\KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png",
+      "PackagePath": "staticwebassets/img/El3ylIGQaCpRpXMmxYvRCkfrGnV2EMzdR.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg",
-      "PackagePath": "staticwebassets\\img\\MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png",
+      "PackagePath": "staticwebassets/img/F2HZ2rXtrm5vfheajrusOLpwbiPZRUDwS.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png",
-      "PackagePath": "staticwebassets\\img\\R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/GjXQ1sEtVgZAIYWVwsQe7sYV0MjRfqrdS.webp",
+      "PackagePath": "staticwebassets/img/GjXQ1sEtVgZAIYWVwsQe7sYV0MjRfqrdS.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg",
-      "PackagePath": "staticwebassets\\img\\VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg",
+      "PackagePath": "staticwebassets/img/H1KAKXW75c7NKzzoD9IxDge1mdn5jCEQ0.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg",
-      "PackagePath": "staticwebassets\\img\\VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg",
+      "PackagePath": "staticwebassets/img/KeFMGr7YPPlmyfbdhem4grXnJ9LVHbWBc.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg",
-      "PackagePath": "staticwebassets\\img\\WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png",
+      "PackagePath": "staticwebassets/img/KrmIHGcHIz6rOgrR5eDuJz7kx9YxS348p.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png",
-      "PackagePath": "staticwebassets\\img\\ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/LJGUNo0CQ0NXa4KhonjM2Xluen38vY3Ih.webp",
+      "PackagePath": "staticwebassets/img/LJGUNo0CQ0NXa4KhonjM2Xluen38vY3Ih.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\apollo_logo-removebg-preview.png",
-      "PackagePath": "staticwebassets\\img\\apollo_logo-removebg-preview.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg",
+      "PackagePath": "staticwebassets/img/MnuTEPp6CiidBXybvjWnxYBuoh8JTMAM0.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\background.jpg",
-      "PackagePath": "staticwebassets\\img\\background.jpg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/QVtD5v9ttqQ8fr8J44mlJvFV4Pj4u3gZs.webp",
+      "PackagePath": "staticwebassets/img/QVtD5v9ttqQ8fr8J44mlJvFV4Pj4u3gZs.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg",
-      "PackagePath": "staticwebassets\\img\\btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png",
+      "PackagePath": "staticwebassets/img/R78dzyyknGiQzYcCEI19AzTaxBb3Nt4Fx.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg",
-      "PackagePath": "staticwebassets\\img\\cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg",
+      "PackagePath": "staticwebassets/img/VF4fXdWS9Z3yzjXW5rE9DHKJudn3kNQwr.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg",
-      "PackagePath": "staticwebassets\\img\\cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg",
+      "PackagePath": "staticwebassets/img/VGla7wJ5BnE6jVX9u6iCHubqKKLTY87iU.jpg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp",
-      "PackagePath": "staticwebassets\\img\\dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg",
+      "PackagePath": "staticwebassets/img/WunIoMCvS7te5DRm6EV5KwdmtsAEero7o.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg",
-      "PackagePath": "staticwebassets\\img\\dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/YRfv6GBqhZoXz3RMBCcE0ZQDP0WFBWx57.webp",
+      "PackagePath": "staticwebassets/img/YRfv6GBqhZoXz3RMBCcE0ZQDP0WFBWx57.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg",
-      "PackagePath": "staticwebassets\\img\\f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png",
+      "PackagePath": "staticwebassets/img/ZYOK9E5odVQz2eN8dh53KEVbrnd0OAxth.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp",
-      "PackagePath": "staticwebassets\\img\\g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/apollo_logo-removebg-preview.png",
+      "PackagePath": "staticwebassets/img/apollo_logo-removebg-preview.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg",
-      "PackagePath": "staticwebassets\\img\\gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/apollostage-logo.png",
+      "PackagePath": "staticwebassets/img/apollostage-logo.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\google.png",
-      "PackagePath": "staticwebassets\\img\\google.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/background.jpg",
+      "PackagePath": "staticwebassets/img/background.jpg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons8-google-logo-20.png",
-      "PackagePath": "staticwebassets\\img\\icons8-google-logo-20.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg",
+      "PackagePath": "staticwebassets/img/btNMrr93ScxgGoKW3nKE2ifFGKsoG75mV.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\filter.png",
-      "PackagePath": "staticwebassets\\img\\icons\\filter.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg",
+      "PackagePath": "staticwebassets/img/cGzt4LSANze0dxjK22UfFNMyGKKRn0J6C.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\google.png",
-      "PackagePath": "staticwebassets\\img\\icons\\google.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg",
+      "PackagePath": "staticwebassets/img/cJDfrnxOV6i4JgnQ4Ewre99x3Lkm3B1sE.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\hamburger.png",
-      "PackagePath": "staticwebassets\\img\\icons\\hamburger.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/ccToG6YmqoqhF3bS6KxJIRcwUjocZk1mb.webp",
+      "PackagePath": "staticwebassets/img/ccToG6YmqoqhF3bS6KxJIRcwUjocZk1mb.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\instagram.png",
-      "PackagePath": "staticwebassets\\img\\icons\\instagram.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/ckNw2YDHd3Qgc7wAtM3QoiGV0FxbXqgWI.webp",
+      "PackagePath": "staticwebassets/img/ckNw2YDHd3Qgc7wAtM3QoiGV0FxbXqgWI.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\save.png",
-      "PackagePath": "staticwebassets\\img\\icons\\save.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp",
+      "PackagePath": "staticwebassets/img/dJ0Wfv05MVV826auhoN7RQsX2yaPRXrSh.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\search.png",
-      "PackagePath": "staticwebassets\\img\\icons\\search.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg",
+      "PackagePath": "staticwebassets/img/dPJ1v4Dz0tZSJU7FJwbazEZN4uWCuPcNn.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\shopping.png",
-      "PackagePath": "staticwebassets\\img\\icons\\shopping.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg",
+      "PackagePath": "staticwebassets/img/f4IzRGN7Z25NNrG6i4MiSMiJHz2q1EYqN.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\twitter.png",
-      "PackagePath": "staticwebassets\\img\\icons\\twitter.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp",
+      "PackagePath": "staticwebassets/img/g6eAnfvpaG7tFNt7XZCTS0OuvwZksuywI.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\user.png",
-      "PackagePath": "staticwebassets\\img\\icons\\user.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg",
+      "PackagePath": "staticwebassets/img/gJ24kbYHuWHY5xJJtXrN5U5qZeGzsFnIt.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\icons\\youtube.png",
-      "PackagePath": "staticwebassets\\img\\icons\\youtube.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/google.png",
+      "PackagePath": "staticwebassets/img/google.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\image-1.webp",
-      "PackagePath": "staticwebassets\\img\\image-1.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/filter.png",
+      "PackagePath": "staticwebassets/img/icons/filter.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\image-2.webp",
-      "PackagePath": "staticwebassets\\img\\image-2.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/google.png",
+      "PackagePath": "staticwebassets/img/icons/google.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\image-3.webp",
-      "PackagePath": "staticwebassets\\img\\image-3.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/hamburger.png",
+      "PackagePath": "staticwebassets/img/icons/hamburger.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\image-4.webp",
-      "PackagePath": "staticwebassets\\img\\image-4.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/instagram.png",
+      "PackagePath": "staticwebassets/img/icons/instagram.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\image-5.webp",
-      "PackagePath": "staticwebassets\\img\\image-5.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/save.png",
+      "PackagePath": "staticwebassets/img/icons/save.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp",
-      "PackagePath": "staticwebassets\\img\\jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/search.png",
+      "PackagePath": "staticwebassets/img/icons/search.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png",
-      "PackagePath": "staticwebassets\\img\\luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/shopping.png",
+      "PackagePath": "staticwebassets/img/icons/shopping.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg",
-      "PackagePath": "staticwebassets\\img\\pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/twitter.png",
+      "PackagePath": "staticwebassets/img/icons/twitter.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png",
-      "PackagePath": "staticwebassets\\img\\png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/user.png",
+      "PackagePath": "staticwebassets/img/icons/user.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\popularity-removebg-preview(1).png",
-      "PackagePath": "staticwebassets\\img\\popularity-removebg-preview(1).png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons/youtube.png",
+      "PackagePath": "staticwebassets/img/icons/youtube.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\star1.png",
-      "PackagePath": "staticwebassets\\img\\star1.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/icons8-google-logo-20.png",
+      "PackagePath": "staticwebassets/img/icons8-google-logo-20.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\star1_100-removebg-preview.png",
-      "PackagePath": "staticwebassets\\img\\star1_100-removebg-preview.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/image-1.webp",
+      "PackagePath": "staticwebassets/img/image-1.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\star2.png",
-      "PackagePath": "staticwebassets\\img\\star2.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/image-2.webp",
+      "PackagePath": "staticwebassets/img/image-2.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\topalbum.png",
-      "PackagePath": "staticwebassets\\img\\topalbum.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/image-3.webp",
+      "PackagePath": "staticwebassets/img/image-3.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg",
-      "PackagePath": "staticwebassets\\img\\u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/image-4.webp",
+      "PackagePath": "staticwebassets/img/image-4.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp",
-      "PackagePath": "staticwebassets\\img\\uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/image-5.webp",
+      "PackagePath": "staticwebassets/img/image-5.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\user-classification(1).png",
-      "PackagePath": "staticwebassets\\img\\user-classification(1).png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp",
+      "PackagePath": "staticwebassets/img/jrU9UlMlHjLiu1PwJOHqHxuOkFTFdXAly.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\img\\wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png",
-      "PackagePath": "staticwebassets\\img\\wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png",
+      "PackagePath": "staticwebassets/img/luud7RJ35fXyh1JZhSFQZ0l42P6euyUru.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\js\\script.js",
-      "PackagePath": "staticwebassets\\js\\script.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/mOBLmAop05f4inJkJyhCYZ0BTax9XU9AH.webp",
+      "PackagePath": "staticwebassets/img/mOBLmAop05f4inJkJyhCYZ0BTax9XU9AH.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg",
+      "PackagePath": "staticwebassets/img/pARzjvaziOgTPIbdm6M70f41z4N9QfYuJ.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "PackagePath": "staticwebassets\\lib\\bootstrap"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png",
+      "PackagePath": "staticwebassets/img/png-transparent-google-logo-google-logo-google-home-google-now-google-plus-company-text-trademark-thumbnail.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/popularity-removebg-preview(1).png",
+      "PackagePath": "staticwebassets/img/popularity-removebg-preview(1).png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/star1.png",
+      "PackagePath": "staticwebassets/img/star1.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/star1_100-removebg-preview.png",
+      "PackagePath": "staticwebassets/img/star1_100-removebg-preview.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/star2.png",
+      "PackagePath": "staticwebassets/img/star2.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/topalbum.png",
+      "PackagePath": "staticwebassets/img/topalbum.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg",
+      "PackagePath": "staticwebassets/img/u2y6OHsOq75R79rrMX7X5ORRvPYV1LWzx.jpeg"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp",
+      "PackagePath": "staticwebassets/img/uS3yxl2jMkJTDdH3ig4pewPT1DWqO1OEP.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/user-classification(1).png",
+      "PackagePath": "staticwebassets/img/user-classification(1).png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png",
+      "PackagePath": "staticwebassets/img/wCfwVaMaETFvMzqgDG0KA3aCb8EgllGPV.png"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/img/x8ceGJV0aWyAf3TREiXbWUOPKxECLoKJy.webp",
+      "PackagePath": "staticwebassets/img/x8ceGJV0aWyAf3TREiXbWUOPKxECLoKJy.webp"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/js/script.js",
+      "PackagePath": "staticwebassets/js/script.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\joaon\\OneDrive\\Documents\\GitHub\\apollostage\\ApolloStage\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApolloStage.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.ApolloStage.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ApolloStage.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.ApolloStage.props",
       "PackagePath": "build\\ApolloStage.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ApolloStage.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.ApolloStage.props",
       "PackagePath": "buildMultiTargeting\\ApolloStage.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ApolloStage.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.ApolloStage.props",
       "PackagePath": "buildTransitive\\ApolloStage.props"
     }
   ],

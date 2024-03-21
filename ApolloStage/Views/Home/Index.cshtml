@@ -3,16 +3,15 @@
 
 @{
     string meu = TempData["meu"]?.ToString();
-
 }
-
 @{
     ViewData["Title"] = "Home Page";
-    @if (meu == "False")
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    else
+    @if (meu == "True")
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <head>
     <meta charset="utf-8" />
@@ -39,8 +38,8 @@
                 go get it and enjoy the new work of art!
             </p>
             <div class="container mt-5">
-         <button class="btn btn-primary" id="openModalBtn">help</button>
-     </div>
+                <button class="btn btn-primary" id="openModalBtn">help</button>
+            </div>
 
         </div>
     </div>
@@ -56,7 +55,7 @@
             <span class="close" id="closeModalBtn">&times;</span>
             <h2>Pop-up Arrastável</h2>
             <iframe width="80%" height="80%" style="margin: auto;"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=0">
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=0">
             </iframe>
         </div>
     </div>
@@ -270,17 +269,17 @@
 
 <script>function carouselChanged(event) {
         var currentItemIndex = event.item.index + 2;
-        $(".custom-carousel .item").removeClass("active"); 
-        $(".custom-carousel .item").eq(currentItemIndex).addClass("active"); 
+        $(".custom-carousel .item").removeClass("active");
+        $(".custom-carousel .item").eq(currentItemIndex).addClass("active");
     }
 
     $(".custom-carousel").owlCarousel({
         autoWidth: true,
         loop: true,
-        autoplay: true, 
-        autoplayTimeout: 5000, 
-        autoplayHoverPause: true, 
-        onChanged: carouselChanged 
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        onChanged: carouselChanged
 
     });
     $(document).ready(function () {
@@ -293,7 +292,8 @@
 
 
 
-<style>    // daqui param baixo é bdo pop-up (modal for video)
+<style>
+    // daqui param baixo é bdo pop-up (modal for video)
     /* Estilo para o pop-up */
     #myModal {
         position: fixed;
@@ -338,8 +338,7 @@
             cursor: pointer;
         }
 </style>
-<script>
-    document.getElementById('openModalBtn').addEventListener('click', function () {
+<script>document.getElementById('openModalBtn').addEventListener('click', function () {
         document.getElementById('myModal').style.display = 'block';
     });
 
@@ -383,9 +382,7 @@
         document.getElementById('myModal').style.display = 'none';
     });</script>
 
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
+<script>document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             var modal = document.querySelector("#myModal");
             if (modal) {
@@ -394,6 +391,5 @@
                 modal.style.setProperty("width", "400px", "important");
                 modal.style.setProperty("height", "350px", "important");
             }
-        }, 2000); 
-    });
-</script>
+        }, 2000);
+    });</script>

@@ -1,8 +1,20 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model ApplicationUser
 @inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Register";
+}
 
-
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -23,12 +35,9 @@
 <body>
     <header>
         <div class="container-fluid d-flex align-items-center h-25 position-relative">
-            <img src="~/img/apollo_logo-removebg-preview.png" alt="some text" width="250">
+            <img src="~/img/apollostage-logo.png" alt="some text" width="250">
             <div class="w-100 position-absolute text-center">
-                <h1 class="text-center"> Register</h1>
-            </div>
-            <div class="me-0" style="position:absolute;right:30px">
-                <label> Dark Mode</label>
+                <h1 class="text-center">Register</h1>
             </div>
         </div>
     </header>
@@ -37,10 +46,9 @@
             <div class="col-md-8">
                 <form id="registerForm" method="post" asp-controller="Account" asp-action="FirstRegister">
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                    <div id="email" class="form-outline mb-5 d-block ">
-                        <h5 asp-for="UserMail">E-mail</h5>
-                        <input asp-for="UserMail" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-
+                    <div id="email" class="form-floating mb-5">
+                        <input asp-for="UserMail" class="form-control" aria-required="true" placeholder="E-mail" />
+                        <label asp-for="UserMail">E-mail</label>
                         <span asp-validation-for="UserMail" class="text-danger"></span>
                     </div>
 
@@ -55,30 +63,23 @@
                     <input type="hidden" asp-for="EmailConfirmed" />
 
                     <div>
-                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: forestgreen">Next step</button>
+                        <button type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2" style="height:70px; border-radius: 700px; color: #00BF63; background-color: black;">Next step</button>
                     </div>
 
 
                     <div id="login_google_OR">
-                        <h5 class="w-100 text-center mt-4 mb-4"> or </h5>
-
-
-                        <button id="login-google-submit" class="w-100 btn btn-sm-2 btn-outline-dark btn-block mt-2 d-flex align-items-center position-relative" style="height:70px; border-radius: 700px">
-                            <img class="rounded float-start" src="/img/google.png">
+                        <p class="mt-4 text-center">or</p>
+                        <button id="login-google-submit" class="w-100 btn btn-sm-2 btn-block mt-2 d-flex align-items-center position-relative" style="height:70px; border-radius: 700px; background-color: white; color: black; border-color: lightgrey;">
+                            <img class="rounded float-start" src="/img/icons/google.png" style="width: 25px; margin-left: 10px;">
                             <span class="position-absolute text-center w-100">Continue with Google</span>
                         </button>
                     </div>
 
 
 
-                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: forestgreen  ">Conclude</button>
+                    <button id="registerConfirmation" type="submit" class="w-100 btn btn-lg-2 btn-dark mt-2 d-none " style="height:70px; border-radius: 700px;color: #00BF63  ">Conclude</button>
                     <div>
-
-                        <h5 class="mt-4 w-100 text-center">
-                            Already have an account?
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login"> Log in here</a>
-                        </h5>
-
+                        <p class="mt-4 text-center">Already have an account? <a style="font-weight: bold; color: black; text-decoration: none;" asp-controller="Account" asp-action="Login">Login here</a></p>
                     </div>
                 </form>
                 <form id="google-login-form" asp-action="ExternalLogin" asp-controller="Account" method="post" class="form-horizontal">

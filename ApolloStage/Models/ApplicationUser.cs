@@ -47,7 +47,9 @@ namespace ApolloStage.Models
         public bool Admin { get; set; }
 
         [Required]
-        public bool ConfirmedEmail { get; set; } 
+        public bool ConfirmedEmail { get; set; }
+
+        public int points { get; set; }
 
         public ICollection<FavoriteAlbum> FavoriteAlbum { get; set; }
 
