@@ -77,7 +77,7 @@ public class HomeController : Controller
                     var userEmail = User.FindFirst(ClaimTypes.Email).Value;
                     foreach (var album in albumList)
                     {
-                        bool albumExists = _context.FavoriteAlbum.Any(f => f.UserMail == userEmail && f.AlbumId == album.id);
+                        bool albumExists = _context.ListenList.Any(f => f.UserMail == userEmail && f.AlbumId == album.id);
 
                         if (albumExists)
                         {
@@ -333,16 +333,16 @@ public class HomeController : Controller
     [HttpGet]
     public async Task<IActionResult> top5()
     {
-        var top50Albums = _context.Top50
+        var top20Albums = _context.Top50
       .OrderByDescending(t => t.count)
-      .Take(50)
+      .Take(20)
       .Select(t => t.IdAlbum)
       .ToList();
 
         // Agrupar em lotes de 10
-        var albumGroups = top50Albums
+        var albumGroups = top20Albums
             .Select((value, index) => new { value, index })
-            .GroupBy(x => x.index / 10)
+            .GroupBy(x => x.index / 20)
             .Select(group => group.Select(x => x.value).ToList())
             .ToList();
 

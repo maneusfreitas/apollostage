@@ -173,56 +173,64 @@
             {
                 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
                     <div class="container-fluid">
-                     <div class="hamburger-menu">
-                         <input id="menu__toggle" type="checkbox" />
-                         <label class="menu__btn" for="menu__toggle">
-                             <i class=" nav-link btn btn-link text-dark fa fa-bars fa-2x"></i>
-                         </label>
-                         <button class="border-0 bg-white"></button>
-                         <ul class="menu__box ps-5">
-                             <strong>
-                             <li>STATISTICS</li></strong>
-                             <li>
-                                 <form method="get" asp-controller="Home" asp-action="top5">
-                                     <button type="submit" class="nav-link btn btn-link text-dark">
-                                         TOP 50
-                                     </button>
-                                 </form>
-                             </li>
-                             <li>
-                                 <form method="get" asp-controller="" asp-action="">
-                                     <button type="submit" class="nav-link btn btn-link text-dark">
-                                         POPULAR NOW
-                                     </button>
-                                 </form>
-                             </li>
-                             <li>
-                                 <form method="get" asp-controller="" asp-action="">
-                                     <button type="submit" class="nav-link btn btn-link text-dark">
-                                         NEW STATISTICS
-                                     </button>
-                                 </form>
-                             </li>
-                             <strong>
-                             <li>BUYINGS</li></strong>
-                             <li>
-                                 <form method="get" asp-controller="Market" asp-action="market">
-                                     <button type="submit" class="nav-link btn btn-link text-dark">
-                                         MERCHANDISING
-                                     </button>
-                                 </form>
-                             </li>
-                             <strong>
-                             <li>You</li></strong>
-                             <li>
-                                 <form method="get" asp-controller="Account" asp-action="profile">
-                                     <button type="submit" class="nav-link btn btn-link text-dark">
-                                         Profile
-                                     </button>
-                                 </form>
-                             </li>
-                         </ul>
-                     </div>
+                        <div class="hamburger-menu ">
+                            <input id="menu__toggle" type="checkbox" />
+                            <label class="menu__btn" for="menu__toggle">
+                                <i id="menuIcon" class="nav-link btn btn-link text-dark fa fa-bars fa-2x"></i>
+                            </label>
+                            <button class="border-0 bg-white"></button>
+                            <ul class="menu__box ps-5">
+
+                                <li class="mt-3 pt-3">
+                                    <form method="get" asp-controller="Home" asp-action="index">
+                                        <button type="submit" class="nav-link btn btn-link text-dark" style="color:green">
+                                            HOME
+                                        </button>
+                                    </form>
+                                </li>
+                                <strong>
+                                <li class="mt-3 pt-3">STATISTICS</li></strong>
+                                <li>
+                                    <form method="get" asp-controller="Home" asp-action="top5">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">
+                                            TOP 20
+                                        </button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form method="get" asp-controller="" asp-action="">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">
+                                            POPULAR NOW
+                                        </button>
+                                    </form>
+                                </li>
+                                <strong>
+                                <li class="mt-4 pt-3">BUYINGS</li></strong>
+                                <li>
+                                    <form method="get" asp-controller="Market" asp-action="market">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">
+                                            MERCHANDISING
+                                        </button>
+                                    </form>
+                                </li>
+                                <strong>
+                                <li class="mt-4 pt-3">You</li></strong>
+                                <li>
+                                    <form method="get" asp-controller="Account" asp-action="profile">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">
+                                            Profile
+                                        </button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form method="get" asp-controller="Account" asp-action="dashboard">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">
+                                            Dashboard
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <a class="navbar-brand ml-3 " asp-area="" asp-controller="Home" asp-action="Index">

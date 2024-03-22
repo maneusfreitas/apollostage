@@ -3,16 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Top 50 Albums</title>
+    <title>Top 20 Albums</title>
 </head>
 <body>
-    <center><h1>Top 50 Albums</h1></center>
+    <center><h1>Top 20 Albums</h1></center>
 
     <div class="row ">
         @foreach (var artist in Model)
         {
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 d-flex justify-content-center">
-                @using (Html.BeginForm("SearchArtist", "Home", FormMethod.Get))
+                @using (Html.BeginForm("getalbum", "Account", FormMethod.Get))
                 {
                     <button type="submit" name="value" value="Pesquisar" class="p-0" style="border:none;">
                         <div class="card" style="max-width:200px; border:none">
@@ -26,10 +26,8 @@
                         </div>
                     </button>
 
-                    <input type="hidden" name="id" value="@artist.name" />
-                    <input type="hidden" name="searchType" value="Album" />
-                    <input type="hidden" name="value" value="@artist.name" />
-                    <input type="hidden" id="srch" type="text" name="id" placeholder="Search" />
+                    <input type="hidden" name="albumId" value="@artist.id" />
+                    <input type="hidden" name="albumName" value="@artist.name" />
                 }
             </div>
         }

@@ -2,7 +2,7 @@
 
 namespace ApolloStage.Models
 {
-    public class FavoriteAlbum
+    public class ListenList
     {
         [Key]
         public int Id { get; set; }

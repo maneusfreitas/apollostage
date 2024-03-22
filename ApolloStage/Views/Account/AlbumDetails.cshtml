@@ -108,7 +108,7 @@
                                             <div class="text-center m-0 p-0">
                                                 <!-- Classe text-center para centralizar os botões horizontalmente e mb-3 para adicionar margem inferior -->
                                                 <input type="hidden" name="albumId" value="@albumInfo.id" />
-                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id')">
+                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id','@firstGenre')">
                                                     @(albumInfo.classificacaoEspecifica >= 1 ? "Update" : "Rate")
                                                 </button>
                                             </div>
@@ -639,10 +639,11 @@
             form.submit();
         });</script>
     <script>
-    function submitRatingForm(albumId) {
+    function submitRatingForm(albumId, gender) {
         var formData = {
             albumId: albumId,
             starRating: document.getElementById("selectedRating").value,
+            gender : gender,
         };
 
         $.ajax({

@@ -256,17 +256,18 @@ namespace ApolloStageFirst.Controllers
                          _context.TempRegisterData.Update(user);
                          check = false;
                      }
-                     var product = new ApolloStage.Models.Product.ProductOrder
-                     {
-                         OrderId = oid,
-                         UserMail = userEmail,
-                         TshirtTitle = finalName,
-                         TshirtSize = sizex,
-                         TshirtColor = colorx,
-                         TshirtCount = item.Count,
-                         TshirtPrice = finalprice,
-                         State = "inexistente",
-                         Pointstoapply = points
+                    var product = new ProductOrder
+                    {
+                        OrderId = oid,
+                        UserMail = userEmail,
+                        TshirtTitle = finalName,
+                        TshirtSize = sizex,
+                        TshirtColor = colorx,
+                        TshirtCount = item.Count,
+                        TshirtPrice = finalprice,
+                        State = "inexistente",
+                        Pointstoapply = points,
+                        data = DateTime.Now,
                      };
 
                      _context.ProductOrder.Add(product);

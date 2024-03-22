@@ -11,5 +11,6 @@ namespace ApolloStage.Models
         public string causa { get; set; }
         public string descricao { get; set; }
         public int count { get; set; }
+        public bool revchecked { get; set; }
     }
 }

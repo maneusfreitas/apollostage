@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/ApolloStage.bundle.scp.css"
     },
     {
+      "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/wwwroot/css/demo.css",
       "PackagePath": "staticwebassets/css/demo.css"
     },

@@ -32,6 +32,9 @@ namespace ApolloStage.Models.Product
         [Required]
         public decimal TshirtPrice { get; set; }
 
+        [Required]
+        public DateTime data { get; set; }
+
         public string State { get; set; }
 
         public int Pointstoapply { get; set; }

@@ -9,7 +9,7 @@ namespace ApolloStage.Models
 
         public ApplicationUser()
         {
-            FavoriteAlbum = new List<FavoriteAlbum>(); 
+            FavoriteAlbum = new List<ListenList>(); 
         }
 
         [Key]
@@ -51,7 +51,7 @@ namespace ApolloStage.Models
 
         public int points { get; set; }
 
-        public ICollection<FavoriteAlbum> FavoriteAlbum { get; set; }
+        public ICollection<ListenList> FavoriteAlbum { get; set; }
 
 
         public string Morada { get; set; }
@@ -78,5 +78,7 @@ namespace ApolloStage.Models
 
         public string NumerotelEntrega { get; set; }
         public bool ConfirmoEnvio { get; set; }
+
+        public int CountMails { get; set; }
     }
 }

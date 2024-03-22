@@ -14,7 +14,7 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<ApplicationUser> TempRegisterData { get; set; }
 
-    public DbSet<FavoriteAlbum> FavoriteAlbum { get; set; }
+    public DbSet<ListenList> ListenList { get; set; }
 
     public DbSet<AlbumReview> AlbumReview { get; set; }
 
