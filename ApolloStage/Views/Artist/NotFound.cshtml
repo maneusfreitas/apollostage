@@ -1,7 +1,14 @@
 ﻿
 @{
-    ViewData["Title"] = "Tasks";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    string meu = TempData["meu"]?.ToString();
 }
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <h1>The resource you requested was not found or something failed, try again.</h1>

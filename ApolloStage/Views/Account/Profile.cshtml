@@ -1,0 +1,2068 @@
+﻿@using System.Security.Claims;
+@model ApolloStage.Models.ProfileViewModel
+@{
+    string meu = TempData["meu"]?.ToString();
+    string limite = TempData["limite"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<div class="parallax1 position-relative">
+    <div class="container d-flex justify-content-center align-items-center p-0 w-100" style="bottom:0">
+        <div class="mx-auto position-absolute" style="left: 50%; top: 100%; transform: translate(-50%, -50%);">
+            <!-- Botão para abrir o modal -->
+            <button type="button" class="btn" data-toggle="modal" data-target="#imagemModal" style="background: none; border: none; padding: 0;">
+                <img src="~/img/image-3.webp" style="max-width: 60px; max-height: 150px; min-width: 150px;" class="circular" />
+            </button>
+        </div>
+        <!-- Botão no canto superior direito -->
+        <button type="button" class="btn btn-dark position-absolute" style="top: 10px; right: 10px;" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-repeat fa-rotate-90"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change background image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Not implemented yet
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imagemModal" tabindex="-1" role="dialog" aria-labelledby="imagemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imagemModalLabel">Change Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo do modal -->
+                <p>Not implemented Yet</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-between align-items-center p-0 w-100" style="bottom: 15vh;">
+    <div class="d-flex flex-column flex-sm-row me-5 paraCol">
+        <button type="button" class="btn btn-dark mb-2 mb-sm-0 mr-sm-2 me-1" data-toggle="modal" data-target="#popupModal" style="min-width: 50px; min-height: 70px;">
+            <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+        </button>
+
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#chartModal" style="min-width: 50px; min-height: 70px;">
+            <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <button type="button" class="btn btn-dark" style="min-width: 50px; min-height: 70px;" data-toggle="modal" data-target="#spotifyModal" id="spotifyButton">
+        <i class="fa fa-spotify fa-lg" aria-hidden="true"></i>
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="spotifyModal" tabindex="-1" role="dialog" aria-labelledby="spotifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="spotifyModalLabel">Spotify Link</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo do modal -->
+                <p>Not implemented yet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- Outros botões ou ações, se necessário -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Pop-up Modal -->
+<div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel">Personal Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form method="post" action="@Url.Action("UpdateUser", "Account")">
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="Morada">Address:</label>
+                        <input type="text" class="form-control" id="Morada" name="Morada" required>
+                    </div>
+                    <!-- City -->
+                    <div class="form-group">
+                        <label for="Cidade">City:</label>
+                        <input type="text" class="form-control" id="Cidade" name="Cidade" required>
+                    </div>
+                    <!-- Postal Code -->
+                    <div class="form-group">
+                        <label for="CodigoPostal">Postal Code:</label>
+                        <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required>
+                    </div>
+                    <!-- Country -->
+                    <div class="form-group">
+                        <label for="Pais">Country:</label>
+                        <input type="text" class="form-control" id="Pais" name="Pais" required>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="Numerotel">Phone Number:</label>
+                        <input type="text" class="form-control" id="Numerotel" name="Numerotel" required>
+                    </div>
+                    <!-- Recipient Name -->
+                    <div class="form-group">
+                        <label for="NomeEntrega">Recipient Name:</label>
+                        <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega">
+                    </div>
+                    <!-- Delivery Address -->
+                    <div class="form-group">
+                        <label for="MoradaEntrega">Delivery Address:</label>
+                        <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega">
+                    </div>
+                    <!-- Delivery City -->
+                    <div class="form-group">
+                        <label for="CidadeEntrega">Delivery City:</label>
+                        <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega">
+                    </div>
+                    <!-- Delivery Postal Code -->
+                    <div class="form-group">
+                        <label for="CodigoPostalEntrega">Delivery Postal Code:</label>
+                        <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega">
+                    </div>
+                    <!-- Delivery Country -->
+                    <div class="form-group">
+                        <label for="PaisEntrega">Delivery Country:</label>
+                        <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega">
+                    </div>
+                    <!-- Delivery Phone Number -->
+                    <div class="form-group">
+                        <label for="NumerotelEntrega">Delivery Phone Number:</label>
+                        <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega">
+                    </div>
+                    <!-- Shipping Confirmation Checkbox -->
+                    <div class="form-check">
+                        <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
+                        <label class="form-check-label" for="ConfirmoEnvio">
+                            I confirm that I want delivery to the optional address
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chartModalLabel">Gráficos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo dos gráficos -->
+                <div class="wrapper">
+                    <div class="pie-charts">
+                        <div class="pieID--micro-skills pie-chart--wrapper">
+                            <div class="pie-chart">
+                                <h5>Reviews Chart</h5>
+                                <div class="pie-chart__pie"></div>
+                                <ul class="pie-chart__legend">
+                                    <li><em>Total Reviews: </em><span>@Model.NReviwesTotal</span></li>
+                                    <li><em>User Reviews: </em><span>@Model.NReviwesUser</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pieID--categories pie-chart--wrapper">
+                            <div class="pie-chart">
+                                <h5>Reviews Recommended Chart</h5>
+                                <div class="pie-chart__pie"></div>
+                                <ul class="pie-chart__legend">
+                                    <li><em>Recommended: </em><span>@Model.NRecommendedalbum</span></li>
+                                    <li><em>Not Recommended: </em><span>@Model.NNotRecommendedalbum</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pieID--operations pie-chart--wrapper">
+                            <div class="pie-chart">
+                                <h5>Ratings Chart</h5>
+                                <div class="pie-chart__pie"></div>
+                                <ul class="pie-chart__legend">
+                                    <li><em>Total Ratings: </em><span>@Model.NTotalRatings</span></li>
+                                    <li><em>User Ratings: </em><span>@Model.NUserRatings</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="charts mt-4">
+
+                        <div class="card">
+                            <section class="card_header">
+                                <aside class="card_header_balance">
+                                    <p>from 1 to 10</p>
+                                    <h3>Statistic by Genere</h3>
+                                </aside>
+                                <aside class="card_header_logo">
+                                    <img src="./images/logo.svg" alt="">
+                                </aside>
+                            </section>
+
+                            <section class="card_body">
+                                <h3>User Album Rating by Gender</h3>
+                                <section class="bar_canvas">
+                                    @foreach (var order in Model.GenderChart)
+                                    {
+                                        <aside style="--i:@(order.Value + "rem"); --price:'@(order.Value + " "+order.Key + " classified")'">
+                                            <p>@order.Value</p>
+                                        </aside>
+
+                                    }
+                                </section>
+
+
+
+                            </section>
+
+                        </div>
+
+
+
+                    </section>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <h1 class="mt-5">Avaluation albums</h1>
+</div>
+<div class="item-container d-flex justify-content-center ">
+    <button class="slider slider--left">
+        <i class="fa fa-angle-left"></i>
+    </button>
+    <div class="items">
+        @foreach (var album in Model.Album)
+        {
+
+            @if (album.images != null)
+            {
+
+                <div class="item">
+
+                    <a href="@Url.Action("getalbum", "Account", new { albumId = album.id })">   <img src="@album.images[0].URL" alt="" class="item__img"></a>
+
+                </div>
+
+            }
+        }
+    </div>
+    <button class="slider slider--right">
+        <i class="fa fa-angle-right"></i>
+    </button>
+</div>
+
+
+
+<div class="text-center">
+    <h1>ListenList Albums</h1>
+</div>
+
+<div id="carousel">
+    <a href="#" id="prev">
+        <button class="slider slider--right">
+            <i class="fa fa-angle-left"></i>
+        </button>
+    </a>
+    <div class="clear"></div>
+
+    <div class="clear"></div>
+
+    <div id="slides">
+        <ul>
+            @foreach (var album in @Model.Listenslist)
+            {
+                <li>
+                    <div class="img-container">
+                        <form asp-controller="Account" asp-action="GetAlbum" method="get">
+                            <a href="@Url.Action("GetAlbum", "Account", new { albumId = album.id, artistname = TempData["artistName"] })">
+                                <img src="@album.images[0].URL" alt="@album.name" class="card-img-top ms-2 mt-2 col-4">
+                            </a>
+                            <input type="hidden" name="albumId" value="@album.id" />
+                            <input type="hidden" name="artistname" value="@TempData["artistName"]" />
+                        </form>
+                    </div>
+                    <p class="card-text ms-4 mb-0 "><b>@album.name</b></p>
+                </li>
+
+            }
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <a href="#" id="next">
+        <button class="slider slider--right">
+            <i class="fa fa-angle-right"></i>
+        </button>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+<style>
+
+
+    @@-webkit-keyframes bake-pie {
+        from {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+
+    @@keyframes bake-pie {
+        from {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+
+    .pie-chart {
+        font-family: "Open Sans", Arial;
+    }
+
+    .pie-chart--wrapper {
+        width: 400px;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .pie-chart__pie, .pie-chart__legend {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .pie-chart__pie {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 10px auto 35px;
+    }
+
+        .pie-chart__pie::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: #EEE;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+        }
+
+        .pie-chart__pie::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+            margin: 220px auto;
+        }
+
+    .slice {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        clip: rect(0px, 200px, 200px, 100px);
+        -webkit-animation: bake-pie 1s;
+        animation: bake-pie 1s;
+    }
+
+        .slice span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip: rect(0px, 200px, 200px, 100px);
+        }
+
+    .pie-chart__legend {
+        display: block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        background: #FFF;
+        padding: 0.75em 0.75em 0.05em;
+        font-size: 14px;
+        box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+        text-align: left;
+        width: 90%;
+    }
+
+        .pie-chart__legend li {
+            height: 1.25em;
+            margin-bottom: 0.7em;
+            padding-left: 0.5em;
+            border-left: 1.25em solid black;
+        }
+
+        .pie-chart__legend em {
+            font-style: normal;
+        }
+
+        .pie-chart__legend span {
+            float: right;
+        }
+
+    .pie-charts {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @@media (max-width: 500px) {
+        .pie-charts {
+            flex-direction: column;
+        }
+    }
+
+    .circular{
+        border-radius:100%
+    }
+
+
+</style>
+
+<style>
+
+    .clear {
+        clear: both;
+    }
+
+    img {
+        max-width: 100%;
+        border: 0px;
+    }
+
+    ul, ol {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+    }
+
+        a:focus, a:active, a:visited, a:hover {
+            text-decoration: none;
+            outline: none;
+        }
+
+        a:hover {
+            color: #e73700;
+        }
+
+    h2 {
+        margin-bottom: 48px;
+        padding-bottom: 16px;
+        font-size: 40px;
+        line-height: 28px;
+        font-weight: 700;
+        position: relative;
+        text-transform: capitalize;
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    button {
+        outline: none !important;
+    }
+
+
+    .item-container {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .items {
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: row;
+        margin: 2em;
+    }
+
+    .item {
+        display: inline-block;
+        position: relative;
+        left: 0px;
+        margin: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: calc(33% - 2em);
+        &__img
+
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::before {
+        display: block;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: black;
+        opacity: 0;
+    }
+
+    &:hover::before {
+        opacity: 0.6;
+    }
+
+    &:hover &__link {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        border: 2px solid white;
+        opacity: 0;
+        visibility: hidden;
+        text-align: center;
+        &:hover
+
+    {
+        background-color: white;
+        color: black;
+    }
+
+    }
+    }
+
+    .slider {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+        padding: 10px;
+        &:hover
+
+    {
+        background-color: black;
+        color: white;
+    }
+    }
+</style>
+
+
+<script>
+
+    let leftSlider = document.querySelector(".slider--left");
+    let rightSlider = document.querySelector(".slider--right");
+    let items = document.querySelectorAll(".item");
+    let x = @Convert.ToInt32(@limite)
+    console.log("limite: " + x);
+    let maxClicks = 0;
+    let numClicks = 0;
+    if (x > 1 && items.length >= 3) {
+         maxClicks = items.length - 3;
+         numClicks = 0;
+    } else {
+         maxClicks = 0;
+         numClicks = 0;
+    }
+
+    items.forEach((item) => {
+        item.addEventListener("transitionend", () => {
+            item.style.transition = "none";
+        });
+    })
+
+    leftSlider.addEventListener("click", () => {
+        if (numClicks != 0) {
+            items.forEach(item => {
+                let currLeft = item.style.left ? parseFloat(item.style.left) : 0;
+                currLeft += GetWidth();
+
+                item.style.transition = "left 0.3s";
+                item.style.left = currLeft + "px";
+            });
+            numClicks--;
+        }
+    });
+
+    rightSlider.addEventListener("click", () => {
+        if (numClicks != maxClicks) {
+            items.forEach(item => {
+                let currLeft = item.style.left ? parseFloat(item.style.left) : 0;
+                currLeft -= GetWidth();
+
+                item.style.transition = "left 0.3s";
+                item.style.left = currLeft + "px";
+            });
+            numClicks++;
+        }
+    });
+
+    function GetWidth() {
+        let item = document.querySelector(".item");
+        let style = window.getComputedStyle(item);
+
+        let itemWidth =
+            parseFloat(item.offsetWidth) +
+            parseFloat(style.marginLeft) +
+            parseFloat(style.marginRight);
+
+        return itemWidth;
+    }
+
+    window.addEventListener("resize", () => {
+        let newLeft = numClicks * GetWidth();
+
+        items.forEach((item) => {
+            item.style.left = - (newLeft) + "px";
+        });
+    });
+
+    // Função para abrir o pop-up
+    document.getElementById('openPopupButton').addEventListener('click', function () {
+        document.getElementById('popup').style.display = 'block';
+    });
+
+    // Função para fechar o pop-up
+    function fecharPopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    $('#popupModal').on('show.bs.modal', function () {
+        $('body').css('overflow-y', 'hidden');
+    });
+
+    $('#popupModal').on('hidden.bs.modal', function () {
+        $('body').css('overflow-y', 'auto');
+    });
+
+
+</script>
+
+
+
+
+<style>
+
+    #carousel {
+        width: 1440px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        padding-top: 205;
+    }
+
+    @@media (max-width: 1440px) {
+        #carousel {
+            width: 100%;
+        }
+    }
+
+    #slides {
+        overflow: hidden;
+        /* fix ie overflow issue */
+        position: relative;
+        width: 83.3%;
+        height: 315px;
+    }
+
+        /* remove the list styles, width : item width * total items */
+        #slides ul {
+            position: absolute;
+            top: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* width of the item, in this case I put 250x250x gif */
+        #slides li {
+            width: 200px;
+            height: auto;
+            float: left;
+            overflow: hidden;
+            padding: 5px 20px;
+        }
+
+            #slides li img {
+                width: 100%;
+            }
+
+    .img-container {
+        height: 200px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    #slides li p {
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 15px
+    }
+
+    /* Styling for prev and next buttons */
+    #buttons {
+        padding: 0 0 5px 0;
+        float: right;
+    }
+
+        #buttons a {
+            display: block;
+            width: 31px;
+            height: 32px;
+            float: left;
+            outline: 0;
+        }
+
+    a#prev, a#next {
+        font-size: 35px;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 20px;
+        height: 170px;
+    }
+
+    .clear {
+        clear: both
+    }
+
+    @@media (max-width: 1440px) {
+        #carousel {
+            width: 100%;
+        }
+    }
+
+    @@media (max-width: 440px) {
+        #slides li {
+            width: 100px;
+        }
+
+        .img-container {
+            height: 100px;
+        }
+
+        a#prev,
+        a#next {
+            display: none;
+        }
+    }
+</style>
+
+
+<script>$(document).ready(function () {
+
+        //rotation speed and timer
+        var speed = 2000;
+        // var run = setInterval('rotate()', speed);
+
+        //grab the width and calculate left value
+        var item_width = $('#slides li').outerWidth();
+        var left_value = item_width * (-1);
+
+        //move the last item before first item, just in case user click prev button
+        $('#slides li:first').before($('#slides li:last'));
+
+        //set the default item to the correct position
+        $('#slides ul').css({ 'left': left_value });
+
+        //if user clicked on prev button
+        $('#prev').click(function () {
+
+            //get the right position
+            var left_indent = parseInt($('#slides ul').css('left')) + item_width;
+
+            //slide the item
+            $('#slides ul').animate({ 'left': left_indent }, 200, function () {
+
+                //move the last item and put it as first item
+                $('#slides li:first').before($('#slides li:last'));
+
+                //set the default item to correct position
+                $('#slides ul').css({ 'left': left_value });
+
+            });
+
+            //cancel the link behavior
+            return false;
+
+        });
+
+
+        //if user clicked on next button
+        $('#next').click(function () {
+
+            //get the right position
+            var left_indent = parseInt($('#slides ul').css('left')) - item_width;
+
+            //slide the item
+            $('#slides ul').animate({ 'left': left_indent }, 200, function () {
+
+                //move the first item and put it as last item
+                $('#slides li:last').after($('#slides li:first'));
+
+                //set the default item to correct position
+                $('#slides ul').css({ 'left': left_value });
+
+            });
+
+            //cancel the link behavior
+            return false;
+
+        });
+
+        //preventing default img/page drag
+        $('#slides li img').on('dragstart', function (event) {
+            event.preventDefault();
+        });
+        $('#carousel').on('touchstart', function (event) {
+            event.preventDefault();
+        });
+
+        //Hammer init
+        var listItem = document.getElementById('slides');
+        var swipe = new Hammer(listItem);
+
+        //if user swipes any li right
+        swipe.on('swiperight', function () {
+
+            //get the right position
+            var left_indent = parseInt($('#slides ul').css('left')) + item_width;
+
+            //slide the item
+            $('#slides ul').animate({ 'left': left_indent }, 200, function () {
+
+                //move the last item and put it as first item
+                $('#slides li:first').before($('#slides li:last'));
+
+                //set the default item to correct position
+                $('#slides ul').css({ 'left': left_value });
+
+            });
+
+        });
+
+        //if user swipes any li right
+        swipe.on('swipeleft', function () {
+
+            //get the left position
+            var left_indent = parseInt($('#slides ul').css('left')) - item_width;
+
+            //slide the item
+            $('#slides ul').animate({ 'left': left_indent }, 200, function () {
+
+                //move the first item and put it as last item
+                $('#slides li:last').after($('#slides li:first'));
+
+                //set the default item to correct position
+                $('#slides ul').css({ 'left': left_value });
+
+            });
+
+        });
+        //if mouse hover, pause the auto rotation, otherwise rotate it
+        // $('#slides').hover(
+
+        // 	function() {
+        // 		clearInterval(run);
+        // 	},
+        // 	function() {
+        // 		run = setInterval('rotate()', speed);
+        // 	}
+        // );
+    });
+
+    //a simple function to click next link
+    //a timer will call this function, and the rotation will begin :)
+    // function rotate() {
+    // 	$('#next').click();
+    // }</script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="https://codepen.io/MaciejCaputa/pen/EmMooZ.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+        function removeReviewReport(reviewId) {
+        var formData = {
+            reviewId: reviewId
+        };
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("removeReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+
+      function aproveReviewReport(reviewId) {
+        var formData = {
+            reviewId: reviewId
+        };
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("aproveReview", "Account")',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
+
+</script>
+
+<style>
+    i#menuIcon {
+        font-size: 2rem;
+    }
+
+    section.card_body h3 {
+        text-align: center;
+    }
+
+    section.card_body .wrapper {
+        width: 100% !important;
+    }
+
+    button.aproveremove {
+        width: 50px;
+        margin-left: 25px;
+        background-color: transparent;
+    }
+
+    .fa.fa-check {
+        position: relative;
+        text-align: right;
+        color: white;
+        font-size: 25px;
+    }
+
+    .fa.fa-times {
+        position: relative;
+        text-align: right;
+        color: white;
+        font-size: 25px;
+    }
+
+    @@import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet';
+
+    :root {
+        --dk-gray-100: #F3F4F6;
+        --dk-gray-200: #E5E7EB;
+        --dk-gray-300: #D1D5DB;
+        --dk-gray-400: #9CA3AF;
+        --dk-gray-500: #6B7280;
+        --dk-gray-600: #4B5563;
+        --dk-gray-700: #374151;
+        --dk-gray-800: #1F2937;
+        --dk-gray-900: #111827;
+        --dk-dark-bg: #313348;
+        --dk-darker-bg: #2a2b3d;
+        --navbar-bg-color: #6f6486;
+        --sidebar-bg-color: #252636;
+        --sidebar-width: 250px;
+    }
+
+
+
+    #wrapper {
+        transition: all .3s ease-in-out;
+    }
+
+        #wrapper.fullwidth {
+            margin-left: 0;
+        }
+
+
+
+
+
+    /** --------------------------------
+         -- welcome
+        -------------------------------- */
+    .welcome {
+        color: var(--dk-gray-300);
+    }
+
+        .welcome .content {
+            background-color: var(--dk-dark-bg);
+        }
+
+        .welcome p {
+            color: var(--dk-gray-400);
+        }
+
+
+
+
+    /** --------------------------------
+         -- Statistics
+        -------------------------------- */
+    .statistics {
+        color: var(--dk-gray-200);
+    }
+
+        .statistics .box {
+            background-color: var(--dk-dark-bg);
+        }
+
+            .statistics .box i {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+            }
+
+            .statistics .box p {
+                color: var(--dk-gray-400);
+            }
+
+
+
+
+    /** --------------------------------
+         -- Charts
+        -------------------------------- */
+    .charts .chart-container {
+        background-color: var(--dk-dark-bg);
+    }
+
+        .charts .chart-container h3 {
+            color: var(--dk-gray-400)
+        }
+
+
+
+
+    /** --------------------------------
+         -- users
+        -------------------------------- */
+    .admins .box .admin {
+        background-color: var(--dk-dark-bg);
+    }
+
+    .admins .box h3 {
+        color: var(--dk-gray-300);
+    }
+
+    .admins .box p {
+        color: var(--dk-gray-400)
+    }
+
+
+
+
+    /** --------------------------------
+         -- statis
+        -------------------------------- */
+    .statis {
+        color: var(--dk-gray-100);
+    }
+
+        .statis .box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+
+            .statis .box h3:after {
+                content: "";
+                height: 2px;
+                width: 70%;
+                margin: auto;
+                background-color: rgba(255, 255, 255, 0.12);
+                display: block;
+                margin-top: 10px;
+            }
+
+            .statis .box i {
+                position: absolute;
+                height: 70px;
+                width: 70px;
+                font-size: 22px;
+                padding: 15px;
+                top: -25px;
+                left: -25px;
+                background-color: rgba(255, 255, 255, 0.15);
+                line-height: 60px;
+                text-align: right;
+                border-radius: 50%;
+            }
+
+
+
+
+
+    .main-color {
+        color: #ffc107
+    }
+
+
+
+
+    ::-webkit-scrollbar {
+        background: transparent;
+        width: 5px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #3c3f58;
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+
+
+
+
+    .card {
+        min-width: 400px;
+        margin: 0 auto;
+        font-family: sans-serif;
+    }
+
+    .card_body {
+        background-color: #fffcf7;
+        border-radius: 1rem 1rem 0 0;
+        padding: 0 2rem;
+        border-radius: 1rem;
+    }
+
+        .card_body h3 {
+            padding: 1rem 0;
+        }
+
+    .bar_canvas {
+        background-color: #fffcf7;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-around;
+        gap: .8rem;
+        height: 17.4rem;
+        padding: 0 0 2rem 0;
+    }
+
+
+
+        .bar_canvas > aside:hover {
+            background-color: #b4dfe5;
+        }
+
+        .bar_canvas > aside {
+            background-color: #000000 !important;
+            height: var(--i);
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            border-radius: .2rem;
+            position: relative;
+            animation: rise .5s .1s ease-out forwards;
+        }
+
+            .bar_canvas > aside:hover::after {
+                content: var(--price);
+                color: #b4dfe5;
+                padding: .4rem;
+                text-align: center;
+                width: 100%;
+                background: black;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                font-size: .8rem;
+                transform: translate(-50%,-2rem);
+            }
+
+            .bar_canvas > aside p {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin: 0;
+                padding: 0;
+                transform: translate(-50%,1.2rem);
+            }
+
+    .card_footer {
+        background-color: #fffcf7;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 2rem 0;
+        border-top: .1rem solid var(--dk-dark-bg);
+    }
+
+    .card_footer_total > p {
+        font-size: .8rem;
+        text-align: center;
+        margin: 0;
+        opacity: .5;
+    }
+
+    .card_footer_total > h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        opacity: 0;
+        animation: text_fade 1s .3s ease-out forwards;
+    }
+
+    .card_footer_lastmonth > h4, p {
+        margin: 0;
+        text-align: right;
+    }
+
+    .card_footer_lastmonth p {
+        font-size: .8rem;
+        opacity: .5;
+    }
+
+    .card_header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #000000;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-radius: 3px;
+    }
+
+    .card_header_balance :where(p,h3) {
+        color: #fffcf7;
+        margin: 0;
+        text-align: left;
+    }
+
+    .card_header_balance p {
+        font-size: .8rem;
+    }
+
+    .card_header_balance h3 {
+        font-size: 1.2rem;
+    }
+
+    @@keyframes rise {
+        from {
+            height: 0;
+            background-color: #000000;
+        }
+
+        to {
+            height: var(--i);
+            background-color: var(--dk-dark-bg);
+        }
+    }
+
+    @@keyframes text_fade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 100%;
+        }
+    }
+
+    .author_info {
+        margin: 1rem 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        padding: .2rem;
+        display: flex;
+        color: #fff;
+    }
+
+        .author_info p,
+        .author_info ul {
+            margin: 0 auto;
+            font-size: .7rem;
+        }
+
+        .author_info ul {
+            list-style: '➤ ';
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2rem;
+        }
+
+            .author_info ul li a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+                .author_info ul li a:hover {
+                    appearance: none;
+                    text-decoration: underline;
+                    text-shadow: 0px 0px 5px #fff;
+                }
+
+            .author_info ul li:hover {
+                transform: scale(1.1);
+            }
+
+    section.charts.mt-4 {
+        width: 90%;
+        margin:auto;
+    }
+</style>
+
+
+<script>// Other important pens.
+    // Map: https://codepen.io/themustafaomar/pen/ZEGJeZq
+    // Navbar: https://codepen.io/themustafaomar/pen/VKbQyZ
+
+    'use strict'
+
+    function $(selector) {
+        return document.querySelector(selector)
+    }
+
+    function find(el, selector) {
+        let finded
+        return (finded = el.querySelector(selector)) ? finded : null
+    }
+
+    function siblings(el) {
+        const siblings = []
+        for (let sibling of el.parentNode.children) {
+            if (sibling !== el) {
+                siblings.push(sibling)
+            }
+        }
+        return siblings
+    }
+
+    const showAsideBtn = $('.show-side-btn')
+    const sidebar = $('.sidebar')
+    const wrapper = $('#wrapper')
+
+    showAsideBtn.addEventListener('click', function () {
+        $(`#${this.dataset.show}`).classList.toggle('show-sidebar')
+        wrapper.classList.toggle('fullwidth')
+    })
+
+    if (window.innerWidth < 767) {
+        sidebar.classList.add('show-sidebar');
+    }
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 767) {
+            sidebar.classList.remove('show-sidebar')
+        }
+    })
+
+    // dropdown menu in the side nav
+    var slideNavDropdown = $('.sidebar-dropdown');
+
+    $('.sidebar .categories').addEventListener('click', function (event) {
+        event.preventDefault()
+
+        const item = event.target.closest('.has-dropdown')
+
+        if (!item) {
+            return
+        }
+
+        item.classList.toggle('opened')
+
+        siblings(item).forEach(sibling => {
+            sibling.classList.remove('opened')
+        })
+
+        if (item.classList.contains('opened')) {
+            const toOpen = find(item, '.sidebar-dropdown')
+
+            if (toOpen) {
+                toOpen.classList.add('active')
+            }
+
+            siblings(item).forEach(sibling => {
+                const toClose = find(sibling, '.sidebar-dropdown')
+
+                if (toClose) {
+                    toClose.classList.remove('active')
+                }
+            })
+        } else {
+            find(item, '.sidebar-dropdown').classList.toggle('active')
+        }
+    })
+
+    $('.sidebar .close-aside').addEventListener('click', function () {
+        $(`#${this.dataset.close}`).classList.add('show-sidebar')
+        wrapper.classList.remove('margin')
+    })
+
+
+    // Global defaults
+    Chart.defaults.global.animation.duration = 2000; // Animation duration
+    Chart.defaults.global.title.display = false; // Remove title
+    Chart.defaults.global.defaultFontColor = '#71748c'; // Font color
+    Chart.defaults.global.defaultFontSize = 13; // Font size for every label
+
+    // Tooltip global resets
+    Chart.defaults.global.tooltips.backgroundColor = '#111827'
+    Chart.defaults.global.tooltips.borderColor = 'blue'
+
+    // Gridlines global resets
+    Chart.defaults.scale.gridLines.zeroLineColor = '#3b3d56'
+    Chart.defaults.scale.gridLines.color = '#3b3d56'
+    Chart.defaults.scale.gridLines.drawBorder = false
+
+    // Legend global resets
+    Chart.defaults.global.legend.labels.padding = 0;
+    Chart.defaults.global.legend.display = false;
+
+    // Ticks global resets
+    Chart.defaults.scale.ticks.fontSize = 12
+    Chart.defaults.scale.ticks.fontColor = '#71748c'
+    Chart.defaults.scale.ticks.beginAtZero = false
+    Chart.defaults.scale.ticks.padding = 10
+
+    // Elements globals
+    Chart.defaults.global.elements.point.radius = 0
+
+    // Responsivess
+    Chart.defaults.global.responsive = true
+    Chart.defaults.global.maintainAspectRatio = false
+
+    // The bar chart
+    var myChart = new Chart(document.getElementById('myChart'), {
+        type: 'bar',
+        data: {
+            labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+            datasets: [{
+                label: "Lost",
+                data: [45, 25, 40, 20, 60, 20, 35, 25],
+                backgroundColor: "#0d6efd",
+                borderColor: 'transparent',
+                borderWidth: 2.5,
+                barPercentage: 0.4,
+            }, {
+                label: "Succes",
+                startAngle: 2,
+                data: [20, 40, 20, 50, 25, 40, 25, 10],
+                backgroundColor: "#dc3545",
+                borderColor: 'transparent',
+                borderWidth: 2.5,
+                barPercentage: 0.4,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {},
+                    ticks: {
+                        stepSize: 15,
+                    },
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    }
+                }]
+            }
+        }
+    })
+
+    // The line chart
+    var chart = new Chart(document.getElementById('myChart2'), {
+        type: 'line',
+        data: {
+            labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+            datasets: [{
+                label: "My First dataset",
+                data: [4, 20, 5, 20, 5, 25, 9, 18],
+                backgroundColor: 'transparent',
+                borderColor: '#0d6efd',
+                lineTension: .4,
+                borderWidth: 1.5,
+            }, {
+                label: "Month",
+                data: [11, 25, 10, 25, 10, 30, 14, 23],
+                backgroundColor: 'transparent',
+                borderColor: '#dc3545',
+                lineTension: .4,
+                borderWidth: 1.5,
+            }, {
+                label: "Month",
+                data: [16, 30, 16, 30, 16, 36, 21, 35],
+                backgroundColor: 'transparent',
+                borderColor: '#f0ad4e',
+                lineTension: .4,
+                borderWidth: 1.5,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: 12,
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    },
+                }]
+            }
+        }
+    })
+
+    var chart = document.getElementById('chart3');
+    var myChart = new Chart(chart, {
+        type: 'line',
+        data: {
+            labels: ["One", "Two", "Three", "Four", "Five", 'Six', "Seven", "Eight"],
+            datasets: [{
+                label: "Lost",
+                lineTension: 0.2,
+                borderColor: '#d9534f',
+                borderWidth: 1.5,
+                showLine: true,
+                data: [3, 30, 16, 30, 16, 36, 21, 40, 20, 30],
+                backgroundColor: 'transparent'
+            }, {
+                label: "Lost",
+                lineTension: 0.2,
+                borderColor: '#5cb85c',
+                borderWidth: 1.5,
+                data: [6, 20, 5, 20, 5, 25, 9, 18, 20, 15],
+                backgroundColor: 'transparent'
+            },
+            {
+                label: "Lost",
+                lineTension: 0.2,
+                borderColor: '#f0ad4e',
+                borderWidth: 1.5,
+                data: [12, 20, 15, 20, 5, 35, 10, 15, 35, 25],
+                backgroundColor: 'transparent'
+            },
+            {
+                label: "Lost",
+                lineTension: 0.2,
+                borderColor: '#337ab7',
+                borderWidth: 1.5,
+                data: [16, 25, 10, 25, 10, 30, 14, 23, 14, 29],
+                backgroundColor: 'transparent'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: 12
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    },
+                }],
+            }
+        }
+    })</script>
+
+
+
+
+
+
+<style>
+
+
+    @@-webkit-keyframes bake-pie {
+        from {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+
+    @@keyframes bake-pie {
+        from {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+
+    .pie-chart {
+        font-family: "Open Sans", Arial;
+    }
+
+    .pie-chart--wrapper {
+        width: 400px;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .pie-chart__pie, .pie-chart__legend {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .pie-chart__pie2, .pie-chart__legend2 {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .pie-chart__pie {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 10px auto 35px;
+    }
+
+        .pie-chart__pie::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: #EEE;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+        }
+
+        .pie-chart__pie::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+            margin: 220px auto;
+        }
+
+    .pie-chart__pie2 {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 10px auto 35px;
+    }
+
+        .pie-chart__pie2::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: #EEE;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+        }
+
+        .pie-chart__pie2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+            margin: 220px auto;
+        }
+
+    .slice {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        clip: rect(0px, 200px, 200px, 100px);
+        -webkit-animation: bake-pie 1s;
+        animation: bake-pie 1s;
+    }
+
+        .slice span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip: rect(0px, 200px, 200px, 100px);
+        }
+
+    .pie-chart__legend {
+        display: block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        background: #FFF;
+        padding: 0.75em 0.75em 0.05em;
+        font-size: 14px;
+        box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+        text-align: left;
+        width: 90%;
+    }
+
+        .pie-chart__legend li {
+            height: 1.25em;
+            margin-bottom: 0.7em;
+            padding-left: 0.5em;
+            border-left: 1.25em solid black;
+        }
+
+        .pie-chart__legend em {
+            font-style: normal;
+        }
+
+        .pie-chart__legend span {
+            float: right;
+        }
+
+
+    .pie-chart__legend2 {
+        display: block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        background: #FFF;
+        padding: 0.75em 0.75em 0.05em;
+        font-size: 14px;
+        box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+        text-align: left;
+        width: 90%;
+    }
+
+        .pie-chart__legend2 li {
+            height: 1.25em;
+            margin-bottom: 0.7em;
+            padding-left: 0.5em;
+            border-left: 1.25em solid black;
+        }
+
+        .pie-chart__legend2 em {
+            font-style: normal;
+        }
+
+        .pie-chart__legend2 span {
+            float: right;
+        }
+
+
+    .pie-charts {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @@media (max-width: 500px) {
+        .pie-charts {
+            flex-direction: column;
+        }
+    }
+
+    .card_footer_lastmonth > h4, p {
+        margin: 0;
+        text-align: center !important;
+    }
+
+    .content.rounded-3.p-3 p {
+        text-align: left !important;
+    }
+
+    .admin {
+        width: 48%;
+        margin-right: 1%;
+        margin-left: 1%;
+        background-color: var(--dk-dark-bg);
+    }
+    .wrapper {
+        width: 100%!important;
+        max-width: 100%;
+        position: relative;
+    }
+        .wrapper h1 {
+            text-align: center;
+        }
+        .wrapper input {
+            width: 600px;
+        }
+</style>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="https://codepen.io/MaciejCaputa/pen/EmMooZ.js"></script>
+
+
+<script>function sliceSize(dataNum, dataTotal) {
+        return (dataNum / dataTotal) * 360;
+    }
+
+    function addSlice(id, sliceSize, pieElement, offset, sliceID, color) {
+        $(pieElement).append("<div class='slice " + sliceID + "'><span></span></div>");
+        var offset = offset - 1;
+        var sizeRotation = -179 + sliceSize;
+
+        $(id + " ." + sliceID).css({
+            "transform": "rotate(" + offset + "deg) translate3d(0,0,0)"
+        });
+
+        $(id + " ." + sliceID + " span").css({
+            "transform": "rotate(" + sizeRotation + "deg) translate3d(0,0,0)",
+            "background-color": color
+        });
+    }
+
+    function iterateSlices(id, sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+        var
+            maxSize = 179,
+            sliceID = "s" + dataCount + "-" + sliceCount;
+
+        if (sliceSize <= maxSize) {
+            addSlice(id, sliceSize, pieElement, offset, sliceID, color);
+        } else {
+            addSlice(id, maxSize, pieElement, offset, sliceID, color);
+            iterateSlices(id, sliceSize - maxSize, pieElement, offset + maxSize, dataCount, sliceCount + 1, color);
+        }
+    }
+
+    function createPie(id) {
+        var
+            listData = [],
+            listTotal = 0,
+            offset = 0,
+            i = 0,
+            pieElement = id + " .pie-chart__pie"
+        dataElement = id + " .pie-chart__legend"
+
+        color = [
+            "cornflowerblue",
+            "olivedrab",
+            "turquoise",
+            "forestgreen",
+            "navy"
+        ];
+
+        color = shuffle(color);
+
+        $(dataElement + " span").each(function () {
+            listData.push(Number($(this).html()));
+        });
+
+        for (i = 0; i < listData.length; i++) {
+            listTotal += listData[i];
+        }
+
+        for (i = 0; i < listData.length; i++) {
+            var size = sliceSize(listData[i], listTotal);
+            iterateSlices(id, size, pieElement, offset, i, 0, color[i]);
+            $(dataElement + " li:nth-child(" + (i + 1) + ")").css("border-color", color[i]);
+            offset += size;
+        }
+    }
+
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            x = a[i - 1];
+            a[i - 1] = a[j];
+            a[j] = x;
+        }
+
+        return a;
+    }
+    function createPie2(id) {
+        var
+            listData = [],
+            listTotal = 0,
+            offset = 0,
+            i = 0,
+            pieElement = id + " .pie-chart__pie2"
+        dataElement = id + " .pie-chart__legend2"
+
+        color = [
+            "cornflowerblue",
+            "olivedrab",
+            "purple",
+            "turquoise",
+            "forestgreen",
+            "navy"
+        ];
+
+        color = shuffle(color);
+
+        $(dataElement + " span").each(function () {
+            listData.push(Number($(this).html()));
+        });
+
+        for (i = 0; i < listData.length; i++) {
+            listTotal += listData[i];
+        }
+
+        for (i = 0; i < listData.length; i++) {
+            var size = sliceSize(listData[i], listTotal);
+            iterateSlices(id, size, pieElement, offset, i, 0, color[i]);
+            $(dataElement + " li:nth-child(" + (i + 1) + ")").css("border-color", color[i]);
+            offset += size;
+        }
+    }
+
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            x = a[i - 1];
+            a[i - 1] = a[j];
+            a[j] = x;
+        }
+
+        return a;
+    }
+
+    function createPieCharts() {
+        createPie('.pieID--micro-skills');
+        createPie('.pieID--categories');
+        createPie('.pieID--operations');
+        createPie2('.pieID--micro-skills2');
+        createPie2('.pieID--categories2');
+        createPie2('.pieID--operations2');
+    }
+
+    createPieCharts();</script>

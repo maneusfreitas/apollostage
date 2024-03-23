@@ -1,7 +1,18 @@
 ﻿@model List<Album>
 @{
     string username = TempData["username"]?.ToString();
+    string meu = TempData["meu"]?.ToString();
 }
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <h1 class="ms-5"> @username's ListenList</h1>
 
 <div class="row ms-5 justify-content-center ">
@@ -35,15 +46,20 @@
                     <!-- Mudança: Adicionando uma classe para identificar este elemento específico e o atributo data-date com a data do álbum -->
                     <p class="card-text ms-4 releaseDate mb-0 gray-text" data-date="@album.release_date.ToUpper()"></p>
                     <!--  <p>Genres: @string.Join(", ", album.Genres)</p>-->
-                   
-                    <p class="card-text ms-4 mb-0 gray-text">@album.Genres[0].ToUpper()</p>
-
+                    @if (@album.Genres.Count > 0)
+                    {
+                        <p class="card-text ms-4 mb-0 gray-text">@album.Genres[0].ToUpper()</p>
+                    }
+                    else
+                    {
+                        <p class="card-text ms-4 mb-0 gray-text">Sem genero musical</p>
+                    }
                     <p class="card-text ms-4 gray-text">@album.duration_ms_album </p>
                 </div>
             }
         </div>
     }
-
+    </div>
     <script>window.onload = function () {
             // Seu código JavaScript aqui
             var releaseDateElements = document.querySelectorAll(".releaseDate");

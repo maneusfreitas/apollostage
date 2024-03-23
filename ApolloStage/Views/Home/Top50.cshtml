@@ -1,0 +1,36 @@
+﻿@model List<Album>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 20 Albums</title>
+</head>
+<body>
+    <center><h1>Top 20 Albums</h1></center>
+
+    <div class="row ">
+        @foreach (var artist in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 d-flex justify-content-center">
+                @using (Html.BeginForm("getalbum", "Account", FormMethod.Get))
+                {
+                    <button type="submit" name="value" value="Pesquisar" class="p-0" style="border:none;">
+                        <div class="card" style="max-width:200px; border:none">
+                            @if (artist.images.Count > 0)
+                            {
+                                <img src="@artist.images[0].URL" alt="@artist.name" class="card-img-top img-fluid fixed-size-image">
+                            }
+                            <div class="card-body">
+                                <p class="card-text">@artist.name</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <input type="hidden" name="albumId" value="@artist.id" />
+                    <input type="hidden" name="albumName" value="@artist.name" />
+                }
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -10,6 +10,15 @@
     string rate = TempData["rate"]?.ToString();
     string rated = TempData["rated"]?.ToString();
     string durationSeconds = TempData["durationSeconds"]?.ToString();
+    string meu = TempData["meu"]?.ToString();
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -72,9 +81,9 @@
                     <div class="modal fade" style="background-color:rgba(0,0,0,0.5)" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                         <div class="modal-dialog modal-none modal-dialog-centered border-2">
-                            
+
                             <div class="modal-content">
-                                <img class="mb-2" style="max-width:100px "  src="/img/star1_100-removebg-preview.png">
+                                <img class="mb-2" style="max-width:100px " src="/img/star1_100-removebg-preview.png">
                                 <span style="margin-top:-67px !important;color: green;" class="mb-5">@myrating </span>
 
                                 <h5 class="modal-title" id="exampleModalLabel">@Model.AlbumsInfo[0].name</h5>
@@ -99,7 +108,7 @@
                                             <div class="text-center m-0 p-0">
                                                 <!-- Classe text-center para centralizar os botões horizontalmente e mb-3 para adicionar margem inferior -->
                                                 <input type="hidden" name="albumId" value="@albumInfo.id" />
-                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id')">
+                                                <button class=" toGreenOnAD btn mr-2" type="button" onclick="submitRatingForm('@albumInfo.id','@firstGenre')">
                                                     @(albumInfo.classificacaoEspecifica >= 1 ? "Update" : "Rate")
                                                 </button>
                                             </div>
@@ -110,13 +119,12 @@
 
 
                                         </div>
-                                        <script>
-                                            function updateRating(value) {
+                                        <script>function updateRating(value) {
                                                 document.getElementById("selectedRating").value = value;
                                             }</script>
                                     }
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -257,16 +265,16 @@
 
 
 
-    
 
 
 
 
 
-    <div style="width: 60%; text-align: center; margin: auto;">
+
+    <div style="width: 50%; text-align: center; margin: auto;">
         <input type="hidden" name="albumId" value="@Model.AlbumsInfo[0].id" />
 
-        <div class="form-group">
+        <div class="form-group mt-4">
             <label for="reviewTitle">Título da Review:</label>
             <input type="text" id="reviewTitle" name="reviewTitle" class="form-control" placeholder="Insira o título da Review" />
         </div>
@@ -284,13 +292,13 @@
             </select>
         </div>
 
-        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none">
+        <button type="button" onclick="submitReviewForm('@Model.AlbumsInfo[0].id')" class="btn btn-dark btnAdicionar shadow-none mt-2">
             Enviar Review
         </button>
     </div>
 
 
-    <h1>Reviews do Álbum</h1>
+    <h1 class="mt-5">Reviews do Álbum</h1>
     <ul>
         @foreach (var review in Model.AlbumReviews)
         {
@@ -299,19 +307,31 @@
                 <strong>Título da Review:</strong> @review.reviewTitle<br />
                 <strong>Descrição da Review:</strong> @review.reviewDescription<br />
                 <strong>Recomendação:</strong> @review.reviewRecommendation<br />
-                @if (@review.itsMine == true)
+                @if (@review.itsMine == true || @meu == "True")
                 {
-                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none">
+                    <button onclick="removeComment('@Model.AlbumsInfo[0].id','@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none mt-2">
                         remover
                     </button>
                 }
                 @if (@review.itsMine != true)
-                    {
-                    <button onclick="reportComment('@review.Id', '@review.UserMail')" class="btn btn-dark btnAdicionar shadow-none">
+                {
+                    <button onclick="reportComment('@review.Id', '@review.UserMail', 'motivo_@review.Id', 'descricao_@review.Id')" class="btn btn-dark btnAdicionar shadow-none mt-2">
                         reportar
                     </button>
-                    }
-                </li>
+                    <label class="d-flex mt-2 mb-1" for="motivo_@review.Id">Selecione um motivo para relatar o comentário:</label>
+                    <select id="motivo_@review.Id" name="motivo_@review.Id">
+                        <option value="discurso de ódio">Discurso de ódio</option>
+                        <option value="bullying">Bullying</option>
+                        <option value="assédio">Assédio</option>
+                        <option value="spam">Spam</option>
+                        <option value="conteúdo inapropriado">Conteúdo inapropriado</option>
+                    </select>
+                    <br>
+                    <label class="mt-1 mb-1" for="descricao_@review.Id">Descreva o motivo do report:</label>
+                    <br>
+                    <textarea id="descricao_@review.Id" name="descricao_@review.Id"></textarea>
+                }
+            </li>
             <hr />
         }
     </ul>
@@ -531,9 +551,10 @@
                 outline: none !important;
             }
 
-        .fS{
-            width:100%;
-            background-color:white;        }
+        .fS {
+            width: 100%;
+            background-color: white;
+        }
 
         .modal-content img {
             margin: auto;
@@ -543,8 +564,7 @@
         .modal-content {
             border: 5px solid rgba(0,0,0) !important
         }
-        
-            </style>
+    </style>
     <script>window.onload = function () {
             // Seu código JavaScript aqui
             var releaseDateElements = document.querySelectorAll(".releaseDate");
@@ -619,10 +639,11 @@
             form.submit();
         });</script>
     <script>
-    function submitRatingForm(albumId) {
+    function submitRatingForm(albumId, gender) {
         var formData = {
             albumId: albumId,
             starRating: document.getElementById("selectedRating").value,
+            gender : gender,
         };
 
         $.ajax({
@@ -713,29 +734,28 @@
     </script>
 
     <script>
-        function reportComment(reviewId,userEmail) {
-                $.ajax({
-                    type: 'POST',
-                    url: '@Url.Action("reportComment", "Account")',
-                    data: { reviewId: reviewId, userEmail: userEmail },
-                    success: function(response) {
-                        console.log(response);
-                        location.reload();
-                    },
-                    error: function(error) {
-                        console.error('Erro ao enviar os dados do formulário via AJAX:', error);
-                    }
-                });
-             }
+    function reportComment(reviewId, userEmail, selectId, textareaId) {
+        var motivo = document.getElementById(selectId).value;
+        var descricao = document.getElementById(textareaId).value;
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("reportComment", "Account")',
+            data: { reviewId: reviewId, userEmail: userEmail, motivo: motivo, descricao: descricao },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.error('Erro ao enviar os dados do formulário via AJAX:', error);
+            }
+        });
+    }
     </script>
 
-    <script>
-        document.getElementById('ratingButton').addEventListener('click', function () {
+    <script>document.getElementById('ratingButton').addEventListener('click', function () {
             // Seleciona o modal e o exibe
             var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
             modal.show();
-        });
-    </script>
+        });</script>
 
 </body>
 </html>

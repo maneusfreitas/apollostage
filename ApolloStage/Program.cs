@@ -6,9 +6,21 @@ using ApolloStage.Services;
 using ApolloStage.Factories.IFactories;
 
 using ApolloStage;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
+StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -84,7 +96,7 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseCors();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

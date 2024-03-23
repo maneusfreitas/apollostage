@@ -10,6 +10,7 @@ namespace ApolloStage.Models.Extra
         public string userEmail { get; set; }
         public string albumId { get; set; }
         public int starRating { get; set; }
+        public string gender { get; set; }
     }
 }
 

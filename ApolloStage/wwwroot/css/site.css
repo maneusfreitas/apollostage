@@ -1,4 +1,4 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -12,7 +12,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Poppins' !important;
+    font-family: 'Poppins';
 }
 
 .preWrapper{
@@ -125,6 +125,20 @@ footer.border-top.footer.text-muted {
     background-size: cover;
 }
 
+.parallax1{
+
+    /* The image used */
+    background-image: url("../img/images_drake.jpg");
+    min-height: 200px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
 
 
 
@@ -229,6 +243,7 @@ p.card-text.ms-4.releaseDate.mb-0 {
         left: 60%;
         bottom: 20px !important;
         transform: translate(-50%);
+
     }
 }
 

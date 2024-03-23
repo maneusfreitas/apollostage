@@ -1,8 +1,18 @@
 ﻿@model List<Album>
+@{
+    string meu = TempData["meu"]?.ToString();
+}
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <head>
+<head>
     <link rel="stylesheet" href="~/ApolloStage.styles.css" asp-append-version="true" />
-    </head>
+</head>
 
 @if (TempData.ContainsKey("artistName"))
 {
@@ -24,7 +34,7 @@
                 <div class="card-body text-center ">
                     <div class="w-100 d-flex justify-content-center">
                         <div class=" butInImage " style="max-width:200px">
-                            <form  asp-controller="Account" asp-action="GetAlbum" method="get">
+                            <form asp-controller="Account" asp-action="GetAlbum" method="get">
                                 <a href="@Url.Action("GetAlbum", "Account", new { albumId = album.id, artistname = TempData["artistName"] })">
                                     <img src="@album.images[0].URL" alt="@album.name" class="img-fluid">
                                 </a>
@@ -50,7 +60,7 @@
                                 {
                                     <img src="~/img/topalbum.png" style="max-width: 39px; max-height:39px" />
                                 }
-                              
+
                                 @if (@album.classificacaoEspecifica >= 1 && @album.classificacaoEspecifica != 10)
                                 {
                                     <p>@album.classificacaoEspecifica</p>
@@ -80,11 +90,9 @@
                     <button style="text-align:center;" type="button" onclick="submitRatingForm('@album.id')">Submit</button>
                 </form>
 
-                <script>
-                        function updateRating(value) {
-                            document.getElementById("selectedRating").value = value;
-                        }
-                </script>
+                <script>function updateRating(value) {
+                        document.getElementById("selectedRating").value = value;
+                    }</script>
             }
 
         </div>
@@ -111,8 +119,7 @@
 
 
 @section Scripts {
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
             $(".btnAdicionar").on("click", function (e) {
                 e.preventDefault();
 
@@ -224,8 +231,7 @@
             $popup.classList.add('s--active');
 
             setTimeout(closeHandler, 2000); // Chama closeHandler após 5 segundos
-        });
-    </script>
+        });</script>
 }
 <style>
     main.pb-3 h1 {
@@ -242,58 +248,67 @@
         border-radius: 0 !important;
     }
 
-.star-cb-group {
-  /* remove inline-block whitespace */
-  font-size: 0;
-  /* flip the order so we can use the + and ~ combinators */
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  /* the hidden clearer */
-}
-.star-cb-group * {
-  font-size: 1rem;
-}
-.star-cb-group > input {
-  display: none;
-}
-.star-cb-group > input + label {
-  /* only enough room for the star */
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 9999px;
-  width: 1em;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.star-cb-group > input + label:before {
-  display: inline-block;
-  text-indent: -9999px;
-  content: "☆";
-  color: #888;
-}
-.star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
-  content: "★";
-  color: #e52;
-  text-shadow: 0 0 1px #333;
-}
-.star-cb-group > .star-cb-clear + label {
-  text-indent: -9999px;
-  width: .5em;
-  margin-left: -.5em;
-}
-.star-cb-group > .star-cb-clear + label:before {
-  width: .5em;
-}
-.star-cb-group:hover > input + label:before {
-  content: "☆";
-  color: #888;
-  text-shadow: none;
-}
-.star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
-  content: "★";
-  color: #e52;
-  text-shadow: 0 0 1px #333;
-}
+    .star-cb-group {
+        /* remove inline-block whitespace */
+        font-size: 0;
+        /* flip the order so we can use the + and ~ combinators */
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        /* the hidden clearer */
+    }
+
+        .star-cb-group * {
+            font-size: 1rem;
+        }
+
+        .star-cb-group > input {
+            display: none;
+        }
+
+            .star-cb-group > input + label {
+                /* only enough room for the star */
+                display: inline-block;
+                overflow: hidden;
+                text-indent: 9999px;
+                width: 1em;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+
+                .star-cb-group > input + label:before {
+                    display: inline-block;
+                    text-indent: -9999px;
+                    content: "☆";
+                    color: #888;
+                }
+
+                .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+                    content: "★";
+                    color: #e52;
+                    text-shadow: 0 0 1px #333;
+                }
+
+        .star-cb-group > .star-cb-clear + label {
+            text-indent: -9999px;
+            width: .5em;
+            margin-left: -.5em;
+        }
+
+            .star-cb-group > .star-cb-clear + label:before {
+                width: .5em;
+            }
+
+        .star-cb-group:hover > input + label:before {
+            content: "☆";
+            color: #888;
+            text-shadow: none;
+        }
+
+        .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+            content: "★";
+            color: #e52;
+            text-shadow: 0 0 1px #333;
+        }
 
 
 
@@ -307,34 +322,39 @@
         width: 210px;
     }
 
-#log {
-  margin: 1em auto;
-  width: 5em;
-  text-align: center;
-  background: transparent;
-}
+    #log {
+        margin: 1em auto;
+        width: 5em;
+        text-align: center;
+        background: transparent;
+    }
 
-h1 {
-  text-align: center;
-}
+    h1 {
+        text-align: center;
+    }
+
     button#formse {
         width: 100px;
         height: 30px;
         top: 160px;
         left: 50px;
     }
+
     .card.pt-2.col-12.col-md-3 form fieldset {
         display: none;
     }
+
     .card.pt-2.col-12.col-md-3 form button {
         display: none;
     }
+
     .butInImage2 img {
         position: absolute;
         top: 0px;
         left: 0px;
         z-index: 0;
     }
+
     .butInImage2 p {
         position: absolute;
         z-index: 9;
@@ -342,9 +362,7 @@ h1 {
         top: 10px;
     }
 </style>
-<script>
-
-    $('[id^="rating-"]').click(function () {
+<script>$('[id^="rating-"]').click(function () {
         // Encontre o formulário pai do input de rádio clicado
         var form = $(this).closest('form');
         // Envie o formulário

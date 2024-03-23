@@ -26,7 +26,7 @@ namespace ApolloStageTest
             // Arrange
             var httpClientMock = new Mock<IHttpClientHelper>();
             var singletonMock = new Mock<ISingleton>();
-            var controller = new HomeController(null,null,null);
+            var controller = new HomeController(null, null, null, null);
 
             var expectedAlbumList = new List<Album>
             {
@@ -53,7 +53,7 @@ namespace ApolloStageTest
             // Arrange
             var httpClientMock = new Mock<IHttpClientHelper>();
             var singletonMock = new Mock<ISingleton>();
-            var controller = new HomeController(null, null, null);
+            var controller = new HomeController(null, null, null, null);
 
             httpClientMock.Setup(client => client.SendAysnc(It.IsAny<string>(), It.IsAny<string>()))
                 .ThrowsAsync(new HttpRequestException("Authentication failed."));
@@ -63,35 +63,6 @@ namespace ApolloStageTest
         }
 
 
-        [Fact]
-        public void Privacy_ReturnsViewResult()
-        {
-            // Arrange
-            var controller = new HomeController(null, null, null);
-
-            // Act
-            var result = controller.Privacy();
-
-            // Assert
-            Assert.IsType<ViewResult>(result);
-        }
-        [Fact]
-        public void Error_ReturnsViewResult_WithModelError()
-        {
-            // Arrange
-            var mockContext = new Mock<ApplicationDbContext>(new DbContextOptions<ApplicationDbContext>());
-            var mockHttpClientHelper = new Mock<IHttpClientHelper>();
-            var mockSingleton = new Mock<ISingleton>();
-
-            var controller = new HomeController(mockContext.Object, mockHttpClientHelper.Object, mockSingleton.Object);
-
-            // Act
-            var result = controller.Error();
-
-            // Assert
-            var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsType<ErrorViewModel>(viewResult.Model);
-            Assert.NotNull(model);
-        }
+     
     }
 }

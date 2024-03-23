@@ -1,8 +1,15 @@
 ﻿@model IndexModelView;
 @{
-    ViewData["Title"] = "Tasks";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    string meu = TempData["meu"]?.ToString();
 }
+@{
+    ViewData["Title"] = "Home Page";
+    @if (meu == "True")
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <div class="container text-center">
     @using (Html.BeginForm("SearchArtist", "Home", FormMethod.Post))
@@ -29,13 +36,13 @@
             }
         </div>
 
-       <div class="section">
+        <div class="section">
             <h1 class="section-title">Álbuns</h1>
             <div class="row">
                 @if (Model.Artists[0].Albums != null && Model.Artists[0].Albums.items != null)
-                    {
+                {
                     @foreach (var album in Model.Artists[0].Albums.items)
-                        {
+                    {
                         <div class="col-4">
                             <div class="card">
                                 <img src="@album.images[0].URL" class="card-img-top" alt="Capa do Álbum">
@@ -43,7 +50,6 @@
                                     <h5 class="card-title">@album.name</h5>
                                     <p class="card-text">Data de Lançamento: @album.release_date</p>
                                     <p class="card-text">Total de Faixas: @album.total_tracks</p>
-                                    <!-- Adicione mais informações do álbum, se necessário -->
                                 </div>
                             </div>
                         </div>
@@ -57,19 +63,13 @@
         </div>
 
 
-        <!-- Renderizar informações do artista -->
-
-
     }
     else
     {
         <p>Nenhum artista encontrado.</p>
     }
 
-    <input id="updateButton" type="submit" value="Gerar Outra Palavra" />
-    <div id="customStringDiv">
-        <!-- A string personalizada será exibida aqui -->
-    </div>
+
 </div>
 @if (Model.Playlists != null)
 {

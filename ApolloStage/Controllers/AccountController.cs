@@ -38,6 +38,125 @@ namespace ApolloStageFirst.Controllers
         {
             return View("Login");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> profile()
+        {
+            var userEmail = User.FindFirst(ClaimTypes.Email);
+            var existingUser = _userManager.FindByEmailAsync(userEmail.Value).Result;
+
+            // var getuseralbums = _context.AlbumRatings.Where(t => t.userEmail == userEmail.Value).ToList();
+            var top50Albums = _context.AlbumRatings.Where(t => t.userEmail == userEmail.Value)
+                  .Take(50)
+                  .Select(t => t.albumId)
+                  .ToList();
+            // Agrupar em lotes de 10
+            var albumGroups = top50Albums
+                .Select((value, index) => new { value, index })
+                .GroupBy(x => x.index / 10)
+                .Select(group => group.Select(x => x.value).ToList())
+                .ToList();
+
+            // Consultar a API do Spotify para cada lote de 10
+            var albums = new List<Album>();
+            foreach (var group in albumGroups)
+            {
+                // Concatenar os IdAlbum em uma única string separada por vírgulas
+                string rAlbums = string.Join(",", group);
+
+                // Consultar a API do Spotify
+                string urlnew = "https://api.spotify.com/v1/albums?ids=" + rAlbums;
+                Console.WriteLine("token: " + SpotifyService.AccessToken);
+                Console.WriteLine("albuns: " + rAlbums);
+                var responseJsonw = await _httpClientHelper.SendAysnc(urlnew, SpotifyService.AccessToken);
+
+                var responseJObjectw = JObject.Parse(responseJsonw);
+                var albumsInGroup = responseJObjectw["albums"].ToObject<List<Album>>();
+
+                albums.AddRange(albumsInGroup);
+            }
+
+
+            var albumList = albums.Select(albumItem => new Album
+            {
+                album_type = albumItem.album_type,
+                artists = albumItem.artists,
+                available_markets = albumItem.available_markets,
+                external_urls = albumItem.external_urls,
+                href = albumItem.href,
+                id = albumItem.id,
+                images = albumItem.images,
+                name = albumItem.name,
+                release_date = albumItem.release_date,
+                release_date_precision = albumItem.release_date_precision,
+                type = albumItem.type,
+                uri = albumItem.uri,
+                label = albumItem.label,
+                popularity = albumItem.popularity,
+            }).Reverse().ToList();
+
+            var allAlbums = _context.ListenList
+                     .Where(a => a.UserMail == userEmail.Value)
+                     .Select(a => a.AlbumId)
+                     .ToList();
+            List<Album> albumsWithDetails = new List<Album>();
+            Album albumDetails; // Mova a declaração para fora do loop
+
+            foreach (var favoriteAlbum in allAlbums)
+            {
+                var albumDetailsUrl = $"https://api.spotify.com/v1/albums/{favoriteAlbum}";
+                var responseJson = await _httpClientHelper.SendAysnc(albumDetailsUrl, SpotifyService.AccessToken);
+                albumDetails = JsonConvert.DeserializeObject<Album>(responseJson);
+
+                // Aqui você pode adicionar albumDetails a uma lista, se necessário
+                albumsWithDetails.Add(albumDetails);
+            }
+            var reviewUser = _context.AlbumReview
+                    .Where(a => a.UserMail == userEmail.Value).Count();
+            var reviewTotal = _context.AlbumReview.Count();
+
+            var recommendedAlbum = _context.AlbumReview
+                    .Where(a => a.UserMail == userEmail.Value && a.reviewRecommendation == "Recomendo").Count();
+            var notRecommendedAlbum = _context.AlbumReview
+                    .Where(a => a.UserMail == userEmail.Value && a.reviewRecommendation != "Recomendo").Count();
+
+            var nratingUser = _context.AlbumRatings
+                 .Where(a => a.userEmail == userEmail.Value).Count();
+            var nratingTotal = _context.AlbumRatings.Count();
+
+            var genderChart = _context.AlbumRatings.Where(a=> a.userEmail == userEmail.Value)
+             .GroupBy(a => a.gender)
+             .ToDictionary(g => g.Key, g => g.Count());
+
+            var viewModel = new ProfileViewModel
+            {
+                User = existingUser,
+                Album = albumList,
+                Listenslist = albumsWithDetails,
+                NReviwesUser = reviewUser,
+                NReviwesTotal = reviewTotal,
+                NRecommendedalbum= recommendedAlbum,
+                NNotRecommendedalbum = notRecommendedAlbum,
+                NTotalRatings= nratingTotal,
+                NUserRatings = nratingUser,
+                GenderChart = genderChart,
+
+            };
+            TempData["limite"] = albums.Count();
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+            TempData["meu"] = admin.Admin;
+
+            return View("Profile", viewModel);
+        }
+
+
+        [HttpGet]
+        public IActionResult LimitAttempts()
+        {
+            return View("LimitAttempts");
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -49,11 +168,200 @@ namespace ApolloStageFirst.Controllers
             return View("ForgotPassword");
         }
         [HttpGet]
-        public IActionResult LimitAttempts()
+        public async Task<IActionResult> dashboard()
         {
-            return View("LimitAttempts");
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+            TempData["meu"] = admin.Admin;
+            TempData["name"] = admin.Name;
+            var prodcount = _context.ProductOrder
+                     .Where(item => item.State == "Pago")
+                     .Sum(item =>  item.TshirtCount);
+            var prodRating = _context.AlbumRatings.Count();
+            var prodproduct = _context.Tshirt.Count();
+            var prodemail = _context.TempRegisterData.Count();
+            var prodrev = _context.AlbumReview.Count();
+            var prodlistnlist = _context.ListenList.Count();
+            var somaCountMails = _context.TempRegisterData.Sum(item => item.CountMails);
+            var reports = _context.ReviewReports.Where(a => a.revchecked == false).OrderByDescending(a => a.count).ToList();
+            var orderbystatus = _context.ProductOrder
+       .Where(a => a.State != "inexistente")
+       .GroupBy(a => a.State)
+       .Select(g => new
+       {
+           State = g.Key,
+           Count = g.Sum(item => item.TshirtCount)
+       }).ToList<dynamic>();
+
+
+            var orders = _context.ProductOrder
+                     .Where(item => item.State == "Pago")
+                     .ToList();
+
+            var balance = orders.Sum(item => item.TshirtPrice * item.TshirtCount);
+
+
+            DateTime today = DateTime.Today;
+            DayOfWeek currentDayOfWeek = today.DayOfWeek;
+            DateTime startOfWeek = today.AddDays(-(int)currentDayOfWeek + (int)DayOfWeek.Monday);
+            DateTime endOfWeek = startOfWeek.AddDays(6);
+
+
+            var allDaysOfWeek = new List<DayOfWeek>
+                {
+                    DayOfWeek.Monday,
+                    DayOfWeek.Tuesday,
+                    DayOfWeek.Wednesday,
+                    DayOfWeek.Thursday,
+                    DayOfWeek.Friday,
+                    DayOfWeek.Saturday,
+                    DayOfWeek.Sunday
+                };
+
+            var weeksales = _context.ProductOrder
+          .Where(a => a.data >= startOfWeek && a.data <= endOfWeek && a.State == "Pago")
+          .GroupBy(a => a.data.DayOfWeek)
+          .Select(g => new
+          {
+              DayOfWeek = g.Key,
+              TotalQuantity = g.Sum(item => (double)item.TshirtCount),
+              TotalTshirtPrice = g.Sum(item => (double)item.TshirtCount * (double)item.TshirtPrice)  
+          })
+          .ToList();
+
+            var salesByDayOfWeek = weeksales.ToDictionary(ws => ws.DayOfWeek, ws => ws);
+
+
+            foreach (var missingDay in allDaysOfWeek.Except(salesByDayOfWeek.Keys))
+            {
+                salesByDayOfWeek.Add(missingDay, new
+                {
+                    DayOfWeek = missingDay,
+                    TotalQuantity = 0.0,
+                    TotalTshirtPrice = 0.0
+                });
+            }
+
+            var orderedWeekSales = salesByDayOfWeek
+                .OrderBy(pair => pair.Key)
+                .Select(pair => new
+                {
+                    DayOfWeek = $"{GetDayAbbreviation(pair.Key)}({startOfWeek.AddDays((int)pair.Key).Day})", 
+                    pair.Value.TotalQuantity,
+                    pair.Value.TotalTshirtPrice
+                })
+                .ToList<dynamic>();
+
+
+
+            foreach (var sale in orderedWeekSales)
+            {
+                Console.WriteLine($"DayOfWeek: {sale.DayOfWeek}, Total Quantity: {sale.TotalQuantity}, Total Tshirt Price: {sale.TotalTshirtPrice}");
+            }
+
+
+            var existingRatings = _context.AlbumRatings.Select(a => a.starRating).Distinct().ToList();
+            var allRatings = Enumerable.Range(1, 10).ToList();
+            var avg = allRatings.Select(rating =>
+            {
+                var ratingExists = existingRatings.Contains(rating);
+                var count = ratingExists ? _context.AlbumRatings.Count(a => a.starRating == rating) : 0;
+                return new { StarRating = rating, Count = count };
+            }).ToList<dynamic>();
+
+
+            foreach (var group in avg)
+            {
+                Console.WriteLine($"Star Rating: {group.StarRating}, Count: {group.Count}");
+            }
+
+
+            var genderChart = _context.AlbumRatings
+               .GroupBy(a => a.gender)
+               .ToDictionary(g => g.Key, g => g.Count());
+
+
+            var viewModel = new Dashboard
+            {
+               TotalEmail= somaCountMails,
+               TotalListenList = prodlistnlist,
+               TotalProducts= prodproduct,
+               TotalProductSales = prodcount,
+               TotalRatings= prodRating,
+               TotalReviews= prodrev,
+               TotalUsers= prodemail,
+               Reports = reports,
+               balance = balance,
+               ordercoutstatus = orderbystatus,
+               orders = orderedWeekSales,
+               averageRatings = avg,
+                GenderChart = genderChart
+
+            };
+            return View("Dashboard", viewModel);
         }
 
+        private static string GetDayAbbreviation(DayOfWeek dayOfWeek)
+        {
+            switch (dayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    return "Mon";
+                case DayOfWeek.Tuesday:
+                    return "Tue";
+                case DayOfWeek.Wednesday:
+                    return "Wed";
+                case DayOfWeek.Thursday:
+                    return "Thu";
+                case DayOfWeek.Friday:
+                    return "Fri";
+                case DayOfWeek.Saturday:
+                    return "Sat";
+                case DayOfWeek.Sunday:
+                    return "Sun";
+                default:
+                    return string.Empty; // Retornar vazio para valores inválidos
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> removeReview(int reviewId)
+        {
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+            if (admin.Admin)
+            {
+                var reviewReportToRemove = await _context.ReviewReports.FindAsync(reviewId);
+                if (reviewReportToRemove != null)
+                {
+                    _context.ReviewReports.Remove(reviewReportToRemove);
+                    await _context.SaveChangesAsync();
+                    return Json(new { success = true });
+                }
+            }
+
+            return Json(new { success = false });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> aproveReview(int reviewId)
+        {
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+            if (admin.Admin)
+            {
+                var reviewReport = await _context.ReviewReports.FindAsync(reviewId);
+                if (reviewReport != null)
+                {
+                    reviewReport.revchecked = true;
+                    _context.ReviewReports.Update(reviewReport);
+                    await _context.SaveChangesAsync();
+                    return Json(new { success = true });
+                }
+            }
+
+            return Json(new { success = false });
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(ApplicationUser model)
@@ -80,11 +388,8 @@ namespace ApolloStageFirst.Controllers
         [HttpPost]
         public async Task<IActionResult> FirstRegister(ApplicationUser model)
         {
-
             try
             {
-
-
                 var tempRegisterData = new ApplicationUser
                 {
                     UserMail = model.UserMail,
@@ -96,9 +401,10 @@ namespace ApolloStageFirst.Controllers
                     Gender = "",
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin = false,
+                    points = 0,
+                    CountMails=0,
                 };
-
-
                 return View("SecondRegister", tempRegisterData);
             }
 
@@ -131,6 +437,9 @@ namespace ApolloStageFirst.Controllers
                     Gender = "",
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin = false,
+                    points=0,
+                    CountMails = 0,
                 };
 
                 return View("ThirdRegister", tempRegisterData);
@@ -172,6 +481,9 @@ namespace ApolloStageFirst.Controllers
                     Gender = model.Gender,
                     Code = "0",
                     ConfirmedEmail = false,
+                    Admin= false,
+                    points=0,
+                    CountMails = 0,
                 };
 
                 // Gerar um código aleatório de 4 numeros
@@ -187,7 +499,9 @@ namespace ApolloStageFirst.Controllers
 
                     EmailService emailService = new EmailService();
                     await emailService.SendCodeByEmailAsync(model.UserMail, code);
-
+                    applicationUser.CountMails += 1;
+                    _context.TempRegisterData.Update(applicationUser);
+                    _context.SaveChanges();
                     return View("CodeConfim", applicationUser);
                 }
                 else
@@ -314,6 +628,7 @@ namespace ApolloStageFirst.Controllers
 
 
 
+
         [ValidateAntiForgeryToken]
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
@@ -329,7 +644,7 @@ namespace ApolloStageFirst.Controllers
         {
             if (remoteError != null)
             {
-                return RedirectToAction("Error");
+                return View("Error");
             }
 
             var result = await HttpContext.AuthenticateAsync("Identity.External");
@@ -338,7 +653,7 @@ namespace ApolloStageFirst.Controllers
 
             if (externalEmail == null)
             {
-                return RedirectToAction("Error");
+                return View("Error");
             }
 
             var user = await _userManager.FindByEmailAsync(externalEmail);
@@ -353,6 +668,9 @@ namespace ApolloStageFirst.Controllers
                     Name = externalFirstName,
                     Code = "0",
                     ConfirmedEmail = true,
+                    Admin = false,
+                    points = 0,
+                    CountMails = 0,
                 };
 
 
@@ -365,7 +683,7 @@ namespace ApolloStageFirst.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Error");
+                    return View("Error");
                 }
             }
             else
@@ -394,7 +712,9 @@ namespace ApolloStageFirst.Controllers
                 {
                     EmailService emailService = new EmailService();
                     await emailService.SendCodeByEmailAsync(existingUser.UserMail, code);
-
+                    existingUser.CountMails += 1;
+                    _context.TempRegisterData.Update(existingUser);
+                    _context.SaveChanges();
                     return View("CodeConfimPassword", existingUser);
                 }
             }
@@ -422,7 +742,9 @@ namespace ApolloStageFirst.Controllers
                 {
                     EmailService emailService = new EmailService();
                     await emailService.SendCodeByEmailAsync(userEmail, code);
-
+                    existingUser.CountMails += 1;
+                    _context.TempRegisterData.Update(existingUser);
+                    _context.SaveChanges();
                     if (n <= 0)
                     {
                         var deleteResult = await _userManager.DeleteAsync(existingUser);
@@ -479,18 +801,42 @@ namespace ApolloStageFirst.Controllers
                 return RedirectToAction("Login");
             }
 
-            var albumExistente = _context.FavoriteAlbum.FirstOrDefault(a => a.UserMail == userEmail && a.AlbumId == albumId);
+            var albumExistente = _context.ListenList.FirstOrDefault(a => a.UserMail == userEmail && a.AlbumId == albumId);
+           
+            var user = _context.TempRegisterData.FirstOrDefault(r => r.UserMail == userEmail);
+            if (user != null)
+            {
+                user.points++;
+                _context.TempRegisterData.Update(user);
+                _context.SaveChanges();
 
+            }
 
             if (albumExistente == null)
             {
-                existingUser.FavoriteAlbum.Add(new FavoriteAlbum { UserMail = userEmail, AlbumId = albumId });
+                existingUser.FavoriteAlbum.Add(new ListenList { UserMail = userEmail, AlbumId = albumId });
+
                 await _userManager.UpdateAsync(existingUser);
+                var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count++;
+                }
+                else
+                {
+                    var novoRegistro = new Top50 { IdAlbum = albumId, count = 1 };
+                    _context.Top50.Add(novoRegistro);
+                }
+
+                _context.SaveChanges();
                 return Json(new { success = true, errorMessage = "O álbum " + albumName + " foi adicionado à sua ListenList." });
             }
             else
             {
+               
 
+                _context.SaveChanges();
                 return Json(new { success = false, errorMessage = "O álbum " + albumName + " foi removido da sua ListenList." });
             }
         }
@@ -499,6 +845,8 @@ namespace ApolloStageFirst.Controllers
         public async Task<IActionResult> RemoverDosFavoritos(string albumId)
         {
             var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+
             string username = "";
             if (userEmailClaim == null)
             {
@@ -507,6 +855,18 @@ namespace ApolloStageFirst.Controllers
 
             var userEmail = userEmailClaim.Value;
 
+
+            var user = _context.TempRegisterData.FirstOrDefault(r => r.UserMail == userEmail);
+            if (user != null)
+            {
+                if (user.points > 0)
+                {
+                    user.points -= 1;
+                    _context.TempRegisterData.Update(user);
+                    _context.SaveChanges();
+                }
+            }
+        
             var existingUser = await _userManager.FindByEmailAsync(userEmail);
 
             if (existingUser == null)
@@ -516,21 +876,38 @@ namespace ApolloStageFirst.Controllers
             }
             username = existingUser.Name;
             // Verifica se o álbum existe na lista de favoritos do usuário
-            var albumExistente = _context.FavoriteAlbum.FirstOrDefault(a => a.AlbumId == albumId);
+            var albumExistente = _context.ListenList.FirstOrDefault(a => a.AlbumId == albumId);
 
             if (albumExistente != null)
             {
-                _context.FavoriteAlbum.Remove(albumExistente);
+                var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count--;
+                    _context.Top50.Update(registroExistente);
+
+                }
+                _context.ListenList.Remove(albumExistente);
                 await _context.SaveChangesAsync();
 
             }
             else
             {
-                // Adicione logs para depuração
-                Console.WriteLine($"Álbum não encontrado na lista de favoritos: {albumId}");
+                 var registroExistente = _context.Top50.FirstOrDefault(t => t.IdAlbum == albumId);
+
+                if (registroExistente != null)
+                {
+                    registroExistente.count++;
+                }
+                else
+                {
+                    var novoRegistro = new Top50 { IdAlbum = albumId, count = 1 };
+                    _context.Top50.Add(novoRegistro);
+                }
             }
 
-            var allAlbums = _context.FavoriteAlbum
+            var allAlbums = _context.ListenList
                     .Where(a => a.UserMail == userEmail)
                     .Select(a => a.AlbumId)
                     .ToList();
@@ -551,7 +928,7 @@ namespace ApolloStageFirst.Controllers
 
 
 
-
+            TempData["meu"] = admin.Admin;
             return View("ListenList", albumsWithDetails);
         }
 
@@ -579,11 +956,13 @@ namespace ApolloStageFirst.Controllers
             }
             username = existingUser.Name;
             // Verifica se o álbum existe na lista de favoritos do usuário
-            var albumExistente = _context.FavoriteAlbum.FirstOrDefault(a => a.AlbumId == albumId);
+            var albumExistente = _context.ListenList.FirstOrDefault(a => a.AlbumId == albumId);
 
             if (albumExistente != null)
             {
-                _context.FavoriteAlbum.Remove(albumExistente);
+                
+
+                _context.ListenList.Remove(albumExistente);
                 await _context.SaveChangesAsync();
 
             }
@@ -594,7 +973,7 @@ namespace ApolloStageFirst.Controllers
                 return Json(new { success = false });
             }
 
-            var allAlbums = _context.FavoriteAlbum
+            var allAlbums = _context.ListenList
                     .Where(a => a.UserMail == userEmail)
                     .Select(a => a.AlbumId)
                     .ToList();
@@ -636,7 +1015,7 @@ namespace ApolloStageFirst.Controllers
             }
             username = existingUser.Name;
 
-            var allAlbums = _context.FavoriteAlbum
+            var allAlbums = _context.ListenList
                      .Where(a => a.UserMail == userEmail)
                      .Select(a => a.AlbumId)
                      .ToList();
@@ -706,7 +1085,7 @@ namespace ApolloStageFirst.Controllers
                 }
                 else
                 {
-                    album.classificacaoEspecifica = 0; // Ou defina um valor padrão, se necessário
+                    album.classificacaoEspecifica = 0; 
                 }
             }
 
@@ -763,7 +1142,7 @@ namespace ApolloStageFirst.Controllers
         }
 
         [HttpPost]
-        public  IActionResult SaveAlbumRating(Classification classification)
+        public async Task<IActionResult> SaveAlbumRating(Classification classification)
         {
             if (classification.userEmail != "" && classification.albumId != "")
             {
@@ -780,17 +1159,22 @@ namespace ApolloStageFirst.Controllers
                     return Json(new { success = true, message = "Classificação do album Atualizada" });
                 }
 
-                // Criar uma instância do modelo AlbumRating com os dados recebidos
+                Console.WriteLine(classification.gender);
+                Console.WriteLine(classification.gender); Console.WriteLine(classification.gender);
+                if (classification.gender == "" || classification.gender == null)
+                    classification.gender = "No Genere";
                 var albumRating = new Classification
                 {
                     userEmail = userEmail,
                     albumId = classification.albumId,
-                    starRating = classification.starRating
+                    starRating = classification.starRating,
+                    gender = classification.gender
                 };
-
-                // Adicionar a nova classificação ao contexto e salvar as alterações no banco de dados
+               
                 _context.AlbumRatings.Add(albumRating);
                 _context.SaveChanges();
+
+             
 
                 return Json(new { success = true }); // Resposta JSON indicando sucesso
             }
@@ -801,7 +1185,7 @@ namespace ApolloStageFirst.Controllers
 
 
         [HttpPost]
-        public IActionResult RemoveAlbumRating(string albumId)
+        public async Task<IActionResult> RemoveAlbumRating(string albumId, string gender)
         {
             if (albumId != "" && albumId != "")
             {
@@ -812,6 +1196,7 @@ namespace ApolloStageFirst.Controllers
 
                 if (existingRating != null)
                 {
+                  
                     _context.Remove(existingRating);
                     _context.SaveChanges();
 
@@ -825,23 +1210,33 @@ namespace ApolloStageFirst.Controllers
         }
 
         [HttpPost]
-        public IActionResult reportComment(string reviewId, string userEmail)
+        public IActionResult reportComment(string reviewId, string userEmail, string motivo, string descricao)
         {
-            if (reviewId != "" && reviewId != null)
+            if (reviewId != "" && reviewId != null && motivo != "" && descricao != "")
             {
                 var rev = _context.ReviewReports.FirstOrDefault(r => r.IdReview == reviewId);
                 if (rev == null)
                 {
+                    Console.WriteLine(motivo);
                     var reviewReports = new ReviewReports
                     {
                         IdReview = reviewId,
                         IdUserMail = userEmail,
+                        causa = motivo,
+                        descricao = descricao,
+                        count = 0,
                     };
                     _context.ReviewReports.Add(reviewReports);
                     _context.SaveChanges();
                     return Json(new { success = true });
-                }else
-                     return Json(new { success = false, msg = "já foi reportado por um utilizador" });
+                }
+                else
+                {
+                    rev.count++; 
+                    _context.ReviewReports.Update(rev);
+                    _context.SaveChanges();
+                    return Json(new { success = false, msg = "já foi reportado por um utilizador" });
+                }
             }
             else
                 return Json(new { success = false });
@@ -856,6 +1251,8 @@ namespace ApolloStageFirst.Controllers
             if (!string.IsNullOrEmpty(albumId))
             {
                 var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+                var admin = await _userManager.FindByEmailAsync(userEmail);
+
                 var rating = _context.AlbumRatings.FirstOrDefault(r => r.userEmail == userEmail && r.albumId == albumId);
                 int userRating = 0;
                 double allRatingvalue = 0;
@@ -946,6 +1343,10 @@ namespace ApolloStageFirst.Controllers
                 TempData["artistname"] = name;
                 TempData["artistgenres"] = genresList;
                 TempData["artistimage"] = artistimage;
+                if (admin != null)
+                    TempData["meu"] = admin.Admin;
+                else
+                    TempData["meu"] = false;
                 var ratingd = _context.AlbumRatings
                                          .FirstOrDefault(f => f.userEmail == userEmail && f.albumId == albumId);
                 int rate = 0;
@@ -960,7 +1361,7 @@ namespace ApolloStageFirst.Controllers
 
 
                 string listaounao = "false";
-                bool albumExists = _context.FavoriteAlbum.Any(f => f.UserMail == userEmail && f.AlbumId == albumId);
+                bool albumExists = _context.ListenList.Any(f => f.UserMail == userEmail && f.AlbumId == albumId);
 
                 if (albumExists)
                 {
@@ -1026,7 +1427,7 @@ namespace ApolloStageFirst.Controllers
                                 albumRating.reviewRecommendation = "Recomendo";
                             if (album.reviewRecommendation == "nao-recomendo")
                                 albumRating.reviewRecommendation = "Não Recomendo";
-                            _context.AlbumReview.Add(albumRating);
+                                _context.AlbumReview.Add(albumRating);
                             _context.SaveChanges();
 
                             return Json(new { success = true });
@@ -1079,8 +1480,54 @@ namespace ApolloStageFirst.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser([FromForm]  ApplicationUser user)
+        {
+           
 
+            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            if (userEmail == null)
+            {
+                return BadRequest("User email not found");
+            }
 
+            var existingUser = await _userManager.FindByEmailAsync(userEmail);
+            if (existingUser == null)
+            {
+                return NotFound("User not found");
+            }
+
+            existingUser.Morada = user.Morada;
+            existingUser.Cidade = user.Cidade;
+            existingUser.CodigoPostal = user.CodigoPostal;
+            existingUser.Pais = user.Pais;
+            existingUser.NomeEntrega = user.NomeEntrega;
+            existingUser.MoradaEntrega = user.MoradaEntrega;
+            existingUser.CidadeEntrega = user.CidadeEntrega;
+            existingUser.CodigoPostalEntrega = user.CodigoPostalEntrega;
+            existingUser.PaisEntrega = user.PaisEntrega;
+            existingUser.NumerotelEntrega = user.NumerotelEntrega;
+
+            try
+            {
+                var result = await _userManager.UpdateAsync(existingUser);
+                if (!result.Succeeded)
+                {
+                    // Lidar com falhas na atualização do usuário
+                    return BadRequest("Failed to update user");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com exceções não tratadas
+                return StatusCode(500, "An error occurred while updating user");
+            }
+            //  return Json(new {update = true});
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email);
+            var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
+            TempData["meu"] = admin.Admin;
+            return View("Profile", existingUser);
+        }
 
 
 
