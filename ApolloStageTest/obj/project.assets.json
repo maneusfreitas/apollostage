@@ -4999,11 +4999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/ApolloStageTest.csproj",
+      "projectUniqueName": "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStageTest/ApolloStageTest.csproj",
       "projectName": "ApolloStageTest",
-      "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/ApolloStageTest.csproj",
+      "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStageTest/ApolloStageTest.csproj",
       "packagesPath": "/Users/tenkait/.nuget/packages/",
-      "outputPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/obj/",
+      "outputPath": "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStageTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tenkait/.nuget/NuGet/NuGet.Config"
@@ -5018,8 +5018,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/ApolloStage.csproj": {
-              "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/ApolloStage.csproj"
+            "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStage/ApolloStage.csproj": {
+              "projectPath": "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStage/ApolloStage.csproj"
             }
           }
         }
@@ -5090,13 +5090,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache /Users/tenkait/Desktop/apollostage-cristiano/ApolloStageTest/obj/project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

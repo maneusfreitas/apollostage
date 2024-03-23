@@ -26,114 +26,195 @@
 
 </head>
 
-<div class="container">
-    <div class="text-center">
-        <h1>Zona morada</h1>
-    </div>
-    <div class="d-flex justify-content-center mt-2">
-        <!-- Adicione um atributo data-target para identificar o modal -->
-        <button type="button" class="btn btn-primary w-50" data-toggle="modal" data-target="#popupModal">Abrir Pop-up</button>
+<div class="parallax1 position-relative">
+    <div class="container d-flex justify-content-center align-items-center p-0 w-100" style="bottom:0">
+        <div class="mx-auto position-absolute" style="left: 50%; top: 100%; transform: translate(-50%, -50%);">
+            <!-- Botão para abrir o modal -->
+            <button type="button" class="btn" data-toggle="modal" data-target="#imagemModal" style="background: none; border: none; padding: 0;">
+                <img src="~/img/image-3.webp" style="max-width: 60px; max-height: 150px; min-width: 150px;" class="circular" />
+            </button>
+        </div>
+        <!-- Botão no canto superior direito -->
+        <button type="button" class="btn btn-dark position-absolute" style="top: 10px; right: 10px;" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-repeat fa-rotate-90"></i>
+        </button>
     </div>
 </div>
 
-<!-- Pop-up Modal -->
-<div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="popupModalLabel">Pop-up Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <h5 class="modal-title" id="exampleModalLabel">Change background image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Formulário -->
-                <form method="post" action="@Url.Action("UpdateUser", "Account")">
-                    <!-- Morada -->
-                    <div class="form-group">
-                        <label for="Morada">Morada:</label>
-                        <input type="text" class="form-control" id="Morada" name="Morada" required>
-                    </div>
-                    <!-- Cidade -->
-                    <div class="form-group">
-                        <label for="Cidade">Cidade:</label>
-                        <input type="text" class="form-control" id="Cidade" name="Cidade" required>
-                    </div>
-                    <!-- Código Postal -->
-                    <div class="form-group">
-                        <label for="CodigoPostal">Código Postal:</label>
-                        <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required>
-                    </div>
-                    <!-- País -->
-                    <div class="form-group">
-                        <label for="Pais">País:</label>
-                        <input type="text" class="form-control" id="Pais" name="Pais" required>
-                    </div>
-                    <!-- Número de Telefone -->
-                    <div class="form-group">
-                        <label for="Numerotel">Número de Telefone:</label>
-                        <input type="text" class="form-control" id="Numerotel" name="Numerotel" required>
-                    </div>
-                    <!-- Nome do Destinatário -->
-                    <div class="form-group">
-                        <label for="NomeEntrega">Nome do Destinatário:</label>
-                        <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega">
-                    </div>
-                    <!-- Morada de Entrega -->
-                    <div class="form-group">
-                        <label for="MoradaEntrega">Morada de Entrega:</label>
-                        <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega">
-                    </div>
-                    <!-- Cidade de Entrega -->
-                    <div class="form-group">
-                        <label for="CidadeEntrega">Cidade de Entrega:</label>
-                        <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega">
-                    </div>
-                    <!-- Código Postal de Entrega -->
-                    <div class="form-group">
-                        <label for="CodigoPostalEntrega">Código Postal de Entrega:</label>
-                        <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega">
-                    </div>
-                    <!-- País de Entrega -->
-                    <div class="form-group">
-                        <label for="PaisEntrega">País de Entrega:</label>
-                        <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega">
-                    </div>
-                    <!-- Número de Telefone de Entrega -->
-                    <div class="form-group">
-                        <label for="NumerotelEntrega">Número de Telefone de Entrega:</label>
-                        <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega">
-                    </div>
-                    <!-- Checkbox de Confirmação de Envio -->
-                    <div class="form-check">
-                        <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
-                        <label class="form-check-label" for="ConfirmoEnvio">
-                            Confirmo que pretendo o envio para a morada opcional
-                        </label>
-                    </div>
-                </form>
+                Not implemented yet
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imagemModal" tabindex="-1" role="dialog" aria-labelledby="imagemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imagemModalLabel">Change Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo do modal -->
+                <p>Not implemented Yet</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-between align-items-center p-0 w-100" style="bottom: 15vh;">
+    <div class="d-flex flex-column flex-sm-row me-5 paraCol">
+        <button type="button" class="btn btn-dark mb-2 mb-sm-0 mr-sm-2 me-1" data-toggle="modal" data-target="#popupModal" style="min-width: 50px; min-height: 70px;">
+            <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+        </button>
+
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#chartModal" style="min-width: 50px; min-height: 70px;">
+            <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <button type="button" class="btn btn-dark" style="min-width: 50px; min-height: 70px;" data-toggle="modal" data-target="#spotifyModal" id="spotifyButton">
+        <i class="fa fa-spotify fa-lg" aria-hidden="true"></i>
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="spotifyModal" tabindex="-1" role="dialog" aria-labelledby="spotifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="spotifyModalLabel">Spotify Link</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo do modal -->
+                <p>Not implemented yet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- Outros botões ou ações, se necessário -->
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="container">
 
-    <div class="d-flex justify-content-center mt-2">
-        <!-- Botão para abrir o modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chartModal">
-            Abrir Gráficos
-        </button>
+
+
+
+<!-- Pop-up Modal -->
+<div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel">Personal Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form method="post" action="@Url.Action("UpdateUser", "Account")">
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="Morada">Address:</label>
+                        <input type="text" class="form-control" id="Morada" name="Morada" required>
+                    </div>
+                    <!-- City -->
+                    <div class="form-group">
+                        <label for="Cidade">City:</label>
+                        <input type="text" class="form-control" id="Cidade" name="Cidade" required>
+                    </div>
+                    <!-- Postal Code -->
+                    <div class="form-group">
+                        <label for="CodigoPostal">Postal Code:</label>
+                        <input type="text" class="form-control" id="CodigoPostal" name="CodigoPostal" required>
+                    </div>
+                    <!-- Country -->
+                    <div class="form-group">
+                        <label for="Pais">Country:</label>
+                        <input type="text" class="form-control" id="Pais" name="Pais" required>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="Numerotel">Phone Number:</label>
+                        <input type="text" class="form-control" id="Numerotel" name="Numerotel" required>
+                    </div>
+                    <!-- Recipient Name -->
+                    <div class="form-group">
+                        <label for="NomeEntrega">Recipient Name:</label>
+                        <input type="text" class="form-control" id="NomeEntrega" name="NomeEntrega">
+                    </div>
+                    <!-- Delivery Address -->
+                    <div class="form-group">
+                        <label for="MoradaEntrega">Delivery Address:</label>
+                        <input type="text" class="form-control" id="MoradaEntrega" name="MoradaEntrega">
+                    </div>
+                    <!-- Delivery City -->
+                    <div class="form-group">
+                        <label for="CidadeEntrega">Delivery City:</label>
+                        <input type="text" class="form-control" id="CidadeEntrega" name="CidadeEntrega">
+                    </div>
+                    <!-- Delivery Postal Code -->
+                    <div class="form-group">
+                        <label for="CodigoPostalEntrega">Delivery Postal Code:</label>
+                        <input type="text" class="form-control" id="CodigoPostalEntrega" name="CodigoPostalEntrega">
+                    </div>
+                    <!-- Delivery Country -->
+                    <div class="form-group">
+                        <label for="PaisEntrega">Delivery Country:</label>
+                        <input type="text" class="form-control" id="PaisEntrega" name="PaisEntrega">
+                    </div>
+                    <!-- Delivery Phone Number -->
+                    <div class="form-group">
+                        <label for="NumerotelEntrega">Delivery Phone Number:</label>
+                        <input type="text" class="form-control" id="NumerotelEntrega" name="NumerotelEntrega">
+                    </div>
+                    <!-- Shipping Confirmation Checkbox -->
+                    <div class="form-check">
+                        <input style="display: block;" class="form-check-input" type="checkbox" value="" name="ConfirmoEnvio" id="ConfirmoEnvio">
+                        <label class="form-check-label" for="ConfirmoEnvio">
+                            I confirm that I want delivery to the optional address
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
     </div>
 </div>
 
+
+
+
+
 <!-- Modal -->
-<div class="modal fade" id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel" aria-hidden="true">
+<div class="modal fade " id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -191,7 +272,7 @@
                             </section>
 
                             <section class="card_body">
-                                <h3>User Album Rating by Genere</h3>
+                                <h3>User Album Rating by Gender</h3>
                                 <section class="bar_canvas">
                                     @foreach (var order in Model.GenderChart)
                                     {
@@ -214,13 +295,13 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 <div class="text-center">
-    <h1>Zona slider</h1>
+    <h1 class="mt-5">Avaluation albums</h1>
 </div>
 <div class="item-container d-flex justify-content-center ">
     <button class="slider slider--left">
@@ -250,7 +331,7 @@
 
 
 <div class="text-center">
-    <h1>Zona slider ListenList</h1>
+    <h1>ListenList Albums</h1>
 </div>
 
 <div id="carousel">
@@ -424,6 +505,12 @@
             flex-direction: column;
         }
     }
+
+    .circular{
+        border-radius:100%
+    }
+
+
 </style>
 
 <style>
@@ -654,6 +741,8 @@
     $('#popupModal').on('hidden.bs.modal', function () {
         $('body').css('overflow-y', 'auto');
     });
+
+
 </script>
 
 
@@ -1196,7 +1285,7 @@
         }
 
         .bar_canvas > aside {
-            background-color: var(--dk-dark-bg);
+            background-color: #000000 !important;
             height: var(--i);
             margin: 0;
             padding: 0;
@@ -1265,7 +1354,7 @@
     .card_header {
         display: flex;
         justify-content: space-between;
-        background-color: var(--dk-dark-bg);
+        background-color: #000000;
         align-items: center;
         padding: 1rem 2rem;
         border-radius: 3px;
@@ -1348,7 +1437,7 @@
 
     section.charts.mt-4 {
         width: 90%;
-        margin: auto;
+        margin:auto;
     }
 </style>
 
@@ -1822,17 +1911,14 @@
         margin-left: 1%;
         background-color: var(--dk-dark-bg);
     }
-
     .wrapper {
-        width: 100% !important;
+        width: 100%!important;
         max-width: 100%;
         position: relative;
     }
-
         .wrapper h1 {
             text-align: center;
         }
-
         .wrapper input {
             width: 600px;
         }
@@ -1888,10 +1974,6 @@
         color = [
             "cornflowerblue",
             "olivedrab",
-            "orange",
-            "tomato",
-            "crimson",
-            "purple",
             "turquoise",
             "forestgreen",
             "navy"
@@ -1938,9 +2020,6 @@
         color = [
             "cornflowerblue",
             "olivedrab",
-            "orange",
-            "tomato",
-            "crimson",
             "purple",
             "turquoise",
             "forestgreen",

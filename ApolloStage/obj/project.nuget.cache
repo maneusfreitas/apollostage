@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ujDVRkD/aLmBRUmBaHdcJc1dc/9VIqgBnIPneFxjfmju2YrqG4Ljer51beI9YtJWpH+SnC1ImfoCU48LyYWrxQ==",
+  "dgSpecHash": "GwPsOqgoU/+oVNYZMA28xqI7jTmozk3YD3PyxbMIB61x2iqkIywlAt30IvOMlZGyObqwl1PrnmUVRKF1JHZMPA==",
   "success": true,
-  "projectFilePath": "/Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/ApolloStage.csproj",
+  "projectFilePath": "/Users/tenkait/Desktop/apollostage-cristiano-1/ApolloStage/ApolloStage.csproj",
   "expectedPackageFiles": [
     "/Users/tenkait/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/htmlagilitypack/1.11.57/htmlagilitypack.1.11.57.nupkg.sha512",
@@ -163,12 +163,5 @@
     "/Users/tenkait/.nuget/packages/xunit.extensibility.execution/2.4.1/xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "/Users/tenkait/.nuget/packages/xunit.runner.visualstudio/2.4.1/xunit.runner.visualstudio.2.4.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache /Users/tenkait/Desktop/apollostage-cristiano/ApolloStage/obj/project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

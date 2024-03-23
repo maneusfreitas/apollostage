@@ -202,7 +202,8 @@ public class HomeController : Controller
                     }
                 }
             }
-           
+
+
 /*
             // albuns lançados recentemente
             string apiUrl = "https://api.spotify.com/v1/browse/new-releases";

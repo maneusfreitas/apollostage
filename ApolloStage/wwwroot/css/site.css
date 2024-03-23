@@ -125,6 +125,20 @@ footer.border-top.footer.text-muted {
     background-size: cover;
 }
 
+.parallax1{
+
+    /* The image used */
+    background-image: url("../img/images_drake.jpg");
+    min-height: 200px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
 
 
 
@@ -229,6 +243,7 @@ p.card-text.ms-4.releaseDate.mb-0 {
         left: 60%;
         bottom: 20px !important;
         transform: translate(-50%);
+
     }
 }
 

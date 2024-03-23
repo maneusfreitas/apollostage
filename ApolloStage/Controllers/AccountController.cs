@@ -146,6 +146,7 @@ namespace ApolloStageFirst.Controllers
             var userEmailClaim = User.FindFirst(ClaimTypes.Email);
             var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
             TempData["meu"] = admin.Admin;
+
             return View("Profile", viewModel);
         }
 
@@ -1157,6 +1158,9 @@ namespace ApolloStageFirst.Controllers
 
                     return Json(new { success = true, message = "Classificação do album Atualizada" });
                 }
+
+                Console.WriteLine(classification.gender);
+                Console.WriteLine(classification.gender); Console.WriteLine(classification.gender);
                 if (classification.gender == "" || classification.gender == null)
                     classification.gender = "No Genere";
                 var albumRating = new Classification
@@ -1518,6 +1522,7 @@ namespace ApolloStageFirst.Controllers
                 // Lidar com exceções não tratadas
                 return StatusCode(500, "An error occurred while updating user");
             }
+            //  return Json(new {update = true});
             var userEmailClaim = User.FindFirst(ClaimTypes.Email);
             var admin = await _userManager.FindByEmailAsync(userEmailClaim.Value);
             TempData["meu"] = admin.Admin;

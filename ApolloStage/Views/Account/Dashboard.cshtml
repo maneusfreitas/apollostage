@@ -32,7 +32,7 @@
         <div class="p-4">
             <div class="welcome">
                 <div class="content rounded-3 p-3">
-                    <h1 class="fs-3">Welcome to Dashboard</h1>
+                    <h1 class="fs-3 text-white">Welcome to Dashboard</h1>
                     <p class="mb-0">Hello @name, welcome to your dashboard!</p>
                 </div>
             </div>
@@ -231,14 +231,14 @@
                         <section class="card_header">
                             <aside class="card_header_balance">
                                 <p>Circular Chart</p>
-                                <h3>Genere Chart</h3>
+                                <h3>Gender Chart</h3>
                             </aside>
                             <aside class="card_header_logo">
                                 <img src="./images/logo.svg" alt="">
                             </aside>
                         </section>
                         <section class="card_body">
-                            <h3>Classification by Genere</h3>
+                            <h3>Classification by Gender</h3>
                             <div class="wrapper">
                                 <div class="pie-charts">
                                     <div class="pieID--micro-skills2 pie-chart--wrapper">
@@ -412,15 +412,15 @@
          -- welcome
         -------------------------------- */
         .welcome {
-            color: var(--dk-gray-300);
+            color: #ffffff,
         }
 
             .welcome .content {
-                background-color: var(--dk-dark-bg);
+                background-color: #000000
             }
 
             .welcome p {
-                color: var(--dk-gray-400);
+                color: #ffffff;
             }
 
 
@@ -430,11 +430,11 @@
          -- Statistics
         -------------------------------- */
         .statistics {
-            color: var(--dk-gray-200);
+            color: #FFFFFF
         }
 
             .statistics .box {
-                background-color: var(--dk-dark-bg);
+                background-color: #000000;
             }
 
                 .statistics .box i {
@@ -444,9 +444,24 @@
                 }
 
                 .statistics .box p {
-                    color: var(--dk-gray-400);
+                    color: #FFFFFF
                 }
 
+        .bg-primary {
+            background-color: #008661 !important;
+        }
+
+        .bg-danger {
+            background-color: #00BF63 !important;
+        }
+
+        .bg-success {
+            background-color: #5AB3A7 !important;
+        }
+
+        .bg-warning {
+            background-color: #545454 !important;
+        }
 
 
 
@@ -579,11 +594,11 @@
 
 
             .bar_canvas > aside:hover {
-                background-color: #b4dfe5;
+                background-color: #000000;
             }
 
             .bar_canvas > aside {
-                background-color: var(--dk-dark-bg);
+                background-color: #000000 !important;
                 height: var(--i);
                 margin: 0;
                 padding: 0;
@@ -652,7 +667,7 @@
         .card_header {
             display: flex;
             justify-content: space-between;
-            background-color: var(--dk-dark-bg);
+            background-color: #;
             align-items: center;
             padding: 1rem 2rem;
             border-radius: 3px;
@@ -1261,10 +1276,6 @@
             color = [
                 "cornflowerblue",
                 "olivedrab",
-                "orange",
-                "tomato",
-                "crimson",
-                "purple",
                 "turquoise",
                 "forestgreen",
                 "navy"
@@ -1311,9 +1322,7 @@
             color = [
                 "cornflowerblue",
                 "olivedrab",
-                "orange",
                 "tomato",
-                "crimson",
                 "purple",
                 "turquoise",
                 "forestgreen",
